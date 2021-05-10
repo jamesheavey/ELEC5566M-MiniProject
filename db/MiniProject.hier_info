@@ -1,8 +1,12 @@
-|VGA
+|game_engine
 clk => comb.DATAIN
-rst => rst~0.DATAIN
-hSync <= hSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vSync <= vSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rst => comb.DATAIN
+key[0] => ~NO_FANOUT~
+key[1] => ~NO_FANOUT~
+key[2] => ~NO_FANOUT~
+key[3] => ~NO_FANOUT~
+hSync <= VGA:vga_gen.hSync
+vSync <= VGA:vga_gen.vSync
 R[0] <= R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 R[1] <= R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 R[2] <= R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -27,7 +31,97 @@ B[4] <= B[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 B[5] <= B[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 B[6] <= B[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 B[7] <= B[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-vCLK <= clk_divider:div.port1
+vCLK <= VGA:vga_gen.vCLK
+BLANK <= VGA:vga_gen.BLANK
+SYNC <= VGA:vga_gen.SYNC
+
+
+|game_engine|clk_divider:div
+clk => div_clk~reg0.CLK
+div_clk <= div_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_engine|VGA:vga_gen
+clk => BLANK~reg0.CLK
+clk => de.CLK
+clk => vSync~reg0.CLK
+clk => vs.CLK
+clk => hSync~reg0.CLK
+clk => hs.CLK
+clk => vPos[0]~reg0.CLK
+clk => vPos[1]~reg0.CLK
+clk => vPos[2]~reg0.CLK
+clk => vPos[3]~reg0.CLK
+clk => vPos[4]~reg0.CLK
+clk => vPos[5]~reg0.CLK
+clk => vPos[6]~reg0.CLK
+clk => vPos[7]~reg0.CLK
+clk => vPos[8]~reg0.CLK
+clk => vPos[9]~reg0.CLK
+clk => vPos[10]~reg0.CLK
+clk => vPos[11]~reg0.CLK
+clk => vPos[12]~reg0.CLK
+clk => vPos[13]~reg0.CLK
+clk => vPos[14]~reg0.CLK
+clk => vPos[15]~reg0.CLK
+clk => hPos[0]~reg0.CLK
+clk => hPos[1]~reg0.CLK
+clk => hPos[2]~reg0.CLK
+clk => hPos[3]~reg0.CLK
+clk => hPos[4]~reg0.CLK
+clk => hPos[5]~reg0.CLK
+clk => hPos[6]~reg0.CLK
+clk => hPos[7]~reg0.CLK
+clk => hPos[8]~reg0.CLK
+clk => hPos[9]~reg0.CLK
+clk => hPos[10]~reg0.CLK
+clk => hPos[11]~reg0.CLK
+clk => hPos[12]~reg0.CLK
+clk => hPos[13]~reg0.CLK
+clk => hPos[14]~reg0.CLK
+clk => hPos[15]~reg0.CLK
+clk => vCLK.DATAIN
+rst => BLANK~reg0.ACLR
+rst => de.ACLR
+rst => vSync~reg0.ACLR
+rst => vs.ACLR
+rst => hSync~reg0.ACLR
+rst => hs.ACLR
+rst => vPos[0]~reg0.ACLR
+rst => vPos[1]~reg0.ACLR
+rst => vPos[2]~reg0.ACLR
+rst => vPos[3]~reg0.ACLR
+rst => vPos[4]~reg0.ACLR
+rst => vPos[5]~reg0.ACLR
+rst => vPos[6]~reg0.ACLR
+rst => vPos[7]~reg0.ACLR
+rst => vPos[8]~reg0.ACLR
+rst => vPos[9]~reg0.ACLR
+rst => vPos[10]~reg0.ACLR
+rst => vPos[11]~reg0.ACLR
+rst => vPos[12]~reg0.ACLR
+rst => vPos[13]~reg0.ACLR
+rst => vPos[14]~reg0.ACLR
+rst => vPos[15]~reg0.ACLR
+rst => hPos[0]~reg0.ACLR
+rst => hPos[1]~reg0.ACLR
+rst => hPos[2]~reg0.ACLR
+rst => hPos[3]~reg0.ACLR
+rst => hPos[4]~reg0.ACLR
+rst => hPos[5]~reg0.ACLR
+rst => hPos[6]~reg0.ACLR
+rst => hPos[7]~reg0.ACLR
+rst => hPos[8]~reg0.ACLR
+rst => hPos[9]~reg0.ACLR
+rst => hPos[10]~reg0.ACLR
+rst => hPos[11]~reg0.ACLR
+rst => hPos[12]~reg0.ACLR
+rst => hPos[13]~reg0.ACLR
+rst => hPos[14]~reg0.ACLR
+rst => hPos[15]~reg0.ACLR
+hSync <= hSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vSync <= vSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vCLK <= clk.DB_MAX_OUTPUT_PORT_TYPE
 BLANK <= BLANK~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SYNC <= <GND>
 hPos[0] <= hPos[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -62,10 +156,5 @@ vPos[12] <= vPos[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[13] <= vPos[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[14] <= vPos[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[15] <= vPos[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|VGA|clk_divider:div
-clk => div_clk~reg0.CLK
-div_clk <= div_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

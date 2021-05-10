@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Mon May 10 16:18:57 2021
+Mon May 10 16:45:51 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -14,10 +14,11 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Source assignments for Top-level Entity: |VGA
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Source assignments for Top-level Entity: |game_engine
+ 10. Port Connectivity Checks: "VGA:vga_gen"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +44,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 10 16:18:57 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 10 16:45:51 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
-; Top-level Entity Name           ; VGA                                         ;
+; Top-level Entity Name           ; game_engine                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 63                                          ;
-; Total pins                      ; 63                                          ;
+; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +70,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; VGA                ; MiniProject        ;
+; Top-level entity name                                                           ; game_engine        ; MiniProject        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -163,8 +164,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -175,6 +175,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
 ; VGA.v                            ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v         ;         ;
 ; clk_divider.v                    ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v ;         ;
+; game_engine.v                    ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v ;         ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
 
 
@@ -194,25 +195,26 @@ refer to the applicable agreement for further details.
 ;                                             ;                         ;
 ; Dedicated logic registers                   ; 63                      ;
 ;                                             ;                         ;
-; I/O pins                                    ; 63                      ;
+; I/O pins                                    ; 35                      ;
 ;                                             ;                         ;
 ; Total DSP Blocks                            ; 0                       ;
 ;                                             ;                         ;
 ; Maximum fan-out node                        ; clk_divider:div|div_clk ;
 ; Maximum fan-out                             ; 64                      ;
-; Total fan-out                               ; 487                     ;
-; Average fan-out                             ; 2.06                    ;
+; Total fan-out                               ; 427                     ;
+; Average fan-out                             ; 2.37                    ;
 +---------------------------------------------+-------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; |VGA                       ; 47 (46)             ; 63 (62)                   ; 0                 ; 0          ; 63   ; 0            ; |VGA                 ; VGA         ; work         ;
-;    |clk_divider:div|       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA|clk_divider:div ; clk_divider ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
+; |game_engine               ; 47 (0)              ; 63 (24)                   ; 0                 ; 0          ; 35   ; 0            ; |game_engine                 ; game_engine ; work         ;
+;    |VGA:vga_gen|           ; 46 (46)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |game_engine|VGA:vga_gen     ; VGA         ; work         ;
+;    |clk_divider:div|       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_engine|clk_divider:div ; clk_divider ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -231,43 +233,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------+
-; Source assignments for Top-level Entity: |VGA ;
-+------------+----------+------+----------------+
-; Assignment ; Value    ; From ; To             ;
-+------------+----------+------+----------------+
-; LOCATION   ; Pin_F13  ; -    ; R[7]           ;
-; LOCATION   ; Pin_E12  ; -    ; R[6]           ;
-; LOCATION   ; Pin_D12  ; -    ; R[5]           ;
-; LOCATION   ; Pin_C12  ; -    ; R[4]           ;
-; LOCATION   ; Pin_B12  ; -    ; R[3]           ;
-; LOCATION   ; Pin_E13  ; -    ; R[2]           ;
-; LOCATION   ; Pin_C13  ; -    ; R[1]           ;
-; LOCATION   ; Pin_A13  ; -    ; R[0]           ;
-; LOCATION   ; Pin_E11  ; -    ; G[7]           ;
-; LOCATION   ; Pin_F11  ; -    ; G[6]           ;
-; LOCATION   ; Pin_G12  ; -    ; G[5]           ;
-; LOCATION   ; Pin_G11  ; -    ; G[4]           ;
-; LOCATION   ; Pin_G10  ; -    ; G[3]           ;
-; LOCATION   ; Pin_H12  ; -    ; G[2]           ;
-; LOCATION   ; Pin_J10  ; -    ; G[1]           ;
-; LOCATION   ; Pin_J9   ; -    ; G[0]           ;
-; LOCATION   ; Pin_J14  ; -    ; B[7]           ;
-; LOCATION   ; Pin_G15  ; -    ; B[6]           ;
-; LOCATION   ; Pin_F15  ; -    ; B[5]           ;
-; LOCATION   ; Pin_H14  ; -    ; B[4]           ;
-; LOCATION   ; Pin_F14  ; -    ; B[3]           ;
-; LOCATION   ; Pin_H13  ; -    ; B[2]           ;
-; LOCATION   ; Pin_G13  ; -    ; B[1]           ;
-; LOCATION   ; Pin_B13  ; -    ; B[0]           ;
-; LOCATION   ; Pin_AF14 ; -    ; clk            ;
-; LOCATION   ; Pin_AB12 ; -    ; rst            ;
-; LOCATION   ; Pin_B11  ; -    ; hSync          ;
-; LOCATION   ; Pin_D11  ; -    ; vSync          ;
-; LOCATION   ; Pin_A11  ; -    ; vCLK           ;
-; LOCATION   ; Pin_F10  ; -    ; BLANK          ;
-; LOCATION   ; Pin_C10  ; -    ; SYNC           ;
-+------------+----------+------+----------------+
++-------------------------------------------------------+
+; Source assignments for Top-level Entity: |game_engine ;
++------------+----------+------+------------------------+
+; Assignment ; Value    ; From ; To                     ;
++------------+----------+------+------------------------+
+; LOCATION   ; Pin_F13  ; -    ; R[7]                   ;
+; LOCATION   ; Pin_E12  ; -    ; R[6]                   ;
+; LOCATION   ; Pin_D12  ; -    ; R[5]                   ;
+; LOCATION   ; Pin_C12  ; -    ; R[4]                   ;
+; LOCATION   ; Pin_B12  ; -    ; R[3]                   ;
+; LOCATION   ; Pin_E13  ; -    ; R[2]                   ;
+; LOCATION   ; Pin_C13  ; -    ; R[1]                   ;
+; LOCATION   ; Pin_A13  ; -    ; R[0]                   ;
+; LOCATION   ; Pin_E11  ; -    ; G[7]                   ;
+; LOCATION   ; Pin_F11  ; -    ; G[6]                   ;
+; LOCATION   ; Pin_G12  ; -    ; G[5]                   ;
+; LOCATION   ; Pin_G11  ; -    ; G[4]                   ;
+; LOCATION   ; Pin_G10  ; -    ; G[3]                   ;
+; LOCATION   ; Pin_H12  ; -    ; G[2]                   ;
+; LOCATION   ; Pin_J10  ; -    ; G[1]                   ;
+; LOCATION   ; Pin_J9   ; -    ; G[0]                   ;
+; LOCATION   ; Pin_J14  ; -    ; B[7]                   ;
+; LOCATION   ; Pin_G15  ; -    ; B[6]                   ;
+; LOCATION   ; Pin_F15  ; -    ; B[5]                   ;
+; LOCATION   ; Pin_H14  ; -    ; B[4]                   ;
+; LOCATION   ; Pin_F14  ; -    ; B[3]                   ;
+; LOCATION   ; Pin_H13  ; -    ; B[2]                   ;
+; LOCATION   ; Pin_G13  ; -    ; B[1]                   ;
+; LOCATION   ; Pin_B13  ; -    ; B[0]                   ;
+; LOCATION   ; Pin_AF14 ; -    ; clk                    ;
+; LOCATION   ; Pin_AB12 ; -    ; rst                    ;
+; LOCATION   ; Pin_B11  ; -    ; hSync                  ;
+; LOCATION   ; Pin_D11  ; -    ; vSync                  ;
+; LOCATION   ; Pin_A11  ; -    ; vCLK                   ;
+; LOCATION   ; Pin_F10  ; -    ; BLANK                  ;
+; LOCATION   ; Pin_C10  ; -    ; SYNC                   ;
++------------+----------+------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:vga_gen"                                                                                                              ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                   ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; hPos ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "hPos[15..1]" have no fanouts ;
+; hPos ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; vPos ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "vPos[15..1]" have no fanouts ;
+; vPos ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -290,7 +304,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;         4 data inputs ; 3                           ;
 ;         5 data inputs ; 4                           ;
 ;         6 data inputs ; 4                           ;
-; boundary_port         ; 63                          ;
+; boundary_port         ; 35                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.50                        ;
 ; Average LUT depth     ; 1.59                        ;
@@ -312,7 +326,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 10 16:18:46 2021
+    Info: Processing started: Mon May 10 16:45:40 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -320,24 +334,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga.v
     Info (12023): Found entity 1: VGA File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clk_divider.v
     Info (12023): Found entity 1: clk_divider File: C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v Line: 1
-Info (12127): Elaborating entity "VGA" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VGA.v(67): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 67
-Warning (10230): Verilog HDL assignment warning at VGA.v(81): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 81
-Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:div" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file game_engine.v
+    Info (12023): Found entity 1: game_engine File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at game_engine.v(48): created implicit net for "X" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 48
+Warning (10236): Verilog HDL Implicit Net warning at game_engine.v(49): created implicit net for "Y" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 49
+Info (12127): Elaborating entity "game_engine" for the top level hierarchy
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:div" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 37
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:vga_gen" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 50
+Warning (10230): Verilog HDL assignment warning at VGA.v(47): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 47
+Warning (10230): Verilog HDL assignment warning at VGA.v(61): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 61
 Info (13014): Ignored 2 buffer(s)
     Info (13019): Ignored 2 SOFT buffer(s)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SYNC" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 31
+    Warning (13410): Pin "SYNC" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 61 output pins
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key[0]" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 9
+    Warning (15610): No output dependent on input pin "key[1]" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 9
+    Warning (15610): No output dependent on input pin "key[2]" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 9
+    Warning (15610): No output dependent on input pin "key[3]" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 9
+Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 29 output pins
     Info (21061): Implemented 74 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Mon May 10 16:18:57 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Mon May 10 16:45:51 2021
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:22
 
