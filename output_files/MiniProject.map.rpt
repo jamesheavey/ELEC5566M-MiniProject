@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Mon May 10 21:28:01 2021
+Mon May 10 22:05:57 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,14 +13,19 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for Top-level Entity: |game_engine
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. State Machine - |game_engine|direction
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for Top-level Entity: |game_engine
+ 15. Parameter Settings for User Entity Instance: clk_divider:VGA
+ 16. Parameter Settings for User Entity Instance: clk_divider:GAME
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,13 +51,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 10 21:28:01 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 10 22:05:57 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; game_engine                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 86                                          ;
+; Total registers                 ; 117                                         ;
 ; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -188,25 +193,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 118       ;
+; Estimate of Logic utilization (ALMs needed) ; 135       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 190       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 43        ;
-;     -- 5 input functions                    ; 5         ;
-;     -- 4 input functions                    ; 16        ;
-;     -- <=3 input functions                  ; 126       ;
+; Combinational ALUT usage for logic          ; 227       ;
+;     -- 7 input functions                    ; 1         ;
+;     -- 6 input functions                    ; 39        ;
+;     -- 5 input functions                    ; 18        ;
+;     -- 4 input functions                    ; 18        ;
+;     -- <=3 input functions                  ; 151       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 86        ;
+; Dedicated logic registers                   ; 117       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 35        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 84        ;
-; Total fan-out                               ; 1034      ;
-; Average fan-out                             ; 2.99      ;
+; Maximum fan-out                             ; 82        ;
+; Total fan-out                               ; 1198      ;
+; Average fan-out                             ; 2.89      ;
 +---------------------------------------------+-----------+
 
 
@@ -215,29 +220,64 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
-; |game_engine               ; 190 (142)           ; 86 (46)                   ; 0                 ; 0          ; 35   ; 0            ; |game_engine                   ; game_engine ; work         ;
+; |game_engine               ; 227 (137)           ; 117 (44)                  ; 0                 ; 0          ; 35   ; 0            ; |game_engine                   ; game_engine ; work         ;
 ;    |VGA:vga_gen|           ; 46 (46)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |game_engine|VGA:vga_gen       ; VGA         ; work         ;
-;    |clk_divider:div|       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_engine|clk_divider:div   ; clk_divider ; work         ;
+;    |clk_divider:GAME|      ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |game_engine|clk_divider:GAME  ; clk_divider ; work         ;
+;    |clk_divider:VGA|       ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_engine|clk_divider:VGA   ; clk_divider ; work         ;
 ;    |key_filter:filter|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |game_engine|key_filter:filter ; key_filter  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; G[7]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; G[6]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; G[5]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; G[4]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; B[7]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; B[6]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; B[5]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; B[4]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 8 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |game_engine|direction                                                              ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; Name           ; direction.0000 ; direction.1000 ; direction.0100 ; direction.0010 ; direction.0001 ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; direction.0000 ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; direction.0001 ; 1              ; 0              ; 0              ; 0              ; 1              ;
+; direction.0010 ; 1              ; 0              ; 0              ; 1              ; 0              ;
+; direction.0100 ; 1              ; 0              ; 1              ; 0              ; 0              ;
+; direction.1000 ; 1              ; 1              ; 0              ; 0              ; 0              ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; B[0]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[7]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[6]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[5]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[4]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[3]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[2]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[1]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; G[0]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[7]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[6]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[5]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[4]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[3]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[2]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; B[1]~reg0                              ; Stuck at GND due to stuck port data_in ;
+; clk_divider:VGA|count[0..31]           ; Lost fanout                            ;
+; direction.0000                         ; Lost fanout                            ;
+; Total Number of Removed Registers = 49 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; B[0]~reg0     ; Stuck at GND              ; G[5]~reg0                              ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -245,32 +285,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 86    ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 117   ;
+; Number of registers using Synchronous Clear  ; 64    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 84    ;
+; Number of registers using Asynchronous Clear ; 82    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 46    ;
+; Number of registers using Clock Enable       ; 48    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; snakeY[1]                              ; 4       ;
-; snakeX[1]                              ; 4       ;
-; snakeX[5]                              ; 4       ;
-; snakeX[2]                              ; 4       ;
-; snakeX[8]                              ; 4       ;
-; snakeY[4]                              ; 4       ;
-; snakeY[7]                              ; 4       ;
-; snakeY[6]                              ; 4       ;
-; snakeY[2]                              ; 4       ;
-; Total number of inverted registers = 9 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; snakeY[0]                               ; 3       ;
+; snakeY[1]                               ; 4       ;
+; snakeX[8]                               ; 4       ;
+; snakeX[3]                               ; 3       ;
+; snakeX[2]                               ; 3       ;
+; snakeX[5]                               ; 4       ;
+; snakeY[3]                               ; 3       ;
+; snakeY[2]                               ; 3       ;
+; snakeY[7]                               ; 4       ;
+; snakeY[6]                               ; 4       ;
+; snakeY[4]                               ; 4       ;
+; Total number of inverted registers = 11 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -278,10 +320,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |game_engine|snakeX[4]     ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |game_engine|snakeY[8]     ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |game_engine|snakeX[0]     ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |game_engine|snakeY[5]     ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |game_engine|snakeX[8]     ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; Yes        ; |game_engine|snakeY[2]     ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |game_engine|snakeY[6]     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |game_engine|direction     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -328,34 +371,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------+----------+------+------------------------+
 
 
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:VGA ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; DIVISOR        ; 0     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:GAME ;
++----------------+---------+------------------------------------+
+; Parameter Name ; Value   ; Type                               ;
++----------------+---------+------------------------------------+
+; DIVISOR        ; 1999999 ; Signed Integer                     ;
++----------------+---------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 86                          ;
-;     CLR               ; 22                          ;
+; arriav_ff             ; 117                         ;
+;     CLR               ; 18                          ;
 ;     CLR SCLR          ; 16                          ;
-;     ENA CLR           ; 30                          ;
+;     ENA CLR           ; 32                          ;
 ;     ENA CLR SCLR      ; 16                          ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 191                         ;
-;     arith             ; 90                          ;
-;         1 data inputs ; 60                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 28                          ;
-;     normal            ; 101                         ;
+;     SCLR              ; 32                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 228                         ;
+;     arith             ; 124                         ;
+;         1 data inputs ; 92                          ;
+;         2 data inputs ; 32                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 103                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 43                          ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 18                          ;
+;         6 data inputs ; 39                          ;
 ; boundary_port         ; 35                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.70                        ;
-; Average LUT depth     ; 3.55                        ;
+; Max LUT depth         ; 5.80                        ;
+; Average LUT depth     ; 3.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -364,7 +429,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -374,7 +439,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 10 21:27:50 2021
+    Info: Processing started: Mon May 10 22:05:45 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -388,54 +453,69 @@ Warning (12019): Can't analyze file -- file PosedgeDetector.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file key_filter.v
     Info (12023): Found entity 1: key_filter File: C:/Users/James/Workspace/ELEC5566M-MiniProject/key_filter.v Line: 15
 Info (12127): Elaborating entity "game_engine" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at game_engine.v(83): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 83
-Warning (10230): Verilog HDL assignment warning at game_engine.v(84): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 84
+Warning (10230): Verilog HDL assignment warning at game_engine.v(86): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
 Warning (10230): Verilog HDL assignment warning at game_engine.v(87): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 87
-Warning (10230): Verilog HDL assignment warning at game_engine.v(89): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
-Warning (10230): Verilog HDL assignment warning at game_engine.v(91): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 91
-Warning (10230): Verilog HDL assignment warning at game_engine.v(93): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 93
-Warning (10240): Verilog HDL Always Construct warning at game_engine.v(80): inferring latch(es) for variable "snakeX", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 80
-Warning (10240): Verilog HDL Always Construct warning at game_engine.v(80): inferring latch(es) for variable "snakeY", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 80
-Info (10041): Inferred latch for "snakeY[0]" at game_engine.v(80) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 80
-Info (10041): Inferred latch for "snakeX[0]" at game_engine.v(80) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 80
-Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:div" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 40
-Info (12128): Elaborating entity "key_filter" for hierarchy "key_filter:filter" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 43
-Info (12128): Elaborating entity "VGA" for hierarchy "VGA:vga_gen" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 60
+Warning (10230): Verilog HDL assignment warning at game_engine.v(90): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 90
+Warning (10230): Verilog HDL assignment warning at game_engine.v(92): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 92
+Warning (10230): Verilog HDL assignment warning at game_engine.v(94): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 94
+Warning (10230): Verilog HDL assignment warning at game_engine.v(96): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 96
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 40
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:GAME" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 43
+Info (12128): Elaborating entity "key_filter" for hierarchy "key_filter:filter" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 46
+Info (12128): Elaborating entity "VGA" for hierarchy "VGA:vga_gen" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 63
 Warning (10230): Verilog HDL assignment warning at VGA.v(47): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 47
 Warning (10230): Verilog HDL assignment warning at VGA.v(61): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/VGA.v Line: 61
 Info (13014): Ignored 6 buffer(s)
     Info (13019): Ignored 6 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "G[4]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "G[5]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "G[6]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "G[7]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "B[4]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "B[5]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "B[6]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
-    Warning (13410): Pin "B[7]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 124
+    Warning (13410): Pin "G[0]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[1]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[2]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[3]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[4]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[5]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[6]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "G[7]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[0]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[1]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[2]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[3]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[4]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[5]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[6]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
+    Warning (13410): Pin "B[7]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 109
     Warning (13410): Pin "SYNC" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 35
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register snakeX[8] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeX[5] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeX[2] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeX[1] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeY[7] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeY[6] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeY[4] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeY[2] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
-    Critical Warning (18010): Register snakeY[1] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 86
+    Critical Warning (18010): Register snakeX[8] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeX[5] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeX[3] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeX[2] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[7] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[6] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[4] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[3] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[2] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[0] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+    Critical Warning (18010): Register snakeY[1] will power up to High File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_engine.v Line: 89
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 244 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 273 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 209 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Mon May 10 21:28:01 2021
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21061): Implemented 238 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Mon May 10 22:05:57 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg.
 
 

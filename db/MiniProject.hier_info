@@ -36,9 +36,78 @@ BLANK <= VGA:vga_gen.BLANK
 SYNC <= VGA:vga_gen.SYNC
 
 
-|game_engine|clk_divider:div
-clk => div_clk~reg0.CLK
-div_clk <= div_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+|game_engine|clk_divider:VGA
+in_clk => out_clk~reg0.CLK
+in_clk => count[0].CLK
+in_clk => count[1].CLK
+in_clk => count[2].CLK
+in_clk => count[3].CLK
+in_clk => count[4].CLK
+in_clk => count[5].CLK
+in_clk => count[6].CLK
+in_clk => count[7].CLK
+in_clk => count[8].CLK
+in_clk => count[9].CLK
+in_clk => count[10].CLK
+in_clk => count[11].CLK
+in_clk => count[12].CLK
+in_clk => count[13].CLK
+in_clk => count[14].CLK
+in_clk => count[15].CLK
+in_clk => count[16].CLK
+in_clk => count[17].CLK
+in_clk => count[18].CLK
+in_clk => count[19].CLK
+in_clk => count[20].CLK
+in_clk => count[21].CLK
+in_clk => count[22].CLK
+in_clk => count[23].CLK
+in_clk => count[24].CLK
+in_clk => count[25].CLK
+in_clk => count[26].CLK
+in_clk => count[27].CLK
+in_clk => count[28].CLK
+in_clk => count[29].CLK
+in_clk => count[30].CLK
+in_clk => count[31].CLK
+out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_engine|clk_divider:GAME
+in_clk => out_clk~reg0.CLK
+in_clk => count[0].CLK
+in_clk => count[1].CLK
+in_clk => count[2].CLK
+in_clk => count[3].CLK
+in_clk => count[4].CLK
+in_clk => count[5].CLK
+in_clk => count[6].CLK
+in_clk => count[7].CLK
+in_clk => count[8].CLK
+in_clk => count[9].CLK
+in_clk => count[10].CLK
+in_clk => count[11].CLK
+in_clk => count[12].CLK
+in_clk => count[13].CLK
+in_clk => count[14].CLK
+in_clk => count[15].CLK
+in_clk => count[16].CLK
+in_clk => count[17].CLK
+in_clk => count[18].CLK
+in_clk => count[19].CLK
+in_clk => count[20].CLK
+in_clk => count[21].CLK
+in_clk => count[22].CLK
+in_clk => count[23].CLK
+in_clk => count[24].CLK
+in_clk => count[25].CLK
+in_clk => count[26].CLK
+in_clk => count[27].CLK
+in_clk => count[28].CLK
+in_clk => count[29].CLK
+in_clk => count[30].CLK
+in_clk => count[31].CLK
+out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |game_engine|key_filter:filter
