@@ -60,22 +60,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "G[4]",
-					"strict" : false
-				},
-				{
-					"name" : "G[5]",
-					"strict" : false
-				},
-				{
-					"name" : "G[6]",
-					"strict" : false
-				},
-				{
-					"name" : "G[7]",
-					"strict" : false
-				},
-				{
 					"name" : "B[0]",
 					"strict" : false
 				},
@@ -92,22 +76,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "B[4]",
-					"strict" : false
-				},
-				{
-					"name" : "B[5]",
-					"strict" : false
-				},
-				{
-					"name" : "B[6]",
-					"strict" : false
-				},
-				{
-					"name" : "B[7]",
-					"strict" : false
-				},
-				{
 					"name" : "vCLK",
 					"strict" : false
 				},
@@ -121,6 +89,22 @@
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "key[3]",
+					"strict" : false
+				},
+				{
+					"name" : "key[0]",
+					"strict" : false
+				},
+				{
+					"name" : "key[2]",
+					"strict" : false
+				},
+				{
+					"name" : "key[1]",
 					"strict" : false
 				}
 			]

@@ -1,10 +1,10 @@
 |game_engine
 clk => comb.DATAIN
 rst => comb.DATAIN
-key[0] => ~NO_FANOUT~
-key[1] => ~NO_FANOUT~
-key[2] => ~NO_FANOUT~
-key[3] => ~NO_FANOUT~
+key[0] => key[0]~0.DATAIN
+key[1] => key[1]~1.DATAIN
+key[2] => key[2]~2.DATAIN
+key[3] => key[3]~3.DATAIN
 hSync <= VGA:vga_gen.hSync
 vSync <= VGA:vga_gen.vSync
 R[0] <= R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -39,6 +39,22 @@ SYNC <= VGA:vga_gen.SYNC
 |game_engine|clk_divider:div
 clk => div_clk~reg0.CLK
 div_clk <= div_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_engine|key_filter:filter
+clock => delay.CLK
+key[0] => WideOr0.IN0
+key[0] => posedge_key.IN1
+key[1] => WideOr0.IN1
+key[1] => posedge_key.IN1
+key[2] => WideOr0.IN2
+key[2] => posedge_key.IN1
+key[3] => WideOr0.IN3
+key[3] => posedge_key.IN1
+posedge_key[0] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
+posedge_key[1] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
+posedge_key[2] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
+posedge_key[3] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |game_engine|VGA:vga_gen
