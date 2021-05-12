@@ -28,13 +28,15 @@ module game_engine
 	output vCLK,
 	
 	(* chip_pin = "F10" *)
-	output BLANK,
+	output display_on,
 	
 	(* chip_pin = "C10" *)
 	output SYNC
 );
 
-localparam [5:0] head_size = 50;
+
+
+localparam [5:0] head_size = 20;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -56,7 +58,7 @@ VGA vga_gen
 	.hSync		( hSync ),
 	.vSync		( vSync ),
 	.vCLK			( vCLK ),
-	.BLANK		( BLANK ),
+	.display_on	( display_on ),
 	.SYNC			( SYNC ),
 	.hPos			( X ),
 	.vPos			( Y )
@@ -83,8 +85,8 @@ end
 always @(posedge GAME_clk or posedge rst)
 begin
 	if (rst) begin
-		snakeX <= (640 + 10 - head_size) /2;
-		snakeY <= (480 + 16 - head_size) /2;
+		snakeX <= 0 /2;
+		snakeY <= 0 /2;
 	end else begin
 		if (direction == 4'h1) begin
 			snakeX <= snakeX - 5;
@@ -99,6 +101,35 @@ begin
 end
 
 
+wire snakeX_gfx = (X - snakeX) < head_size;
+wire snakeY_gfx = (Y - snakeY) < head_size;
+
+wire snake_gfx = snakeX_gfx && snakeY_gfx;
+
+reg [15:0] carX = 50, carY = 50;
+wire [7:0] carR, carG, carB;
+
+wire carX_gfx = (X - carX) < 64;
+wire carY_gfx = (Y - carY) < 32;
+
+wire car_gfx = carX_gfx && carY_gfx;
+
+(* ram_init_file = "test.mif" *)
+reg [23:0] sprite [2047:0];
+
+wire bgX_gfx = (X) < 256;
+wire bgY_gfx = (Y) < 256;
+
+wire bg_gfx = bgX_gfx && bgY_gfx;
+wire [23:0] colour;
+mario_background_rom
+(
+	.clk	(VGA_clk),
+	.row	(Y),
+	.col	(X),
+	.color_data (colour)
+);
+
 always @(posedge VGA_clk or posedge rst)
 begin
 	if (rst) begin
@@ -106,10 +137,14 @@ begin
 		G <= 8'h00;
 		B <= 8'h00;
 	end else begin
-		if (BLANK & X >= snakeX & X <= snakeX + head_size & Y >= snakeY & Y <= snakeY + head_size) begin
+		if (display_on && snake_gfx) begin
 			R <= 8'h00;
 			G <= 8'hFF;
 			B <= 8'h00;
+		end else if (display_on && car_gfx) begin
+			{R,G,B} <= sprite[(Y-carY)*64 + (X-carX)];
+		end else if (display_on && bg_gfx) begin
+			{R,G,B} <= colour;
 		end else begin
 			R <= 8'h00;
 			G <= 8'h00;

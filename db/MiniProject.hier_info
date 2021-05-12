@@ -32,7 +32,7 @@ B[5] <= B[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 B[6] <= B[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 B[7] <= B[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vCLK <= VGA:vga_gen.vCLK
-BLANK <= VGA:vga_gen.BLANK
+display_on <= VGA:vga_gen.display_on
 SYNC <= VGA:vga_gen.SYNC
 
 
@@ -127,7 +127,7 @@ posedge_key[3] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |game_engine|VGA:vga_gen
-clk => BLANK~reg0.CLK
+clk => display_on~reg0.CLK
 clk => de.CLK
 clk => vSync~reg0.CLK
 clk => vs.CLK
@@ -166,7 +166,7 @@ clk => hPos[13]~reg0.CLK
 clk => hPos[14]~reg0.CLK
 clk => hPos[15]~reg0.CLK
 clk => vCLK.DATAIN
-rst => BLANK~reg0.ACLR
+rst => display_on~reg0.ACLR
 rst => de.ACLR
 rst => vSync~reg0.ACLR
 rst => vs.ACLR
@@ -207,7 +207,7 @@ rst => hPos[15]~reg0.ACLR
 hSync <= hSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vSync <= vSync~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vCLK <= clk.DB_MAX_OUTPUT_PORT_TYPE
-BLANK <= BLANK~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display_on <= display_on~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SYNC <= <GND>
 hPos[0] <= hPos[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hPos[1] <= hPos[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -241,5 +241,64 @@ vPos[12] <= vPos[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[13] <= vPos[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[14] <= vPos[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 vPos[15] <= vPos[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|game_engine|mario_background_rom:comb_411
+clk => col_reg[0].CLK
+clk => col_reg[1].CLK
+clk => col_reg[2].CLK
+clk => col_reg[3].CLK
+clk => col_reg[4].CLK
+clk => col_reg[5].CLK
+clk => col_reg[6].CLK
+clk => col_reg[7].CLK
+clk => row_reg[0].CLK
+clk => row_reg[1].CLK
+clk => row_reg[2].CLK
+clk => row_reg[3].CLK
+clk => row_reg[4].CLK
+clk => row_reg[5].CLK
+clk => row_reg[6].CLK
+clk => row_reg[7].CLK
+row[0] => row_reg[0].DATAIN
+row[1] => row_reg[1].DATAIN
+row[2] => row_reg[2].DATAIN
+row[3] => row_reg[3].DATAIN
+row[4] => row_reg[4].DATAIN
+row[5] => row_reg[5].DATAIN
+row[6] => row_reg[6].DATAIN
+row[7] => row_reg[7].DATAIN
+col[0] => col_reg[0].DATAIN
+col[1] => col_reg[1].DATAIN
+col[2] => col_reg[2].DATAIN
+col[3] => col_reg[3].DATAIN
+col[4] => col_reg[4].DATAIN
+col[5] => col_reg[5].DATAIN
+col[6] => col_reg[6].DATAIN
+col[7] => col_reg[7].DATAIN
+color_data[0] <= Ram0.DATAOUT
+color_data[1] <= Ram0.DATAOUT1
+color_data[2] <= Ram0.DATAOUT2
+color_data[3] <= Ram0.DATAOUT3
+color_data[4] <= Ram0.DATAOUT4
+color_data[5] <= Ram0.DATAOUT5
+color_data[6] <= Ram0.DATAOUT6
+color_data[7] <= Ram0.DATAOUT7
+color_data[8] <= Ram0.DATAOUT8
+color_data[9] <= Ram0.DATAOUT9
+color_data[10] <= Ram0.DATAOUT10
+color_data[11] <= Ram0.DATAOUT11
+color_data[12] <= Ram0.DATAOUT12
+color_data[13] <= Ram0.DATAOUT13
+color_data[14] <= Ram0.DATAOUT14
+color_data[15] <= Ram0.DATAOUT15
+color_data[16] <= Ram0.DATAOUT16
+color_data[17] <= Ram0.DATAOUT17
+color_data[18] <= Ram0.DATAOUT18
+color_data[19] <= Ram0.DATAOUT19
+color_data[20] <= Ram0.DATAOUT20
+color_data[21] <= Ram0.DATAOUT21
+color_data[22] <= Ram0.DATAOUT22
+color_data[23] <= Ram0.DATAOUT23
 
 

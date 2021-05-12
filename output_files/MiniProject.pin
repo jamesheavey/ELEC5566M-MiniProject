@@ -533,7 +533,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :      
 GND                          : F7        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8A        :                
-BLANK                        : F10       : output : 2.5 V             :         : 8A        : Y              
+display_on                   : F10       : output : 2.5 V             :         : 8A        : Y              
 G[6]                         : F11       : output : 2.5 V             :         : 8A        : Y              
 VCCIO8A                      : F12       : power  :                   : 2.5V    : 8A        :                
 R[7]                         : F13       : output : 2.5 V             :         : 8A        : Y              

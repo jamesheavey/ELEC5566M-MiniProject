@@ -10,7 +10,7 @@ module VGA
 	
 	output vCLK,
 	
-	output reg BLANK,
+	output reg display_on,
 	
 	output SYNC,
 
@@ -98,14 +98,14 @@ always @(posedge clk or posedge rst)
 begin
 	if (rst) begin
 		de <= 0;
-		BLANK <= 0;
+		display_on <= 0;
 	end else begin
 		if (hPos < hVisible && vPos < vVisible) begin
 			de <= 1;
 		end else begin
 			de <= 0;
 		end
-		BLANK <= de;
+		display_on <= de;
 	end
 end
 
