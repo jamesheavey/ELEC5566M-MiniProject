@@ -1,9 +1,9 @@
 module image_renderer #(
-	parameter HEAD_SIZE = 20
+	parameter PLAYER_SIZE = 20
 )(
 	input VGA_clk, rst, display_on,
 	input [3:0] game_state,
-	input [15:0] X, Y, snakeX, snakeY,
+	input [15:0] X, Y, playerX, playerY,
 	output reg [23:0] RGB
 );
 
@@ -20,9 +20,9 @@ mario_background_rom
 	.color_data (colour)
 );
 
-wire snakeX_gfx = (X - snakeX) < HEAD_SIZE;
-wire snakeY_gfx = (Y - snakeY) < HEAD_SIZE;
-wire snake_gfx = snakeX_gfx && snakeY_gfx;
+wire playerX_gfx = (X - playerX) < PLAYER_SIZE;
+wire playerY_gfx = (Y - playerY) < PLAYER_SIZE;
+wire player_gfx = playerX_gfx && playerY_gfx;
 
 always @(posedge VGA_clk or posedge rst)
 begin
@@ -34,7 +34,7 @@ begin
 				// start screen
 				
 			4'h1: begin
-				if (display_on && snake_gfx) begin
+				if (display_on && player_gfx) begin
 					RGB <= 24'h00FF00;
 				end else if (display_on && bg_gfx) begin
 					RGB <= colour;

@@ -1,1 +1,2 @@
+Info (10281): Verilog HDL Declaration information at main.v(41): object "VGA" differs only in case from object "vga" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 41
 Warning (10268): Verilog HDL information at clk_divider.v(10): always construct contains both blocking and non-blocking assignments File: C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v Line: 10

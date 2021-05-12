@@ -4,11 +4,19 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "hSync",
+					"name" : "h_sync",
 					"strict" : false
 				},
 				{
-					"name" : "vSync",
+					"name" : "v_sync",
+					"strict" : false
+				},
+				{
+					"name" : "v_clk",
+					"strict" : false
+				},
+				{
+					"name" : "display_on",
 					"strict" : false
 				},
 				{
@@ -105,14 +113,6 @@
 				},
 				{
 					"name" : "B[7]",
-					"strict" : false
-				},
-				{
-					"name" : "vCLK",
-					"strict" : false
-				},
-				{
-					"name" : "display_on",
 					"strict" : false
 				},
 				{
