@@ -37,14 +37,14 @@ module image_renderer #(
 //);
 
 
-wire player_gfx = (X - playerX < PLAYER_SIZE_X) && (Y - playerY < PLAYER_SIZE_Y);
+wire player_gfx = (X - playerX-1 < PLAYER_SIZE_X) && (Y - playerY < PLAYER_SIZE_Y);
 wire [23:0] player_colour;
 sonic_stand_rom sonic_stand
 (
-	.clk	(VGA_clk),
-	.row	(Y - playerY),
-	.col	( player_dir ? (X - playerX):PLAYER_SIZE_X-(X - playerX) ),
-	.colour_data (player_colour)
+	.clk				( VGA_clk ),
+	.row				( Y - playerY ),
+	.col				( player_dir ? PLAYER_SIZE_X-(X - playerX):(X - playerX) ),
+	.colour_data 	( player_colour )
 );
 
 always @(posedge VGA_clk or posedge rst)

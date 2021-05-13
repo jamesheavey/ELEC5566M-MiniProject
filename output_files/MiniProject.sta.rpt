@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MiniProject
-Thu May 13 15:30:56 2021
+Thu May 13 21:54:20 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.47        ;
+; Average used               ; 1.45        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.1%      ;
-;     Processor 3            ;  15.6%      ;
-;     Processor 4            ;  15.3%      ;
+;     Processor 2            ;  15.3%      ;
+;     Processor 3            ;  14.9%      ;
+;     Processor 4            ;  14.5%      ;
 +----------------------------+-------------+
 
 
@@ -127,10 +127,10 @@ refer to the applicable agreement for further details.
 +------------+-----------------+--------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name               ; Note ;
 +------------+-----------------+--------------------------+------+
-; 102.89 MHz ; 102.89 MHz      ; clk_divider:VGA|out_clk  ;      ;
-; 145.79 MHz ; 145.79 MHz      ; clk                      ;      ;
-; 173.01 MHz ; 173.01 MHz      ; PS2_clk                  ;      ;
-; 367.51 MHz ; 367.51 MHz      ; clk_divider:GAME|out_clk ;      ;
+; 91.33 MHz  ; 91.33 MHz       ; clk_divider:VGA|out_clk  ;      ;
+; 166.94 MHz ; 166.94 MHz      ; clk                      ;      ;
+; 177.53 MHz ; 177.53 MHz      ; PS2_clk                  ;      ;
+; 186.46 MHz ; 186.46 MHz      ; clk_divider:GAME|out_clk ;      ;
 +------------+-----------------+--------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -146,10 +146,10 @@ HTML report is unavailable in plain text report export.
 +--------------------------+---------+---------------+
 ; Clock                    ; Slack   ; End Point TNS ;
 +--------------------------+---------+---------------+
-; clk_divider:GAME|out_clk ; -11.603 ; -181.402      ;
-; clk_divider:VGA|out_clk  ; -8.719  ; -467.558      ;
-; clk                      ; -5.859  ; -119.547      ;
-; PS2_clk                  ; -4.780  ; -242.049      ;
+; clk_divider:GAME|out_clk ; -11.348 ; -424.834      ;
+; clk_divider:VGA|out_clk  ; -9.949  ; -423.934      ;
+; clk                      ; -4.990  ; -120.891      ;
+; PS2_clk                  ; -4.633  ; -238.021      ;
 +--------------------------+---------+---------------+
 
 
@@ -158,10 +158,10 @@ HTML report is unavailable in plain text report export.
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
+; clk_divider:GAME|out_clk ; 0.139 ; 0.000         ;
 ; PS2_clk                  ; 0.219 ; 0.000         ;
-; clk_divider:GAME|out_clk ; 0.268 ; 0.000         ;
-; clk_divider:VGA|out_clk  ; 0.284 ; 0.000         ;
-; clk                      ; 0.525 ; 0.000         ;
+; clk_divider:VGA|out_clk  ; 0.263 ; 0.000         ;
+; clk                      ; 0.527 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -182,10 +182,10 @@ No paths to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk                      ; -0.956 ; -24.590       ;
-; clk_divider:VGA|out_clk  ; -0.395 ; -58.346       ;
-; PS2_clk                  ; -0.394 ; -29.066       ;
-; clk_divider:GAME|out_clk ; -0.394 ; -8.353        ;
+; clk                      ; -0.768 ; -25.452       ;
+; clk_divider:VGA|out_clk  ; -0.394 ; -50.753       ;
+; clk_divider:GAME|out_clk ; -0.394 ; -44.429       ;
+; PS2_clk                  ; -0.394 ; -29.785       ;
 +--------------------------+--------+---------------+
 
 
@@ -200,10 +200,10 @@ No synchronizer chains to report.
 +------------+-----------------+--------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name               ; Note ;
 +------------+-----------------+--------------------------+------+
-; 103.44 MHz ; 103.44 MHz      ; clk_divider:VGA|out_clk  ;      ;
-; 142.11 MHz ; 142.11 MHz      ; clk                      ;      ;
-; 175.16 MHz ; 175.16 MHz      ; PS2_clk                  ;      ;
-; 354.48 MHz ; 354.48 MHz      ; clk_divider:GAME|out_clk ;      ;
+; 92.41 MHz  ; 92.41 MHz       ; clk_divider:VGA|out_clk  ;      ;
+; 163.16 MHz ; 163.16 MHz      ; clk                      ;      ;
+; 178.86 MHz ; 178.86 MHz      ; PS2_clk                  ;      ;
+; 188.39 MHz ; 188.39 MHz      ; clk_divider:GAME|out_clk ;      ;
 +------------+-----------------+--------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -213,10 +213,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------+---------+---------------+
 ; Clock                    ; Slack   ; End Point TNS ;
 +--------------------------+---------+---------------+
-; clk_divider:GAME|out_clk ; -11.562 ; -179.951      ;
-; clk_divider:VGA|out_clk  ; -8.667  ; -455.369      ;
-; clk                      ; -6.037  ; -116.844      ;
-; PS2_clk                  ; -4.709  ; -240.365      ;
+; clk_divider:GAME|out_clk ; -11.193 ; -419.183      ;
+; clk_divider:VGA|out_clk  ; -9.821  ; -418.270      ;
+; clk                      ; -5.129  ; -116.359      ;
+; PS2_clk                  ; -4.591  ; -234.323      ;
 +--------------------------+---------+---------------+
 
 
@@ -225,10 +225,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------+-------+---------------+
 ; Clock                    ; Slack ; End Point TNS ;
 +--------------------------+-------+---------------+
-; PS2_clk                  ; 0.268 ; 0.000         ;
-; clk_divider:GAME|out_clk ; 0.268 ; 0.000         ;
-; clk_divider:VGA|out_clk  ; 0.288 ; 0.000         ;
-; clk                      ; 0.537 ; 0.000         ;
+; clk_divider:GAME|out_clk ; 0.125 ; 0.000         ;
+; PS2_clk                  ; 0.267 ; 0.000         ;
+; clk_divider:VGA|out_clk  ; 0.275 ; 0.000         ;
+; clk                      ; 0.530 ; 0.000         ;
 +--------------------------+-------+---------------+
 
 
@@ -249,10 +249,10 @@ No paths to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk                      ; -0.960 ; -26.866       ;
-; clk_divider:VGA|out_clk  ; -0.394 ; -57.924       ;
-; PS2_clk                  ; -0.394 ; -28.476       ;
-; clk_divider:GAME|out_clk ; -0.394 ; -8.430        ;
+; clk                      ; -0.772 ; -27.670       ;
+; clk_divider:VGA|out_clk  ; -0.394 ; -49.732       ;
+; clk_divider:GAME|out_clk ; -0.394 ; -43.111       ;
+; PS2_clk                  ; -0.394 ; -29.019       ;
 +--------------------------+--------+---------------+
 
 
@@ -267,23 +267,23 @@ No synchronizer chains to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_divider:GAME|out_clk ; -6.767 ; -106.082      ;
-; clk_divider:VGA|out_clk  ; -4.721 ; -263.249      ;
-; clk                      ; -4.182 ; -57.630       ;
-; PS2_clk                  ; -2.233 ; -106.327      ;
+; clk_divider:GAME|out_clk ; -6.790 ; -241.775      ;
+; clk_divider:VGA|out_clk  ; -5.441 ; -226.582      ;
+; clk                      ; -3.543 ; -54.244       ;
+; PS2_clk                  ; -2.080 ; -103.408      ;
 +--------------------------+--------+---------------+
 
 
-+--------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary               ;
-+--------------------------+-------+---------------+
-; Clock                    ; Slack ; End Point TNS ;
-+--------------------------+-------+---------------+
-; clk_divider:GAME|out_clk ; 0.091 ; 0.000         ;
-; clk_divider:VGA|out_clk  ; 0.096 ; 0.000         ;
-; PS2_clk                  ; 0.141 ; 0.000         ;
-; clk                      ; 0.267 ; 0.000         ;
-+--------------------------+-------+---------------+
++---------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                ;
++--------------------------+--------+---------------+
+; Clock                    ; Slack  ; End Point TNS ;
++--------------------------+--------+---------------+
+; clk_divider:VGA|out_clk  ; -0.064 ; -0.171        ;
+; clk_divider:GAME|out_clk ; 0.028  ; 0.000         ;
+; PS2_clk                  ; 0.141  ; 0.000         ;
+; clk                      ; 0.269  ; 0.000         ;
++--------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -303,10 +303,10 @@ No paths to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk                      ; -0.849 ; -5.965        ;
-; PS2_clk                  ; -0.287 ; -16.037       ;
-; clk_divider:VGA|out_clk  ; -0.136 ; -5.525        ;
-; clk_divider:GAME|out_clk ; 0.126  ; 0.000         ;
+; clk                      ; -0.703 ; -5.647        ;
+; PS2_clk                  ; -0.306 ; -17.448       ;
+; clk_divider:VGA|out_clk  ; -0.097 ; -3.866        ;
+; clk_divider:GAME|out_clk ; -0.011 ; -0.164        ;
 +--------------------------+--------+---------------+
 
 
@@ -321,23 +321,23 @@ No synchronizer chains to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk_divider:GAME|out_clk ; -6.526 ; -102.053      ;
-; clk_divider:VGA|out_clk  ; -4.266 ; -231.592      ;
-; clk                      ; -3.600 ; -49.498       ;
-; PS2_clk                  ; -1.948 ; -94.178       ;
+; clk_divider:GAME|out_clk ; -6.446 ; -225.663      ;
+; clk_divider:VGA|out_clk  ; -4.870 ; -201.921      ;
+; clk                      ; -3.041 ; -45.980       ;
+; PS2_clk                  ; -1.826 ; -91.021       ;
 +--------------------------+--------+---------------+
 
 
-+--------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary                ;
-+--------------------------+-------+---------------+
-; Clock                    ; Slack ; End Point TNS ;
-+--------------------------+-------+---------------+
-; clk_divider:GAME|out_clk ; 0.078 ; 0.000         ;
-; clk_divider:VGA|out_clk  ; 0.083 ; 0.000         ;
-; PS2_clk                  ; 0.147 ; 0.000         ;
-; clk                      ; 0.253 ; 0.000         ;
-+--------------------------+-------+---------------+
++---------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                 ;
++--------------------------+--------+---------------+
+; Clock                    ; Slack  ; End Point TNS ;
++--------------------------+--------+---------------+
+; clk_divider:VGA|out_clk  ; -0.081 ; -0.243        ;
+; clk_divider:GAME|out_clk ; 0.016  ; 0.000         ;
+; PS2_clk                  ; 0.146  ; 0.000         ;
+; clk                      ; 0.254  ; 0.000         ;
++--------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -357,10 +357,10 @@ No paths to report.
 +--------------------------+--------+---------------+
 ; Clock                    ; Slack  ; End Point TNS ;
 +--------------------------+--------+---------------+
-; clk                      ; -0.795 ; -5.852        ;
-; PS2_clk                  ; -0.294 ; -16.506       ;
-; clk_divider:VGA|out_clk  ; -0.078 ; -2.668        ;
-; clk_divider:GAME|out_clk ; 0.126  ; 0.000         ;
+; clk                      ; -0.681 ; -5.616        ;
+; PS2_clk                  ; -0.310 ; -17.818       ;
+; clk_divider:VGA|out_clk  ; -0.041 ; -0.934        ;
+; clk_divider:GAME|out_clk ; 0.029  ; 0.000         ;
 +--------------------------+--------+---------------+
 
 
@@ -372,20 +372,20 @@ No synchronizer chains to report.
 
 +------------------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                                      ;
-+---------------------------+-----------+-------+----------+---------+---------------------+
-; Clock                     ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+---------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack          ; -11.603   ; 0.078 ; N/A      ; N/A     ; -0.960              ;
-;  PS2_clk                  ; -4.780    ; 0.141 ; N/A      ; N/A     ; -0.394              ;
-;  clk                      ; -6.037    ; 0.253 ; N/A      ; N/A     ; -0.960              ;
-;  clk_divider:GAME|out_clk ; -11.603   ; 0.078 ; N/A      ; N/A     ; -0.394              ;
-;  clk_divider:VGA|out_clk  ; -8.719    ; 0.083 ; N/A      ; N/A     ; -0.395              ;
-; Design-wide TNS           ; -1010.556 ; 0.0   ; 0.0      ; 0.0     ; -121.696            ;
-;  PS2_clk                  ; -242.049  ; 0.000 ; N/A      ; N/A     ; -29.066             ;
-;  clk                      ; -119.547  ; 0.000 ; N/A      ; N/A     ; -26.866             ;
-;  clk_divider:GAME|out_clk ; -181.402  ; 0.000 ; N/A      ; N/A     ; -8.430              ;
-;  clk_divider:VGA|out_clk  ; -467.558  ; 0.000 ; N/A      ; N/A     ; -58.346             ;
-+---------------------------+-----------+-------+----------+---------+---------------------+
++---------------------------+----------+--------+----------+---------+---------------------+
+; Clock                     ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++---------------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack          ; -11.348  ; -0.081 ; N/A      ; N/A     ; -0.772              ;
+;  PS2_clk                  ; -4.633   ; 0.141  ; N/A      ; N/A     ; -0.394              ;
+;  clk                      ; -5.129   ; 0.254  ; N/A      ; N/A     ; -0.772              ;
+;  clk_divider:GAME|out_clk ; -11.348  ; 0.016  ; N/A      ; N/A     ; -0.394              ;
+;  clk_divider:VGA|out_clk  ; -9.949   ; -0.081 ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS           ; -1207.68 ; -0.243 ; 0.0      ; 0.0     ; -150.419            ;
+;  PS2_clk                  ; -238.021 ; 0.000  ; N/A      ; N/A     ; -29.785             ;
+;  clk                      ; -120.891 ; 0.000  ; N/A      ; N/A     ; -27.670             ;
+;  clk_divider:GAME|out_clk ; -424.834 ; 0.000  ; N/A      ; N/A     ; -44.429             ;
+;  clk_divider:VGA|out_clk  ; -423.934 ; -0.243 ; N/A      ; N/A     ; -50.753             ;
++---------------------------+----------+--------+----------+---------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -425,6 +425,7 @@ No synchronizer chains to report.
 ; led[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; led[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; led[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; led[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
@@ -477,6 +478,7 @@ No synchronizer chains to report.
 ; led[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; led[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; led[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; led[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 +------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -517,6 +519,7 @@ No synchronizer chains to report.
 ; led[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; led[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; led[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; led[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 +------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -557,6 +560,7 @@ No synchronizer chains to report.
 ; led[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; led[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; led[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; led[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 +------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -597,6 +601,7 @@ No synchronizer chains to report.
 ; led[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; led[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; led[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; led[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 +------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -605,14 +610,14 @@ No synchronizer chains to report.
 +--------------------------+--------------------------+----------+----------+----------+----------+
 ; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------+--------------------------+----------+----------+----------+----------+
-; clk                      ; clk                      ; 2033     ; 0        ; 0        ; 0        ;
+; clk                      ; clk                      ; 2107     ; 0        ; 0        ; 0        ;
 ; clk_divider:GAME|out_clk ; clk                      ; 1        ; 1        ; 0        ; 0        ;
 ; clk_divider:VGA|out_clk  ; clk                      ; 1        ; 1        ; 0        ; 0        ;
-; clk_divider:GAME|out_clk ; clk_divider:GAME|out_clk ; 136      ; 0        ; 0        ; 0        ;
-; PS2_clk                  ; clk_divider:GAME|out_clk ; 0        ; 2144     ; 0        ; 0        ;
-; clk_divider:GAME|out_clk ; clk_divider:VGA|out_clk  ; 5374     ; 0        ; 0        ; 0        ;
-; clk_divider:VGA|out_clk  ; clk_divider:VGA|out_clk  ; 1100839  ; 0        ; 0        ; 0        ;
-; PS2_clk                  ; PS2_clk                  ; 0        ; 0        ; 0        ; 30760    ;
+; clk_divider:GAME|out_clk ; clk_divider:GAME|out_clk ; 2585     ; 0        ; 0        ; 0        ;
+; PS2_clk                  ; clk_divider:GAME|out_clk ; 0        ; 628      ; 0        ; 0        ;
+; clk_divider:GAME|out_clk ; clk_divider:VGA|out_clk  ; 44183    ; 0        ; 0        ; 0        ;
+; clk_divider:VGA|out_clk  ; clk_divider:VGA|out_clk  ; 1216238  ; 0        ; 0        ; 0        ;
+; PS2_clk                  ; PS2_clk                  ; 0        ; 0        ; 0        ; 31311    ;
 +--------------------------+--------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -622,14 +627,14 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------+--------------------------+----------+----------+----------+----------+
 ; From Clock               ; To Clock                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------+--------------------------+----------+----------+----------+----------+
-; clk                      ; clk                      ; 2033     ; 0        ; 0        ; 0        ;
+; clk                      ; clk                      ; 2107     ; 0        ; 0        ; 0        ;
 ; clk_divider:GAME|out_clk ; clk                      ; 1        ; 1        ; 0        ; 0        ;
 ; clk_divider:VGA|out_clk  ; clk                      ; 1        ; 1        ; 0        ; 0        ;
-; clk_divider:GAME|out_clk ; clk_divider:GAME|out_clk ; 136      ; 0        ; 0        ; 0        ;
-; PS2_clk                  ; clk_divider:GAME|out_clk ; 0        ; 2144     ; 0        ; 0        ;
-; clk_divider:GAME|out_clk ; clk_divider:VGA|out_clk  ; 5374     ; 0        ; 0        ; 0        ;
-; clk_divider:VGA|out_clk  ; clk_divider:VGA|out_clk  ; 1100839  ; 0        ; 0        ; 0        ;
-; PS2_clk                  ; PS2_clk                  ; 0        ; 0        ; 0        ; 30760    ;
+; clk_divider:GAME|out_clk ; clk_divider:GAME|out_clk ; 2585     ; 0        ; 0        ; 0        ;
+; PS2_clk                  ; clk_divider:GAME|out_clk ; 0        ; 628      ; 0        ; 0        ;
+; clk_divider:GAME|out_clk ; clk_divider:VGA|out_clk  ; 44183    ; 0        ; 0        ; 0        ;
+; clk_divider:VGA|out_clk  ; clk_divider:VGA|out_clk  ; 1216238  ; 0        ; 0        ; 0        ;
+; PS2_clk                  ; PS2_clk                  ; 0        ; 0        ; 0        ; 31311    ;
 +--------------------------+--------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -654,9 +659,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 107   ; 107  ;
-; Unconstrained Output Ports      ; 29    ; 29   ;
-; Unconstrained Output Port Paths ; 43    ; 43   ;
+; Unconstrained Input Port Paths  ; 163   ; 163  ;
+; Unconstrained Output Ports      ; 30    ; 30   ;
+; Unconstrained Output Port Paths ; 58    ; 58   ;
 +---------------------------------+-------+------+
 
 
@@ -714,6 +719,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; led[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; led[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; led[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; v_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; v_sync      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -761,6 +767,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; led[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; led[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; led[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; led[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; v_clk       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; v_sync      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
@@ -772,7 +779,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 13 15:30:48 2021
+    Info: Processing started: Thu May 13 21:54:12 2021
 Info: Command: quartus_sta MiniProject -c MiniProject
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -785,128 +792,128 @@ Info (332142): No user constrained base clocks found in the design. Calling "der
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk_divider:VGA|out_clk clk_divider:VGA|out_clk
     Info (332105): create_clock -period 1.000 -name clk clk
-    Info (332105): create_clock -period 1.000 -name clk_divider:GAME|out_clk clk_divider:GAME|out_clk
     Info (332105): create_clock -period 1.000 -name PS2_clk PS2_clk
+    Info (332105): create_clock -period 1.000 -name clk_divider:GAME|out_clk clk_divider:GAME|out_clk
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.603
+Info (332146): Worst-case setup slack is -11.348
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.603            -181.402 clk_divider:GAME|out_clk 
-    Info (332119):    -8.719            -467.558 clk_divider:VGA|out_clk 
-    Info (332119):    -5.859            -119.547 clk 
-    Info (332119):    -4.780            -242.049 PS2_clk 
-Info (332146): Worst-case hold slack is 0.219
+    Info (332119):   -11.348            -424.834 clk_divider:GAME|out_clk 
+    Info (332119):    -9.949            -423.934 clk_divider:VGA|out_clk 
+    Info (332119):    -4.990            -120.891 clk 
+    Info (332119):    -4.633            -238.021 PS2_clk 
+Info (332146): Worst-case hold slack is 0.139
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):     0.139               0.000 clk_divider:GAME|out_clk 
     Info (332119):     0.219               0.000 PS2_clk 
-    Info (332119):     0.268               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     0.284               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.525               0.000 clk 
+    Info (332119):     0.263               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     0.527               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.956
+Info (332146): Worst-case minimum pulse width slack is -0.768
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.956             -24.590 clk 
-    Info (332119):    -0.395             -58.346 clk_divider:VGA|out_clk 
-    Info (332119):    -0.394             -29.066 PS2_clk 
-    Info (332119):    -0.394              -8.353 clk_divider:GAME|out_clk 
+    Info (332119):    -0.768             -25.452 clk 
+    Info (332119):    -0.394             -50.753 clk_divider:VGA|out_clk 
+    Info (332119):    -0.394             -44.429 clk_divider:GAME|out_clk 
+    Info (332119):    -0.394             -29.785 PS2_clk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.562
+Info (332146): Worst-case setup slack is -11.193
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.562            -179.951 clk_divider:GAME|out_clk 
-    Info (332119):    -8.667            -455.369 clk_divider:VGA|out_clk 
-    Info (332119):    -6.037            -116.844 clk 
-    Info (332119):    -4.709            -240.365 PS2_clk 
-Info (332146): Worst-case hold slack is 0.268
+    Info (332119):   -11.193            -419.183 clk_divider:GAME|out_clk 
+    Info (332119):    -9.821            -418.270 clk_divider:VGA|out_clk 
+    Info (332119):    -5.129            -116.359 clk 
+    Info (332119):    -4.591            -234.323 PS2_clk 
+Info (332146): Worst-case hold slack is 0.125
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.268               0.000 PS2_clk 
-    Info (332119):     0.268               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     0.288               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.537               0.000 clk 
+    Info (332119):     0.125               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.267               0.000 PS2_clk 
+    Info (332119):     0.275               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     0.530               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.960
+Info (332146): Worst-case minimum pulse width slack is -0.772
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.960             -26.866 clk 
-    Info (332119):    -0.394             -57.924 clk_divider:VGA|out_clk 
-    Info (332119):    -0.394             -28.476 PS2_clk 
-    Info (332119):    -0.394              -8.430 clk_divider:GAME|out_clk 
+    Info (332119):    -0.772             -27.670 clk 
+    Info (332119):    -0.394             -49.732 clk_divider:VGA|out_clk 
+    Info (332119):    -0.394             -43.111 clk_divider:GAME|out_clk 
+    Info (332119):    -0.394             -29.019 PS2_clk 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.767
+Info (332146): Worst-case setup slack is -6.790
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.767            -106.082 clk_divider:GAME|out_clk 
-    Info (332119):    -4.721            -263.249 clk_divider:VGA|out_clk 
-    Info (332119):    -4.182             -57.630 clk 
-    Info (332119):    -2.233            -106.327 PS2_clk 
-Info (332146): Worst-case hold slack is 0.091
+    Info (332119):    -6.790            -241.775 clk_divider:GAME|out_clk 
+    Info (332119):    -5.441            -226.582 clk_divider:VGA|out_clk 
+    Info (332119):    -3.543             -54.244 clk 
+    Info (332119):    -2.080            -103.408 PS2_clk 
+Info (332146): Worst-case hold slack is -0.064
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.091               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     0.096               0.000 clk_divider:VGA|out_clk 
+    Info (332119):    -0.064              -0.171 clk_divider:VGA|out_clk 
+    Info (332119):     0.028               0.000 clk_divider:GAME|out_clk 
     Info (332119):     0.141               0.000 PS2_clk 
-    Info (332119):     0.267               0.000 clk 
+    Info (332119):     0.269               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.849
+Info (332146): Worst-case minimum pulse width slack is -0.703
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.849              -5.965 clk 
-    Info (332119):    -0.287             -16.037 PS2_clk 
-    Info (332119):    -0.136              -5.525 clk_divider:VGA|out_clk 
-    Info (332119):     0.126               0.000 clk_divider:GAME|out_clk 
+    Info (332119):    -0.703              -5.647 clk 
+    Info (332119):    -0.306             -17.448 PS2_clk 
+    Info (332119):    -0.097              -3.866 clk_divider:VGA|out_clk 
+    Info (332119):    -0.011              -0.164 clk_divider:GAME|out_clk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.526
+Info (332146): Worst-case setup slack is -6.446
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.526            -102.053 clk_divider:GAME|out_clk 
-    Info (332119):    -4.266            -231.592 clk_divider:VGA|out_clk 
-    Info (332119):    -3.600             -49.498 clk 
-    Info (332119):    -1.948             -94.178 PS2_clk 
-Info (332146): Worst-case hold slack is 0.078
+    Info (332119):    -6.446            -225.663 clk_divider:GAME|out_clk 
+    Info (332119):    -4.870            -201.921 clk_divider:VGA|out_clk 
+    Info (332119):    -3.041             -45.980 clk 
+    Info (332119):    -1.826             -91.021 PS2_clk 
+Info (332146): Worst-case hold slack is -0.081
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.078               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     0.083               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.147               0.000 PS2_clk 
-    Info (332119):     0.253               0.000 clk 
+    Info (332119):    -0.081              -0.243 clk_divider:VGA|out_clk 
+    Info (332119):     0.016               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.146               0.000 PS2_clk 
+    Info (332119):     0.254               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.795
+Info (332146): Worst-case minimum pulse width slack is -0.681
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.795              -5.852 clk 
-    Info (332119):    -0.294             -16.506 PS2_clk 
-    Info (332119):    -0.078              -2.668 clk_divider:VGA|out_clk 
-    Info (332119):     0.126               0.000 clk_divider:GAME|out_clk 
+    Info (332119):    -0.681              -5.616 clk 
+    Info (332119):    -0.310             -17.818 PS2_clk 
+    Info (332119):    -0.041              -0.934 clk_divider:VGA|out_clk 
+    Info (332119):     0.029               0.000 clk_divider:GAME|out_clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5148 megabytes
-    Info: Processing ended: Thu May 13 15:30:55 2021
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 5150 megabytes
+    Info: Processing ended: Thu May 13 21:54:20 2021
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:09
 
 

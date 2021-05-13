@@ -1,0 +1,11 @@
+module character_physics
+(
+	input GAME_clk, grounded, direction, move, jump, playerX, playerY,
+	output playerX, playerY, 
+	output [3:0] player_state
+)
+
+integer h_acc, v_acc
+integer player_h_vel, player_v_vel;
+
+	

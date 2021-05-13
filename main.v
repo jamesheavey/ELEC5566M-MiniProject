@@ -39,12 +39,12 @@ module main
 	(* chip_pin = "J14, G15, F15, H14, F14, H13, G13, B13" *)
 	output [7:0] B,
 	
-	(* chip_pin = "V17, W16, V16" *)
-	output [2:0] led
+	(* chip_pin = "V18, V17, W16, V16" *)
+	output [3:0] led
 );
 
 
-localparam [6:0] PLAYER_SIZE_X = 37, PLAYER_SIZE_Y = 42;
+localparam [6:0] PLAYER_SIZE_X = 37-1, PLAYER_SIZE_Y = 42;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -74,6 +74,7 @@ reg [15:0] playerX, playerY;
 wire direction, move, jump, pause;
 keyboard_input kb
 (
+	.clk			( clk ),
 	.PS2_clk		( PS2_clk ),
 	.PS2_data	( PS2_data ),
 	.direction	( direction ),
@@ -82,20 +83,46 @@ keyboard_input kb
 	.pause		( pause )
 );
 
-assign led = {direction, move, jump};
+assign led = {grounded, direction, move, jump};
 
+integer X_acc=2, Y_acc=2, X_vel_max=10, Y_vel_min=-20;
+reg signed [15:0] X_vel, Y_vel;
+reg grounded;
 always @(posedge GAME_clk or posedge rst)
 begin
 	if (rst) begin
-		playerX <= 0;
+		X_vel <= 0;
+		Y_vel <= 0;
+		playerX <= (640 - 36)/2;
 		playerY <= 480 - 42;
 	end else begin
-		if (direction && move) begin
-			playerX <= playerX + 5;
-		end else if (move) begin
-			playerX <= playerX - 5;
+		if (!direction && move && X_vel < X_vel_max)
+			X_vel <= X_vel + X_acc;
+		else if (direction && move && X_vel > -X_vel_max)
+			X_vel <= X_vel - X_acc;
+		else if (!move && X_vel != 0) begin
+			X_vel <= (X_vel < 0) ? X_vel + X_acc : X_vel - X_acc;
 		end
+		
+		
+		if (grounded && jump)
+			Y_vel <= -20;
+		else if (grounded) 
+			Y_vel <= 0;
+		else if (!grounded) 
+			Y_vel <= Y_vel + Y_acc;
+		
+		playerX <= playerX + X_vel;
+		playerY <= playerY + Y_vel;
 	end
+end
+
+always @(playerX or playerY)
+begin
+	if (playerY >= 480 - 42 - 1)
+		grounded <= 1;
+	else
+		grounded <= 0;
 end
 
 

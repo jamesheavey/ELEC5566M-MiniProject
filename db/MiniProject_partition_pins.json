@@ -120,6 +120,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
 					"name" : "rst",
 					"strict" : false
 				},
