@@ -1,39 +1,40 @@
 |main
 clk => comb.DATAIN
 rst => comb.DATAIN
-key[0] => key[0]~0.DATAIN
-key[1] => key[1]~1.DATAIN
-key[2] => key[2]~2.DATAIN
-key[3] => key[3]~3.DATAIN
-h_sync << vga_gen:vga.h_sync
-v_sync << vga_gen:vga.v_sync
-v_clk << vga_gen:vga.v_clk
-display_on << display_on.DB_MAX_OUTPUT_PORT_TYPE
-sync_n << vga_gen:vga.sync_n
-R[0] << image_renderer:disp.RGB
-R[1] << image_renderer:disp.RGB
-R[2] << image_renderer:disp.RGB
-R[3] << image_renderer:disp.RGB
-R[4] << image_renderer:disp.RGB
-R[5] << image_renderer:disp.RGB
-R[6] << image_renderer:disp.RGB
-R[7] << image_renderer:disp.RGB
-G[0] << image_renderer:disp.RGB
-G[1] << image_renderer:disp.RGB
-G[2] << image_renderer:disp.RGB
-G[3] << image_renderer:disp.RGB
-G[4] << image_renderer:disp.RGB
-G[5] << image_renderer:disp.RGB
-G[6] << image_renderer:disp.RGB
-G[7] << image_renderer:disp.RGB
-B[0] << image_renderer:disp.RGB
-B[1] << image_renderer:disp.RGB
-B[2] << image_renderer:disp.RGB
-B[3] << image_renderer:disp.RGB
-B[4] << image_renderer:disp.RGB
-B[5] << image_renderer:disp.RGB
-B[6] << image_renderer:disp.RGB
-B[7] << image_renderer:disp.RGB
+PS2_clk => comb.DATAIN
+PS2_data => comb.DATAIN
+h_sync <= vga_gen:vga.h_sync
+v_sync <= vga_gen:vga.v_sync
+v_clk <= vga_gen:vga.v_clk
+display_on <= display_on.DB_MAX_OUTPUT_PORT_TYPE
+sync_n <= vga_gen:vga.sync_n
+R[0] <= image_renderer:disp.RGB
+R[1] <= image_renderer:disp.RGB
+R[2] <= image_renderer:disp.RGB
+R[3] <= image_renderer:disp.RGB
+R[4] <= image_renderer:disp.RGB
+R[5] <= image_renderer:disp.RGB
+R[6] <= image_renderer:disp.RGB
+R[7] <= image_renderer:disp.RGB
+G[0] <= image_renderer:disp.RGB
+G[1] <= image_renderer:disp.RGB
+G[2] <= image_renderer:disp.RGB
+G[3] <= image_renderer:disp.RGB
+G[4] <= image_renderer:disp.RGB
+G[5] <= image_renderer:disp.RGB
+G[6] <= image_renderer:disp.RGB
+G[7] <= image_renderer:disp.RGB
+B[0] <= image_renderer:disp.RGB
+B[1] <= image_renderer:disp.RGB
+B[2] <= image_renderer:disp.RGB
+B[3] <= image_renderer:disp.RGB
+B[4] <= image_renderer:disp.RGB
+B[5] <= image_renderer:disp.RGB
+B[6] <= image_renderer:disp.RGB
+B[7] <= image_renderer:disp.RGB
+led[0] <= keyboard_input:kb.jump
+led[1] <= keyboard_input:kb.move
+led[2] <= keyboard_input:kb.direction
 
 
 |main|clk_divider:VGA
@@ -108,22 +109,6 @@ in_clk => count[29].CLK
 in_clk => count[30].CLK
 in_clk => count[31].CLK
 out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|key_filter:filter
-clock => delay.CLK
-key[0] => WideOr0.IN0
-key[0] => posedge_key.IN1
-key[1] => WideOr0.IN1
-key[1] => posedge_key.IN1
-key[2] => WideOr0.IN2
-key[2] => posedge_key.IN1
-key[3] => WideOr0.IN3
-key[3] => posedge_key.IN1
-posedge_key[0] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
-posedge_key[1] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
-posedge_key[2] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
-posedge_key[3] <= posedge_key.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|vga_gen:vga
@@ -235,6 +220,77 @@ v_pos[12] <= v_pos[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 v_pos[13] <= v_pos[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 v_pos[14] <= v_pos[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 v_pos[15] <= v_pos[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|keyboard_input:kb
+PS2_clk => prevCode[0].CLK
+PS2_clk => prevCode[1].CLK
+PS2_clk => prevCode[2].CLK
+PS2_clk => prevCode[3].CLK
+PS2_clk => prevCode[4].CLK
+PS2_clk => prevCode[5].CLK
+PS2_clk => prevCode[6].CLK
+PS2_clk => prevCode[7].CLK
+PS2_clk => code[0].CLK
+PS2_clk => code[1].CLK
+PS2_clk => code[2].CLK
+PS2_clk => code[3].CLK
+PS2_clk => code[4].CLK
+PS2_clk => code[5].CLK
+PS2_clk => code[6].CLK
+PS2_clk => code[7].CLK
+PS2_clk => count[0].CLK
+PS2_clk => count[1].CLK
+PS2_clk => count[2].CLK
+PS2_clk => count[3].CLK
+PS2_clk => count[4].CLK
+PS2_clk => count[5].CLK
+PS2_clk => count[6].CLK
+PS2_clk => count[7].CLK
+PS2_clk => count[8].CLK
+PS2_clk => count[9].CLK
+PS2_clk => count[10].CLK
+PS2_clk => count[11].CLK
+PS2_clk => count[12].CLK
+PS2_clk => count[13].CLK
+PS2_clk => count[14].CLK
+PS2_clk => count[15].CLK
+PS2_clk => count[16].CLK
+PS2_clk => count[17].CLK
+PS2_clk => count[18].CLK
+PS2_clk => count[19].CLK
+PS2_clk => count[20].CLK
+PS2_clk => count[21].CLK
+PS2_clk => count[22].CLK
+PS2_clk => count[23].CLK
+PS2_clk => count[24].CLK
+PS2_clk => count[25].CLK
+PS2_clk => count[26].CLK
+PS2_clk => count[27].CLK
+PS2_clk => count[28].CLK
+PS2_clk => count[29].CLK
+PS2_clk => count[30].CLK
+PS2_clk => count[31].CLK
+PS2_clk => keyCode[1].CLK
+PS2_clk => keyCode[2].CLK
+PS2_clk => keyCode[3].CLK
+PS2_clk => keyCode[4].CLK
+PS2_clk => keyCode[5].CLK
+PS2_clk => keyCode[6].CLK
+PS2_clk => keyCode[7].CLK
+PS2_clk => keyCode[8].CLK
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+PS2_data => keyCode.DATAB
+direction <= direction$latch.DB_MAX_OUTPUT_PORT_TYPE
+jump <= jump.DB_MAX_OUTPUT_PORT_TYPE
+move <= move.DB_MAX_OUTPUT_PORT_TYPE
+pause <= pause$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|image_renderer:disp

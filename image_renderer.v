@@ -8,7 +8,7 @@ module image_renderer #(
 	output reg [23:0] RGB
 );
 
-wire [23:0] bg_colour [2:0];
+//wire [23:0] bg_colour [2:0];
 //wire bg1_gfx = (X < 265) && (Y - (480-156) > 156);
 //bg_1_rom bottom_left
 //(
