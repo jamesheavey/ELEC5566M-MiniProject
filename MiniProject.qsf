@@ -51,13 +51,27 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE sprites/background/bg_3_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/background/bg_2_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/background/bg_1_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_stop_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_stand_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_6_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_5_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_4_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_3_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_2_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_run_1_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_jump_3_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_jump_2_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_jump_1_24_bit_rom.v
+set_global_assignment -name VERILOG_FILE sprites/sonic_sprite/sonic_fall_24_bit_rom.v
 set_global_assignment -name VERILOG_FILE main.v
 set_global_assignment -name VERILOG_FILE vga_gen.v
 set_global_assignment -name VERILOG_FILE clk_divider.v
 set_global_assignment -name VERILOG_FILE key_filter.v
-set_global_assignment -name VERILOG_FILE mario_background_rom.v
 set_global_assignment -name VERILOG_FILE image_renderer.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

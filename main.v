@@ -35,7 +35,7 @@ module main
 );
 
 
-localparam [5:0] PLAYER_SIZE = 20;
+localparam [6:0] PLAYER_SIZE_X = 37, PLAYER_SIZE_Y = 42;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -103,12 +103,15 @@ end
 
 
 image_renderer #(
-	.PLAYER_SIZE	( PLAYER_SIZE )
+	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),
+	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y )
 ) disp (
 	.VGA_clk			( VGA_clk ),
 	.rst				( rst ),
+	.player_dir		( direction == 4'h1 ? 0:1 ),
 	.display_on		( display_on ),
 	.game_state		( game_state ),
+	.player_state	( ),
 	.X					( X ),
 	.Y					( Y ),
 	.playerX			( playerX ),
