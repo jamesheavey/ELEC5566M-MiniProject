@@ -43,14 +43,17 @@ module main
 	output [3:0] led
 );
 
-
-localparam [6:0] PLAYER_SIZE_X = 37-1, PLAYER_SIZE_Y = 42;
+localparam [6:0] SCALE = 3;
+localparam [6:0] PLAYER_SIZE_X = 18 * SCALE, PLAYER_SIZE_Y = 12 * SCALE;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
 
 wire GAME_clk;
 clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
+
+wire ANI_clk;
+clk_divider #(5000000-1) ANIMATION (clk, ANI_clk); // 10 Hz
 
 
 wire [15:0] X, Y;
@@ -69,54 +72,39 @@ vga_gen vga
 
 wire [3:0] game_state = 4'h1;
 
-wire [15:0] playerX, playerY;
+wire [15:0] playerX=150, playerY;
 
-wire direction, move, jump, pause;
+wire flap, pause;
 keyboard_input kb
 (
 	.clk			( clk ),
 	.rst			( rst ),
 	.PS2_clk		( PS2_clk ),
 	.PS2_data	( PS2_data ),
-	.direction	( direction ),
-	.move			( move ),
-	.jump			( jump ),
+	.flap			( flap ),
 	.pause		( pause )
 );
 
-assign led = {grounded, direction, move, jump};
+assign led = {pause, flap};
 
-reg grounded;
-reg [15:0] groundedY;
-
-always @(posedge clk)
-begin
-	if (playerY >= 480 - PLAYER_SIZE_Y -1) begin
-		grounded <= 1;
-		groundedY <= 480 - PLAYER_SIZE_Y;
-	end else
-		grounded <= 0;
-end
-
-character_physics phys
-(
+character_physics #(
+	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),
+	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y )
+) phys (
 	.GAME_clk		( GAME_clk ),
 	.rst				( rst ),
-	.grounded		( grounded ),
-	.groundedY		( groundedY ),
-	.direction		( direction ),
-	.move				( move ),
-	.jump				( jump ),
-	.playerX			( playerX ),
+	.flap				( flap ),
 	.playerY			( playerY ),
 	.player_state	( )
 );
 
 image_renderer #(
 	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),
-	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y )
+	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y ),
+	.SCALE			( SCALE )
 ) disp (
 	.VGA_clk			( VGA_clk ),
+	.ANI_clk			( ANI_clk ),
 	.rst				( rst ),
 	.player_dir		( direction ),
 	.display_on		( display_on ),

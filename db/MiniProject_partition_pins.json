@@ -52,6 +52,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "G[0]",
+					"strict" : false
+				},
+				{
 					"name" : "G[1]",
 					"strict" : false
 				},
@@ -77,6 +81,10 @@
 				},
 				{
 					"name" : "G[7]",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
@@ -116,14 +124,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "led[2]",
-					"strict" : false
-				},
-				{
-					"name" : "led[3]",
-					"strict" : false
-				},
-				{
 					"name" : "rst",
 					"strict" : false
 				},
@@ -132,11 +132,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "PS2_data",
+					"name" : "PS2_clk",
 					"strict" : false
 				},
 				{
-					"name" : "PS2_clk",
+					"name" : "PS2_data",
 					"strict" : false
 				}
 			]

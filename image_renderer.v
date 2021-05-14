@@ -1,49 +1,53 @@
 module image_renderer #(
-	parameter PLAYER_SIZE_X = 37,
-	parameter PLAYER_SIZE_Y = 42
+	parameter PLAYER_SIZE_X,
+	parameter PLAYER_SIZE_Y,
+	parameter SCALE
 )(
-	input VGA_clk, rst, display_on, player_dir,
+	input VGA_clk, ANI_clk, rst, display_on, player_dir,
 	input [3:0] game_state, player_state,
 	input [15:0] X, Y, playerX, playerY,
 	output reg [23:0] RGB
 );
 
-//wire [23:0] bg_colour [2:0];
-//wire bg1_gfx = (X < 265) && (Y - (480-156) > 156);
-//bg_1_rom bottom_left
-//(
-//	.clk	(VGA_clk),
-//	.row	(Y-(480-156)),
-//	.col	(X-265),
-//	.colour_data (bg_colour[0])
-//);
-//
-//wire bg2_gfx = (X - (640-111) > 111) && (Y - (480-146) > 146);
-//bg_2_rom bottom_right
-//(
-//	.clk	(VGA_clk),
-//	.row	(Y-(480-146)),
-//	.col	(X-(640-111)),
-//	.colour_data (bg_colour[1])
-//);
-//
-//wire bg3_gfx = (X - 310 > 138) && (Y - 110 > 19);
-//bg_3_rom sky_bar
-//(
-//	.clk	(VGA_clk),
-//	.row	(Y-110),
-//	.col	(X-310),
-//	.colour_data (bg_colour[2])
-//);
+localparam DISPLAY_SIZE_X = 640, DISPLAY_SIZE_Y = 480;
+localparam BG_SIZE_X = 140*SCALE, BG_SIZE_Y = 40*SCALE;
+localparam BG_Y = 300;
+localparam FLOOR_SIZE_X = 140*SCALE, FLOOR_SIZE_Y = 10*SCALE; 
+localparam FLOOR_Y = BG_SIZE_Y + BG_Y - 2;
 
+wire [23:0] bg_colour [3:0];
+
+wire bg0_gfx = (Y <= BG_Y);
+assign bg_colour [0] = 24'h70C5CE;
+
+wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y);
+background_rom bg
+(
+	.clk				( VGA_clk ),
+	.row				( (Y-BG_Y)/SCALE ),
+	.col				( X/SCALE ),
+	.colour_data 	( bg_colour[1] )
+);
+
+wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y);
+floor_rom floor
+(
+	.clk				( VGA_clk ),
+	.row				( (Y-FLOOR_Y)/SCALE ),
+	.col				( X/SCALE ),
+	.colour_data 	( bg_colour[2] )
+);
+
+wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
+assign bg_colour [3] = 24'hDED895;
 
 wire player_gfx = (X - playerX-1 < PLAYER_SIZE_X) && (Y - playerY < PLAYER_SIZE_Y);
 wire [23:0] player_colour;
-sonic_stand_rom sonic_stand
+flap_1_rom bird1
 (
 	.clk				( VGA_clk ),
-	.row				( Y - playerY ),
-	.col				( player_dir ? PLAYER_SIZE_X-(X - playerX):(X - playerX) ),
+	.row				( (Y - playerY)/SCALE ),
+	.col				( (X - playerX)/SCALE ),
 	.colour_data 	( player_colour )
 );
 
@@ -59,12 +63,11 @@ begin
 			4'h1: begin
 				if (display_on && player_gfx && player_colour != 24'hFF0096) begin
 					RGB <= player_colour;
-				end else if (display_on) begin
-					RGB <= 24'h2222EE;
-//					if 		(bg1_gfx && bg_colour[0] != 24'hFF0096)	RGB <= bg_colour[0];
-//					else if 	(bg2_gfx && bg_colour[1] != 24'hFF0096)	RGB <= bg_colour[1];
-//					else if 	(bg3_gfx && bg_colour[2] != 24'hFF0096)	RGB <= bg_colour[2];
-//					else																RGB <= 24'h2222EE;
+				end else if (display_on) begin			
+					if 		(bg0_gfx && bg_colour[0] != 24'hFF0096)	RGB <= bg_colour[0];
+					else if 	(bg1_gfx && bg_colour[1] != 24'hFF0096)	RGB <= bg_colour[1];
+					else if 	(bg2_gfx && bg_colour[2] != 24'hFF0096)	RGB <= bg_colour[2];
+					else if 	(bg3_gfx && bg_colour[3] != 24'hFF0096)	RGB <= bg_colour[3];
 				end else begin
 					RGB <= 24'h000000;
 				end end
