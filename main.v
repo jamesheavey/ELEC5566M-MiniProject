@@ -52,35 +52,46 @@ clk_divider VGA (clk, VGA_clk);
 wire GAME_clk;
 clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
 
-wire ANI_clk;
-clk_divider #(5000000-1) GAME (clk, ANI_clk); // 10 Hz
-
 
 wire [15:0] X, Y, birdX=150, birdY;
-wire [3:0] game_state = 4'h1;
-wire flap, pause;
+wire [3:0] game_state;
+wire flap, p_flap, pause, p_pause;
 
 vga_gen vga
 (
-	.clk			( VGA_clk ),
-	.rst			( rst ),
-	.h_sync		( h_sync ),
-	.v_sync		( v_sync ),
-	.v_clk		( v_clk ),
-	.display_on	( display_on ),
-	.sync_n		( sync_n ),
-	.h_pos		( X ),
-	.v_pos		( Y )
+	.clk				( VGA_clk ),
+	.rst				( rst ),
+	.h_sync			( h_sync ),
+	.v_sync			( v_sync ),
+	.v_clk			( v_clk ),
+	.display_on		( display_on ),
+	.sync_n			( sync_n ),
+	.h_pos			( X ),
+	.v_pos			( Y )
 );
 
 keyboard_input kb
 (
-	.clk			( clk ),
-	.rst			( rst ),
-	.PS2_clk		( PS2_clk ),
-	.PS2_data	( PS2_data ),
-	.flap			( flap ),
-	.pause		( pause )
+	.clk				( clk ),
+	.rst				( rst ),
+	.PS2_clk			( PS2_clk ),
+	.PS2_data		( PS2_data ),
+	.flap				( p_flap ),
+	.pause			( p_pause )
+);
+
+key_filter f (clk, p_flap, flap);
+key_filter p (clk, p_pause, pause);
+
+wire collision = 0;
+game_FSM FSM
+(
+	.clk				( clk ),
+	.rst				( rst ),
+	.collision		( collision ),
+	.pause			( pause ),
+	.flap				( flap ),
+	.game_state		( game_state )
 );
 
 bird_physics #(
@@ -92,7 +103,7 @@ bird_physics #(
 	.game_state		( game_state ),
 	.flap				( flap ),
 	.birdY			( birdY ),
-	.bird_state	( )
+	.bird_state		( )
 );
 
 image_renderer #(
@@ -100,9 +111,9 @@ image_renderer #(
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y ),
 	.SCALE			( SCALE )
 ) disp (
+	.clk				( clk ),
 	.VGA_clk			( VGA_clk ),
 	.GAME_clk		( GAME_clk ),
-	.ANI_clk			( ANI_clk ),
 	.rst				( rst ),
 	.display_on		( display_on ),
 	.game_state		( game_state ),
