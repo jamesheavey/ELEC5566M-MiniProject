@@ -1,5 +1,5 @@
 Flow report for MiniProject
-Thu May 13 21:54:20 2021
+Fri May 14 05:15:53 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu May 13 21:54:12 2021       ;
+; Flow Status                     ; Successful - Fri May 14 05:15:44 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 571 / 32,070 ( 2 % )                        ;
-; Total registers                 ; 256                                         ;
+; Logic utilization (in ALMs)     ; 599 / 32,070 ( 2 % )                        ;
+; Total registers                 ; 277                                         ;
 ; Total pins                      ; 37 / 457 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/13/2021 21:52:41 ;
+; Start date & time ; 05/14/2021 05:14:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MiniProject         ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 70975883156024.162093916118652         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 70975883156024.162096564402468         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 4978 MB             ; 00:00:27                           ;
-; Fitter                    ; 00:01:04     ; 1.1                     ; 6630 MB             ; 00:02:09                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 4832 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.4                     ; 5150 MB             ; 00:00:09                           ;
-; Total                     ; 00:01:37     ; --                      ; --                  ; 00:02:52                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 4974 MB             ; 00:00:31                           ;
+; Fitter                    ; 00:01:10     ; 1.1                     ; 6639 MB             ; 00:02:14                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4828 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.5                     ; 5157 MB             ; 00:00:10                           ;
+; Total                     ; 00:01:45     ; --                      ; --                  ; 00:03:02                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

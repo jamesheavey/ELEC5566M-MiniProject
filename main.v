@@ -69,12 +69,13 @@ vga_gen vga
 
 wire [3:0] game_state = 4'h1;
 
-reg [15:0] playerX, playerY;
+wire [15:0] playerX, playerY;
 
 wire direction, move, jump, pause;
 keyboard_input kb
 (
 	.clk			( clk ),
+	.rst			( rst ),
 	.PS2_clk		( PS2_clk ),
 	.PS2_data	( PS2_data ),
 	.direction	( direction ),
@@ -85,46 +86,31 @@ keyboard_input kb
 
 assign led = {grounded, direction, move, jump};
 
-integer X_acc=2, Y_acc=2, X_vel_max=10, Y_vel_min=-20;
-reg signed [15:0] X_vel, Y_vel;
 reg grounded;
-always @(posedge GAME_clk or posedge rst)
-begin
-	if (rst) begin
-		X_vel <= 0;
-		Y_vel <= 0;
-		playerX <= (640 - 36)/2;
-		playerY <= 480 - 42;
-	end else begin
-		if (!direction && move && X_vel < X_vel_max)
-			X_vel <= X_vel + X_acc;
-		else if (direction && move && X_vel > -X_vel_max)
-			X_vel <= X_vel - X_acc;
-		else if (!move && X_vel != 0) begin
-			X_vel <= (X_vel < 0) ? X_vel + X_acc : X_vel - X_acc;
-		end
-		
-		
-		if (grounded && jump)
-			Y_vel <= -20;
-		else if (grounded) 
-			Y_vel <= 0;
-		else if (!grounded) 
-			Y_vel <= Y_vel + Y_acc;
-		
-		playerX <= playerX + X_vel;
-		playerY <= playerY + Y_vel;
-	end
-end
+reg [15:0] groundedY;
 
-always @(playerX or playerY)
+always @(posedge clk)
 begin
-	if (playerY >= 480 - 42 - 1)
+	if (playerY >= 480 - PLAYER_SIZE_Y -1) begin
 		grounded <= 1;
-	else
+		groundedY <= 480 - PLAYER_SIZE_Y;
+	end else
 		grounded <= 0;
 end
 
+character_physics phys
+(
+	.GAME_clk		( GAME_clk ),
+	.rst				( rst ),
+	.grounded		( grounded ),
+	.groundedY		( groundedY ),
+	.direction		( direction ),
+	.move				( move ),
+	.jump				( jump ),
+	.playerX			( playerX ),
+	.playerY			( playerY ),
+	.player_state	( )
+);
 
 image_renderer #(
 	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),

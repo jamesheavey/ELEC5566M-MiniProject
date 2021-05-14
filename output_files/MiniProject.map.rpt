@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Thu May 13 21:52:58 2021
+Fri May 14 05:14:24 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -24,11 +24,12 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  16. Parameter Settings for User Entity Instance: image_renderer:disp
  17. Port Connectivity Checks: "image_renderer:disp|sonic_stand_rom:sonic_stand"
  18. Port Connectivity Checks: "image_renderer:disp"
- 19. Port Connectivity Checks: "keyboard_input:kb"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 19. Port Connectivity Checks: "character_physics:phys"
+ 20. Port Connectivity Checks: "keyboard_input:kb"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,13 +55,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 13 21:52:58 2021       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 14 05:14:24 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 219                                         ;
+; Total registers                 ; 220                                         ;
 ; Total pins                      ; 37                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -191,6 +192,7 @@ refer to the applicable agreement for further details.
 ; clk_divider.v                                 ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v                                 ;         ;
 ; image_renderer.v                              ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v                              ;         ;
 ; keyboard_input.v                              ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v                              ;         ;
+; character_physics.v                           ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v                           ;         ;
 +-----------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
@@ -199,16 +201,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------------------+
 ; Resource                                    ; Usage                                                      ;
 +---------------------------------------------+------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 570                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 589                                                        ;
 ;                                             ;                                                            ;
-; Combinational ALUT usage for logic          ; 943                                                        ;
-;     -- 7 input functions                    ; 7                                                          ;
-;     -- 6 input functions                    ; 187                                                        ;
-;     -- 5 input functions                    ; 191                                                        ;
-;     -- 4 input functions                    ; 153                                                        ;
-;     -- <=3 input functions                  ; 405                                                        ;
+; Combinational ALUT usage for logic          ; 977                                                        ;
+;     -- 7 input functions                    ; 8                                                          ;
+;     -- 6 input functions                    ; 190                                                        ;
+;     -- 5 input functions                    ; 227                                                        ;
+;     -- 4 input functions                    ; 146                                                        ;
+;     -- <=3 input functions                  ; 406                                                        ;
 ;                                             ;                                                            ;
-; Dedicated logic registers                   ; 219                                                        ;
+; Dedicated logic registers                   ; 220                                                        ;
 ;                                             ;                                                            ;
 ; I/O pins                                    ; 37                                                         ;
 ;                                             ;                                                            ;
@@ -216,35 +218,39 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                            ;
 ; Maximum fan-out node                        ; image_renderer:disp|sonic_stand_rom:sonic_stand|col_reg[2] ;
 ; Maximum fan-out                             ; 181                                                        ;
-; Total fan-out                               ; 4511                                                       ;
-; Average fan-out                             ; 3.65                                                       ;
+; Total fan-out                               ; 4665                                                       ;
+; Average fan-out                             ; 3.67                                                       ;
 +---------------------------------------------+------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name     ; Library Name ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
-; |main                               ; 943 (117)           ; 219 (60)                  ; 0                 ; 0          ; 37   ; 0            ; |main                                                 ; main            ; work         ;
-;    |clk_divider:GAME|               ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:GAME                                ; clk_divider     ; work         ;
-;    |clk_divider:VGA|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:VGA                                 ; clk_divider     ; work         ;
-;    |image_renderer:disp|            ; 662 (90)            ; 34 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp                             ; image_renderer  ; work         ;
-;       |sonic_stand_rom:sonic_stand| ; 572 (572)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|sonic_stand_rom:sonic_stand ; sonic_stand_rom ; work         ;
-;    |keyboard_input:kb|              ; 77 (77)             ; 56 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |main|keyboard_input:kb                               ; keyboard_input  ; work         ;
-;    |vga_gen:vga|                    ; 45 (45)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_gen:vga                                     ; vga_gen         ; work         ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name       ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-------------------+--------------+
+; |main                               ; 977 (3)             ; 220 (1)                   ; 0                 ; 0          ; 37   ; 0            ; |main                                                 ; main              ; work         ;
+;    |character_physics:phys|         ; 144 (144)           ; 60 (60)                   ; 0                 ; 0          ; 0    ; 0            ; |main|character_physics:phys                          ; character_physics ; work         ;
+;    |clk_divider:GAME|               ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:GAME                                ; clk_divider       ; work         ;
+;    |clk_divider:VGA|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:VGA                                 ; clk_divider       ; work         ;
+;    |image_renderer:disp|            ; 661 (89)            ; 34 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp                             ; image_renderer    ; work         ;
+;       |sonic_stand_rom:sonic_stand| ; 572 (572)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|sonic_stand_rom:sonic_stand ; sonic_stand_rom   ; work         ;
+;    |keyboard_input:kb|              ; 82 (82)             ; 56 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |main|keyboard_input:kb                               ; keyboard_input    ; work         ;
+;    |vga_gen:vga|                    ; 45 (45)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_gen:vga                                     ; vga_gen           ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; keyboard_input:kb|direction                        ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
++--------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                    ;
++----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal      ; Free of Timing Hazards ;
++----------------------------------------------------+--------------------------+------------------------+
+; keyboard_input:kb|j[0]                             ; keyboard_input:kb|Equal7 ; yes                    ;
+; keyboard_input:kb|j[1]                             ; keyboard_input:kb|Equal7 ; yes                    ;
+; keyboard_input:kb|move                             ; GND                      ; yes                    ;
+; keyboard_input:kb|direction                        ; GND                      ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                          ;                        ;
++----------------------------------------------------+--------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -254,11 +260,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
 ; image_renderer:disp|RGB[0,8]           ; Stuck at GND due to stuck port data_in ;
-; X_vel[0]                               ; Stuck at GND due to stuck port data_in ;
-; Y_vel[0]                               ; Stuck at GND due to stuck port data_in ;
-; playerX[0]                             ; Merged with playerY[0]                 ;
-; playerY[0]                             ; Stuck at GND due to stuck port data_in ;
 ; clk_divider:VGA|count[0..31]           ; Lost fanout                            ;
+; character_physics:phys|Y_vel[0]        ; Stuck at GND due to stuck port data_in ;
+; character_physics:phys|playerY[0]      ; Stuck at GND due to stuck port data_in ;
+; character_physics:phys|X_vel[0]        ; Stuck at GND due to stuck port data_in ;
+; character_physics:phys|playerX[0]      ; Stuck at GND due to stuck port data_in ;
 ; Total Number of Removed Registers = 38 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
@@ -268,12 +274,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 219   ;
-; Number of registers using Synchronous Clear  ; 129   ;
-; Number of registers using Synchronous Load   ; 21    ;
+; Total registers                              ; 220   ;
+; Number of registers using Synchronous Clear  ; 124   ;
+; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 117   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 45    ;
+; Number of registers using Clock Enable       ; 47    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -283,30 +289,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; playerY[5]                              ; 4       ;
-; playerY[4]                              ; 4       ;
-; playerY[2]                              ; 4       ;
-; playerY[1]                              ; 4       ;
-; playerY[8]                              ; 3       ;
-; playerY[7]                              ; 3       ;
-; playerX[2]                              ; 4       ;
-; playerX[3]                              ; 4       ;
-; playerX[1]                              ; 4       ;
-; playerX[5]                              ; 4       ;
-; playerX[8]                              ; 2       ;
+; character_physics:phys|playerY[7]       ; 3       ;
+; character_physics:phys|playerY[8]       ; 3       ;
+; character_physics:phys|playerY[5]       ; 4       ;
+; character_physics:phys|playerY[4]       ; 4       ;
+; character_physics:phys|playerY[2]       ; 4       ;
+; character_physics:phys|playerY[1]       ; 4       ;
+; character_physics:phys|playerX[2]       ; 5       ;
+; character_physics:phys|playerX[3]       ; 5       ;
+; character_physics:phys|playerX[1]       ; 4       ;
+; character_physics:phys|playerX[5]       ; 6       ;
+; character_physics:phys|playerX[8]       ; 4       ;
 ; Total number of inverted registers = 11 ;         ;
 +-----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |main|Y_vel[9]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |main|Y_vel[4]             ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; Yes        ; |main|X_vel[5]             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; Yes        ; |main|character_physics:phys|Y_vel[5]  ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 45 LEs               ; 45 LEs                 ; Yes        ; |main|character_physics:phys|X_vel[10] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
 +------------------------------------------------+
@@ -406,6 +411,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "character_physics:phys"                                                                                          ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; player_state ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; jumpup       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "keyboard_input:kb"                                                                   ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -420,40 +435,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 219                         ;
-;     CLR               ; 39                          ;
-;     CLR SCLR          ; 41                          ;
+; arriav_ff             ; 220                         ;
+;     CLR               ; 49                          ;
+;     CLR SCLR          ; 29                          ;
 ;     CLR SLD           ; 8                           ;
-;     ENA               ; 8                           ;
-;     ENA CLR SCLR      ; 16                          ;
-;     ENA CLR SLD       ; 13                          ;
-;     ENA SCLR          ; 8                           ;
+;     ENA               ; 16                          ;
+;     ENA CLR SCLR      ; 31                          ;
 ;     SCLR              ; 64                          ;
-;     plain             ; 22                          ;
-; arriav_lcell_comb     ; 945                         ;
+;     plain             ; 23                          ;
+; arriav_lcell_comb     ; 978                         ;
 ;     arith             ; 196                         ;
 ;         1 data inputs ; 160                         ;
 ;         2 data inputs ; 30                          ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 5                           ;
-;     extend            ; 7                           ;
-;         7 data inputs ; 7                           ;
-;     normal            ; 697                         ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 729                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 81                          ;
-;         3 data inputs ; 76                          ;
-;         4 data inputs ; 148                         ;
-;         5 data inputs ; 191                         ;
-;         6 data inputs ; 187                         ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 80                          ;
+;         3 data inputs ; 78                          ;
+;         4 data inputs ; 141                         ;
+;         5 data inputs ; 227                         ;
+;         6 data inputs ; 190                         ;
 ;     shared            ; 45                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 40                          ;
 ; boundary_port         ; 37                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 6.79                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.30                        ;
 +-----------------------+-----------------------------+
 
 
@@ -462,7 +475,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -472,7 +485,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 13 21:52:41 2021
+    Info: Processing started: Fri May 14 05:14:04 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -522,14 +535,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file charact
     Info (12023): Found entity 1: character_physics File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at main.v(47): truncated value with size 32 to match size of target (7) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 47
-Warning (10036): Verilog HDL or VHDL warning at main.v(88): object "Y_vel_min" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 88
 Warning (10230): Verilog HDL assignment warning at main.v(96): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 96
-Warning (10230): Verilog HDL assignment warning at main.v(97): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 97
-Warning (10230): Verilog HDL assignment warning at main.v(100): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 100
-Warning (10230): Verilog HDL assignment warning at main.v(102): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 102
-Warning (10230): Verilog HDL assignment warning at main.v(104): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 104
-Warning (10230): Verilog HDL assignment warning at main.v(109): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 109
-Warning (10230): Verilog HDL assignment warning at main.v(113): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 113
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 50
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:GAME" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 53
 Info (12128): Elaborating entity "vga_gen" for hierarchy "vga_gen:vga" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 68
@@ -538,18 +544,41 @@ Warning (10230): Verilog HDL assignment warning at vga_gen.v(48): truncated valu
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(60): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 60
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(61): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 61
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(62): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 62
-Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 84
-Warning (10036): Verilog HDL or VHDL warning at keyboard_input.v(7): object "lastCode" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 7
-Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(46): variable "pause" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 46
+Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 85
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(40): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 40
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(44): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 44
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(48): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 48
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(51): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 51
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(52): variable "j" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 52
+Warning (10230): Verilog HDL assignment warning at keyboard_input.v(52): truncated value with size 32 to match size of target (2) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(53): variable "code" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 53
+Warning (10235): Verilog HDL Always Construct warning at keyboard_input.v(54): variable "pause" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 54
 Warning (10240): Verilog HDL Always Construct warning at keyboard_input.v(32): inferring latch(es) for variable "direction", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Warning (10240): Verilog HDL Always Construct warning at keyboard_input.v(32): inferring latch(es) for variable "j", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Warning (10240): Verilog HDL Always Construct warning at keyboard_input.v(32): inferring latch(es) for variable "move", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
 Warning (10240): Verilog HDL Always Construct warning at keyboard_input.v(32): inferring latch(es) for variable "pause", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Warning (10230): Verilog HDL assignment warning at keyboard_input.v(58): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 58
 Info (10041): Inferred latch for "pause" at keyboard_input.v(32) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Info (10041): Inferred latch for "move" at keyboard_input.v(32) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Info (10041): Inferred latch for "j[0]" at keyboard_input.v(32) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+Info (10041): Inferred latch for "j[1]" at keyboard_input.v(32) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
 Info (10041): Inferred latch for "direction" at keyboard_input.v(32) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
-Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:disp" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 144
+Info (12128): Elaborating entity "character_physics" for hierarchy "character_physics:phys" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 113
+Warning (10230): Verilog HDL assignment warning at character_physics.v(33): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 33
+Warning (10230): Verilog HDL assignment warning at character_physics.v(39): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 39
+Warning (10230): Verilog HDL assignment warning at character_physics.v(44): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 44
+Warning (10230): Verilog HDL assignment warning at character_physics.v(47): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 47
+Warning (10230): Verilog HDL assignment warning at character_physics.v(58): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 58
+Warning (10230): Verilog HDL assignment warning at character_physics.v(66): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 66
+Warning (10230): Verilog HDL assignment warning at character_physics.v(70): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 70
+Warning (10034): Output port "player_state" at character_physics.v(8) has no driver File: C:/Users/James/Workspace/ELEC5566M-MiniProject/character_physics.v Line: 8
+Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:disp" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 130
 Info (12128): Elaborating entity "sonic_stand_rom" for hierarchy "image_renderer:disp|sonic_stand_rom:sonic_stand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 48
 Info (13014): Ignored 4 buffer(s)
     Info (13019): Ignored 4 SOFT buffer(s)
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch keyboard_input:kb|j[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 32
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal keyboard_input:kb|code[5] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 12
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 31
     Warning (13410): Pin "G[0]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 37
@@ -559,15 +588,15 @@ Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1052 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1086 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 1015 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 4978 megabytes
-    Info: Processing ended: Thu May 13 21:52:58 2021
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:28
+    Info (21061): Implemented 1049 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4974 megabytes
+    Info: Processing ended: Fri May 14 05:14:24 2021
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+

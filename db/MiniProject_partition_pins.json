@@ -132,11 +132,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "PS2_clk",
+					"name" : "PS2_data",
 					"strict" : false
 				},
 				{
-					"name" : "PS2_data",
+					"name" : "PS2_clk",
 					"strict" : false
 				}
 			]
