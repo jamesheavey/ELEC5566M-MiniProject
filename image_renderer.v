@@ -5,6 +5,7 @@ module image_renderer #(
 )(
 	input clk, VGA_clk, GAME_clk, rst, display_on, flap,
 	input [3:0] game_state,
+	input [2:0] bird_state,
 	input [15:0] X, Y, birdX, birdY,
 	output reg [23:0] RGB
 );
@@ -40,9 +41,7 @@ begin
 				if (display_on) begin
 					if			(title_gfx && title_colour != 24'hFF0096)	RGB <= title_colour;
 					
-					else if	(bird_state == FLAP_1 && bird_gfx && bird_colour[0] != 24'hFF0096)				RGB <= bird_colour[0];
-					else if	(bird_state == (FLAP_2||FLAP_4) && bird_gfx && bird_colour[1] != 24'hFF0096)	RGB <= bird_colour[1];
-					else if	(bird_state == FLAP_3 && bird_gfx && bird_colour[2] != 24'hFF0096)				RGB <= bird_colour[2];
+					else if	(bird_gfx && bird_colour[bird_state] != 24'hFF0096)	RGB <= bird_colour[bird_state];
 		
 					else if 	(bg0_gfx && bg_colour[0] != 24'hFF0096)	RGB <= bg_colour[0];
 					else if 	(bg1_gfx && bg_colour[1] != 24'hFF0096)	RGB <= bg_colour[1];
@@ -54,10 +53,8 @@ begin
 				
 			IN_GAME: begin
 				if (display_on) begin
-					if			(bird_state == FLAP_1 && bird_gfx && bird_colour[0] != 24'hFF0096)				RGB <= bird_colour[0];
-					else if	(bird_state == (FLAP_2||FLAP_4) && bird_gfx && bird_colour[1] != 24'hFF0096)	RGB <= bird_colour[1];
-					else if	(bird_state == FLAP_3 && bird_gfx && bird_colour[2] != 24'hFF0096)				RGB <= bird_colour[2];
-		
+					if			(bird_gfx && bird_colour[bird_state] != 24'hFF0096)	RGB <= bird_colour[bird_state];
+					
 					else if 	(bg0_gfx && bg_colour[0] != 24'hFF0096)	RGB <= bg_colour[0];
 					else if 	(bg1_gfx && bg_colour[1] != 24'hFF0096)	RGB <= bg_colour[1];
 					else if 	(bg2_gfx && bg_colour[2] != 24'hFF0096)	RGB <= bg_colour[2];
@@ -79,31 +76,31 @@ end
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-localparam	FLAP_1 			= 4'b0001,
-				FLAP_2			= 4'b0010,
-				FLAP_3 			= 4'b0100,
-				FLAP_4 			= 4'b1000;
-				
-reg [3:0] bird_state = FLAP_1;
-
-always @(posedge ANI_clk) begin
-	case (bird_state)
-		FLAP_1:
-			bird_state <= FLAP_2;
-
-		FLAP_2:
-			bird_state <= FLAP_3;
-		
-		FLAP_3:
-			bird_state <= FLAP_4;
-		
-		FLAP_4:
-			bird_state <= FLAP_1;
-			
-		default:
-			bird_state <= FLAP_1;
-	endcase
-end
+//localparam	FLAP_1 			= 4'b0001,
+//				FLAP_2			= 4'b0010,
+//				FLAP_3 			= 4'b0100,
+//				FLAP_4 			= 4'b1000;
+//				
+//reg [3:0] bird_state = FLAP_1;
+//
+//always @(posedge ANI_clk) begin
+//	case (bird_state)
+//		FLAP_1:
+//			bird_state <= FLAP_2;
+//
+//		FLAP_2:
+//			bird_state <= FLAP_3;
+//		
+//		FLAP_3:
+//			bird_state <= FLAP_4;
+//		
+//		FLAP_4:
+//			bird_state <= FLAP_1;
+//			
+//		default:
+//			bird_state <= FLAP_1;
+//	endcase
+//end
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
 wire [23:0] bird_colour [2:0];

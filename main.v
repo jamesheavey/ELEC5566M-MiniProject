@@ -44,7 +44,7 @@ module main
 );
 
 localparam [6:0] SCALE = 3;
-localparam [6:0] BIRD_SIZE_X = 18 * SCALE, BIRD_SIZE_Y = 12 * SCALE;
+localparam [6:0] BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 12*SCALE;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -55,7 +55,8 @@ clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
 
 wire [15:0] X, Y, birdX=150, birdY;
 wire [3:0] game_state;
-wire flap, p_flap, pause, p_pause;
+wire [2:0] bird_state;
+wire flap, pause, p_pause;
 
 vga_gen vga
 (
@@ -103,7 +104,7 @@ bird_physics #(
 	.game_state		( game_state ),
 	.flap				( flap ),
 	.birdY			( birdY ),
-	.bird_state		( )
+	.bird_state		( bird_state )
 );
 
 image_renderer #(
@@ -117,6 +118,7 @@ image_renderer #(
 	.rst				( rst ),
 	.display_on		( display_on ),
 	.game_state		( game_state ),
+	.bird_state		( bird_state ),
 	.flap				( flap ),
 	.X					( X ),
 	.Y					( Y ),

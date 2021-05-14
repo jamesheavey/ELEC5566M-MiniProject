@@ -5,7 +5,7 @@ module bird_physics#(
 	input GAME_clk, rst, flap, 
 	input [3:0] game_state,
 	output reg [15:0] birdY,
-	output reg [3:0] bird_state
+	output reg [1:0] bird_state
 );
 
 integer Y_acc=2, Y_vel_max=20;
@@ -23,6 +23,7 @@ begin
 	if (rst) begin
 		Y_vel <= 0;
 		birdY <= (480 - BIRD_SIZE_Y)/2;
+		down <= 0;
 	end else begin
 		case (game_state)
 		
@@ -46,6 +47,37 @@ begin
 		birdY <= birdY + Y_vel;
 		
 	end
+end
+
+localparam	FLAP_1 			= 2'd0,
+				FLAP_2			= 2'd1,
+				FLAP_3 			= 2'd2;
+
+always @(posedge GAME_clk)
+begin
+
+	case (game_state)
+		START_SCREEN: begin
+			if (birdY > 10 + (480 - BIRD_SIZE_Y)/2)
+				bird_state <= FLAP_3;
+			else if (birdY == (480 - BIRD_SIZE_Y)/2 && !down)
+				bird_state <= FLAP_2;
+			else if (birdY < -10 + (480 - BIRD_SIZE_Y)/2)
+				bird_state <= FLAP_1;
+		end
+				
+		IN_GAME: begin
+			if (Y_vel < -10)
+				bird_state <= FLAP_3;
+			else if (Y_vel > -10 && Y_vel < 10)
+				bird_state <= FLAP_2;
+			else if (Y_vel > 10)
+				bird_state <= FLAP_1;
+		end
+				
+		default: bird_state <= FLAP_1;
+		
+	endcase
 end
 
 endmodule
