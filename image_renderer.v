@@ -13,11 +13,15 @@ wire ANI_clk;
 clk_divider #(500000-1) ANI (clk, ANI_clk);
 
 localparam DISPLAY_SIZE_X = 640, DISPLAY_SIZE_Y = 480;
+
 localparam BG_SIZE_X = 214*SCALE, BG_SIZE_Y = 40*SCALE;
 localparam BG_Y = 300;
+
 localparam FLOOR_SIZE_X = 214*SCALE, FLOOR_SIZE_Y = 10*SCALE; 
 localparam FLOOR_Y = BG_SIZE_Y + BG_Y - 2;
 
+localparam TITLE_SIZE_X = 96*SCALE, TITLE_SIZE_Y = 22*SCALE;
+localparam TITLE_X = (DISPLAY_SIZE_X-TITLE_SIZE_X)/2, TITLE_Y = 50;
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -34,7 +38,9 @@ begin
 		case(game_state)
 			START_SCREEN: begin
 				if (display_on) begin
-					if			(bird_state == FLAP_1 && bird_gfx && bird_colour[0] != 24'hFF0096)				RGB <= bird_colour[0];
+					if			(title_gfx && title_colour != 24'hFF0096)	RGB <= title_colour;
+					
+					else if	(bird_state == FLAP_1 && bird_gfx && bird_colour[0] != 24'hFF0096)				RGB <= bird_colour[0];
 					else if	(bird_state == (FLAP_2||FLAP_4) && bird_gfx && bird_colour[1] != 24'hFF0096)	RGB <= bird_colour[1];
 					else if	(bird_state == FLAP_3 && bird_gfx && bird_colour[2] != 24'hFF0096)				RGB <= bird_colour[2];
 		
@@ -80,28 +86,23 @@ localparam	FLAP_1 			= 4'b0001,
 				
 reg [3:0] bird_state = FLAP_1;
 
-always @(posedge GAME_clk) begin
-	if (!display_on) begin
-		case (bird_state)
-			FLAP_1:
-				if (flap)
-					bird_state <= FLAP_2;
-				else
-					bird_state <= FLAP_1;
+always @(posedge ANI_clk) begin
+	case (bird_state)
+		FLAP_1:
+			bird_state <= FLAP_2;
+
+		FLAP_2:
+			bird_state <= FLAP_3;
+		
+		FLAP_3:
+			bird_state <= FLAP_4;
+		
+		FLAP_4:
+			bird_state <= FLAP_1;
 			
-			FLAP_2:
-				bird_state <= FLAP_3;
-			
-			FLAP_3:
-				bird_state <= FLAP_4;
-			
-			FLAP_4:
-				bird_state <= FLAP_1;
-				
-			default:
-				bird_state <= FLAP_1;
-		endcase
-	end
+		default:
+			bird_state <= FLAP_1;
+	endcase
 end
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
@@ -128,6 +129,18 @@ flap_3_rom bird3
 	.row				( (Y - birdY)/SCALE ),
 	.col				( (X - birdX)/SCALE ),
 	.colour_data 	( bird_colour[2] )
+);
+
+///////////////////////////////////////////////////////////////////////////////////
+
+wire title_gfx = (X - TITLE_X-1 < TITLE_SIZE_X) && (Y - TITLE_Y < TITLE_SIZE_Y);
+wire [23:0] title_colour;
+title_rom title
+(
+	.clk				( VGA_clk ),
+	.row				( (Y - TITLE_Y)/SCALE ),
+	.col				( (X - TITLE_X)/SCALE ),
+	.colour_data	( title_colour )
 );
 
 ///////////////////////////////////////////////////////////////////////////////////

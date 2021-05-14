@@ -76,11 +76,11 @@ keyboard_input kb
 	.rst				( rst ),
 	.PS2_clk			( PS2_clk ),
 	.PS2_data		( PS2_data ),
-	.flap				( p_flap ),
+	.flap				( flap ),
 	.pause			( p_pause )
 );
 
-key_filter f (clk, p_flap, flap);
+//key_filter f (clk, p_flap, flap);
 key_filter p (clk, p_pause, pause);
 
 wire collision = 0;

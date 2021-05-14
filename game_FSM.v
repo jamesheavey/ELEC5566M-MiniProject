@@ -40,7 +40,7 @@ always @(posedge clk or posedge rst) begin
 					game_state <= PAUSE;
 			
 			END_SCREEN:
-				if (flap)
+				if (pause)
 					game_state <= START_SCREEN;
 				else
 					game_state <= END_SCREEN;
