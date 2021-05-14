@@ -44,7 +44,7 @@ module main
 );
 
 localparam [6:0] SCALE = 3;
-localparam [6:0] PLAYER_SIZE_X = 18 * SCALE, PLAYER_SIZE_Y = 12 * SCALE;
+localparam [6:0] BIRD_SIZE_X = 18 * SCALE, BIRD_SIZE_Y = 12 * SCALE;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -53,10 +53,13 @@ wire GAME_clk;
 clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
 
 wire ANI_clk;
-clk_divider #(5000000-1) ANIMATION (clk, ANI_clk); // 10 Hz
+clk_divider #(5000000-1) GAME (clk, ANI_clk); // 10 Hz
 
 
-wire [15:0] X, Y;
+wire [15:0] X, Y, birdX=150, birdY;
+wire [3:0] game_state = 4'h1;
+wire flap, pause;
+
 vga_gen vga
 (
 	.clk			( VGA_clk ),
@@ -70,11 +73,6 @@ vga_gen vga
 	.v_pos		( Y )
 );
 
-wire [3:0] game_state = 4'h1;
-
-wire [15:0] playerX=150, playerY;
-
-wire flap, pause;
 keyboard_input kb
 (
 	.clk			( clk ),
@@ -85,36 +83,37 @@ keyboard_input kb
 	.pause		( pause )
 );
 
-assign led = {pause, flap};
-
-character_physics #(
-	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),
-	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y )
+bird_physics #(
+	.BIRD_SIZE_X	( BIRD_SIZE_X ),
+	.BIRD_SIZE_Y	( BIRD_SIZE_Y )
 ) phys (
 	.GAME_clk		( GAME_clk ),
 	.rst				( rst ),
+	.game_state		( game_state ),
 	.flap				( flap ),
-	.playerY			( playerY ),
-	.player_state	( )
+	.birdY			( birdY ),
+	.bird_state	( )
 );
 
 image_renderer #(
-	.PLAYER_SIZE_X	( PLAYER_SIZE_X ),
-	.PLAYER_SIZE_Y	( PLAYER_SIZE_Y ),
+	.BIRD_SIZE_X	( BIRD_SIZE_X ),
+	.BIRD_SIZE_Y	( BIRD_SIZE_Y ),
 	.SCALE			( SCALE )
 ) disp (
 	.VGA_clk			( VGA_clk ),
+	.GAME_clk		( GAME_clk ),
 	.ANI_clk			( ANI_clk ),
 	.rst				( rst ),
-	.player_dir		( direction ),
 	.display_on		( display_on ),
 	.game_state		( game_state ),
-	.player_state	( ),
+	.flap				( flap ),
 	.X					( X ),
 	.Y					( Y ),
-	.playerX			( playerX ),
-	.playerY			( playerY ),
+	.birdX			( birdX ),
+	.birdY			( birdY ),
 	.RGB				( {R,G,B} )
 );
+
+assign led = {pause, flap};
 
 endmodule
