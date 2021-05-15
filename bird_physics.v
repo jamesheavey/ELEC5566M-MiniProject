@@ -10,8 +10,8 @@ module bird_physics#(
 
 integer Y_acc=2, Y_vel_max=20;
 reg signed [15:0] Y_vel;
-
 reg down;
+
 
 localparam	START_SCREEN 	= 4'b0001,
 				IN_GAME			= 4'b0010,
@@ -48,6 +48,7 @@ begin
 		
 	end
 end
+
 
 localparam	FLAP_1 			= 2'd0,
 				FLAP_2			= 2'd1,

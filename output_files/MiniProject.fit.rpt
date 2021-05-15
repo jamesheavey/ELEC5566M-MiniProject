@@ -1,5 +1,5 @@
 Fitter report for MiniProject
-Sat May 15 01:10:14 2021
+Sat May 15 01:56:03 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sat May 15 01:10:14 2021       ;
+; Fitter Status                   ; Successful - Sat May 15 01:56:03 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 5,702 / 32,070 ( 18 % )                     ;
-; Total registers                 ; 377                                         ;
+; Logic utilization (in ALMs)     ; 5,913 / 32,070 ( 18 % )                     ;
+; Total registers                 ; 361                                         ;
 ; Total pins                      ; 37 / 457 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -153,104 +153,80 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.29        ;
+; Average used               ; 1.28        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  11.0%      ;
-;     Processor 3            ;   9.0%      ;
-;     Processor 4            ;   8.9%      ;
+;     Processor 2            ;  10.6%      ;
+;     Processor 3            ;   8.9%      ;
+;     Processor 4            ;   8.6%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                      ;
-+-------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------+------------------+-----------------------+
-; Node                                            ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                          ; Destination Port ; Destination Port Name ;
-+-------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------+------------------+-----------------------+
-; PS2_clk~inputCLKENA0                            ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                           ;                  ;                       ;
-; clk~inputCLKENA0                                ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                           ;                  ;                       ;
-; bird_physics:phys|birdY[2]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[2]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[3]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[3]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[4]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[4]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[5]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[5]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[6]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[6]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[7]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[7]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[8]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[8]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[9]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[9]~DUPLICATE                      ;                  ;                       ;
-; bird_physics:phys|birdY[10]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[10]~DUPLICATE                     ;                  ;                       ;
-; bird_physics:phys|birdY[12]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[12]~DUPLICATE                     ;                  ;                       ;
-; bird_physics:phys|birdY[13]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[13]~DUPLICATE                     ;                  ;                       ;
-; bird_physics:phys|birdY[15]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[15]~DUPLICATE                     ;                  ;                       ;
-; clk_divider:GAME|count[0]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[0]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[1]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[1]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[3]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[3]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[4]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[4]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[7]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[7]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[9]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[9]~DUPLICATE                       ;                  ;                       ;
-; clk_divider:GAME|count[11]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[11]~DUPLICATE                      ;                  ;                       ;
-; clk_divider:GAME|count[12]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[12]~DUPLICATE                      ;                  ;                       ;
-; clk_divider:GAME|count[15]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[15]~DUPLICATE                      ;                  ;                       ;
-; clk_divider:GAME|count[17]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[17]~DUPLICATE                      ;                  ;                       ;
-; clk_divider:GAME|count[25]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[25]~DUPLICATE                      ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[0]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[0]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[1]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[1]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[2]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[2]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[3]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[3]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[5]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[5]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[6]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[6]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[7]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[7]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[8]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[8]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[9]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[9]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[10]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[10]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[11]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[11]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[12]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[12]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[13]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[13]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[14]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[14]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_bg[15]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_bg[15]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[0]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[0]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[2]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[2]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[3]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[3]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[4]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[4]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[5]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[5]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[6]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[6]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[7]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[7]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[8]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[8]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[9]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[9]~DUPLICATE                 ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[10]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[10]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[11]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[11]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[12]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[12]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|X_ofs_fl[13]                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|X_ofs_fl[13]~DUPLICATE                ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[5]    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[5]~DUPLICATE    ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[7]    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[7]~DUPLICATE    ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[9]    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[9]~DUPLICATE    ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[10]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[10]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[16]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[16]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[20]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[20]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[23]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[23]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[25]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[25]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[26]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[26]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|clk_divider:ANI|count[28]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[28]~DUPLICATE   ;                  ;                       ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|flap_1_rom:bird1|col_reg[1]~DUPLICATE ;                  ;                       ;
-; keyboard_input:kb|count[21]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; keyboard_input:kb|count[21]~DUPLICATE                     ;                  ;                       ;
-; keyboard_input:kb|count[29]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; keyboard_input:kb|count[29]~DUPLICATE                     ;                  ;                       ;
-; keyboard_input:kb|count[30]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; keyboard_input:kb|count[30]~DUPLICATE                     ;                  ;                       ;
-; vga_gen:vga|h_pos[0]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[0]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|h_pos[3]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[3]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|h_pos[5]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[5]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|h_pos[7]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[7]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|h_pos[9]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[9]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|h_pos[15]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[15]~DUPLICATE                           ;                  ;                       ;
-; vga_gen:vga|v_pos[3]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[3]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[4]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[4]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[5]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[5]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[6]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[6]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[7]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[7]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[9]                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[9]~DUPLICATE                            ;                  ;                       ;
-; vga_gen:vga|v_pos[13]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[13]~DUPLICATE                           ;                  ;                       ;
-; vga_gen:vga|v_pos[15]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[15]~DUPLICATE                           ;                  ;                       ;
-+-------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------+------------------+-----------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                              ;
++-----------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------------+------------------+-----------------------+
+; Node                                                ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                              ; Destination Port ; Destination Port Name ;
++-----------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------------+------------------+-----------------------+
+; PS2_clk~inputCLKENA0                                ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                               ;                  ;                       ;
+; clk~inputCLKENA0                                    ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                               ;                  ;                       ;
+; bird_physics:phys|birdY[2]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[2]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[3]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[3]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[4]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[4]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[5]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[5]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[6]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[6]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[7]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[7]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[8]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[8]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[9]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[9]~DUPLICATE                          ;                  ;                       ;
+; bird_physics:phys|birdY[10]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[10]~DUPLICATE                         ;                  ;                       ;
+; bird_physics:phys|birdY[11]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[11]~DUPLICATE                         ;                  ;                       ;
+; bird_physics:phys|birdY[12]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[12]~DUPLICATE                         ;                  ;                       ;
+; bird_physics:phys|birdY[13]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[13]~DUPLICATE                         ;                  ;                       ;
+; bird_physics:phys|birdY[14]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[14]~DUPLICATE                         ;                  ;                       ;
+; bird_physics:phys|birdY[15]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; bird_physics:phys|birdY[15]~DUPLICATE                         ;                  ;                       ;
+; clk_divider:GAME|count[0]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[0]~DUPLICATE                           ;                  ;                       ;
+; clk_divider:GAME|count[3]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[3]~DUPLICATE                           ;                  ;                       ;
+; clk_divider:GAME|count[7]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[7]~DUPLICATE                           ;                  ;                       ;
+; clk_divider:GAME|count[8]                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[8]~DUPLICATE                           ;                  ;                       ;
+; clk_divider:GAME|count[11]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[11]~DUPLICATE                          ;                  ;                       ;
+; clk_divider:GAME|count[12]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[12]~DUPLICATE                          ;                  ;                       ;
+; clk_divider:GAME|count[15]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[15]~DUPLICATE                          ;                  ;                       ;
+; clk_divider:GAME|count[29]                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; clk_divider:GAME|count[29]~DUPLICATE                          ;                  ;                       ;
+; image_renderer:disp|background_rom:bg|row_reg[0]    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|background_rom:bg|row_reg[0]~DUPLICATE    ;                  ;                       ;
+; image_renderer:disp|background_rom:bg|row_reg[4]    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|background_rom:bg|row_reg[4]~DUPLICATE    ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[1]        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[1]~DUPLICATE        ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[3]        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[3]~DUPLICATE        ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[4]        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[4]~DUPLICATE        ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[5]        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[5]~DUPLICATE        ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[9]        ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[9]~DUPLICATE        ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[11]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[11]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[12]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[12]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[14]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[14]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[17]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[17]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[18]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[18]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[19]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[19]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[22]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[22]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|clk_divider:ANI|count[28]       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|clk_divider:ANI|count[28]~DUPLICATE       ;                  ;                       ;
+; image_renderer:disp|flap_1_rom:bird1|col_reg[2]     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|flap_1_rom:bird1|col_reg[2]~DUPLICATE     ;                  ;                       ;
+; image_renderer:disp|pause_rom:pause_icon|col_reg[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|pause_rom:pause_icon|col_reg[0]~DUPLICATE ;                  ;                       ;
+; image_renderer:disp|pause_rom:pause_icon|col_reg[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|pause_rom:pause_icon|col_reg[3]~DUPLICATE ;                  ;                       ;
+; image_renderer:disp|pause_rom:pause_icon|row_reg[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|pause_rom:pause_icon|row_reg[0]~DUPLICATE ;                  ;                       ;
+; image_renderer:disp|pause_rom:pause_icon|row_reg[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; image_renderer:disp|pause_rom:pause_icon|row_reg[1]~DUPLICATE ;                  ;                       ;
+; keyboard_input:kb|count[20]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; keyboard_input:kb|count[20]~DUPLICATE                         ;                  ;                       ;
+; keyboard_input:kb|count[22]                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; keyboard_input:kb|count[22]~DUPLICATE                         ;                  ;                       ;
+; vga_gen:vga|h_pos[1]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[1]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[4]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[4]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[5]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[5]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[7]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[7]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[8]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[8]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[9]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[9]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|h_pos[10]                               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[10]~DUPLICATE                               ;                  ;                       ;
+; vga_gen:vga|h_pos[11]                               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[11]~DUPLICATE                               ;                  ;                       ;
+; vga_gen:vga|h_pos[15]                               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|h_pos[15]~DUPLICATE                               ;                  ;                       ;
+; vga_gen:vga|v_pos[9]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[9]~DUPLICATE                                ;                  ;                       ;
+; vga_gen:vga|v_pos[15]                               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; vga_gen:vga|v_pos[15]~DUPLICATE                               ;                  ;                       ;
++-----------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------------+------------------+-----------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -259,8 +235,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 8928 ) ; 0.00 % ( 0 / 8928 )        ; 0.00 % ( 0 / 8928 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 8928 ) ; 0.00 % ( 0 / 8928 )        ; 0.00 % ( 0 / 8928 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 9437 ) ; 0.00 % ( 0 / 9437 )        ; 0.00 % ( 0 / 9437 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 9437 ) ; 0.00 % ( 0 / 9437 )        ; 0.00 % ( 0 / 9437 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -283,7 +259,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 8928 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 9437 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -299,41 +275,41 @@ The pin-out file can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/
 +-------------------------------------------------------------+-----------------------+-------+
 ; Resource                                                    ; Usage                 ; %     ;
 +-------------------------------------------------------------+-----------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 5,702 / 32,070        ; 18 %  ;
-; ALMs needed [=A-B+C]                                        ; 5,702                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 5,917 / 32,070        ; 18 %  ;
-;         [a] ALMs used for LUT logic and registers           ; 133                   ;       ;
-;         [b] ALMs used for LUT logic                         ; 5,767                 ;       ;
-;         [c] ALMs used for registers                         ; 17                    ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 5,913 / 32,070        ; 18 %  ;
+; ALMs needed [=A-B+C]                                        ; 5,913                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 6,141 / 32,070        ; 19 %  ;
+;         [a] ALMs used for LUT logic and registers           ; 139                   ;       ;
+;         [b] ALMs used for LUT logic                         ; 5,988                 ;       ;
+;         [c] ALMs used for registers                         ; 14                    ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 240 / 32,070          ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 25 / 32,070           ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 250 / 32,070          ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 22 / 32,070           ; < 1 % ;
 ;         [a] Due to location constrained logic               ; 0                     ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ;       ;
-;         [c] Due to LAB input limits                         ; 25                    ;       ;
+;         [c] Due to LAB input limits                         ; 22                    ;       ;
 ;         [d] Due to virtual I/Os                             ; 0                     ;       ;
 ;                                                             ;                       ;       ;
 ; Difficulty packing design                                   ; Low                   ;       ;
 ;                                                             ;                       ;       ;
-; Total LABs:  partially or completely used                   ; 742 / 3,207           ; 23 %  ;
-;     -- Logic LABs                                           ; 742                   ;       ;
+; Total LABs:  partially or completely used                   ; 756 / 3,207           ; 24 %  ;
+;     -- Logic LABs                                           ; 756                   ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ;       ;
 ;                                                             ;                       ;       ;
-; Combinational ALUT usage for logic                          ; 8,554                 ;       ;
-;     -- 7 input functions                                    ; 184                   ;       ;
-;     -- 6 input functions                                    ; 2,856                 ;       ;
-;     -- 5 input functions                                    ; 1,504                 ;       ;
-;     -- 4 input functions                                    ; 1,359                 ;       ;
-;     -- <=3 input functions                                  ; 2,651                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 7                     ;       ;
+; Combinational ALUT usage for logic                          ; 9,055                 ;       ;
+;     -- 7 input functions                                    ; 109                   ;       ;
+;     -- 6 input functions                                    ; 2,859                 ;       ;
+;     -- 5 input functions                                    ; 1,877                 ;       ;
+;     -- 4 input functions                                    ; 1,506                 ;       ;
+;     -- <=3 input functions                                  ; 2,704                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 6                     ;       ;
 ;                                                             ;                       ;       ;
-; Dedicated logic registers                                   ; 377                   ;       ;
+; Dedicated logic registers                                   ; 361                   ;       ;
 ;     -- By type:                                             ;                       ;       ;
-;         -- Primary logic registers                          ; 298 / 64,140          ; < 1 % ;
-;         -- Secondary logic registers                        ; 79 / 64,140           ; < 1 % ;
+;         -- Primary logic registers                          ; 306 / 64,140          ; < 1 % ;
+;         -- Secondary logic registers                        ; 55 / 64,140           ; < 1 % ;
 ;     -- By function:                                         ;                       ;       ;
-;         -- Design implementation registers                  ; 298                   ;       ;
-;         -- Routing optimization registers                   ; 79                    ;       ;
+;         -- Design implementation registers                  ; 306                   ;       ;
+;         -- Routing optimization registers                   ; 55                    ;       ;
 ;                                                             ;                       ;       ;
 ; Virtual pins                                                ; 0                     ;       ;
 ; I/O pins                                                    ; 37 / 457              ; 8 %   ;
@@ -388,12 +364,12 @@ The pin-out file can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/
 ; Oscillator blocks                                           ; 0 / 1                 ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 4                 ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2                 ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 3.6% / 3.7% / 3.2%    ;       ;
-; Peak interconnect usage (total/H/V)                         ; 21.0% / 21.9% / 18.2% ;       ;
-; Maximum fan-out                                             ; 1616                  ;       ;
-; Highest non-global fan-out                                  ; 1616                  ;       ;
-; Total fan-out                                               ; 39102                 ;       ;
-; Average fan-out                                             ; 4.34                  ;       ;
+; Average interconnect usage (total/H/V)                      ; 3.7% / 3.9% / 3.2%    ;       ;
+; Peak interconnect usage (total/H/V)                         ; 25.1% / 26.2% / 21.3% ;       ;
+; Maximum fan-out                                             ; 1688                  ;       ;
+; Highest non-global fan-out                                  ; 1688                  ;       ;
+; Total fan-out                                               ; 41011                 ;       ;
+; Average fan-out                                             ; 4.32                  ;       ;
 +-------------------------------------------------------------+-----------------------+-------+
 
 
@@ -402,44 +378,44 @@ The pin-out file can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 5702 / 32070 ( 18 % ) ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 5702                  ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 5917 / 32070 ( 18 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 133                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 5767                  ; 0                              ;
-;         [c] ALMs used for registers                         ; 17                    ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 5913 / 32070 ( 18 % ) ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 5913                  ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 6141 / 32070 ( 19 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 139                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 5988                  ; 0                              ;
+;         [c] ALMs used for registers                         ; 14                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 240 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 25 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 250 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 22 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
-;         [c] Due to LAB input limits                         ; 25                    ; 0                              ;
+;         [c] Due to LAB input limits                         ; 22                    ; 0                              ;
 ;         [d] Due to virtual I/Os                             ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 742 / 3207 ( 23 % )   ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 742                   ; 0                              ;
+; Total LABs:  partially or completely used                   ; 756 / 3207 ( 24 % )   ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 756                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 8554                  ; 0                              ;
-;     -- 7 input functions                                    ; 184                   ; 0                              ;
-;     -- 6 input functions                                    ; 2856                  ; 0                              ;
-;     -- 5 input functions                                    ; 1504                  ; 0                              ;
-;     -- 4 input functions                                    ; 1359                  ; 0                              ;
-;     -- <=3 input functions                                  ; 2651                  ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 7                     ; 0                              ;
+; Combinational ALUT usage for logic                          ; 9055                  ; 0                              ;
+;     -- 7 input functions                                    ; 109                   ; 0                              ;
+;     -- 6 input functions                                    ; 2859                  ; 0                              ;
+;     -- 5 input functions                                    ; 1877                  ; 0                              ;
+;     -- 4 input functions                                    ; 1506                  ; 0                              ;
+;     -- <=3 input functions                                  ; 2704                  ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 6                     ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 298 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 79 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 306 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 55 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
-;         -- Design implementation registers                  ; 298                   ; 0                              ;
-;         -- Routing optimization registers                   ; 79                    ; 0                              ;
+;         -- Design implementation registers                  ; 306                   ; 0                              ;
+;         -- Routing optimization registers                   ; 55                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -456,8 +432,8 @@ The pin-out file can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 39137                 ; 0                              ;
-;     -- Registered Connections                               ; 17162                 ; 0                              ;
+;     -- Total Connections                                    ; 41046                 ; 0                              ;
+;     -- Registered Connections                               ; 17173                 ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -489,10 +465,10 @@ The pin-out file can be found in C:/Users/James/Workspace/ELEC5566M-MiniProject/
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; PS2_clk  ; AD7   ; 3A       ; 6            ; 0            ; 0            ; 59                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; PS2_clk  ; AD7   ; 3A       ; 6            ; 0            ; 0            ; 58                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; PS2_data ; AE7   ; 3A       ; 6            ; 0            ; 17           ; 11                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; clk      ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 92                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; rst      ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 123                   ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; rst      ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 122                   ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -1514,62 +1490,71 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name         ; Library Name ;
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |main                                     ; 5701.5 (0.5)         ; 5915.5 (0.5)                     ; 239.0 (0.0)                                       ; 25.0 (0.0)                       ; 0.0 (0.0)            ; 8554 (1)            ; 377 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 37   ; 0            ; |main                                                                                                                      ; main                ; work         ;
-;    |bird_physics:phys|                    ; 46.6 (46.6)          ; 50.0 (50.0)                      ; 3.5 (3.5)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 83 (83)             ; 45 (45)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|bird_physics:phys                                                                                                    ; bird_physics        ; work         ;
-;    |clk_divider:GAME|                     ; 24.7 (24.7)          ; 23.5 (23.5)                      ; 0.8 (0.8)                                         ; 2.0 (2.0)                        ; 0.0 (0.0)            ; 41 (41)             ; 44 (44)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|clk_divider:GAME                                                                                                     ; clk_divider         ; work         ;
+; |main                                     ; 5912.5 (0.5)         ; 6140.5 (0.5)                     ; 250.0 (0.0)                                       ; 22.0 (0.0)                       ; 0.0 (0.0)            ; 9055 (1)            ; 361 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 37   ; 0            ; |main                                                                                                                      ; main                ; work         ;
+;    |bird_physics:phys|                    ; 47.7 (47.7)          ; 50.8 (50.8)                      ; 3.2 (3.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 83 (83)             ; 47 (47)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|bird_physics:phys                                                                                                    ; bird_physics        ; work         ;
+;    |clk_divider:GAME|                     ; 23.0 (23.0)          ; 23.5 (23.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 41 (41)             ; 41 (41)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|clk_divider:GAME                                                                                                     ; clk_divider         ; work         ;
 ;    |clk_divider:VGA|                      ; 0.5 (0.5)            ; 1.0 (1.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|clk_divider:VGA                                                                                                      ; clk_divider         ; work         ;
-;    |game_FSM:FSM|                         ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 3 (3)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|game_FSM:FSM                                                                                                         ; game_FSM            ; work         ;
-;    |image_renderer:disp|                  ; 5546.3 (1297.1)      ; 5752.2 (1323.2)                  ; 226.9 (31.2)                                      ; 20.9 (5.1)                       ; 0.0 (0.0)            ; 8303 (1583)         ; 175 (84)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp                                                                                                  ; image_renderer      ; work         ;
-;       |background_rom:bg|                 ; 1808.4 (1808.4)      ; 1883.5 (1883.5)                  ; 79.7 (79.7)                                       ; 4.6 (4.6)                        ; 0.0 (0.0)            ; 3034 (3034)         ; 14 (14)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|background_rom:bg                                                                                ; background_rom      ; work         ;
-;       |clk_divider:ANI|                   ; 26.3 (26.3)          ; 24.5 (24.5)                      ; 0.2 (0.2)                                         ; 2.0 (2.0)                        ; 0.0 (0.0)            ; 41 (41)             ; 43 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|clk_divider:ANI                                                                                  ; clk_divider         ; work         ;
-;       |flap_1_rom:bird1|                  ; 69.7 (69.7)          ; 73.5 (73.5)                      ; 3.8 (3.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 88 (88)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
-;       |flap_2_rom:bird2|                  ; 48.5 (48.5)          ; 49.4 (49.4)                      ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 57 (57)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_2_rom:bird2                                                                                 ; flap_2_rom          ; work         ;
-;       |flap_3_rom:bird3|                  ; 56.8 (56.8)          ; 58.0 (58.0)                      ; 1.2 (1.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 66 (66)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
-;       |floor_rom:floor|                   ; 776.8 (776.8)        ; 815.2 (815.2)                    ; 41.3 (41.3)                                       ; 3.0 (3.0)                        ; 0.0 (0.0)            ; 1076 (1076)         ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
-;       |lpm_divide:Div0|                   ; 39.3 (0.0)           ; 39.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_ibm:auto_generated|  ; 39.3 (0.0)           ; 39.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated                                                    ; lpm_divide_ibm      ; work         ;
-;             |sign_div_unsign_olh:divider| ; 39.3 (0.0)           ; 39.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider                        ; sign_div_unsign_olh ; work         ;
-;                |alt_u_div_mve:divider|    ; 39.3 (39.3)          ; 39.3 (39.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider  ; alt_u_div_mve       ; work         ;
-;       |lpm_divide:Div1|                   ; 41.8 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_ibm:auto_generated|  ; 41.8 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated                                                    ; lpm_divide_ibm      ; work         ;
-;             |sign_div_unsign_olh:divider| ; 41.8 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider                        ; sign_div_unsign_olh ; work         ;
-;                |alt_u_div_mve:divider|    ; 41.8 (41.8)          ; 41.8 (41.8)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider  ; alt_u_div_mve       ; work         ;
-;       |lpm_divide:Div10|                  ; 41.7 (0.0)           ; 41.8 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 41.7 (0.0)           ; 41.8 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 41.7 (0.0)           ; 41.8 (0.0)                       ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 41.7 (41.7)          ; 41.8 (41.8)                      ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |game_FSM:FSM|                         ; 2.7 (2.7)            ; 2.7 (2.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (3)               ; 3 (3)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|game_FSM:FSM                                                                                                         ; game_FSM            ; work         ;
+;    |image_renderer:disp|                  ; 5759.1 (578.6)       ; 5977.5 (598.5)                   ; 240.0 (22.5)                                      ; 21.6 (2.6)                       ; 0.0 (0.0)            ; 8804 (852)          ; 164 (56)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp                                                                                                  ; image_renderer      ; work         ;
+;       |background_rom:bg|                 ; 2925.4 (2925.4)      ; 3054.6 (3054.6)                  ; 141.9 (141.9)                                     ; 12.8 (12.8)                      ; 0.0 (0.0)            ; 4297 (4297)         ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|background_rom:bg                                                                                ; background_rom      ; work         ;
+;       |clk_divider:ANI|                   ; 23.5 (23.5)          ; 24.5 (24.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 41 (41)             ; 46 (46)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|clk_divider:ANI                                                                                  ; clk_divider         ; work         ;
+;       |flap_1_rom:bird1|                  ; 65.8 (65.8)          ; 68.9 (68.9)                      ; 3.1 (3.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 84 (84)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
+;       |flap_2_rom:bird2|                  ; 50.1 (50.1)          ; 50.0 (50.0)                      ; 0.0 (0.0)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 58 (58)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_2_rom:bird2                                                                                 ; flap_2_rom          ; work         ;
+;       |flap_3_rom:bird3|                  ; 58.8 (58.8)          ; 60.0 (60.0)                      ; 1.2 (1.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 69 (69)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
+;       |floor_rom:floor|                   ; 512.3 (512.3)        ; 537.7 (537.7)                    ; 26.7 (26.7)                                       ; 1.3 (1.3)                        ; 0.0 (0.0)            ; 888 (888)           ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
+;       |lpm_divide:Div0|                   ; 42.6 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.8 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_ibm:auto_generated|  ; 42.6 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.8 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated                                                    ; lpm_divide_ibm      ; work         ;
+;             |sign_div_unsign_olh:divider| ; 42.6 (0.0)           ; 41.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.8 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider                        ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_mve:divider|    ; 42.6 (42.6)          ; 41.8 (41.8)                      ; 0.0 (0.0)                                         ; 0.8 (0.8)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider  ; alt_u_div_mve       ; work         ;
+;       |lpm_divide:Div1|                   ; 41.9 (0.0)           ; 41.9 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_ibm:auto_generated|  ; 41.9 (0.0)           ; 41.9 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated                                                    ; lpm_divide_ibm      ; work         ;
+;             |sign_div_unsign_olh:divider| ; 41.9 (0.0)           ; 41.9 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider                        ; sign_div_unsign_olh ; work         ;
+;                |alt_u_div_mve:divider|    ; 41.9 (41.9)          ; 41.9 (41.9)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div1|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_mve:divider  ; alt_u_div_mve       ; work         ;
+;       |lpm_divide:Div10|                  ; 41.7 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.4 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 41.7 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.4 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 41.7 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.4 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 41.7 (41.7)          ; 41.3 (41.3)                      ; 0.0 (0.0)                                         ; 0.4 (0.4)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div11|                  ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div11                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_cbm:auto_generated|  ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div11|lpm_divide_cbm:auto_generated                                                   ; lpm_divide_cbm      ; work         ;
 ;             |sign_div_unsign_ilh:divider| ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div11|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider                       ; sign_div_unsign_ilh ; work         ;
 ;                |alt_u_div_ave:divider|    ; 23.8 (23.8)          ; 23.8 (23.8)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (48)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div11|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider|alt_u_div_ave:divider ; alt_u_div_ave       ; work         ;
-;       |lpm_divide:Div6|                   ; 39.3 (0.0)           ; 38.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.6 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 39.3 (0.0)           ; 38.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.6 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 39.3 (0.0)           ; 38.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.6 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 39.3 (39.3)          ; 38.7 (38.7)                      ; 0.0 (0.0)                                         ; 0.6 (0.6)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div7|                   ; 40.5 (0.0)           ; 40.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.5 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 40.5 (0.0)           ; 40.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.5 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 40.5 (0.0)           ; 40.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.5 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 40.5 (40.5)          ; 40.0 (40.0)                      ; 0.0 (0.0)                                         ; 0.5 (0.5)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div8|                   ; 41.5 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.2 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 41.5 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.2 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 41.5 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.2 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 41.5 (41.5)          ; 41.3 (41.3)                      ; 0.0 (0.0)                                         ; 0.2 (0.2)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div9|                   ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_cbm:auto_generated|  ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_cbm:auto_generated                                                    ; lpm_divide_cbm      ; work         ;
-;             |sign_div_unsign_ilh:divider| ; 23.8 (0.0)           ; 23.8 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider                        ; sign_div_unsign_ilh ; work         ;
-;                |alt_u_div_ave:divider|    ; 23.8 (23.8)          ; 23.8 (23.8)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (48)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider|alt_u_div_ave:divider  ; alt_u_div_ave       ; work         ;
-;       |lpm_divide:Mod0|                   ; 102.8 (0.0)          ; 102.8 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_55m:auto_generated|  ; 102.8 (0.0)          ; 102.8 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated                                                    ; lpm_divide_55m      ; work         ;
-;             |sign_div_unsign_8nh:divider| ; 102.8 (0.0)          ; 102.8 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider                        ; sign_div_unsign_8nh ; work         ;
-;                |alt_u_div_m2f:divider|    ; 102.8 (102.8)        ; 102.8 (102.8)                    ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_m2f:divider  ; alt_u_div_m2f       ; work         ;
-;       |lpm_divide:Mod1|                   ; 104.0 (0.0)          ; 104.0 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1                                                                                  ; lpm_divide          ; work         ;
-;          |lpm_divide_55m:auto_generated|  ; 104.0 (0.0)          ; 104.0 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated                                                    ; lpm_divide_55m      ; work         ;
-;             |sign_div_unsign_8nh:divider| ; 104.0 (0.0)          ; 104.0 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider                        ; sign_div_unsign_8nh ; work         ;
-;                |alt_u_div_m2f:divider|    ; 104.0 (104.0)        ; 104.0 (104.0)                    ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_m2f:divider  ; alt_u_div_m2f       ; work         ;
-;       |title_rom:title|                   ; 956.0 (956.0)        ; 1027.5 (1027.5)                  ; 76.5 (76.5)                                       ; 5.0 (5.0)                        ; 0.0 (0.0)            ; 1334 (1334)         ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|title_rom:title                                                                                  ; title_rom           ; work         ;
-;    |key_filter:p|                         ; 1.0 (1.0)            ; 1.3 (1.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|key_filter:p                                                                                                         ; key_filter          ; work         ;
-;    |keyboard_input:kb|                    ; 52.5 (52.5)          ; 53.5 (53.5)                      ; 3.0 (3.0)                                         ; 2.0 (2.0)                        ; 0.0 (0.0)            ; 75 (75)             ; 59 (59)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|keyboard_input:kb                                                                                                    ; keyboard_input      ; work         ;
-;    |vga_gen:vga|                          ; 26.0 (26.0)          ; 29.9 (29.9)                      ; 3.9 (3.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 45 (45)             ; 49 (49)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|vga_gen:vga                                                                                                          ; vga_gen             ; work         ;
+;       |lpm_divide:Div12|                  ; 39.5 (0.0)           ; 39.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div12                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 39.5 (0.0)           ; 39.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div12|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 39.5 (0.0)           ; 39.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div12|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 39.5 (39.5)          ; 39.5 (39.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div12|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div13|                  ; 23.5 (0.0)           ; 23.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div13                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_cbm:auto_generated|  ; 23.5 (0.0)           ; 23.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div13|lpm_divide_cbm:auto_generated                                                   ; lpm_divide_cbm      ; work         ;
+;             |sign_div_unsign_ilh:divider| ; 23.5 (0.0)           ; 23.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div13|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider                       ; sign_div_unsign_ilh ; work         ;
+;                |alt_u_div_ave:divider|    ; 23.5 (23.5)          ; 23.5 (23.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (48)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div13|lpm_divide_cbm:auto_generated|sign_div_unsign_ilh:divider|alt_u_div_ave:divider ; alt_u_div_ave       ; work         ;
+;       |lpm_divide:Div6|                   ; 41.1 (0.0)           ; 41.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.1 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 41.1 (0.0)           ; 41.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.1 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 41.1 (0.0)           ; 41.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.1 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 41.1 (41.1)          ; 41.0 (41.0)                      ; 0.0 (0.0)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div7|                   ; 42.5 (0.0)           ; 42.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 42.5 (0.0)           ; 42.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 42.5 (0.0)           ; 42.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 42.5 (42.5)          ; 42.5 (42.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div8|                   ; 41.3 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 41.3 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 41.3 (0.0)           ; 41.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 41.3 (41.3)          ; 41.3 (41.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div9|                   ; 42.3 (0.0)           ; 42.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 42.3 (0.0)           ; 42.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 42.3 (0.0)           ; 42.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|    ; 42.3 (42.3)          ; 42.3 (42.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 85 (85)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div9|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Mod0|                   ; 103.4 (0.0)          ; 103.4 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_55m:auto_generated|  ; 103.4 (0.0)          ; 103.4 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated                                                    ; lpm_divide_55m      ; work         ;
+;             |sign_div_unsign_8nh:divider| ; 103.4 (0.0)          ; 103.4 (0.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider                        ; sign_div_unsign_8nh ; work         ;
+;                |alt_u_div_m2f:divider|    ; 103.4 (103.4)        ; 103.4 (103.4)                    ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod0|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_m2f:divider  ; alt_u_div_m2f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 103.8 (0.0)          ; 104.1 (0.0)                      ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_55m:auto_generated|  ; 103.8 (0.0)          ; 104.1 (0.0)                      ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated                                                    ; lpm_divide_55m      ; work         ;
+;             |sign_div_unsign_8nh:divider| ; 103.8 (0.0)          ; 104.1 (0.0)                      ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider                        ; sign_div_unsign_8nh ; work         ;
+;                |alt_u_div_m2f:divider|    ; 103.8 (103.8)        ; 104.1 (104.1)                    ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 209 (209)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_m2f:divider  ; alt_u_div_m2f       ; work         ;
+;       |pause_rom:pause_icon|              ; 30.7 (30.7)          ; 31.3 (31.3)                      ; 0.6 (0.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 37 (37)             ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|pause_rom:pause_icon                                                                             ; pause_rom           ; work         ;
+;       |title_rom:title|                   ; 919.0 (919.0)        ; 965.7 (965.7)                    ; 50.3 (50.3)                                       ; 3.6 (3.6)                        ; 0.0 (0.0)            ; 1284 (1284)         ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|image_renderer:disp|title_rom:title                                                                                  ; title_rom           ; work         ;
+;    |key_filter:p|                         ; 1.2 (1.2)            ; 1.3 (1.3)                        ; 0.3 (0.3)                                         ; 0.2 (0.2)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|key_filter:p                                                                                                         ; key_filter          ; work         ;
+;    |keyboard_input:kb|                    ; 50.7 (50.7)          ; 51.7 (51.7)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 75 (75)             ; 58 (58)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|keyboard_input:kb                                                                                                    ; keyboard_input      ; work         ;
+;    |vga_gen:vga|                          ; 27.2 (27.2)          ; 31.5 (31.5)                      ; 4.5 (4.5)                                         ; 0.2 (0.2)                        ; 0.0 (0.0)            ; 46 (46)             ; 46 (46)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main|vga_gen:vga                                                                                                          ; vga_gen             ; work         ;
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1613,7 +1598,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; led[2]     ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; led[3]     ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; rst        ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; clk        ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; clk        ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; PS2_clk    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; PS2_data   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
@@ -1628,11 +1613,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - vga_gen:vga|display_on                      ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_sync                          ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_sync                          ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[0]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[1]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[2]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[3]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[4]                  ; 1                 ; 0       ;
 ;      - image_renderer:disp|RGB[5]                  ; 1                 ; 0       ;
 ;      - image_renderer:disp|RGB[6]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[7]                  ; 1                 ; 0       ;
 ;      - image_renderer:disp|RGB[8]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[9]                  ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[10]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[11]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[12]                 ; 1                 ; 0       ;
 ;      - image_renderer:disp|RGB[13]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[14]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[15]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[16]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[17]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[18]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[19]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[20]                 ; 1                 ; 0       ;
 ;      - image_renderer:disp|RGB[21]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[22]                 ; 1                 ; 0       ;
+;      - image_renderer:disp|RGB[23]                 ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[5]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[4]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[3]                        ; 1                 ; 0       ;
@@ -1649,48 +1653,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - vga_gen:vga|h_pos[8]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[7]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[6]                        ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[3]                        ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[9]                        ; 1                 ; 0       ;
+;      - vga_gen:vga|v_pos[15]                       ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[8]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[10]                       ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[7]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[6]                        ; 1                 ; 0       ;
+;      - vga_gen:vga|v_pos[9]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[11]                       ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[0]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[5]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[1]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[2]                        ; 1                 ; 0       ;
+;      - vga_gen:vga|v_pos[3]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[4]                        ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[12]                       ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[13]                       ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[14]                       ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[15]                       ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[17]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[18]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[19]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[11]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[10]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[9]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[16]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[3]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[2]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[1]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[0]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[12]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[23]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[20]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[22]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[7]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[4]                  ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[15]                 ; 1                 ; 0       ;
-;      - image_renderer:disp|RGB[14]                 ; 1                 ; 0       ;
 ;      - keyboard_input:kb|flap~1                    ; 1                 ; 0       ;
 ;      - key_filter:p|p_key                          ; 1                 ; 0       ;
-;      - game_FSM:FSM|game_state[2]                  ; 1                 ; 0       ;
 ;      - game_FSM:FSM|game_state[0]                  ; 1                 ; 0       ;
 ;      - game_FSM:FSM|game_state[1]                  ; 1                 ; 0       ;
+;      - game_FSM:FSM|game_state[2]                  ; 1                 ; 0       ;
 ;      - keyboard_input:kb|pause~1                   ; 1                 ; 0       ;
-;      - keyboard_input:kb|pause~2                   ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[8]                  ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[9]                  ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[6]                  ; 1                 ; 0       ;
@@ -1722,36 +1706,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - bird_physics:phys|Y_vel[7]                  ; 1                 ; 0       ;
 ;      - bird_physics:phys|Y_vel[6]                  ; 1                 ; 0       ;
 ;      - bird_physics:phys|Y_vel[5]                  ; 1                 ; 0       ;
-;      - vga_gen:vga|h_pos[7]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|h_pos[5]~DUPLICATE              ; 1                 ; 0       ;
+;      - keyboard_input:kb|pause~2                   ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[9]~DUPLICATE              ; 1                 ; 0       ;
 ;      - vga_gen:vga|h_pos[15]~DUPLICATE             ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[3]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[4]~DUPLICATE              ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[11]~DUPLICATE             ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[10]~DUPLICATE             ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[8]~DUPLICATE              ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[7]~DUPLICATE              ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[5]~DUPLICATE              ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[4]~DUPLICATE              ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[9]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[13]~DUPLICATE             ; 1                 ; 0       ;
 ;      - vga_gen:vga|v_pos[15]~DUPLICATE             ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[5]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[7]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|v_pos[6]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|h_pos[3]~DUPLICATE              ; 1                 ; 0       ;
-;      - vga_gen:vga|h_pos[0]~DUPLICATE              ; 1                 ; 0       ;
+;      - vga_gen:vga|h_pos[1]~DUPLICATE              ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[8]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[9]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[6]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[7]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[10]~DUPLICATE       ; 1                 ; 0       ;
+;      - bird_physics:phys|birdY[11]~DUPLICATE       ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[12]~DUPLICATE       ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[13]~DUPLICATE       ; 1                 ; 0       ;
+;      - bird_physics:phys|birdY[14]~DUPLICATE       ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[5]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[4]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[3]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[2]~DUPLICATE        ; 1                 ; 0       ;
 ;      - bird_physics:phys|birdY[15]~DUPLICATE       ; 1                 ; 0       ;
 ; clk                                                ;                   ;         ;
-;      - clk_divider:VGA|out_clk                     ; 0                 ; 0       ;
-;      - clk_divider:GAME|out_clk                    ; 0                 ; 0       ;
-;      - image_renderer:disp|clk_divider:ANI|out_clk ; 0                 ; 0       ;
+;      - clk_divider:VGA|out_clk                     ; 1                 ; 0       ;
+;      - clk_divider:GAME|out_clk                    ; 1                 ; 0       ;
+;      - image_renderer:disp|clk_divider:ANI|out_clk ; 1                 ; 0       ;
 ; PS2_clk                                            ;                   ;         ;
 ;      - PS2_clk~inputCLKENA0                        ; 0                 ; 0       ;
 ; PS2_data                                           ;                   ;         ;
@@ -1774,26 +1758,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------+----------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                            ; Location             ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------+----------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; PS2_clk                                         ; PIN_AD7              ; 59      ; Clock                     ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; PS2_clk                                         ; PIN_AD7              ; 58      ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; clk                                             ; PIN_AF14             ; 4       ; Clock                     ; no     ; --                   ; --               ; --                        ;
 ; clk                                             ; PIN_AF14             ; 89      ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; clk_divider:GAME|LessThan0~6                    ; LABCELL_X50_Y2_N42   ; 43      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; clk_divider:GAME|out_clk                        ; FF_X51_Y2_N5         ; 77      ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clk_divider:VGA|out_clk                         ; FF_X25_Y70_N14       ; 123     ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|Equal6~3                    ; LABCELL_X23_Y66_N54  ; 31      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|Equal7~3                    ; MLABCELL_X25_Y76_N48 ; 29      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|RGB[12]~17                  ; LABCELL_X30_Y71_N57  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|RGB[12]~20                  ; LABCELL_X29_Y71_N18  ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|RGB[17]~11                  ; LABCELL_X30_Y70_N33  ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|RGB[17]~7                   ; LABCELL_X31_Y68_N48  ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|clk_divider:ANI|LessThan0~7 ; LABCELL_X51_Y2_N36   ; 42      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; image_renderer:disp|clk_divider:ANI|out_clk     ; FF_X51_Y2_N44        ; 30      ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; keyboard_input:kb|Equal0~4                      ; LABCELL_X30_Y76_N48  ; 43      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; keyboard_input:kb|always0~4                     ; LABCELL_X29_Y74_N3   ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; keyboard_input:kb|code[7]~0                     ; LABCELL_X29_Y74_N18  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; rst                                             ; PIN_AB12             ; 123     ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; vga_gen:vga|Equal0~3                            ; LABCELL_X24_Y68_N54  ; 46      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; vga_gen:vga|Equal1~3                            ; MLABCELL_X25_Y69_N57 ; 24      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; clk_divider:GAME|LessThan0~6                    ; LABCELL_X29_Y42_N36  ; 40      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; clk_divider:GAME|out_clk                        ; FF_X21_Y44_N50       ; 64      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; clk_divider:VGA|out_clk                         ; FF_X19_Y67_N8        ; 134     ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|Equal3~0                    ; LABCELL_X17_Y69_N48  ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|Equal5~3                    ; LABCELL_X18_Y66_N45  ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|Equal6~3                    ; MLABCELL_X21_Y69_N48 ; 16      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|RGB[9]~14                   ; LABCELL_X18_Y69_N0   ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|clk_divider:ANI|LessThan0~7 ; LABCELL_X31_Y40_N42  ; 45      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; image_renderer:disp|clk_divider:ANI|out_clk     ; FF_X30_Y43_N20       ; 17      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; keyboard_input:kb|Equal0~4                      ; LABCELL_X16_Y71_N36  ; 42      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; keyboard_input:kb|always0~4                     ; LABCELL_X16_Y69_N51  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; keyboard_input:kb|code[7]~0                     ; LABCELL_X17_Y71_N0   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; rst                                             ; PIN_AB12             ; 122     ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; vga_gen:vga|Equal0~3                            ; LABCELL_X27_Y67_N15  ; 43      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; vga_gen:vga|Equal1~3                            ; LABCELL_X19_Y67_N24  ; 18      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------+----------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1802,24 +1784,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+----------+---------+----------------------+------------------+---------------------------+
 ; Name    ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------+----------+---------+----------------------+------------------+---------------------------+
-; PS2_clk ; PIN_AD7  ; 59      ; Global Clock         ; GCLK5            ; --                        ;
+; PS2_clk ; PIN_AD7  ; 58      ; Global Clock         ; GCLK4            ; --                        ;
 ; clk     ; PIN_AF14 ; 89      ; Global Clock         ; GCLK6            ; --                        ;
 +---------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                            ;
-+--------------------------------------------------+---------+
-; Name                                             ; Fan-Out ;
-+--------------------------------------------------+---------+
-; image_renderer:disp|background_rom:bg|col_reg[3] ; 1616    ;
-; image_renderer:disp|background_rom:bg|col_reg[4] ; 1359    ;
-; image_renderer:disp|background_rom:bg|col_reg[2] ; 1258    ;
-; image_renderer:disp|background_rom:bg|col_reg[0] ; 1256    ;
-; image_renderer:disp|background_rom:bg|col_reg[1] ; 1111    ;
-; image_renderer:disp|background_rom:bg|col_reg[5] ; 724     ;
-; image_renderer:disp|background_rom:bg|row_reg[0] ; 704     ;
-+--------------------------------------------------+---------+
++----------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                      ;
++------------------------------------------------------------+---------+
+; Name                                                       ; Fan-Out ;
++------------------------------------------------------------+---------+
+; image_renderer:disp|background_rom:bg|col_reg[3]           ; 1688    ;
+; image_renderer:disp|background_rom:bg|col_reg[4]           ; 1522    ;
+; image_renderer:disp|background_rom:bg|col_reg[0]           ; 1360    ;
+; image_renderer:disp|background_rom:bg|col_reg[2]           ; 1342    ;
+; image_renderer:disp|background_rom:bg|col_reg[1]           ; 1180    ;
+; image_renderer:disp|background_rom:bg|row_reg[0]~DUPLICATE ; 775     ;
+; image_renderer:disp|background_rom:bg|col_reg[5]           ; 700     ;
+; image_renderer:disp|background_rom:bg|row_reg[1]           ; 578     ;
++------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------+
@@ -1827,14 +1810,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+---------------------------+
 ; Routing Resource Type                       ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Block interconnects                         ; 16,175 / 289,320 ( 6 % )  ;
-; C12 interconnects                           ; 130 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 4,073 / 119,108 ( 3 % )   ;
-; C4 interconnects                            ; 2,288 / 56,300 ( 4 % )    ;
+; Block interconnects                         ; 16,639 / 289,320 ( 6 % )  ;
+; C12 interconnects                           ; 111 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 4,169 / 119,108 ( 4 % )   ;
+; C4 interconnects                            ; 2,124 / 56,300 ( 4 % )    ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )            ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )            ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )            ;
-; Direct links                                ; 1,038 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 1,069 / 289,320 ( < 1 % ) ;
 ; Global clocks                               ; 2 / 16 ( 13 % )           ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )             ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )             ;
@@ -1890,12 +1873,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )             ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )            ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )            ;
-; Local interconnects                         ; 4,201 / 84,580 ( 5 % )    ;
+; Local interconnects                         ; 4,467 / 84,580 ( 5 % )    ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )            ;
-; R14 interconnects                           ; 180 / 12,676 ( 1 % )      ;
-; R14/C12 interconnect drivers                ; 271 / 20,720 ( 1 % )      ;
-; R3 interconnects                            ; 5,281 / 130,992 ( 4 % )   ;
-; R6 interconnects                            ; 8,636 / 266,960 ( 3 % )   ;
+; R14 interconnects                           ; 176 / 12,676 ( 1 % )      ;
+; R14/C12 interconnect drivers                ; 254 / 20,720 ( 1 % )      ;
+; R3 interconnects                            ; 5,384 / 130,992 ( 4 % )   ;
+; R6 interconnects                            ; 9,038 / 266,960 ( 3 % )   ;
 ; Spine clocks                                ; 3 / 360 ( < 1 % )         ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )        ;
 +---------------------------------------------+---------------------------+
@@ -2043,130 +2026,127 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                                      ;
-+--------------------------------------------------+---------------------------------------------+-------------------+
-; Source Clock(s)                                  ; Destination Clock(s)                        ; Delay Added in ns ;
-+--------------------------------------------------+---------------------------------------------+-------------------+
-; clk_divider:GAME|out_clk                         ; clk_divider:GAME|out_clk                    ; 47.1              ;
-; clk_divider:VGA|out_clk                          ; clk_divider:VGA|out_clk                     ; 40.8              ;
-; clk                                              ; clk                                         ; 24.5              ;
-; clk                                              ; clk_divider:GAME|out_clk                    ; 20.7              ;
-; clk                                              ; clk_divider:VGA|out_clk                     ; 18.8              ;
-; clk_divider:VGA|out_clk,clk_divider:GAME|out_clk ; clk_divider:VGA|out_clk                     ; 13.6              ;
-; clk,clk_divider:GAME|out_clk                     ; clk_divider:GAME|out_clk                    ; 8.1               ;
-; image_renderer:disp|clk_divider:ANI|out_clk      ; image_renderer:disp|clk_divider:ANI|out_clk ; 5.1               ;
-+--------------------------------------------------+---------------------------------------------+-------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                 ;
++---------------------------------------------+---------------------------------------------+-------------------+
+; Source Clock(s)                             ; Destination Clock(s)                        ; Delay Added in ns ;
++---------------------------------------------+---------------------------------------------+-------------------+
+; clk_divider:GAME|out_clk                    ; clk_divider:GAME|out_clk                    ; 40.9              ;
+; clk                                         ; clk                                         ; 29.7              ;
+; clk_divider:VGA|out_clk                     ; clk_divider:VGA|out_clk                     ; 16.5              ;
+; clk                                         ; clk_divider:VGA|out_clk                     ; 11.7              ;
+; image_renderer:disp|clk_divider:ANI|out_clk ; image_renderer:disp|clk_divider:ANI|out_clk ; 4.1               ;
++---------------------------------------------+---------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                     ;
-+-------------------------------------------------+---------------------------------------------+-------------------+
-; Source Register                                 ; Destination Register                        ; Delay Added in ns ;
-+-------------------------------------------------+---------------------------------------------+-------------------+
-; clk_divider:VGA|out_clk                         ; clk_divider:VGA|out_clk                     ; 7.752             ;
-; image_renderer:disp|clk_divider:ANI|out_clk     ; image_renderer:disp|clk_divider:ANI|out_clk ; 6.063             ;
-; clk_divider:GAME|out_clk                        ; clk_divider:GAME|out_clk                    ; 6.052             ;
-; image_renderer:disp|clk_divider:ANI|count[30]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[29]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[28]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[27]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[26]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[25]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[24]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[31]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[22]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[21]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[20]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[19]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[18]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[16]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[15]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[14]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[13]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[12]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[11]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[10]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[9]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[8]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[7]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[6]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[5]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[4]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[3]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[2]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[1]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[0]    ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[17]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; image_renderer:disp|clk_divider:ANI|count[23]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.547             ;
-; clk_divider:GAME|count[30]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[29]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[28]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[27]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[26]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[25]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[24]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[23]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[22]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[21]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[19]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[18]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[17]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[16]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[15]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[14]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[13]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[12]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[11]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[10]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[9]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[8]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[7]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[6]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[5]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[4]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[3]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[2]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[1]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[0]                       ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[20]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; clk_divider:GAME|count[31]                      ; clk_divider:GAME|out_clk                    ; 2.545             ;
-; vga_gen:vga|v_pos[2]                            ; image_renderer:disp|RGB[17]                 ; 2.113             ;
-; vga_gen:vga|v_pos[3]                            ; image_renderer:disp|RGB[17]                 ; 2.113             ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[0] ; image_renderer:disp|RGB[9]                  ; 1.847             ;
-; vga_gen:vga|h_pos[10]                           ; image_renderer:disp|RGB[17]                 ; 1.714             ;
-; vga_gen:vga|v_pos[7]                            ; image_renderer:disp|RGB[17]                 ; 1.595             ;
-; vga_gen:vga|v_pos[5]                            ; image_renderer:disp|RGB[17]                 ; 1.595             ;
-; vga_gen:vga|v_pos[4]                            ; image_renderer:disp|RGB[17]                 ; 1.595             ;
-; vga_gen:vga|v_pos[6]                            ; image_renderer:disp|RGB[17]                 ; 1.595             ;
-; game_FSM:FSM|game_state[1]                      ; bird_physics:phys|Y_vel[1]                  ; 1.561             ;
-; vga_gen:vga|v_pos[8]                            ; image_renderer:disp|RGB[17]                 ; 1.552             ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[4] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; bird_physics:phys|bird_state[0]                 ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; bird_physics:phys|bird_state[1]                 ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|row_reg[1] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|row_reg[0] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[1] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[2] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|row_reg[2] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|col_reg[3] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; image_renderer:disp|flap_1_rom:bird1|row_reg[3] ; image_renderer:disp|RGB[9]                  ; 1.522             ;
-; game_FSM:FSM|game_state[0]                      ; bird_physics:phys|Y_vel[1]                  ; 1.419             ;
-; vga_gen:vga|v_pos[14]                           ; image_renderer:disp|RGB[17]                 ; 1.385             ;
-; game_FSM:FSM|game_state[2]                      ; bird_physics:phys|Y_vel[4]                  ; 1.341             ;
-; vga_gen:vga|v_pos[13]                           ; image_renderer:disp|RGB[17]                 ; 1.333             ;
-; vga_gen:vga|v_pos[12]                           ; image_renderer:disp|RGB[17]                 ; 1.333             ;
-; vga_gen:vga|v_pos[11]                           ; image_renderer:disp|RGB[17]                 ; 1.333             ;
-; vga_gen:vga|v_pos[10]                           ; image_renderer:disp|RGB[17]                 ; 1.333             ;
-; vga_gen:vga|v_pos[9]                            ; image_renderer:disp|RGB[17]                 ; 1.333             ;
-; bird_physics:phys|Y_vel[12]                     ; bird_physics:phys|birdY[15]                 ; 1.192             ;
-; bird_physics:phys|Y_vel[8]                      ; bird_physics:phys|birdY[15]                 ; 1.185             ;
-; bird_physics:phys|Y_vel[11]                     ; bird_physics:phys|birdY[15]                 ; 1.176             ;
-; bird_physics:phys|Y_vel[10]                     ; bird_physics:phys|birdY[15]                 ; 1.148             ;
-; vga_gen:vga|display_on                          ; image_renderer:disp|RGB[16]                 ; 1.130             ;
-+-------------------------------------------------+---------------------------------------------+-------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                    ;
++------------------------------------------------+---------------------------------------------+-------------------+
+; Source Register                                ; Destination Register                        ; Delay Added in ns ;
++------------------------------------------------+---------------------------------------------+-------------------+
+; clk_divider:VGA|out_clk                        ; clk_divider:VGA|out_clk                     ; 7.546             ;
+; clk_divider:GAME|out_clk                       ; clk_divider:GAME|out_clk                    ; 6.988             ;
+; image_renderer:disp|clk_divider:ANI|out_clk    ; image_renderer:disp|clk_divider:ANI|out_clk ; 5.390             ;
+; image_renderer:disp|clk_divider:ANI|count[30]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[29]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[28]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[27]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[26]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[25]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[24]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[31]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[22]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[21]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[20]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[19]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[18]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[16]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[15]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[14]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[13]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[12]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[11]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[10]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[9]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[8]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[7]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[6]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[5]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[4]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[3]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[2]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[1]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[0]   ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[17]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; image_renderer:disp|clk_divider:ANI|count[23]  ; image_renderer:disp|clk_divider:ANI|out_clk ; 2.569             ;
+; clk_divider:GAME|count[30]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[29]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[28]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[27]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[26]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[25]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[24]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[23]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[22]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[21]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[19]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[18]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[17]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[16]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[15]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[14]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[13]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[12]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[11]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[10]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[9]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[8]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[7]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[6]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[5]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[4]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[3]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[2]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[1]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[0]                      ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[20]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; clk_divider:GAME|count[31]                     ; clk_divider:GAME|out_clk                    ; 2.559             ;
+; vga_gen:vga|h_pos[7]                           ; image_renderer:disp|RGB[3]                  ; 1.406             ;
+; vga_gen:vga|h_pos[15]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[14]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[13]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[12]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[11]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[8]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[10]                          ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[5]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[4]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[3]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[2]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[1]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[6]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; vga_gen:vga|h_pos[9]                           ; image_renderer:disp|RGB[3]                  ; 1.385             ;
+; image_renderer:disp|RGB[3]                     ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[3] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|row_reg[0] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[5] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[7] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[6] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|row_reg[2] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|row_reg[1] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|row_reg[3] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[2] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[0] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[1] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; image_renderer:disp|floor_rom:floor|col_reg[4] ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; vga_gen:vga|v_pos[15]                          ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; vga_gen:vga|v_pos[13]                          ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; vga_gen:vga|v_pos[12]                          ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; vga_gen:vga|v_pos[11]                          ; image_renderer:disp|RGB[3]                  ; 1.255             ;
+; vga_gen:vga|v_pos[10]                          ; image_renderer:disp|RGB[3]                  ; 1.255             ;
++------------------------------------------------+---------------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
 
@@ -2201,28 +2181,28 @@ Info (176235): Finished register packing
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:13
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:16
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:20
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:11
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:12
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 3% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X22_Y46 to location X32_Y57
+    Info (170196): Router estimated peak interconnect usage is 22% of the available device resources in the region that extends from location X11_Y46 to location X21_Y57
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:21
-Info (11888): Total time spent on timing analysis during the Fitter is 13.50 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:19
+Info (11888): Total time spent on timing analysis during the Fitter is 12.73 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:18
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:19
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 6627 megabytes
-    Info: Processing ended: Sat May 15 01:10:16 2021
-    Info: Elapsed time: 00:02:07
-    Info: Total CPU time (on all processors): 00:04:35
+    Info: Peak virtual memory: 6639 megabytes
+    Info: Processing ended: Sat May 15 01:56:05 2021
+    Info: Elapsed time: 00:02:15
+    Info: Total CPU time (on all processors): 00:04:57
 
 
 +----------------------------+

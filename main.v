@@ -60,25 +60,25 @@ wire flap, pause, p_pause;
 
 vga_gen vga
 (
-	.clk				( VGA_clk ),
-	.rst				( rst ),
-	.h_sync			( h_sync ),
-	.v_sync			( v_sync ),
-	.v_clk			( v_clk ),
-	.display_on		( display_on ),
-	.sync_n			( sync_n ),
-	.h_pos			( X ),
-	.v_pos			( Y )
+	.clk				( VGA_clk 		),
+	.rst				( rst 			),
+	.h_sync			( h_sync 		),
+	.v_sync			( v_sync 		),
+	.v_clk			( v_clk 			),
+	.display_on		( display_on 	),
+	.sync_n			( sync_n 		),
+	.h_pos			( X 				),
+	.v_pos			( Y 				)
 );
 
 keyboard_input kb
 (
-	.clk				( clk ),
-	.rst				( rst ),
-	.PS2_clk			( PS2_clk ),
-	.PS2_data		( PS2_data ),
-	.flap				( flap ),
-	.pause			( p_pause )
+	.clk				( clk 			),
+	.rst				( rst 			),
+	.PS2_clk			( PS2_clk 		),
+	.PS2_data		( PS2_data 		),
+	.flap				( flap 			),
+	.pause			( p_pause 		)
 );
 
 //key_filter f (clk, p_flap, flap);
@@ -87,44 +87,44 @@ key_filter p (clk, p_pause, pause);
 wire collision = 0;
 game_FSM FSM
 (
-	.clk				( clk ),
-	.rst				( rst ),
-	.collision		( collision ),
-	.pause			( pause ),
-	.flap				( flap ),
-	.game_state		( game_state )
+	.clk				( clk 			),
+	.rst				( rst 			),
+	.collision		( collision 	),
+	.pause			( pause 			),
+	.flap				( flap 			),
+	.game_state		( game_state 	)
 );
 
 bird_physics #(
-	.BIRD_SIZE_X	( BIRD_SIZE_X ),
-	.BIRD_SIZE_Y	( BIRD_SIZE_Y )
+	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
+	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
 ) phys (
-	.GAME_clk		( GAME_clk ),
-	.rst				( rst ),
-	.game_state		( game_state ),
-	.flap				( flap ),
-	.birdY			( birdY ),
-	.bird_state		( bird_state )
+	.GAME_clk		( GAME_clk 		),
+	.rst				( rst				),
+	.game_state		( game_state 	),
+	.flap				( flap 			),
+	.birdY			( birdY 			),
+	.bird_state		( bird_state 	)
 );
 
 image_renderer #(
-	.BIRD_SIZE_X	( BIRD_SIZE_X ),
-	.BIRD_SIZE_Y	( BIRD_SIZE_Y ),
-	.SCALE			( SCALE )
+	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
+	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
+	.SCALE			( SCALE 			)
 ) disp (
-	.clk				( clk ),
-	.VGA_clk			( VGA_clk ),
-	.GAME_clk		( GAME_clk ),
-	.rst				( rst ),
-	.display_on		( display_on ),
-	.game_state		( game_state ),
-	.bird_state		( bird_state ),
-	.flap				( flap ),
-	.X					( X ),
-	.Y					( Y ),
-	.birdX			( birdX ),
-	.birdY			( birdY ),
-	.RGB				( {R,G,B} )
+	.clk				( clk 			),
+	.VGA_clk			( VGA_clk 		),
+	.GAME_clk		( GAME_clk 		),
+	.rst				( rst 			),
+	.display_on		( display_on 	),
+	.game_state		( game_state 	),
+	.bird_state		( bird_state 	),
+	.flap				( flap 			),
+	.X					( X 				),
+	.Y					( Y 				),
+	.birdX			( birdX 			),
+	.birdY			( birdY 			),
+	.RGB				( {R,G,B} 		)
 );
 
 assign led = {pause, flap};

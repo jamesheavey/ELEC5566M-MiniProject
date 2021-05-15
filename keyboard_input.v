@@ -33,15 +33,16 @@ end
 always @(code or rst)
 begin
 	if (rst) begin
-		flap <= 0;
+		flap 	<= 0;
 		pause <= 0;
 	end else begin
-		flap <= 0;
+		flap 	<= 0;
 		pause <= 0;
 		if (code == 8'h29)
-			flap <= 1;
+			flap 	<= 1;
 		else if (code == 8'h76)
 			pause <= 1;
 	end
 end
+
 endmodule

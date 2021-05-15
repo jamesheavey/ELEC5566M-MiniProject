@@ -3,243 +3,243 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -33.039
-TNS   : -1849.229
+Slack : -31.599
+TNS   : -2029.424
 
 Type  : Slow 1100mV 85C Model Setup 'clk_divider:GAME|out_clk'
-Slack : -8.409
-TNS   : -263.385
+Slack : -9.608
+TNS   : -274.637
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -7.578
-TNS   : -290.000
+Slack : -7.632
+TNS   : -270.058
 
 Type  : Slow 1100mV 85C Model Setup 'PS2_clk'
-Slack : -4.680
-TNS   : -250.164
+Slack : -5.504
+TNS   : -258.910
 
 Type  : Slow 1100mV 85C Model Setup 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -2.495
-TNS   : -72.264
+Slack : -3.349
+TNS   : -53.576
 
 Type  : Slow 1100mV 85C Model Hold 'PS2_clk'
-Slack : 0.222
+Slack : 0.220
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clk_divider:GAME|out_clk'
-Slack : 0.291
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'clk_divider:VGA|out_clk'
-Slack : 0.292
+Slack : 0.271
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : 0.292
+Slack : 0.271
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clk_divider:VGA|out_clk'
+Slack : 0.283
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.375
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.755
-TNS   : -49.197
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
-Slack : -0.675
-TNS   : -75.448
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -0.661
-TNS   : -31.064
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : -0.483
-TNS   : -86.102
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
-Slack : -0.394
-TNS   : -31.972
-
-Type  : Slow 1100mV 0C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -33.889
-TNS   : -1854.837
-
-Type  : Slow 1100mV 0C Model Setup 'clk_divider:GAME|out_clk'
-Slack : -8.523
-TNS   : -264.968
-
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -7.366
-TNS   : -287.723
-
-Type  : Slow 1100mV 0C Model Setup 'PS2_clk'
-Slack : -4.664
-TNS   : -248.961
-
-Type  : Slow 1100mV 0C Model Setup 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -2.406
-TNS   : -69.654
-
-Type  : Slow 1100mV 0C Model Hold 'PS2_clk'
-Slack : 0.272
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : 0.292
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'clk_divider:GAME|out_clk'
-Slack : 0.293
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'clk_divider:VGA|out_clk'
-Slack : 0.294
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'clk'
 Slack : 0.377
 TNS   : 0.000
 
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.753
+TNS   : -49.521
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
+Slack : -0.394
+TNS   : -85.605
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
+Slack : -0.394
+TNS   : -45.826
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
+Slack : -0.394
+TNS   : -30.121
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : -0.394
+TNS   : -12.016
+
+Type  : Slow 1100mV 0C Model Setup 'clk_divider:VGA|out_clk'
+Slack : -32.580
+TNS   : -2061.116
+
+Type  : Slow 1100mV 0C Model Setup 'clk_divider:GAME|out_clk'
+Slack : -9.521
+TNS   : -276.744
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -7.399
+TNS   : -263.782
+
+Type  : Slow 1100mV 0C Model Setup 'PS2_clk'
+Slack : -5.445
+TNS   : -254.295
+
+Type  : Slow 1100mV 0C Model Setup 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : -3.477
+TNS   : -55.624
+
+Type  : Slow 1100mV 0C Model Hold 'PS2_clk'
+Slack : 0.270
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk_divider:GAME|out_clk'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk_divider:VGA|out_clk'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.394
+TNS   : 0.000
+
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.765
-TNS   : -52.796
+Slack : -0.762
+TNS   : -53.980
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
-Slack : -0.715
-TNS   : -82.632
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -0.698
-TNS   : -34.121
+Slack : -0.401
+TNS   : -46.861
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : -0.465
-TNS   : -84.501
+Slack : -0.394
+TNS   : -82.843
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PS2_clk'
 Slack : -0.394
-TNS   : -30.172
+TNS   : -29.507
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : -0.394
+TNS   : -12.288
 
 Type  : Fast 1100mV 85C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -17.174
-TNS   : -1041.415
+Slack : -16.747
+TNS   : -1125.571
 
 Type  : Fast 1100mV 85C Model Setup 'clk_divider:GAME|out_clk'
-Slack : -4.971
-TNS   : -142.497
+Slack : -5.797
+TNS   : -148.960
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -4.583
-TNS   : -131.918
+Slack : -4.509
+TNS   : -125.364
 
 Type  : Fast 1100mV 85C Model Setup 'PS2_clk'
-Slack : -2.172
-TNS   : -111.801
+Slack : -2.657
+TNS   : -114.949
 
 Type  : Fast 1100mV 85C Model Setup 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -1.199
-TNS   : -34.735
+Slack : -1.550
+TNS   : -24.800
 
 Type  : Fast 1100mV 85C Model Hold 'clk_divider:GAME|out_clk'
-Slack : 0.096
+Slack : 0.088
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : 0.098
+Slack : 0.090
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk_divider:VGA|out_clk'
-Slack : 0.100
+Slack : 0.096
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'PS2_clk'
-Slack : 0.143
+Slack : 0.142
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.183
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.692
-TNS   : -9.963
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
-Slack : -0.405
-TNS   : -26.071
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -0.381
-TNS   : -11.807
+Slack : -0.686
+TNS   : -9.949
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
-Slack : -0.308
-TNS   : -18.213
+Slack : -0.289
+TNS   : -16.731
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
+Slack : -0.130
+TNS   : -5.775
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : -0.124
+TNS   : -1.960
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : -0.211
-TNS   : -10.558
+Slack : -0.096
+TNS   : -4.038
 
 Type  : Fast 1100mV 0C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -16.086
-TNS   : -950.639
+Slack : -15.664
+TNS   : -1040.010
 
 Type  : Fast 1100mV 0C Model Setup 'clk_divider:GAME|out_clk'
-Slack : -4.979
-TNS   : -133.712
+Slack : -5.611
+TNS   : -142.250
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -4.326
-TNS   : -115.507
+Slack : -4.279
+TNS   : -108.950
 
 Type  : Fast 1100mV 0C Model Setup 'PS2_clk'
-Slack : -1.906
-TNS   : -98.671
+Slack : -2.353
+TNS   : -101.406
 
 Type  : Fast 1100mV 0C Model Setup 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -1.049
-TNS   : -30.389
+Slack : -1.556
+TNS   : -24.896
 
 Type  : Fast 1100mV 0C Model Hold 'clk_divider:GAME|out_clk'
-Slack : 0.084
+Slack : 0.078
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : 0.084
+Slack : 0.078
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk_divider:VGA|out_clk'
-Slack : 0.087
+Slack : 0.082
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'PS2_clk'
-Slack : 0.151
+Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 0.170
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.672
-TNS   : -9.744
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
-Slack : -0.363
-TNS   : -24.081
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
-Slack : -0.352
-TNS   : -10.429
+Slack : -0.673
+TNS   : -10.009
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PS2_clk'
-Slack : -0.323
-TNS   : -18.883
+Slack : -0.295
+TNS   : -17.183
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:GAME|out_clk'
+Slack : -0.104
+TNS   : -4.455
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'image_renderer:disp|clk_divider:ANI|out_clk'
+Slack : -0.097
+TNS   : -1.536
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : -0.136
-TNS   : -5.414
+Slack : -0.035
+TNS   : -0.810
 
 ------------------------------------------------------------
