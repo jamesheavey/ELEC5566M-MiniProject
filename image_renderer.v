@@ -24,6 +24,9 @@ localparam FLOOR_Y = BG_SIZE_Y + BG_Y - 2;
 localparam TITLE_SIZE_X = 96*SCALE, TITLE_SIZE_Y = 22*SCALE;
 localparam TITLE_X = (DISPLAY_SIZE_X-TITLE_SIZE_X)/2, TITLE_Y = 50;
 
+localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE; 
+localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 localparam	START_SCREEN 	= 4'b0001,
@@ -63,8 +66,19 @@ begin
 					RGB <= 24'h000000;
 				end end
 				
-			PAUSE: RGB <= 24'h000000;
-				// pause
+			PAUSE: begin
+				if (display_on) begin
+					if			(pause_gfx && pause_colour != 24'hFF0096)	RGB <= pause_colour;
+					
+					else if	(bird_gfx && bird_colour[bird_state] != 24'hFF0096)	RGB <= bird_colour[bird_state] & 24'h3F3F3F;
+					
+					else if 	(bg0_gfx && bg_colour[0] != 24'hFF0096)	RGB <= bg_colour[0] & 24'h3F3F3F;
+					else if 	(bg1_gfx && bg_colour[1] != 24'hFF0096)	RGB <= bg_colour[1] & 24'h3F3F3F;
+					else if 	(bg2_gfx && bg_colour[2] != 24'hFF0096)	RGB <= bg_colour[2] & 24'h3F3F3F;
+					else if 	(bg3_gfx && bg_colour[3] != 24'hFF0096)	RGB <= bg_colour[3] & 24'h3F3F3F;
+				end else begin
+					RGB <= 24'h000000;
+				end end
 				
 			END_SCREEN: RGB <= 24'h000000;
 				// end
@@ -75,32 +89,6 @@ begin
 end
 
 ///////////////////////////////////////////////////////////////////////////////////
-
-//localparam	FLAP_1 			= 4'b0001,
-//				FLAP_2			= 4'b0010,
-//				FLAP_3 			= 4'b0100,
-//				FLAP_4 			= 4'b1000;
-//				
-//reg [3:0] bird_state = FLAP_1;
-//
-//always @(posedge ANI_clk) begin
-//	case (bird_state)
-//		FLAP_1:
-//			bird_state <= FLAP_2;
-//
-//		FLAP_2:
-//			bird_state <= FLAP_3;
-//		
-//		FLAP_3:
-//			bird_state <= FLAP_4;
-//		
-//		FLAP_4:
-//			bird_state <= FLAP_1;
-//			
-//		default:
-//			bird_state <= FLAP_1;
-//	endcase
-//end
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
 wire [23:0] bird_colour [2:0];
@@ -138,6 +126,18 @@ title_rom title
 	.row				( (Y - TITLE_Y)/SCALE ),
 	.col				( (X - TITLE_X)/SCALE ),
 	.colour_data	( title_colour )
+);
+
+///////////////////////////////////////////////////////////////////////////////////
+
+wire pause_gfx = (X - PAUSE_X-1 < PAUSE_SIZE_X) && (Y - PAUSE_Y < PAUSE_SIZE_Y);
+wire [23:0] pause_colour;
+pause_rom pause_icon
+(
+	.clk				( VGA_clk ),
+	.row				( (Y - PAUSE_Y)/SCALE ),
+	.col				( (X - PAUSE_X)/SCALE ),
+	.colour_data	( pause_colour )
 );
 
 ///////////////////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Sat May 15 00:47:30 2021
+Sat May 15 01:08:08 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -71,7 +71,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 15 00:47:30 2021       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 15 01:08:08 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; main                                        ;
@@ -240,14 +240,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------+
 ; Resource                                    ; Usage                                            ;
 +---------------------------------------------+--------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 5418                                             ;
+; Estimate of Logic utilization (ALMs needed) ; 5798                                             ;
 ;                                             ;                                                  ;
-; Combinational ALUT usage for logic          ; 8378                                             ;
-;     -- 7 input functions                    ; 209                                              ;
-;     -- 6 input functions                    ; 2246                                             ;
-;     -- 5 input functions                    ; 1744                                             ;
-;     -- 4 input functions                    ; 1534                                             ;
-;     -- <=3 input functions                  ; 2645                                             ;
+; Combinational ALUT usage for logic          ; 8553                                             ;
+;     -- 7 input functions                    ; 184                                              ;
+;     -- 6 input functions                    ; 2856                                             ;
+;     -- 5 input functions                    ; 1504                                             ;
+;     -- 4 input functions                    ; 1359                                             ;
+;     -- <=3 input functions                  ; 2650                                             ;
 ;                                             ;                                                  ;
 ; Dedicated logic registers                   ; 298                                              ;
 ;                                             ;                                                  ;
@@ -256,9 +256,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0                                                ;
 ;                                             ;                                                  ;
 ; Maximum fan-out node                        ; image_renderer:disp|background_rom:bg|col_reg[3] ;
-; Maximum fan-out                             ; 1651                                             ;
-; Total fan-out                               ; 37233                                            ;
-; Average fan-out                             ; 4.26                                             ;
+; Maximum fan-out                             ; 1616                                             ;
+; Total fan-out                               ; 38835                                            ;
+; Average fan-out                             ; 4.35                                             ;
 +---------------------------------------------+--------------------------------------------------+
 
 
@@ -267,18 +267,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |main                                     ; 8378 (0)            ; 298 (0)                   ; 0                 ; 0          ; 37   ; 0            ; |main                                                                                                                      ; main                ; work         ;
-;    |bird_physics:phys|                    ; 82 (82)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|bird_physics:phys                                                                                                    ; bird_physics        ; work         ;
+; |main                                     ; 8553 (0)            ; 298 (0)                   ; 0                 ; 0          ; 37   ; 0            ; |main                                                                                                                      ; main                ; work         ;
+;    |bird_physics:phys|                    ; 83 (83)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|bird_physics:phys                                                                                                    ; bird_physics        ; work         ;
 ;    |clk_divider:GAME|                     ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:GAME                                                                                                     ; clk_divider         ; work         ;
 ;    |clk_divider:VGA|                      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clk_divider:VGA                                                                                                      ; clk_divider         ; work         ;
-;    |game_FSM:FSM|                         ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|game_FSM:FSM                                                                                                         ; game_FSM            ; work         ;
-;    |image_renderer:disp|                  ; 8130 (1551)         ; 136 (56)                  ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp                                                                                                  ; image_renderer      ; work         ;
-;       |background_rom:bg|                 ; 3040 (3040)         ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|background_rom:bg                                                                                ; background_rom      ; work         ;
+;    |game_FSM:FSM|                         ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |main|game_FSM:FSM                                                                                                         ; game_FSM            ; work         ;
+;    |image_renderer:disp|                  ; 8303 (1583)         ; 136 (56)                  ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp                                                                                                  ; image_renderer      ; work         ;
+;       |background_rom:bg|                 ; 3034 (3034)         ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|background_rom:bg                                                                                ; background_rom      ; work         ;
 ;       |clk_divider:ANI|                   ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|clk_divider:ANI                                                                                  ; clk_divider         ; work         ;
-;       |flap_1_rom:bird1|                  ; 84 (84)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
+;       |flap_1_rom:bird1|                  ; 88 (88)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
 ;       |flap_2_rom:bird2|                  ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_2_rom:bird2                                                                                 ; flap_2_rom          ; work         ;
-;       |flap_3_rom:bird3|                  ; 68 (68)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
-;       |floor_rom:floor|                   ; 1073 (1073)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
+;       |flap_3_rom:bird3|                  ; 66 (66)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
+;       |floor_rom:floor|                   ; 1076 (1076)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
 ;       |lpm_divide:Div0|                   ; 85 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0                                                                                  ; lpm_divide          ; work         ;
 ;          |lpm_divide_ibm:auto_generated|  ; 85 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated                                                    ; lpm_divide_ibm      ; work         ;
 ;             |sign_div_unsign_olh:divider| ; 85 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Div0|lpm_divide_ibm:auto_generated|sign_div_unsign_olh:divider                        ; sign_div_unsign_olh ; work         ;
@@ -319,7 +319,7 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_55m:auto_generated|  ; 209 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated                                                    ; lpm_divide_55m      ; work         ;
 ;             |sign_div_unsign_8nh:divider| ; 209 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider                        ; sign_div_unsign_8nh ; work         ;
 ;                |alt_u_div_m2f:divider|    ; 209 (209)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|lpm_divide:Mod1|lpm_divide_55m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_m2f:divider  ; alt_u_div_m2f       ; work         ;
-;       |title_rom:title|                   ; 1192 (1192)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|title_rom:title                                                                                  ; title_rom           ; work         ;
+;       |title_rom:title|                   ; 1334 (1334)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |main|image_renderer:disp|title_rom:title                                                                                  ; title_rom           ; work         ;
 ;    |key_filter:p|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|key_filter:p                                                                                                         ; key_filter          ; work         ;
 ;    |keyboard_input:kb|                    ; 75 (75)             ; 56 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |main|keyboard_input:kb                                                                                                    ; keyboard_input      ; work         ;
 ;    |vga_gen:vga|                          ; 45 (45)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_gen:vga                                                                                                          ; vga_gen             ; work         ;
@@ -364,7 +364,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 298   ;
-; Number of registers using Synchronous Clear  ; 190   ;
+; Number of registers using Synchronous Clear  ; 187   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 93    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -378,7 +378,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; game_FSM:FSM|game_state[0]             ; 13      ;
+; game_FSM:FSM|game_state[0]             ; 33      ;
 ; bird_physics:phys|birdY[6]             ; 4       ;
 ; bird_physics:phys|birdY[7]             ; 4       ;
 ; bird_physics:phys|birdY[4]             ; 5       ;
@@ -394,10 +394,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
-; 23:1               ; 22 bits   ; 330 LEs       ; 88 LEs               ; 242 LEs                ; Yes        ; |main|image_renderer:disp|RGB[19]  ;
-; 1:1                ; 2 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |main|image_renderer:disp|Mux19    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|game_FSM:FSM|Mux2            ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |main|image_renderer:disp|Mux16    ;
+; 22:1               ; 11 bits   ; 154 LEs       ; 44 LEs               ; 110 LEs                ; Yes        ; |main|image_renderer:disp|RGB[17]  ;
+; 27:1               ; 3 bits    ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; Yes        ; |main|image_renderer:disp|RGB[6]   ;
+; 29:1               ; 8 bits    ; 152 LEs       ; 32 LEs               ; 120 LEs                ; Yes        ; |main|image_renderer:disp|RGB[12]  ;
+; 1:1                ; 2 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |main|image_renderer:disp|Mux1     ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |main|image_renderer:disp|Mux15    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|game_FSM:FSM|Mux1            ;
 ; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |main|bird_physics:phys|Y_vel      ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|bird_physics:phys|bird_state ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|bird_physics:phys|bird_state ;
@@ -834,27 +836,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 39                          ;
 ;     CLR SCLR          ; 16                          ;
 ;     ENA               ; 8                           ;
-;     ENA CLR SCLR      ; 38                          ;
+;     ENA CLR           ; 3                           ;
+;     ENA CLR SCLR      ; 35                          ;
 ;     ENA SCLR          ; 8                           ;
 ;     SCLR              ; 128                         ;
 ;     plain             ; 61                          ;
-; arriav_lcell_comb     ; 8379                        ;
+; arriav_lcell_comb     ; 8555                        ;
 ;     arith             ; 957                         ;
 ;         0 data inputs ; 143                         ;
 ;         1 data inputs ; 405                         ;
 ;         2 data inputs ; 67                          ;
 ;         3 data inputs ; 198                         ;
 ;         4 data inputs ; 144                         ;
-;     extend            ; 209                         ;
-;         7 data inputs ; 209                         ;
-;     normal            ; 7175                        ;
+;     extend            ; 184                         ;
+;         7 data inputs ; 184                         ;
+;     normal            ; 7376                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 54                          ;
-;         2 data inputs ; 870                         ;
-;         3 data inputs ; 870                         ;
-;         4 data inputs ; 1390                        ;
-;         5 data inputs ; 1744                        ;
-;         6 data inputs ; 2246                        ;
+;         1 data inputs ; 55                          ;
+;         2 data inputs ; 865                         ;
+;         3 data inputs ; 880                         ;
+;         4 data inputs ; 1215                        ;
+;         5 data inputs ; 1504                        ;
+;         6 data inputs ; 2856                        ;
 ;     shared            ; 38                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 21                          ;
@@ -862,7 +865,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 37                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 31.40                       ;
-; Average LUT depth     ; 12.71                       ;
+; Average LUT depth     ; 12.91                       ;
 +-----------------------+-----------------------------+
 
 
@@ -871,7 +874,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:06:07     ;
+; Top            ; 00:06:19     ;
 +----------------+--------------+
 
 
@@ -881,7 +884,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat May 15 00:41:10 2021
+    Info: Processing started: Sat May 15 01:01:33 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -950,15 +953,15 @@ Warning (10259): Verilog HDL error at bird_physics.v(65): constant value overflo
 Info (10264): Verilog HDL Case Statement information at bird_physics.v(59): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 59
 Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:disp" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 128
 Info (10264): Verilog HDL Case Statement information at image_renderer.v(39): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 39
-Warning (10230): Verilog HDL assignment warning at image_renderer.v(148): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 148
-Warning (10230): Verilog HDL assignment warning at image_renderer.v(155): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 155
+Warning (10230): Verilog HDL assignment warning at image_renderer.v(131): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 131
+Warning (10230): Verilog HDL assignment warning at image_renderer.v(138): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 138
 Info (12128): Elaborating entity "clk_divider" for hierarchy "image_renderer:disp|clk_divider:ANI" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 14
-Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:disp|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 113
-Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:disp|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 121
-Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:disp|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 129
-Info (12128): Elaborating entity "title_rom" for hierarchy "image_renderer:disp|title_rom:title" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 141
-Info (12128): Elaborating entity "background_rom" for hierarchy "image_renderer:disp|background_rom:bg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 172
-Info (12128): Elaborating entity "floor_rom" for hierarchy "image_renderer:disp|floor_rom:floor" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 181
+Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:disp|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 96
+Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:disp|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 104
+Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:disp|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 112
+Info (12128): Elaborating entity "title_rom" for hierarchy "image_renderer:disp|title_rom:title" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 124
+Info (12128): Elaborating entity "background_rom" for hierarchy "image_renderer:disp|background_rom:bg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 155
+Info (12128): Elaborating entity "floor_rom" for hierarchy "image_renderer:disp|floor_rom:floor" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 164
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/main.v Line: 58
 Warning (12011): Net is missing source, defaulting to GND
@@ -976,18 +979,18 @@ Warning (12011): Net is missing source, defaulting to GND
 Info (13014): Ignored 4 buffer(s)
     Info (13019): Ignored 4 SOFT buffer(s)
 Info (278001): Inferred 10 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div6" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 138
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 139
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 110
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 111
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div10" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 178
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div8" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 169
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Mod0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 170
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 170
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div6" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 138
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div6" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 138
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div6" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 121
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 122
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 93
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 94
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div10" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 161
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div8" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 152
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Mod0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 153
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:disp|Div9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 153
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div6" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 121
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div6" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 121
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -998,14 +1001,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
     Info (12023): Found entity 1: alt_u_div_ive File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 139
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div7" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 139
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 122
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div7" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 122
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 110
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div0" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 110
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 93
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div0" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 93
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1016,20 +1019,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_olh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_olh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mve.tdf
     Info (12023): Found entity 1: alt_u_div_mve File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_mve.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 111
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 111
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 94
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 94
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div10" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 178
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div10" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 178
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div10" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 161
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div10" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 161
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Mod1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Mod1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
     Info (12134): Parameter "LPM_WIDTHN" = "17"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1040,8 +1043,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_8nh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_8nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m2f.tdf
     Info (12023): Found entity 1: alt_u_div_m2f File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_m2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div11" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 179
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div11" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1052,8 +1055,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_ilh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_ilh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ave.tdf
     Info (12023): Found entity 1: alt_u_div_ave File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ave.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div8" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 169
-Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div8" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 169
+Info (12130): Elaborated megafunction instantiation "image_renderer:disp|lpm_divide:Div8" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 152
+Info (12133): Instantiated megafunction "image_renderer:disp|lpm_divide:Div8" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 152
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1068,15 +1071,15 @@ Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8472 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8647 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 8435 logic cells
+    Info (21061): Implemented 8610 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 4988 megabytes
-    Info: Processing ended: Sat May 15 00:47:30 2021
-    Info: Elapsed time: 00:06:20
-    Info: Total CPU time (on all processors): 00:06:30
+    Info: Peak virtual memory: 4989 megabytes
+    Info: Processing ended: Sat May 15 01:08:08 2021
+    Info: Elapsed time: 00:06:35
+    Info: Total CPU time (on all processors): 00:06:45
 
 
 +------------------------------------------+
