@@ -30,7 +30,8 @@ localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE;
 localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
 
 localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 120*SCALE;
-localparam PIPE_GAP = 50; 
+localparam PIPE_GAP = 75; 
+localparam NUM_PIPES = 4;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -243,15 +244,15 @@ reg [31:0] pipe_row=0, pipe_col=0;
 pipe_rom pipe
 (
 	.clk				( VGA_clk 		),
-	.row				( pipe_row 		),
-	.col				( pipe_col 		),
+	.row				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_row : 0 ),
+	.col				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_col : 0 ),
 	.colour_data 	( pipe_colour	)
 );
 
 integer i;
 always @(X or Y)
 begin
-	for (i = 0; i < 4; i = i + 1) begin
+	for (i = 0; i < NUM_PIPES; i = i + 1) begin
 	
 		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
 									(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
@@ -260,12 +261,12 @@ begin
 									(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
 		
 		if (pipe_btm_gfx[i]) begin
-			pipe_row <= (Y - (pipeY[i]))/SCALE;
-			pipe_col <= (X - (pipeX[i]-2))/SCALE;
+			pipe_row <= (Y - (pipeY[i]+PIPE_GAP))/SCALE;
+			pipe_col <= (X - (pipeX[i]))/SCALE;
 		
 		end else if (pipe_top_gfx[i]) begin
-			pipe_row <= (PIPE_SIZE_Y-(Y-(pipeY[i])))/SCALE;
-			pipe_col <= (X - (pipeX[i]-2))/SCALE;
+			pipe_row <= (PIPE_SIZE_Y-(Y-(pipeY[i]-PIPE_GAP)))/SCALE;
+			pipe_col <= (X - (pipeX[i]))/SCALE;
 			
 		end
 	end

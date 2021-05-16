@@ -7,8 +7,14 @@ module pipes #(
 	output signed [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4
 );
 
-wire signed [4:0] randY;
-random_number_gen gen (clk, rst, randY);
+wire signed [5:0] randY;
+LFSR #(
+	.NUM_BITS		( 6		)
+) rand (
+	.i_Clk			( clk		),
+	.i_Enable		( 1		),
+	.o_LFSR_Data	( randY	)
+);
 
 localparam	START_SCREEN 	= 4'b0001,
 				IN_GAME			= 4'b0010,
@@ -24,10 +30,10 @@ reg signed [31:0] pipeY [NUM_PIPES-1:0];
 
 reg [31:0] pipeX_reset [NUM_PIPES-1:0];
 initial begin
-	pipeX_reset[0] = 660;
-	pipeX_reset[1] = 840;
-	pipeX_reset[2] = 1020;
-	pipeX_reset[3] = 1200;
+	pipeX_reset[0] = 700;
+	pipeX_reset[1] = 950;
+	pipeX_reset[2] = 1200;
+	pipeX_reset[3] = 1450;
 end
 
 integer i;
@@ -55,7 +61,7 @@ begin
 				for (i = 0; i < NUM_PIPES; i = i+1) begin
 					pipeX[i] <= pipeX[i] - 1;
 					if (pipeX[i] + PIPE_SIZE_X <= 0) begin
-						pipeX[i] <= pipeX[(i+NUM_PIPES-1)%NUM_PIPES] + 180;
+						pipeX[i] <= pipeX[(i+NUM_PIPES-1)%NUM_PIPES] + 250;
 						pipeY[i] <= CENTRE + (randY << 1);
 					end
 				end

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MiniProject
-Sun May 16 01:24:29 2021
+Sun May 16 02:20:36 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.18        ;
+; Average used               ; 2.14        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  39.5%      ;
-;     Processor 3            ;  39.3%      ;
-;     Processor 4            ;  39.0%      ;
+;     Processor 2            ;  38.3%      ;
+;     Processor 3            ;  38.0%      ;
+;     Processor 4            ;  37.4%      ;
 +----------------------------+-------------+
 
 
@@ -129,12 +129,12 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 11.67 MHz  ; 11.67 MHz       ; pipes:pipe_shift|pipeX[0][0] ;      ;
-; 21.28 MHz  ; 21.28 MHz       ; clk_divider:GAME|out_clk     ;      ;
-; 21.84 MHz  ; 21.84 MHz       ; clk_divider:VGA|out_clk      ;      ;
-; 143.76 MHz ; 143.76 MHz      ; clk_divider:FLOOR|out_clk    ;      ;
-; 150.15 MHz ; 150.15 MHz      ; clk                          ;      ;
-; 163.03 MHz ; 163.03 MHz      ; PS2_clk                      ;      ;
+; 11.75 MHz  ; 11.75 MHz       ; pipes:pipe_shift|pipeX[0][0] ;      ;
+; 21.95 MHz  ; 21.95 MHz       ; clk_divider:VGA|out_clk      ;      ;
+; 154.34 MHz ; 154.34 MHz      ; clk_divider:FLOOR|out_clk    ;      ;
+; 154.63 MHz ; 154.63 MHz      ; clk                          ;      ;
+; 156.27 MHz ; 156.27 MHz      ; PS2_clk                      ;      ;
+; 178.03 MHz ; 178.03 MHz      ; clk_divider:GAME|out_clk     ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -150,12 +150,12 @@ HTML report is unavailable in plain text report export.
 +------------------------------+---------+---------------+
 ; Clock                        ; Slack   ; End Point TNS ;
 +------------------------------+---------+---------------+
-; clk_divider:GAME|out_clk     ; -45.998 ; -798.132      ;
-; pipes:pipe_shift|pipeX[0][0] ; -44.831 ; -410.834      ;
-; clk_divider:VGA|out_clk      ; -44.793 ; -1550.199     ;
-; clk                          ; -8.993  ; -284.059      ;
-; clk_divider:FLOOR|out_clk    ; -6.270  ; -711.163      ;
-; PS2_clk                      ; -5.134  ; -271.282      ;
+; clk_divider:VGA|out_clk      ; -45.143 ; -1570.407     ;
+; pipes:pipe_shift|pipeX[0][0] ; -44.922 ; -413.456      ;
+; clk_divider:GAME|out_clk     ; -9.799  ; -326.148      ;
+; clk                          ; -9.366  ; -278.536      ;
+; clk_divider:FLOOR|out_clk    ; -5.479  ; -629.429      ;
+; PS2_clk                      ; -5.399  ; -283.807      ;
 +------------------------------+---------+---------------+
 
 
@@ -164,12 +164,12 @@ HTML report is unavailable in plain text report export.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; clk_divider:FLOOR|out_clk    ; 0.014 ; 0.000         ;
-; PS2_clk                      ; 0.227 ; 0.000         ;
-; clk                          ; 0.373 ; 0.000         ;
-; clk_divider:VGA|out_clk      ; 0.529 ; 0.000         ;
-; clk_divider:GAME|out_clk     ; 0.900 ; 0.000         ;
-; pipes:pipe_shift|pipeX[0][0] ; 1.872 ; 0.000         ;
+; clk_divider:FLOOR|out_clk    ; 0.078 ; 0.000         ;
+; PS2_clk                      ; 0.221 ; 0.000         ;
+; clk_divider:GAME|out_clk     ; 0.252 ; 0.000         ;
+; clk                          ; 0.376 ; 0.000         ;
+; clk_divider:VGA|out_clk      ; 0.444 ; 0.000         ;
+; pipes:pipe_shift|pipeX[0][0] ; 2.885 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -190,12 +190,12 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; pipes:pipe_shift|pipeX[0][0] ; -2.076 ; -101.790      ;
-; clk                          ; -0.731 ; -52.304       ;
-; clk_divider:VGA|out_clk      ; -0.416 ; -68.138       ;
-; clk_divider:FLOOR|out_clk    ; -0.409 ; -86.465       ;
-; clk_divider:GAME|out_clk     ; -0.394 ; -34.471       ;
-; PS2_clk                      ; -0.394 ; -30.339       ;
+; pipes:pipe_shift|pipeX[0][0] ; -1.311 ; -70.135       ;
+; clk                          ; -0.751 ; -50.773       ;
+; clk_divider:VGA|out_clk      ; -0.469 ; -69.671       ;
+; clk_divider:GAME|out_clk     ; -0.426 ; -58.105       ;
+; clk_divider:FLOOR|out_clk    ; -0.394 ; -86.543       ;
+; PS2_clk                      ; -0.394 ; -30.122       ;
 +------------------------------+--------+---------------+
 
 
@@ -210,12 +210,12 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 11.17 MHz  ; 11.17 MHz       ; pipes:pipe_shift|pipeX[0][0] ;      ;
-; 20.53 MHz  ; 20.53 MHz       ; clk_divider:GAME|out_clk     ;      ;
-; 21.02 MHz  ; 21.02 MHz       ; clk_divider:VGA|out_clk      ;      ;
-; 143.68 MHz ; 143.68 MHz      ; clk_divider:FLOOR|out_clk    ;      ;
-; 148.24 MHz ; 148.24 MHz      ; clk                          ;      ;
-; 165.76 MHz ; 165.76 MHz      ; PS2_clk                      ;      ;
+; 11.25 MHz  ; 11.25 MHz       ; pipes:pipe_shift|pipeX[0][0] ;      ;
+; 21.16 MHz  ; 21.16 MHz       ; clk_divider:VGA|out_clk      ;      ;
+; 151.03 MHz ; 151.03 MHz      ; clk                          ;      ;
+; 153.44 MHz ; 153.44 MHz      ; clk_divider:FLOOR|out_clk    ;      ;
+; 156.91 MHz ; 156.91 MHz      ; PS2_clk                      ;      ;
+; 176.65 MHz ; 176.65 MHz      ; clk_divider:GAME|out_clk     ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -225,12 +225,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+---------+---------------+
 ; Clock                        ; Slack   ; End Point TNS ;
 +------------------------------+---------+---------------+
-; clk_divider:GAME|out_clk     ; -47.713 ; -817.359      ;
-; clk_divider:VGA|out_clk      ; -46.565 ; -1560.128     ;
-; pipes:pipe_shift|pipeX[0][0] ; -46.559 ; -423.441      ;
-; clk                          ; -8.595  ; -275.656      ;
-; clk_divider:FLOOR|out_clk    ; -6.319  ; -711.871      ;
-; PS2_clk                      ; -5.033  ; -265.624      ;
+; clk_divider:VGA|out_clk      ; -46.771 ; -1573.652     ;
+; pipes:pipe_shift|pipeX[0][0] ; -46.707 ; -424.782      ;
+; clk_divider:GAME|out_clk     ; -9.746  ; -328.942      ;
+; clk                          ; -9.010  ; -274.063      ;
+; clk_divider:FLOOR|out_clk    ; -5.517  ; -630.465      ;
+; PS2_clk                      ; -5.373  ; -280.668      ;
 +------------------------------+---------+---------------+
 
 
@@ -239,12 +239,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; clk_divider:FLOOR|out_clk    ; 0.151 ; 0.000         ;
-; clk                          ; 0.188 ; 0.000         ;
-; PS2_clk                      ; 0.272 ; 0.000         ;
-; clk_divider:VGA|out_clk      ; 0.518 ; 0.000         ;
-; clk_divider:GAME|out_clk     ; 0.901 ; 0.000         ;
-; pipes:pipe_shift|pipeX[0][0] ; 1.487 ; 0.000         ;
+; clk                          ; 0.186 ; 0.000         ;
+; clk_divider:FLOOR|out_clk    ; 0.193 ; 0.000         ;
+; clk_divider:GAME|out_clk     ; 0.220 ; 0.000         ;
+; PS2_clk                      ; 0.269 ; 0.000         ;
+; clk_divider:VGA|out_clk      ; 0.458 ; 0.000         ;
+; pipes:pipe_shift|pipeX[0][0] ; 2.447 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
@@ -265,12 +265,12 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; pipes:pipe_shift|pipeX[0][0] ; -2.086 ; -107.142      ;
-; clk                          ; -0.753 ; -58.070       ;
-; clk_divider:VGA|out_clk      ; -0.396 ; -66.554       ;
-; clk_divider:FLOOR|out_clk    ; -0.395 ; -85.156       ;
-; clk_divider:GAME|out_clk     ; -0.394 ; -34.020       ;
-; PS2_clk                      ; -0.394 ; -29.550       ;
+; pipes:pipe_shift|pipeX[0][0] ; -1.308 ; -74.266       ;
+; clk                          ; -0.746 ; -55.292       ;
+; clk_divider:VGA|out_clk      ; -0.467 ; -68.419       ;
+; clk_divider:GAME|out_clk     ; -0.411 ; -57.499       ;
+; clk_divider:FLOOR|out_clk    ; -0.394 ; -84.388       ;
+; PS2_clk                      ; -0.394 ; -29.515       ;
 +------------------------------+--------+---------------+
 
 
@@ -285,12 +285,12 @@ No synchronizer chains to report.
 +------------------------------+---------+---------------+
 ; Clock                        ; Slack   ; End Point TNS ;
 +------------------------------+---------+---------------+
-; clk_divider:GAME|out_clk     ; -24.970 ; -439.823      ;
-; clk_divider:VGA|out_clk      ; -24.305 ; -894.401      ;
-; pipes:pipe_shift|pipeX[0][0] ; -24.280 ; -227.345      ;
-; clk                          ; -5.474  ; -130.275      ;
-; clk_divider:FLOOR|out_clk    ; -3.543  ; -386.073      ;
-; PS2_clk                      ; -2.567  ; -132.987      ;
+; clk_divider:VGA|out_clk      ; -24.384 ; -912.771      ;
+; pipes:pipe_shift|pipeX[0][0] ; -24.375 ; -233.156      ;
+; clk_divider:GAME|out_clk     ; -5.936  ; -178.208      ;
+; clk                          ; -5.747  ; -132.283      ;
+; clk_divider:FLOOR|out_clk    ; -2.897  ; -328.951      ;
+; PS2_clk                      ; -2.618  ; -131.933      ;
 +------------------------------+---------+---------------+
 
 
@@ -299,12 +299,12 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk    ; -0.153 ; -1.351        ;
-; PS2_clk                      ; 0.144  ; 0.000         ;
-; clk_divider:VGA|out_clk      ; 0.148  ; 0.000         ;
-; clk                          ; 0.180  ; 0.000         ;
-; clk_divider:GAME|out_clk     ; 0.406  ; 0.000         ;
-; pipes:pipe_shift|pipeX[0][0] ; 1.449  ; 0.000         ;
+; clk_divider:FLOOR|out_clk    ; -0.168 ; -0.826        ;
+; clk_divider:GAME|out_clk     ; 0.098  ; 0.000         ;
+; PS2_clk                      ; 0.141  ; 0.000         ;
+; clk_divider:VGA|out_clk      ; 0.163  ; 0.000         ;
+; clk                          ; 0.182  ; 0.000         ;
+; pipes:pipe_shift|pipeX[0][0] ; 2.226  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -325,12 +325,12 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; pipes:pipe_shift|pipeX[0][0] ; -0.854 ; -26.672       ;
-; clk                          ; -0.659 ; -10.305       ;
-; PS2_clk                      ; -0.292 ; -16.962       ;
-; clk_divider:VGA|out_clk      ; -0.179 ; -6.264        ;
-; clk_divider:FLOOR|out_clk    ; -0.154 ; -6.378        ;
-; clk_divider:GAME|out_clk     ; -0.094 ; -0.735        ;
+; clk                          ; -0.666 ; -10.220       ;
+; pipes:pipe_shift|pipeX[0][0] ; -0.570 ; -17.091       ;
+; PS2_clk                      ; -0.292 ; -16.961       ;
+; clk_divider:VGA|out_clk      ; -0.186 ; -7.615        ;
+; clk_divider:GAME|out_clk     ; -0.179 ; -8.178        ;
+; clk_divider:FLOOR|out_clk    ; -0.112 ; -7.168        ;
 +------------------------------+--------+---------------+
 
 
@@ -345,12 +345,12 @@ No synchronizer chains to report.
 +------------------------------+---------+---------------+
 ; Clock                        ; Slack   ; End Point TNS ;
 +------------------------------+---------+---------------+
-; clk_divider:GAME|out_clk     ; -23.853 ; -411.131      ;
-; clk_divider:VGA|out_clk      ; -23.254 ; -819.623      ;
-; pipes:pipe_shift|pipeX[0][0] ; -23.172 ; -213.851      ;
-; clk                          ; -5.094  ; -113.807      ;
-; clk_divider:FLOOR|out_clk    ; -3.269  ; -356.440      ;
-; PS2_clk                      ; -2.256  ; -116.148      ;
+; clk_divider:VGA|out_clk      ; -23.307 ; -833.070      ;
+; pipes:pipe_shift|pipeX[0][0] ; -23.275 ; -218.139      ;
+; clk_divider:GAME|out_clk     ; -5.716  ; -167.490      ;
+; clk                          ; -5.331  ; -115.629      ;
+; clk_divider:FLOOR|out_clk    ; -2.610  ; -296.879      ;
+; PS2_clk                      ; -2.251  ; -116.291      ;
 +------------------------------+---------+---------------+
 
 
@@ -359,12 +359,12 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk    ; -0.093 ; -0.610        ;
-; clk                          ; 0.020  ; 0.000         ;
-; PS2_clk                      ; 0.150  ; 0.000         ;
+; clk_divider:FLOOR|out_clk    ; -0.095 ; -0.321        ;
+; clk                          ; 0.072  ; 0.000         ;
+; clk_divider:GAME|out_clk     ; 0.075  ; 0.000         ;
+; PS2_clk                      ; 0.148  ; 0.000         ;
 ; clk_divider:VGA|out_clk      ; 0.152  ; 0.000         ;
-; clk_divider:GAME|out_clk     ; 0.377  ; 0.000         ;
-; pipes:pipe_shift|pipeX[0][0] ; 1.322  ; 0.000         ;
+; pipes:pipe_shift|pipeX[0][0] ; 2.047  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -385,12 +385,12 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; pipes:pipe_shift|pipeX[0][0] ; -0.694 ; -22.073       ;
-; clk                          ; -0.657 ; -10.164       ;
-; PS2_clk                      ; -0.304 ; -17.366       ;
-; clk_divider:VGA|out_clk      ; -0.102 ; -2.909        ;
-; clk_divider:FLOOR|out_clk    ; -0.084 ; -2.247        ;
-; clk_divider:GAME|out_clk     ; -0.041 ; -0.129        ;
+; clk                          ; -0.639 ; -10.235       ;
+; pipes:pipe_shift|pipeX[0][0] ; -0.410 ; -11.498       ;
+; PS2_clk                      ; -0.305 ; -17.244       ;
+; clk_divider:VGA|out_clk      ; -0.130 ; -3.807        ;
+; clk_divider:GAME|out_clk     ; -0.103 ; -4.202        ;
+; clk_divider:FLOOR|out_clk    ; -0.048 ; -2.714        ;
 +------------------------------+--------+---------------+
 
 
@@ -405,20 +405,20 @@ No synchronizer chains to report.
 +-------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                         ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack              ; -47.713   ; -0.153 ; N/A      ; N/A     ; -2.086              ;
-;  PS2_clk                      ; -5.134    ; 0.144  ; N/A      ; N/A     ; -0.394              ;
-;  clk                          ; -8.993    ; 0.020  ; N/A      ; N/A     ; -0.753              ;
-;  clk_divider:FLOOR|out_clk    ; -6.319    ; -0.153 ; N/A      ; N/A     ; -0.409              ;
-;  clk_divider:GAME|out_clk     ; -47.713   ; 0.377  ; N/A      ; N/A     ; -0.394              ;
-;  clk_divider:VGA|out_clk      ; -46.565   ; 0.148  ; N/A      ; N/A     ; -0.416              ;
-;  pipes:pipe_shift|pipeX[0][0] ; -46.559   ; 1.322  ; N/A      ; N/A     ; -2.086              ;
-; Design-wide TNS               ; -4054.079 ; -1.351 ; 0.0      ; 0.0     ; -380.492            ;
-;  PS2_clk                      ; -271.282  ; 0.000  ; N/A      ; N/A     ; -30.339             ;
-;  clk                          ; -284.059  ; 0.000  ; N/A      ; N/A     ; -58.070             ;
-;  clk_divider:FLOOR|out_clk    ; -711.871  ; -1.351 ; N/A      ; N/A     ; -86.465             ;
-;  clk_divider:GAME|out_clk     ; -817.359  ; 0.000  ; N/A      ; N/A     ; -34.471             ;
-;  clk_divider:VGA|out_clk      ; -1560.128 ; 0.000  ; N/A      ; N/A     ; -68.138             ;
-;  pipes:pipe_shift|pipeX[0][0] ; -423.441  ; 0.000  ; N/A      ; N/A     ; -107.142            ;
+; Worst-case Slack              ; -46.771   ; -0.168 ; N/A      ; N/A     ; -1.311              ;
+;  PS2_clk                      ; -5.399    ; 0.141  ; N/A      ; N/A     ; -0.394              ;
+;  clk                          ; -9.366    ; 0.072  ; N/A      ; N/A     ; -0.751              ;
+;  clk_divider:FLOOR|out_clk    ; -5.517    ; -0.168 ; N/A      ; N/A     ; -0.394              ;
+;  clk_divider:GAME|out_clk     ; -9.799    ; 0.075  ; N/A      ; N/A     ; -0.426              ;
+;  clk_divider:VGA|out_clk      ; -46.771   ; 0.152  ; N/A      ; N/A     ; -0.469              ;
+;  pipes:pipe_shift|pipeX[0][0] ; -46.707   ; 2.047  ; N/A      ; N/A     ; -1.311              ;
+; Design-wide TNS               ; -3512.572 ; -0.826 ; 0.0      ; 0.0     ; -369.379            ;
+;  PS2_clk                      ; -283.807  ; 0.000  ; N/A      ; N/A     ; -30.122             ;
+;  clk                          ; -278.536  ; 0.000  ; N/A      ; N/A     ; -55.292             ;
+;  clk_divider:FLOOR|out_clk    ; -630.465  ; -0.826 ; N/A      ; N/A     ; -86.543             ;
+;  clk_divider:GAME|out_clk     ; -328.942  ; 0.000  ; N/A      ; N/A     ; -58.105             ;
+;  clk_divider:VGA|out_clk      ; -1573.652 ; 0.000  ; N/A      ; N/A     ; -69.671             ;
+;  pipes:pipe_shift|pipeX[0][0] ; -424.782  ; 0.000  ; N/A      ; N/A     ; -74.266             ;
 +-------------------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -674,26 +674,26 @@ No synchronizer chains to report.
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
 ; From Clock                   ; To Clock                     ; RR Paths     ; FR Paths ; RF Paths     ; FF Paths     ;
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
-; clk                          ; clk                          ; 4406         ; 0        ; 0            ; 0            ;
+; clk                          ; clk                          ; 4238         ; 0        ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk    ; clk                          ; 1            ; 1        ; 0            ; 0            ;
 ; clk_divider:GAME|out_clk     ; clk                          ; 4            ; 1        ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk      ; clk                          ; 1            ; 1        ; 0            ; 0            ;
 ; PS2_clk                      ; clk                          ; 0            ; 56       ; 0            ; 0            ;
-; clk                          ; clk_divider:FLOOR|out_clk    ; 1056         ; 0        ; 0            ; 0            ;
-; clk_divider:FLOOR|out_clk    ; clk_divider:FLOOR|out_clk    ; 69522        ; 0        ; 0            ; 0            ;
-; pipes:pipe_shift|pipeX[0][0] ; clk_divider:FLOOR|out_clk    ; 66           ; 66       ; 0            ; 0            ;
+; clk                          ; clk_divider:FLOOR|out_clk    ; 1024         ; 0        ; 0            ; 0            ;
+; clk_divider:FLOOR|out_clk    ; clk_divider:FLOOR|out_clk    ; 67651        ; 0        ; 0            ; 0            ;
+; pipes:pipe_shift|pipeX[0][0] ; clk_divider:FLOOR|out_clk    ; 65           ; 65       ; 0            ; 0            ;
 ; clk                          ; clk_divider:GAME|out_clk     ; 144          ; 0        ; 0            ; 0            ;
-; clk_divider:GAME|out_clk     ; clk_divider:GAME|out_clk     ; > 2147483647 ; 0        ; 0            ; 0            ;
+; clk_divider:GAME|out_clk     ; clk_divider:GAME|out_clk     ; 2983         ; 0        ; 0            ; 0            ;
 ; PS2_clk                      ; clk_divider:GAME|out_clk     ; 0            ; 128      ; 0            ; 0            ;
-; clk                          ; clk_divider:VGA|out_clk      ; 327          ; 0        ; 0            ; 0            ;
-; clk_divider:FLOOR|out_clk    ; clk_divider:VGA|out_clk      ; 159104       ; 0        ; 0            ; 0            ;
+; clk                          ; clk_divider:VGA|out_clk      ; 333          ; 0        ; 0            ; 0            ;
+; clk_divider:FLOOR|out_clk    ; clk_divider:VGA|out_clk      ; 216326       ; 0        ; 0            ; 0            ;
 ; clk_divider:GAME|out_clk     ; clk_divider:VGA|out_clk      ; > 2147483647 ; 0        ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk      ; clk_divider:VGA|out_clk      ; > 2147483647 ; 0        ; 0            ; 0            ;
-; pipes:pipe_shift|pipeX[0][0] ; clk_divider:VGA|out_clk      ; 1240         ; 1252     ; 0            ; 0            ;
+; pipes:pipe_shift|pipeX[0][0] ; clk_divider:VGA|out_clk      ; 1674         ; 1686     ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk    ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; 0            ;
 ; clk_divider:VGA|out_clk      ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; 0            ;
 ; pipes:pipe_shift|pipeX[0][0] ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; > 2147483647 ;
-; PS2_clk                      ; PS2_clk                      ; 0            ; 0        ; 0            ; 31868        ;
+; PS2_clk                      ; PS2_clk                      ; 0            ; 0        ; 0            ; 31867        ;
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -703,26 +703,26 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
 ; From Clock                   ; To Clock                     ; RR Paths     ; FR Paths ; RF Paths     ; FF Paths     ;
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
-; clk                          ; clk                          ; 4406         ; 0        ; 0            ; 0            ;
+; clk                          ; clk                          ; 4238         ; 0        ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk    ; clk                          ; 1            ; 1        ; 0            ; 0            ;
 ; clk_divider:GAME|out_clk     ; clk                          ; 4            ; 1        ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk      ; clk                          ; 1            ; 1        ; 0            ; 0            ;
 ; PS2_clk                      ; clk                          ; 0            ; 56       ; 0            ; 0            ;
-; clk                          ; clk_divider:FLOOR|out_clk    ; 1056         ; 0        ; 0            ; 0            ;
-; clk_divider:FLOOR|out_clk    ; clk_divider:FLOOR|out_clk    ; 69522        ; 0        ; 0            ; 0            ;
-; pipes:pipe_shift|pipeX[0][0] ; clk_divider:FLOOR|out_clk    ; 66           ; 66       ; 0            ; 0            ;
+; clk                          ; clk_divider:FLOOR|out_clk    ; 1024         ; 0        ; 0            ; 0            ;
+; clk_divider:FLOOR|out_clk    ; clk_divider:FLOOR|out_clk    ; 67651        ; 0        ; 0            ; 0            ;
+; pipes:pipe_shift|pipeX[0][0] ; clk_divider:FLOOR|out_clk    ; 65           ; 65       ; 0            ; 0            ;
 ; clk                          ; clk_divider:GAME|out_clk     ; 144          ; 0        ; 0            ; 0            ;
-; clk_divider:GAME|out_clk     ; clk_divider:GAME|out_clk     ; > 2147483647 ; 0        ; 0            ; 0            ;
+; clk_divider:GAME|out_clk     ; clk_divider:GAME|out_clk     ; 2983         ; 0        ; 0            ; 0            ;
 ; PS2_clk                      ; clk_divider:GAME|out_clk     ; 0            ; 128      ; 0            ; 0            ;
-; clk                          ; clk_divider:VGA|out_clk      ; 327          ; 0        ; 0            ; 0            ;
-; clk_divider:FLOOR|out_clk    ; clk_divider:VGA|out_clk      ; 159104       ; 0        ; 0            ; 0            ;
+; clk                          ; clk_divider:VGA|out_clk      ; 333          ; 0        ; 0            ; 0            ;
+; clk_divider:FLOOR|out_clk    ; clk_divider:VGA|out_clk      ; 216326       ; 0        ; 0            ; 0            ;
 ; clk_divider:GAME|out_clk     ; clk_divider:VGA|out_clk      ; > 2147483647 ; 0        ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk      ; clk_divider:VGA|out_clk      ; > 2147483647 ; 0        ; 0            ; 0            ;
-; pipes:pipe_shift|pipeX[0][0] ; clk_divider:VGA|out_clk      ; 1240         ; 1252     ; 0            ; 0            ;
+; pipes:pipe_shift|pipeX[0][0] ; clk_divider:VGA|out_clk      ; 1674         ; 1686     ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk    ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; 0            ;
 ; clk_divider:VGA|out_clk      ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; 0            ;
 ; pipes:pipe_shift|pipeX[0][0] ; pipes:pipe_shift|pipeX[0][0] ; 0            ; 0        ; > 2147483647 ; > 2147483647 ;
-; PS2_clk                      ; PS2_clk                      ; 0            ; 0        ; 0            ; 31868        ;
+; PS2_clk                      ; PS2_clk                      ; 0            ; 0        ; 0            ; 31867        ;
 +------------------------------+------------------------------+--------------+----------+--------------+--------------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -747,7 +747,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 277   ; 277  ;
+; Unconstrained Input Port Paths  ; 292   ; 292  ;
 ; Unconstrained Output Ports      ; 38    ; 38   ;
 ; Unconstrained Output Port Paths ; 38    ; 38   ;
 +---------------------------------+-------+------+
@@ -885,7 +885,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun May 16 01:24:16 2021
+    Info: Processing started: Sun May 16 02:20:24 2021
 Info: Command: quartus_sta MiniProject -c MiniProject
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -909,6 +909,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~113  from: cin  to: sumout
     Info (332098): Cell: display|Add19~117  from: cin  to: sumout
     Info (332098): Cell: display|Add19~121  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~125  from: datad  to: sumout
     Info (332098): Cell: display|Add19~13  from: cin  to: sumout
     Info (332098): Cell: display|Add19~17  from: cin  to: sumout
     Info (332098): Cell: display|Add19~1  from: cin  to: sumout
@@ -920,12 +921,12 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~41  from: cin  to: sumout
     Info (332098): Cell: display|Add19~45  from: cin  to: sumout
     Info (332098): Cell: display|Add19~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~53  from: sharein  to: sumout
+    Info (332098): Cell: display|Add19~53  from: cin  to: sumout
     Info (332098): Cell: display|Add19~57  from: cin  to: sumout
     Info (332098): Cell: display|Add19~5  from: cin  to: sumout
     Info (332098): Cell: display|Add19~61  from: cin  to: sumout
     Info (332098): Cell: display|Add19~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~69  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~69  from: sharein  to: sumout
     Info (332098): Cell: display|Add19~73  from: cin  to: sumout
     Info (332098): Cell: display|Add19~77  from: cin  to: sumout
     Info (332098): Cell: display|Add19~81  from: cin  to: sumout
@@ -940,35 +941,35 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -45.998
+Info (332146): Worst-case setup slack is -45.143
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -45.998            -798.132 clk_divider:GAME|out_clk 
-    Info (332119):   -44.831            -410.834 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):   -44.793           -1550.199 clk_divider:VGA|out_clk 
-    Info (332119):    -8.993            -284.059 clk 
-    Info (332119):    -6.270            -711.163 clk_divider:FLOOR|out_clk 
-    Info (332119):    -5.134            -271.282 PS2_clk 
-Info (332146): Worst-case hold slack is 0.014
+    Info (332119):   -45.143           -1570.407 clk_divider:VGA|out_clk 
+    Info (332119):   -44.922            -413.456 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -9.799            -326.148 clk_divider:GAME|out_clk 
+    Info (332119):    -9.366            -278.536 clk 
+    Info (332119):    -5.479            -629.429 clk_divider:FLOOR|out_clk 
+    Info (332119):    -5.399            -283.807 PS2_clk 
+Info (332146): Worst-case hold slack is 0.078
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.014               0.000 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.227               0.000 PS2_clk 
-    Info (332119):     0.373               0.000 clk 
-    Info (332119):     0.529               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.900               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     1.872               0.000 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):     0.078               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.221               0.000 PS2_clk 
+    Info (332119):     0.252               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.376               0.000 clk 
+    Info (332119):     0.444               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     2.885               0.000 pipes:pipe_shift|pipeX[0][0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -2.076
+Info (332146): Worst-case minimum pulse width slack is -1.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.076            -101.790 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -0.731             -52.304 clk 
-    Info (332119):    -0.416             -68.138 clk_divider:VGA|out_clk 
-    Info (332119):    -0.409             -86.465 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.394             -34.471 clk_divider:GAME|out_clk 
-    Info (332119):    -0.394             -30.339 PS2_clk 
+    Info (332119):    -1.311             -70.135 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -0.751             -50.773 clk 
+    Info (332119):    -0.469             -69.671 clk_divider:VGA|out_clk 
+    Info (332119):    -0.426             -58.105 clk_divider:GAME|out_clk 
+    Info (332119):    -0.394             -86.543 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.394             -30.122 PS2_clk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -979,6 +980,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~113  from: cin  to: sumout
     Info (332098): Cell: display|Add19~117  from: cin  to: sumout
     Info (332098): Cell: display|Add19~121  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~125  from: datad  to: sumout
     Info (332098): Cell: display|Add19~13  from: cin  to: sumout
     Info (332098): Cell: display|Add19~17  from: cin  to: sumout
     Info (332098): Cell: display|Add19~1  from: cin  to: sumout
@@ -990,12 +992,12 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~41  from: cin  to: sumout
     Info (332098): Cell: display|Add19~45  from: cin  to: sumout
     Info (332098): Cell: display|Add19~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~53  from: sharein  to: sumout
+    Info (332098): Cell: display|Add19~53  from: cin  to: sumout
     Info (332098): Cell: display|Add19~57  from: cin  to: sumout
     Info (332098): Cell: display|Add19~5  from: cin  to: sumout
     Info (332098): Cell: display|Add19~61  from: cin  to: sumout
     Info (332098): Cell: display|Add19~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~69  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~69  from: sharein  to: sumout
     Info (332098): Cell: display|Add19~73  from: cin  to: sumout
     Info (332098): Cell: display|Add19~77  from: cin  to: sumout
     Info (332098): Cell: display|Add19~81  from: cin  to: sumout
@@ -1007,35 +1009,35 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -47.713
+Info (332146): Worst-case setup slack is -46.771
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -47.713            -817.359 clk_divider:GAME|out_clk 
-    Info (332119):   -46.565           -1560.128 clk_divider:VGA|out_clk 
-    Info (332119):   -46.559            -423.441 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -8.595            -275.656 clk 
-    Info (332119):    -6.319            -711.871 clk_divider:FLOOR|out_clk 
-    Info (332119):    -5.033            -265.624 PS2_clk 
-Info (332146): Worst-case hold slack is 0.151
+    Info (332119):   -46.771           -1573.652 clk_divider:VGA|out_clk 
+    Info (332119):   -46.707            -424.782 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -9.746            -328.942 clk_divider:GAME|out_clk 
+    Info (332119):    -9.010            -274.063 clk 
+    Info (332119):    -5.517            -630.465 clk_divider:FLOOR|out_clk 
+    Info (332119):    -5.373            -280.668 PS2_clk 
+Info (332146): Worst-case hold slack is 0.186
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.151               0.000 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.188               0.000 clk 
-    Info (332119):     0.272               0.000 PS2_clk 
-    Info (332119):     0.518               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.901               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     1.487               0.000 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):     0.186               0.000 clk 
+    Info (332119):     0.193               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.220               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.269               0.000 PS2_clk 
+    Info (332119):     0.458               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     2.447               0.000 pipes:pipe_shift|pipeX[0][0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -2.086
+Info (332146): Worst-case minimum pulse width slack is -1.308
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.086            -107.142 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -0.753             -58.070 clk 
-    Info (332119):    -0.396             -66.554 clk_divider:VGA|out_clk 
-    Info (332119):    -0.395             -85.156 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.394             -34.020 clk_divider:GAME|out_clk 
-    Info (332119):    -0.394             -29.550 PS2_clk 
+    Info (332119):    -1.308             -74.266 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -0.746             -55.292 clk 
+    Info (332119):    -0.467             -68.419 clk_divider:VGA|out_clk 
+    Info (332119):    -0.411             -57.499 clk_divider:GAME|out_clk 
+    Info (332119):    -0.394             -84.388 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.394             -29.515 PS2_clk 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1046,6 +1048,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~113  from: cin  to: sumout
     Info (332098): Cell: display|Add19~117  from: cin  to: sumout
     Info (332098): Cell: display|Add19~121  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~125  from: datad  to: sumout
     Info (332098): Cell: display|Add19~13  from: cin  to: sumout
     Info (332098): Cell: display|Add19~17  from: cin  to: sumout
     Info (332098): Cell: display|Add19~1  from: cin  to: sumout
@@ -1057,12 +1060,12 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~41  from: cin  to: sumout
     Info (332098): Cell: display|Add19~45  from: cin  to: sumout
     Info (332098): Cell: display|Add19~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~53  from: sharein  to: sumout
+    Info (332098): Cell: display|Add19~53  from: cin  to: sumout
     Info (332098): Cell: display|Add19~57  from: cin  to: sumout
     Info (332098): Cell: display|Add19~5  from: cin  to: sumout
     Info (332098): Cell: display|Add19~61  from: cin  to: sumout
     Info (332098): Cell: display|Add19~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~69  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~69  from: sharein  to: sumout
     Info (332098): Cell: display|Add19~73  from: cin  to: sumout
     Info (332098): Cell: display|Add19~77  from: cin  to: sumout
     Info (332098): Cell: display|Add19~81  from: cin  to: sumout
@@ -1074,35 +1077,35 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -24.970
+Info (332146): Worst-case setup slack is -24.384
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -24.970            -439.823 clk_divider:GAME|out_clk 
-    Info (332119):   -24.305            -894.401 clk_divider:VGA|out_clk 
-    Info (332119):   -24.280            -227.345 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -5.474            -130.275 clk 
-    Info (332119):    -3.543            -386.073 clk_divider:FLOOR|out_clk 
-    Info (332119):    -2.567            -132.987 PS2_clk 
-Info (332146): Worst-case hold slack is -0.153
+    Info (332119):   -24.384            -912.771 clk_divider:VGA|out_clk 
+    Info (332119):   -24.375            -233.156 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -5.936            -178.208 clk_divider:GAME|out_clk 
+    Info (332119):    -5.747            -132.283 clk 
+    Info (332119):    -2.897            -328.951 clk_divider:FLOOR|out_clk 
+    Info (332119):    -2.618            -131.933 PS2_clk 
+Info (332146): Worst-case hold slack is -0.168
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.153              -1.351 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.144               0.000 PS2_clk 
-    Info (332119):     0.148               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.180               0.000 clk 
-    Info (332119):     0.406               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     1.449               0.000 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -0.168              -0.826 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.098               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.141               0.000 PS2_clk 
+    Info (332119):     0.163               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     0.182               0.000 clk 
+    Info (332119):     2.226               0.000 pipes:pipe_shift|pipeX[0][0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.854
+Info (332146): Worst-case minimum pulse width slack is -0.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.854             -26.672 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -0.659             -10.305 clk 
-    Info (332119):    -0.292             -16.962 PS2_clk 
-    Info (332119):    -0.179              -6.264 clk_divider:VGA|out_clk 
-    Info (332119):    -0.154              -6.378 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.094              -0.735 clk_divider:GAME|out_clk 
+    Info (332119):    -0.666             -10.220 clk 
+    Info (332119):    -0.570             -17.091 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -0.292             -16.961 PS2_clk 
+    Info (332119):    -0.186              -7.615 clk_divider:VGA|out_clk 
+    Info (332119):    -0.179              -8.178 clk_divider:GAME|out_clk 
+    Info (332119):    -0.112              -7.168 clk_divider:FLOOR|out_clk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: display|Add19~101  from: cin  to: sumout
@@ -1111,6 +1114,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~113  from: cin  to: sumout
     Info (332098): Cell: display|Add19~117  from: cin  to: sumout
     Info (332098): Cell: display|Add19~121  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~125  from: datad  to: sumout
     Info (332098): Cell: display|Add19~13  from: cin  to: sumout
     Info (332098): Cell: display|Add19~17  from: cin  to: sumout
     Info (332098): Cell: display|Add19~1  from: cin  to: sumout
@@ -1122,12 +1126,12 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add19~41  from: cin  to: sumout
     Info (332098): Cell: display|Add19~45  from: cin  to: sumout
     Info (332098): Cell: display|Add19~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~53  from: sharein  to: sumout
+    Info (332098): Cell: display|Add19~53  from: cin  to: sumout
     Info (332098): Cell: display|Add19~57  from: cin  to: sumout
     Info (332098): Cell: display|Add19~5  from: cin  to: sumout
     Info (332098): Cell: display|Add19~61  from: cin  to: sumout
     Info (332098): Cell: display|Add19~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add19~69  from: cin  to: sumout
+    Info (332098): Cell: display|Add19~69  from: sharein  to: sumout
     Info (332098): Cell: display|Add19~73  from: cin  to: sumout
     Info (332098): Cell: display|Add19~77  from: cin  to: sumout
     Info (332098): Cell: display|Add19~81  from: cin  to: sumout
@@ -1139,41 +1143,41 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -23.853
+Info (332146): Worst-case setup slack is -23.307
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -23.853            -411.131 clk_divider:GAME|out_clk 
-    Info (332119):   -23.254            -819.623 clk_divider:VGA|out_clk 
-    Info (332119):   -23.172            -213.851 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -5.094            -113.807 clk 
-    Info (332119):    -3.269            -356.440 clk_divider:FLOOR|out_clk 
-    Info (332119):    -2.256            -116.148 PS2_clk 
-Info (332146): Worst-case hold slack is -0.093
+    Info (332119):   -23.307            -833.070 clk_divider:VGA|out_clk 
+    Info (332119):   -23.275            -218.139 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -5.716            -167.490 clk_divider:GAME|out_clk 
+    Info (332119):    -5.331            -115.629 clk 
+    Info (332119):    -2.610            -296.879 clk_divider:FLOOR|out_clk 
+    Info (332119):    -2.251            -116.291 PS2_clk 
+Info (332146): Worst-case hold slack is -0.095
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.093              -0.610 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.020               0.000 clk 
-    Info (332119):     0.150               0.000 PS2_clk 
+    Info (332119):    -0.095              -0.321 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.072               0.000 clk 
+    Info (332119):     0.075               0.000 clk_divider:GAME|out_clk 
+    Info (332119):     0.148               0.000 PS2_clk 
     Info (332119):     0.152               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.377               0.000 clk_divider:GAME|out_clk 
-    Info (332119):     1.322               0.000 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):     2.047               0.000 pipes:pipe_shift|pipeX[0][0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.694
+Info (332146): Worst-case minimum pulse width slack is -0.639
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.694             -22.073 pipes:pipe_shift|pipeX[0][0] 
-    Info (332119):    -0.657             -10.164 clk 
-    Info (332119):    -0.304             -17.366 PS2_clk 
-    Info (332119):    -0.102              -2.909 clk_divider:VGA|out_clk 
-    Info (332119):    -0.084              -2.247 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.041              -0.129 clk_divider:GAME|out_clk 
+    Info (332119):    -0.639             -10.235 clk 
+    Info (332119):    -0.410             -11.498 pipes:pipe_shift|pipeX[0][0] 
+    Info (332119):    -0.305             -17.244 PS2_clk 
+    Info (332119):    -0.130              -3.807 clk_divider:VGA|out_clk 
+    Info (332119):    -0.103              -4.202 clk_divider:GAME|out_clk 
+    Info (332119):    -0.048              -2.714 clk_divider:FLOOR|out_clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5211 megabytes
-    Info: Processing ended: Sun May 16 01:24:29 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 5205 megabytes
+    Info: Processing ended: Sun May 16 02:20:36 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:22
 
 

@@ -42,7 +42,7 @@ begin
 					down <= 0;
 				else if (birdY < -10 + (480 - BIRD_SIZE_Y)/2)
 					down <= 1;
-				Y_vel <= down? ((480-BIRD_SIZE_Y)/2-birdY)/3:(birdY-(480-BIRD_SIZE_Y)/2)/3;
+				Y_vel <= down? 3:-3;
 			end
 			
 			IN_GAME: begin
