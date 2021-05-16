@@ -3,15 +3,13 @@ module image_renderer #(
 	parameter BIRD_SIZE_Y,
 	parameter SCALE
 )(
-	input clk, VGA_clk, GAME_clk, rst, display_on, flap,
+	input clk, VGA_clk, GAME_clk, FL_clk, rst, display_on, flap,
 	input [3:0] game_state,
 	input [2:0] bird_state,
-	input [15:0] X, Y, birdX, birdY,
+	input signed [31:0] X, Y, birdX, birdY,
+	input signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4, pipeY_1, pipeY_2, pipeY_3, pipeY_4,
 	output reg [23:0] RGB
 );
-
-wire ANI_clk;
-clk_divider #(500000-1) ANI (clk, ANI_clk);
 
 localparam NO_COLOUR = 24'h000000;
 localparam IGNORE_COLOUR = 24'hFF0096;
@@ -31,6 +29,11 @@ localparam TITLE_X = (DISPLAY_SIZE_X-TITLE_SIZE_X)/2, TITLE_Y = 50;
 localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE; 
 localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
 
+localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 60*SCALE;
+
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										DISPLAY LOGIC											/////
 ///////////////////////////////////////////////////////////////////////////////////
 
 localparam	START_SCREEN 	= 4'b0001,
@@ -50,10 +53,12 @@ begin
 					
 					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
 		
-					else if 	(bg0_gfx)	RGB <= bg_colour[0];
-					else if 	(bg1_gfx)	RGB <= bg_colour[1];
-					else if 	(bg2_gfx)	RGB <= bg_colour[2];
-					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+					
+					else RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -62,10 +67,16 @@ begin
 				if (display_on) begin
 					if			(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
 					
-					else if 	(bg0_gfx)	RGB <= bg_colour[0];
-					else if 	(bg1_gfx)	RGB <= bg_colour[1];
-					else if 	(bg2_gfx)	RGB <= bg_colour[2];
-					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+//					else if	(pipe4_gfx && pipe4_colour != IGNORE_COLOUR)	RGB <= pipe4_colour;
+					
+					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= pipe_colour;
+					
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+
+					else RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -76,10 +87,14 @@ begin
 					
 					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= (bird_colour[bird_state] & HALF_COLOUR) >> 2;
 					
-					else if 	(bg0_gfx)	RGB <= (bg_colour[0] & HALF_COLOUR) >> 2;
-					else if 	(bg1_gfx)	RGB <= (bg_colour[1] & HALF_COLOUR) >> 2;
-					else if 	(bg2_gfx)	RGB <= (bg_colour[2] & HALF_COLOUR) >> 2;
-					else if 	(bg3_gfx)	RGB <= (bg_colour[3] & HALF_COLOUR) >> 2;
+					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= (pipe_colour & HALF_COLOUR) >> 2;
+					
+//					else if 	(bg0_gfx)	RGB <= (bg_colour[0] & HALF_COLOUR) >> 2;
+//					else if 	(bg1_gfx)	RGB <= (bg_colour[1] & HALF_COLOUR) >> 2;
+//					else if 	(bg2_gfx)	RGB <= (bg_colour[2] & HALF_COLOUR) >> 2;
+//					else if 	(bg3_gfx)	RGB <= (bg_colour[3] & HALF_COLOUR) >> 2;
+
+					else RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -92,6 +107,10 @@ begin
 	end
 end
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										BIRD														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
@@ -120,6 +139,10 @@ flap_3_rom bird3
 	.colour_data 	( bird_colour[2] 		)
 );
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										TITLE														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
 wire title_gfx = (X - TITLE_X-1 < TITLE_SIZE_X) && (Y - TITLE_Y < TITLE_SIZE_Y) && (title_colour != IGNORE_COLOUR);
@@ -132,6 +155,10 @@ title_rom title
 	.colour_data	( title_colour 			)
 );
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										PAUSE														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
 wire pause_gfx = (X - PAUSE_X-1 < PAUSE_SIZE_X) && (Y - PAUSE_Y < PAUSE_SIZE_Y) && (pause_colour != IGNORE_COLOUR);
@@ -144,51 +171,103 @@ pause_rom pause_icon
 	.colour_data	( pause_colour 			)
 );
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										BACKGROUND												/////
 ///////////////////////////////////////////////////////////////////////////////////
 
-reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
-always @(posedge GAME_clk) begin
-	if (game_state != PAUSE && game_state != END_SCREEN) begin
-		if (X_ofs_bg != 640)
-			X_ofs_bg <= X_ofs_bg + 1;
-		else
-			X_ofs_bg <= 0;
-	end
-end
+//reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
+//always @(posedge GAME_clk) begin
+//	if (game_state != PAUSE && game_state != END_SCREEN) begin
+//		if (X_ofs_bg != 640)
+//			X_ofs_bg <= X_ofs_bg + 1;
+//		else
+//			X_ofs_bg <= 0;
+//	end
+//end
+//
+//always @(posedge FL_clk) begin
+//	if (game_state != PAUSE && game_state != END_SCREEN) begin
+//		if (X_ofs_fl != 640)
+//			X_ofs_fl <= X_ofs_fl + 1;
+//		else
+//			X_ofs_fl <= 0;
+//	end
+//end
+//
+//wire [23:0] bg_colour [3:0];
+//
+//wire bg0_gfx = (Y <= BG_Y);
+//assign bg_colour [0] = 24'h70C5CE;
+//
+//wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+//background_rom bg
+//(
+//	.clk				( VGA_clk 											),
+//	.row				( (Y-BG_Y)/SCALE 									),
+//	.col				( ((X + X_ofs_bg)%DISPLAY_SIZE_X)/SCALE 	),
+//	.colour_data 	( bg_colour[1] 									)
+//);
+//
+//wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+//floor_rom floor
+//(
+//	.clk				( VGA_clk 											),
+//	.row				( (Y-FLOOR_Y)/SCALE 								),
+//	.col				( ((X + X_ofs_fl)%DISPLAY_SIZE_X)/SCALE 	),
+//	.colour_data 	( bg_colour[2] 									)
+//);
+//
+//wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
+//assign bg_colour [3] = 24'hDED895;
 
-always @(posedge ANI_clk) begin
-	if (game_state != PAUSE && game_state != END_SCREEN) begin
-		if (X_ofs_fl != 640)
-			X_ofs_fl <= X_ofs_fl + 1;
-		else
-			X_ofs_fl <= 0;
-	end
-end
 
-wire [23:0] bg_colour [3:0];
 
-wire bg0_gfx = (Y <= BG_Y);
-assign bg_colour [0] = 24'h70C5CE;
+///////////////////////////////////////////////////////////////////////////////////
+/////										PIPES														/////
+///////////////////////////////////////////////////////////////////////////////////
 
-wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
-background_rom bg
+wire signed [31:0] pipeX [3:0];
+wire signed [31:0] pipeY [3:0];
+
+assign {pipeX[3], pipeX[2], pipeX[1], pipeX[0]} = {pipeX_4, pipeX_3, pipeX_2, pipeX_1};
+assign {pipeY[3], pipeY[2], pipeY[1], pipeY[0]} = {pipeY_4, pipeY_3, pipeY_2, pipeY_1};
+									
+reg [3:0] pipe_btm_gfx, pipe_top_gfx;
+
+wire [23:0] pipe_colour;
+reg [31:0] pipe_row=0, pipe_col=0;
+ 
+pipe_rom pipe
 (
-	.clk				( VGA_clk 											),
-	.row				( (Y-BG_Y)/SCALE 									),
-	.col				( ((X + X_ofs_bg)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[1] 									)
+	.clk				( VGA_clk 		),
+	.row				( pipe_row 		),
+	.col				( pipe_col 		),
+	.colour_data 	( pipe_colour	)
 );
 
-wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
-floor_rom floor
-(
-	.clk				( VGA_clk 											),
-	.row				( (Y-FLOOR_Y)/SCALE 								),
-	.col				( ((X + X_ofs_fl)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[2] 									)
-);
-
-wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
-assign bg_colour [3] = 24'hDED895;
-endmodule
+integer i;
+always @(X or Y)
+begin
+	for (i = 0; i < 4; i = i + 1) begin
+	
+		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
+									(Y - (pipeY[i]) < PIPE_SIZE_Y);
 		
+		pipe_top_gfx[i] <=	(X - (pipeX[i]) < PIPE_SIZE_X) && 
+									(-Y + (pipeY[i]) < PIPE_SIZE_Y);
+		
+		if (pipe_btm_gfx[i]) begin
+			pipe_row <= (Y - (pipeY[i]))/SCALE;
+			pipe_col <= (X - (pipeX[i]))/SCALE;
+		
+		end else if (pipe_top_gfx[i]) begin
+			pipe_row <= (PIPE_SIZE_Y-(Y-(pipeY[i])))/SCALE;
+			pipe_col <= (X - (pipeX[i]))/SCALE;
+			
+		end
+	end
+end
+
+endmodule

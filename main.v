@@ -39,8 +39,8 @@ module main
 	(* chip_pin = "J14, G15, F15, H14, F14, H13, G13, B13" *)
 	output [7:0] B,
 	
-	(* chip_pin = "V18, V17, W16, V16" *)
-	output [3:0] led
+	(* chip_pin = "Y21, W21, W20, Y19, W19, W17, V18, V17, W16, V16" *)
+	output [9:0] led
 );
 
 localparam [6:0] SCALE = 3;
@@ -52,11 +52,18 @@ clk_divider VGA (clk, VGA_clk);
 wire GAME_clk;
 clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
 
+wire FL_clk;
+clk_divider #(500000-1) FLOOR (clk, FL_clk);
 
-wire [15:0] X, Y, birdX=150, birdY;
+
 wire [3:0] game_state;
 wire [2:0] bird_state;
-wire flap, pause, p_pause;
+
+wire signed [31:0] X, Y, birdX=150, birdY;
+wire signed [31:0] pipeX [3:0];
+wire signed [31:0] pipeY [3:0];
+
+wire flap, pause, p_pause, collision;
 
 vga_gen vga
 (
@@ -81,10 +88,8 @@ keyboard_input kb
 	.pause			( p_pause 		)
 );
 
-//key_filter f (clk, p_flap, flap);
-key_filter p (clk, p_pause, pause);
+key_filter p_edge (clk, p_pause, pause);
 
-wire collision = 0;
 game_FSM FSM
 (
 	.clk				( clk 			),
@@ -107,14 +112,41 @@ bird_physics #(
 	.bird_state		( bird_state 	)
 );
 
+collision_detection #(
+	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
+	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
+) coll (
+	.GAME_clk		( GAME_clk 		),
+	.rst				( rst				),
+	.birdX			( birdX 			),
+	.birdY			( birdY 			),
+	.collision		( collision		)
+);
+
+pipes pipe_shift
+(
+	.FL_clk			( FL_clk		),
+	.rst				( rst				),
+	.game_state 	( game_state	),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		)
+);
+	
 image_renderer #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
 	.SCALE			( SCALE 			)
-) disp (
-	.clk				( clk 			),
+) display (
+	.clk				( clk				),
 	.VGA_clk			( VGA_clk 		),
 	.GAME_clk		( GAME_clk 		),
+	.FL_clk			( FL_clk			),
 	.rst				( rst 			),
 	.display_on		( display_on 	),
 	.game_state		( game_state 	),
@@ -124,9 +156,18 @@ image_renderer #(
 	.Y					( Y 				),
 	.birdX			( birdX 			),
 	.birdY			( birdY 			),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		),
 	.RGB				( {R,G,B} 		)
 );
 
-assign led = {pause, flap};
+//assign led = {collision, pause, flap};
+assign led = pipeX[3];
 
 endmodule

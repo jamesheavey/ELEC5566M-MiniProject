@@ -1,8 +1,5 @@
 
-State Machine - |main|direction
-Name direction.0000 direction.1000 direction.0100 direction.0010 direction.0001 
-direction.0000 0 0 0 0 0 
-direction.0001 1 0 0 0 1 
-direction.0010 1 0 0 1 0 
-direction.0100 1 0 1 0 0 
-direction.1000 1 1 0 0 0 
+State Machine - |main|pipes:pipe_shift|state
+Name state.SHIFT_PIPE 
+state.IDLE 0 
+state.SHIFT_PIPE 1 
