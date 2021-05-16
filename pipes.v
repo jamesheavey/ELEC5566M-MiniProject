@@ -1,20 +1,21 @@
 module pipes #(
 	parameter NUM_PIPES = 4
 )(
-	input clk, FL_clk, rst,
+	input FL_clk, rst,
+	input signed [5:0] randY,
 	input [3:0] game_state,
 	output signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
 	output signed [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4
 );
 
-wire signed [5:0] randY;
-LFSR #(
-	.NUM_BITS		( 6		)
-) rand (
-	.i_Clk			( clk		),
-	.i_Enable		( 1		),
-	.o_LFSR_Data	( randY	)
-);
+//wire signed [5:0] randY;
+//LFSR #(
+//	.NUM_BITS		( 6		)
+//) rand (
+//	.i_Clk			( clk		),
+//	.i_Enable		( 1		),
+//	.o_LFSR_Data	( randY	)
+//);
 
 localparam	START_SCREEN 	= 4'b0001,
 				IN_GAME			= 4'b0010,
@@ -44,7 +45,7 @@ begin
 	
 		for (i = 0; i < NUM_PIPES; i = i+1) begin
 			pipeX[i] <= pipeX_reset[i];
-			pipeY[i] <= CENTRE + (randY << 1);
+			pipeY[i] <= CENTRE + (randY);
 		end
 		
 	end else begin
@@ -53,7 +54,7 @@ begin
 			START_SCREEN: begin
 				for (i = 0; i < NUM_PIPES; i = i+1) begin
 					pipeX[i] <= pipeX_reset[i];
-					pipeY[i] <= CENTRE;
+					pipeY[i] <= CENTRE + (randY);
 				end
 			end
 			
@@ -62,8 +63,10 @@ begin
 					pipeX[i] <= pipeX[i] - 1;
 					if (pipeX[i] + PIPE_SIZE_X <= 0) begin
 						pipeX[i] <= pipeX[(i+NUM_PIPES-1)%NUM_PIPES] + 250;
-						pipeY[i] <= CENTRE + (randY << 1);
+						pipeY[i] <= CENTRE + (randY);
 					end
+					
+					// Add slight y oscillation
 				end
 			end
 		endcase

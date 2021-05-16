@@ -50,7 +50,7 @@ wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
 
 wire GAME_clk;
-clk_divider #(2000000-1) GAME (clk, GAME_clk); // 25 Hz
+clk_divider #(1666666-1) GAME (clk, GAME_clk); // 30 Hz
 
 wire FL_clk;
 clk_divider #(500000-1) FLOOR (clk, FL_clk);
@@ -64,6 +64,8 @@ wire signed [31:0] pipeX [3:0];
 wire signed [31:0] pipeY [3:0];
 
 wire flap, pause, p_pause, collision;
+
+wire signed [5:0] randY;
 
 vga_gen vga
 (
@@ -86,6 +88,13 @@ keyboard_input kb
 	.PS2_data		( PS2_data 		),
 	.flap				( flap 			),
 	.pause			( p_pause 		)
+);
+
+random_number_generator rand
+(	
+	.clk				( clk				),
+	.user_input		( flap			),
+	.random			( randY			)
 );
 
 key_filter p_edge (clk, p_pause, pause);
@@ -116,18 +125,26 @@ collision_detection #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
 ) coll (
-	.GAME_clk		( GAME_clk 		),
-	.rst				( rst				),
+	.clk				( clk 			),
 	.birdX			( birdX 			),
 	.birdY			( birdY 			),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		),
 	.collision		( collision		)
 );
 
 pipes pipe_shift
 (
-	.FL_clk			( FL_clk		),
+	.FL_clk			( FL_clk			),
 	.rst				( rst				),
 	.game_state 	( game_state	),
+	.randY			( randY			),
 	.pipeX_1			( pipeX[0]		),
 	.pipeX_2			( pipeX[1]		),
 	.pipeX_3			( pipeX[2]		),
@@ -167,6 +184,6 @@ image_renderer #(
 );
 
 //assign led = {collision, pause, flap};
-assign led = pipeX[3];
+assign led = randY;
 
 endmodule

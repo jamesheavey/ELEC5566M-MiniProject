@@ -1,0 +1,12 @@
+module random_number_generator
+(
+	input clk, user_input,
+	output signed [5:0] random = 6'101001
+);
+
+always @(posedge clk) begin
+	if (user_input) begin
+		random[0] = random[0] ^ random[5];
+		random[0] = random[0] ^ random[5];
+		random[0] = random[0] ^ random[5];
+		random[0] = random[0] ^ random[5];

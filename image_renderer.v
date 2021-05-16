@@ -69,8 +69,7 @@ begin
 				if (display_on) begin
 					if			(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
 					
-//					else if	(pipe4_gfx && pipe4_colour != IGNORE_COLOUR)	RGB <= pipe4_colour;
-					
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
 					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= pipe_colour;
 					
 //					else if 	(bg0_gfx)	RGB <= bg_colour[0];
@@ -78,7 +77,8 @@ begin
 //					else if 	(bg2_gfx)	RGB <= bg_colour[2];
 //					else if 	(bg3_gfx)	RGB <= bg_colour[3];
 
-					else RGB <= NO_COLOUR;
+					else RGB <= 24'h70C5CE;
+//					else RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -89,7 +89,7 @@ begin
 					
 					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= (bird_colour[bird_state] & HALF_COLOUR) >> 2;
 					
-					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= (pipe_colour & HALF_COLOUR) >> 2;
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= (pipe_colour & HALF_COLOUR) >> 2;
 					
 //					else if 	(bg0_gfx)	RGB <= (bg_colour[0] & HALF_COLOUR) >> 2;
 //					else if 	(bg1_gfx)	RGB <= (bg_colour[1] & HALF_COLOUR) >> 2;
@@ -101,8 +101,22 @@ begin
 					RGB <= NO_COLOUR;
 				end end
 				
-			END_SCREEN: RGB <= NO_COLOUR;
-				// end
+			END_SCREEN: begin
+				if (display_on) begin
+					// add dead bird sprite?
+					if			(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+					
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
+					
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+
+					else RGB <= NO_COLOUR;
+				end else begin
+					RGB <= NO_COLOUR;
+				end end
 			
 			default: RGB <= NO_COLOUR;
 		endcase
@@ -244,8 +258,8 @@ reg [31:0] pipe_row=0, pipe_col=0;
 pipe_rom pipe
 (
 	.clk				( VGA_clk 		),
-	.row				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_row : 0 ),
-	.col				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_col : 0 ),
+	.row				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_row : 16 ),
+	.col				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_col : 25 ),
 	.colour_data 	( pipe_colour	)
 );
 
@@ -256,17 +270,17 @@ begin
 	
 		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
 									(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
-		
+									
 		pipe_top_gfx[i] <=	(X - (pipeX[i]) < PIPE_SIZE_X) && 
 									(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
 		
 		if (pipe_btm_gfx[i]) begin
-			pipe_row <= (Y - (pipeY[i]+PIPE_GAP))/SCALE;
-			pipe_col <= (X - (pipeX[i]))/SCALE;
+			pipe_row <= (Y - pipeY[i] - PIPE_GAP)/SCALE;
+			pipe_col <= (X - pipeX[i])/SCALE;
 		
 		end else if (pipe_top_gfx[i]) begin
-			pipe_row <= (PIPE_SIZE_Y-(Y-(pipeY[i]-PIPE_GAP)))/SCALE;
-			pipe_col <= (X - (pipeX[i]))/SCALE;
+			pipe_row <= (-Y + pipeY[i] - PIPE_GAP)/SCALE;
+			pipe_col <= (X - pipeX[i])/SCALE;
 			
 		end
 	end

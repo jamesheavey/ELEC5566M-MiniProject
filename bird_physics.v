@@ -8,7 +8,7 @@ module bird_physics#(
 	output reg [1:0] bird_state
 );
 
-integer Y_acc=2, Y_vel_max=20;
+integer Y_acc=3, Y_vel_max=20;
 reg signed [15:0] Y_vel, prev_Y_vel;
 //reg [31:0] Y_load_time;
 
