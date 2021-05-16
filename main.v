@@ -143,7 +143,6 @@ image_renderer #(
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
 	.SCALE			( SCALE 			)
 ) display (
-	.clk				( clk				),
 	.VGA_clk			( VGA_clk 		),
 	.GAME_clk		( GAME_clk 		),
 	.FL_clk			( FL_clk			),

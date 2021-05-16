@@ -3,7 +3,7 @@ module image_renderer #(
 	parameter BIRD_SIZE_Y,
 	parameter SCALE
 )(
-	input clk, VGA_clk, GAME_clk, FL_clk, rst, display_on, flap,
+	input VGA_clk, GAME_clk, FL_clk, rst, display_on, flap,
 	input [3:0] game_state,
 	input [2:0] bird_state,
 	input signed [31:0] X, Y, birdX, birdY,
@@ -29,7 +29,8 @@ localparam TITLE_X = (DISPLAY_SIZE_X-TITLE_SIZE_X)/2, TITLE_Y = 50;
 localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE; 
 localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
 
-localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 60*SCALE;
+localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 120*SCALE;
+localparam PIPE_GAP = 50; 
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -253,18 +254,18 @@ begin
 	for (i = 0; i < 4; i = i + 1) begin
 	
 		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
-									(Y - (pipeY[i]) < PIPE_SIZE_Y);
+									(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
 		
 		pipe_top_gfx[i] <=	(X - (pipeX[i]) < PIPE_SIZE_X) && 
-									(-Y + (pipeY[i]) < PIPE_SIZE_Y);
+									(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
 		
 		if (pipe_btm_gfx[i]) begin
 			pipe_row <= (Y - (pipeY[i]))/SCALE;
-			pipe_col <= (X - (pipeX[i]))/SCALE;
+			pipe_col <= (X - (pipeX[i]-2))/SCALE;
 		
 		end else if (pipe_top_gfx[i]) begin
 			pipe_row <= (PIPE_SIZE_Y-(Y-(pipeY[i])))/SCALE;
-			pipe_col <= (X - (pipeX[i]))/SCALE;
+			pipe_col <= (X - (pipeX[i]-2))/SCALE;
 			
 		end
 	end

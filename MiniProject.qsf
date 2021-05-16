@@ -75,6 +75,6 @@ set_global_assignment -name VERILOG_FILE keyboard_input.v
 set_global_assignment -name VERILOG_FILE bird_physics.v
 set_global_assignment -name VERILOG_FILE game_FSM.v
 set_global_assignment -name VERILOG_FILE collision_detection.v
-set_global_assignment -name VERILOG_FILE random_number_gen.v
 set_global_assignment -name VERILOG_FILE pipes.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE LFSR.v
