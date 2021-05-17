@@ -5,9 +5,9 @@ module collision_detection #(
 	parameter NUM_PIPES
 )(
 	input clk, 
-	input signed [31:0] birdY, birdX,
-	input signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
-	input signed [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	input [31:0] birdY, birdX,
+	input [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
+	input [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
 	output reg collision
 );
 
@@ -29,8 +29,8 @@ begin
 	if (birdY + BIRD_SIZE_Y >= FLOOR_Y && birdY + BIRD_SIZE_Y <= 480)
 		collision <= 1;
 		
-	for (i=0; i<NUM_PIPES; i=i+1) begin
-		if( (birdX + BIRD_SIZE_X >= pipeX[i]) && (birdX <= pipeX[i] + PIPE_SIZE_X) ) begin
+	for (i = 0; i < NUM_PIPES; i = i + 1) begin
+		if ( (birdX + BIRD_SIZE_X >= pipeX[i]) && (birdX <= pipeX[i] + PIPE_SIZE_X) ) begin
 			if ( (birdY + BIRD_SIZE_Y >= pipeY[i] + PIPE_GAP) || (birdY <= pipeY[i] - PIPE_GAP) ) begin
 				collision <= 1;
 			end

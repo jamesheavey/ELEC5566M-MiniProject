@@ -16,14 +16,12 @@ end
 bin2BCD scr (score_count, score_BCD);
 bin2BCD hiscr (hiscore, hiscore_BCD);
 
-wire [23:0] hex_score = score_count;
-
 genvar i;
 generate 
 	// generate a HexTo7Seg converter for each available display
 	for (i = 0; i < 6; i = i + 1) begin : seven_seg_loop
 		hex_to_7seg display (
-			.hex			( hex_score[(i*4)+:4] ),
+			.hex			( {12[0], score_count}[(i*4)+:4] ),
 			.seven_seg	( seven_seg[(i*7)+:7] )
 		);
 	end 

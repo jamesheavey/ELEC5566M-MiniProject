@@ -1,53 +1,12 @@
 module flappy_bird
 (	
-	(* chip_pin = "AF14" *)
-	input clk,
-	
-	(* chip_pin = "AB12" *)
-	input rst,
-	
-//	(* chip_pin = "Y16, W15, AA15, AA14" *)
-//	input [3:0] key,
-	
-	(* chip_pin = "AD7" *)
-	input PS2_clk,
-	
-	(* chip_pin = "AE7" *)
-	input PS2_data,
-	
-	(* chip_pin = "B11" *) 
-	output h_sync,
-	
-	(* chip_pin = "D11" *) 
-	output v_sync,
-	
-	(* chip_pin = "A11" *)
-	output v_clk,
-	
-	(* chip_pin = "F10" *)
-	output display_on,
-	
-	(* chip_pin = "C10" *)
-	output sync_n,
-	
-	(* chip_pin = "F13, E12, D12, C12, B12, E13, C13, A13" *)
-	output [7:0] R,
-	
-	(* chip_pin = "E11, F11, G12, G11, G10, H12, J10, J9" *)	
-	output [7:0] G,
-	
-	(* chip_pin = "J14, G15, F15, H14, F14, H13, G13, B13" *)
-	output [7:0] B,
-	
-	(* chip_pin = "Y21, W21, W20, Y19, W19, W17, V18, V17, W16, V16" *)
-	output [9:0] led,
-	
-	(* chip_pin = {"AA25, AA26, AB26, AB27, Y27, AA28, V25,",
-						"W25, V23, W24, W22, Y24, Y23, AA24,",
-						"AB22, AB25, AB28, AC25, AD25, AC27, AD26,",
-						"AC30, AC29, AD30, AC28, AD29, AE29, AB23,",
-						"AD27, AF30, AF29, AG30, AH30, AH29, AJ29,",
-						"AH28, AG28, AF28, AG27, AE28, AE27, AE26"} *)
+	input clk, rst,
+	input PS2_clk, PS2_data,
+
+	output h_sync, v_sync,
+	output v_clk, display_on, sync_n,
+	output [7:0] R, G, B,
+	output [9:0] LED,
 	output [41:0] seven_seg
 );
 
@@ -149,6 +108,7 @@ pipes #(
 	.FL_clk			( FL_clk			),
 	.rst				( rst				),
 	.game_state 	( game_state	),
+	.birdX			( birdX 			),
 	.pipeX_1			( pipeX[0]		),
 	.pipeX_2			( pipeX[1]		),
 	.pipeX_3			( pipeX[2]		),
@@ -203,6 +163,6 @@ image_renderer #(
 );
 
 //assign led = {collision, pause, flap};
-assign led = score_count;
+assign LED = score_count;
 
 endmodule

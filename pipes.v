@@ -9,7 +9,7 @@ module pipes #(
 	output reg [31:0] score_count
 );
 
-wire [31:0] randY;
+wire [23:0] randY;
 random_number_generator rand (clk, randY);
 
 localparam PIPE_SIZE_X = 78;
@@ -38,7 +38,7 @@ begin
 	
 		for (i = 0; i < NUM_PIPES; i = i+1) begin
 			pipeX[i] <= pipeX_reset[i];
-			pipeY[i] <= CENTRE + (randY[(28-7*(i))-:7]);
+			pipeY[i] <= CENTRE + (randY[(23-6*(i))-:6]);
 		end
 		score_count <= 0;
 		
@@ -48,7 +48,7 @@ begin
 			START_SCREEN: begin
 				for (i = 0; i < NUM_PIPES; i = i+1) begin
 					pipeX[i] <= pipeX_reset[i];
-					pipeY[i] <= CENTRE + (randY[(28-7*(i))-:7]);
+					pipeY[i] <= CENTRE + (randY[(23-6*(i))-:6]);
 				end
 				score_count <= 0;
 				
@@ -59,7 +59,7 @@ begin
 					pipeX[i] <= pipeX[i] - 1;
 					if (pipeX[i] + PIPE_SIZE_X <= 0) begin
 						pipeX[i] <= pipeX[(i+NUM_PIPES-1)%NUM_PIPES] + PIPE_SEPARATION;
-						pipeY[i] <= CENTRE + (randY[(28-7*(i))-:7]);
+						pipeY[i] <= CENTRE + (randY[(23-6*(i))-:6]);
 					end
 					
 					if (pipeX[i] + PIPE_SIZE_X == birdX) begin
