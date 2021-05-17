@@ -20,51 +20,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[7]",
+					"name" : "LED[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[8]",
+					"name" : "LED[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[9]",
+					"name" : "LED[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[10]",
+					"name" : "LED[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[11]",
+					"name" : "LED[4]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[12]",
+					"name" : "LED[5]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[14]",
+					"name" : "LED[6]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[15]",
+					"name" : "LED[7]",
 					"strict" : false
 				},
 				{
-					"name" : "seven_seg[16]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[17]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[18]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[19]",
+					"name" : "LED[8]",
 					"strict" : false
 				},
 				{
@@ -164,42 +152,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LED[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[8]",
-					"strict" : false
-				},
-				{
 					"name" : "LED[9]",
 					"strict" : false
 				},
@@ -232,95 +184,59 @@
 					"strict" : false
 				},
 				{
+					"name" : "seven_seg[7]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[8]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[9]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[10]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[11]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[12]",
+					"strict" : false
+				},
+				{
 					"name" : "seven_seg[13]",
 					"strict" : false
 				},
 				{
+					"name" : "seven_seg[14]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[15]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[16]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[17]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[18]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[19]",
+					"strict" : false
+				},
+				{
 					"name" : "seven_seg[20]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[21]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[22]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[23]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[24]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[25]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[26]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[27]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[28]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[29]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[30]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[31]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[32]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[33]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[34]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[35]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[36]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[37]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[38]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[39]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[40]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[41]",
 					"strict" : false
 				},
 				{

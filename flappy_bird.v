@@ -144,7 +144,6 @@ image_renderer #(
 	.display_on		( display_on 	),
 	.game_state		( game_state 	),
 	.bird_state		( bird_state 	),
-	.flap				( flap 			),
 	.X					( X 				),
 	.Y					( Y 				),
 	.birdX			( birdX 			),
@@ -163,6 +162,6 @@ image_renderer #(
 );
 
 //assign led = {collision, pause, flap};
-assign LED = score_count;
+assign LED = GAME_clk ? {9{collision}} : 0;
 
 endmodule

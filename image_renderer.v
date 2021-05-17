@@ -43,7 +43,7 @@ localparam SCORE_X = (DISPLAY_SIZE_X-SCORE_SIZE_X)/2, SCORE_Y = 150;
 
 localparam NUM_SIZE_X = 7*SCALE, NUM_SIZE_Y = 10*SCALE; // total Y size is 90
 
-localparam MEDAL_SIZE_X = 22*SCALE, MEDAL_SIZE_Y = 33*SCALE; // total Y size is 66
+localparam MEDAL_SIZE_X = 22*SCALE, MEDAL_SIZE_Y = 22*SCALE; // total Y size is 66
 
 ///////////////////////////////////////////////////////////////////////////////////
 /////										DISPLAY LOGIC											/////
@@ -147,10 +147,12 @@ begin
 end
 
 
-
 ///////////////////////////////////////////////////////////////////////////////////
 /////										BIRD														/////
 ///////////////////////////////////////////////////////////////////////////////////
+
+
+// input an angle, multiply row and column by a transformation matrix
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
 wire [23:0] bird_colour [2:0];
@@ -236,9 +238,12 @@ end
 wire [23:0] bg_colour [3:0];
 
 wire bg0_gfx = (Y <= BG_Y);
+wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
+
 assign bg_colour [0] = 24'h70C5CE;
 
-wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
 background_rom bg
 (
 	.clk				( VGA_clk 											),
@@ -247,7 +252,6 @@ background_rom bg
 	.colour_data 	( bg_colour[1] 									)
 );
 
-wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
 floor_rom floor
 (
 	.clk				( VGA_clk 											),
@@ -256,9 +260,7 @@ floor_rom floor
 	.colour_data 	( bg_colour[2] 									)
 );
 
-wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
 assign bg_colour [3] = 24'hDED895;
-
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -266,10 +268,9 @@ assign bg_colour [3] = 24'hDED895;
 ///////////////////////////////////////////////////////////////////////////////////
 									
 reg [3:0] pipe_btm_gfx, pipe_top_gfx;
+reg [31:0] pipe_row, pipe_col;
 
 wire [23:0] pipe_colour;
-reg [31:0] pipe_row=0, pipe_col=0;
-
 wire [31:0] pipeX [NUM_PIPES-1:0];
 wire [31:0] pipeY [NUM_PIPES-1:0];
 
@@ -357,126 +358,64 @@ medals_rom medal
 	.colour_data 	( medal_colour			)
 );
 
+localparam NUM_SPACING = 5;
+
 always@(X or Y)
 begin
-
+	
+	{num_row, num_col, num_gfx, medal_row, medal_col, medal_gfx} = 0;
+	
 	case (game_state)
 		IN_GAME: begin
 			
-			num_row = 0;
-			num_col = 0;
-			num_gfx = 0;
-		
-			// if vga pixel within bcd3 location on screen
-			if(X >= 529 && X < 529 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[11:8] != 0)
-			begin
-				num_col = X - 529;
-				num_row = Y - 16 + (score_BCD[11:8]-1 * NUM_SIZE_Y); // offset row index by scaled bcd3 value
-				num_gfx = 1;
-			end
-			
-			// if vga pixel within bcd2 location on screen
-			if(X >= 566 && X < 566 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[7:4] != 0)
-			begin
-				num_col = X - 566;
-				num_row = Y - 16 + ((score_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
-				num_gfx = 1;
-			end
-			
-			// if vga pixel within bcd2 location on screen
-			if(X >= 603 && X < 603 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[3:0] != 0)
-			begin
-				num_col = X - 603;
-				num_row = Y - 16 + ((score_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
-				num_gfx = 1;
+			for (i = 0; i < 3; i = i + 1) begin
+				if (X >= 550 + i*(NUM_SPACING + NUM_SIZE_X) && X < 550 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
+					num_col = X - (550 + i*(NUM_SPACING + NUM_SIZE_X));
+					num_row = Y - 16 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+					num_gfx = 1;
+				end
 			end
 		end
 		
 		END_SCREEN: begin
 			
-			num_row = 0;
-			num_col = 0;
-			num_gfx = 0;
-		
-			// if vga pixel within bcd3 location on screen
-			if(X >= (SCORE_X+225) && X < (SCORE_X+225) + NUM_SIZE_X && Y >= (SCORE_Y+30) && Y < (SCORE_Y+30) + NUM_SIZE_Y && score_BCD[11:8] != 0)
-			begin
-				num_col = X - (SCORE_X+225);
-				num_row = Y - (SCORE_Y+30) + (score_BCD[11:8]-1 * NUM_SIZE_Y); // offset row index by scaled bcd3 value
-				num_gfx = 1;
+			for (i = 0; i < 3; i = i + 1) begin
+				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+40) && Y < (SCORE_Y+40) + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
+					num_col = X - (SCORE_X + 210 + i*(NUM_SPACING + NUM_SIZE_X));
+					num_row = Y - 40 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+					num_gfx = 1;
+				end
+				
+				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[4*(3-i)-1-:3] != 0) begin
+					num_col = X - (SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X));
+					num_row = Y - 110 + (hiscore_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+					num_gfx = 1;
+				end
 			end
+
+			if(X >= (SCORE_X+35) && X < (SCORE_X+35) + MEDAL_SIZE_X && Y >= (SCORE_Y+75) && Y < (SCORE_Y+75) + MEDAL_SIZE_Y) begin
 			
-			// if vga pixel within bcd2 location on screen
-			if(X >= (SCORE_X+262) && X < (SCORE_X+262) + NUM_SIZE_X && Y >= (SCORE_Y+30) && Y < (SCORE_Y+30) + NUM_SIZE_Y && score_BCD[7:4] != 0)
-			begin
-				num_col = X - (SCORE_X+262);
-				num_row = Y - (SCORE_Y+30) + ((score_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
-				num_gfx = 1;
-			end
-			
-			// if vga pixel within bcd1 location on screen
-			if(X >= (SCORE_X+299) && X < (SCORE_X+299) + NUM_SIZE_X && Y >= (SCORE_Y+30) && Y < (SCORE_Y+30) + NUM_SIZE_Y && score_BCD[3:0] != 0)
-			begin
-				num_col = X - (SCORE_X+299);
-				num_row = Y - (SCORE_Y+30) + ((score_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd1 value
-				num_gfx = 1;
-			end
-			
-			
-			
-			// if vga pixel within bcd3 location on screen
-			if(X >= (SCORE_X+225) && X < (SCORE_X+225) + NUM_SIZE_X && Y >= (SCORE_Y+70) && Y < (SCORE_Y+70) + NUM_SIZE_Y && hiscore_BCD[11:8] != 0)
-			begin
-				num_col = X - (SCORE_X+225);
-				num_row = Y - (SCORE_Y+70) + (hiscore_BCD[11:8]-1 * NUM_SIZE_Y); // offset row index by scaled bcd3 value
-				num_gfx = 1;
-			end
-			
-			// if vga pixel within bcd2 location on screen
-			if(X >= (SCORE_X+262) && X < (SCORE_X+262) + NUM_SIZE_X && Y >= (SCORE_Y+70) && Y < (SCORE_Y+70) + NUM_SIZE_Y && hiscore_BCD[7:4] != 0)
-			begin
-				num_col = X - (SCORE_X+262);
-				num_row = Y - (SCORE_Y+70) + ((hiscore_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
-				num_gfx = 1;
-			end
-			
-			// if vga pixel within bcd1 location on screen
-			if(X >= (SCORE_X+299) && X < (SCORE_X+299) + NUM_SIZE_X && Y >= (SCORE_Y+70) && Y < (SCORE_Y+70) + NUM_SIZE_Y && hiscore_BCD[3:0] != 0)
-			begin
-				num_col = X - (SCORE_X+299);
-				num_row = Y - (SCORE_Y+70) + ((hiscore_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd1 value
-				num_gfx = 1;
-			end
-			
-			medal_row = 0;
-			medal_col = 0;
-			medal_gfx = 0;
-			
-			// if vga pixel within bcd3 location on screen
-			if(X >= (SCORE_X+50) && X < (SCORE_X+50) + MEDAL_SIZE_X && Y >= 50 && Y < 50 + MEDAL_SIZE_Y)
-			begin
-				if ( score_BCD[7:4] > 1 ) begin
+				if (score_BCD[7:4] > 1) begin
 					// GOLD
-					medal_col = X - (SCORE_X+50);
-					medal_row = Y - 50;
+					medal_col = X - (SCORE_X+35);
+					medal_row = Y - 75;
 					medal_gfx = 1;
 				
-				end else if ( score_BCD[7:4] > 0 ) begin
+				end else if (score_BCD[7:4] > 0) begin
 					// SILVER
-					medal_col = X - (SCORE_X+50);
-					medal_row = Y - 50 + (MEDAL_SIZE_Y);
+					medal_col = X - (SCORE_X+35);
+					medal_row = Y - 75 + (MEDAL_SIZE_Y);
 					medal_gfx = 1;
 				
 				end else begin
 					// BROnZE
-					medal_col = X - (SCORE_X+50);
-					medal_row = Y - 50 + (2*MEDAL_SIZE_Y);
+					medal_col = X - (SCORE_X+35);
+					medal_row = Y - 75 + (2*MEDAL_SIZE_Y);
 					medal_gfx = 1;
 				end
 			end
 		end
 	endcase
 end
-			
 		
 endmodule
