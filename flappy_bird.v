@@ -40,7 +40,15 @@ module flappy_bird
 	output [7:0] B,
 	
 	(* chip_pin = "Y21, W21, W20, Y19, W19, W17, V18, V17, W16, V16" *)
-	output [9:0] led
+	output [9:0] led,
+	
+	(* chip_pin = {"AA25, AA26, AB26, AB27, Y27, AA28, V25,",
+						"W25, V23, W24, W22, Y24, Y23, AA24,",
+						"AB22, AB25, AB28, AC25, AD25, AC27, AD26,",
+						"AC30, AC29, AD30, AC28, AD29, AE29, AB23,",
+						"AD27, AF30, AF29, AG30, AH30, AH29, AJ29,",
+						"AH28, AG28, AF28, AG27, AE28, AE27, AE26"} *)
+	output [41:0] seven_seg
 );
 
 localparam [6:0] SCALE = 3;
@@ -61,11 +69,11 @@ clk_divider #(200000-1) FLOOR (clk, FL_clk);
 wire [3:0] game_state;
 wire [2:0] bird_state;
 
-wire signed [31:0] X, Y, birdX=150, birdY;
+wire [31:0] X, Y, birdX=150, birdY;
 wire [31:0] score_count;
-wire signed [31:0] pipeX [NUM_PIPES-1:0];
-wire signed [31:0] pipeY [NUM_PIPES-1:0];
-
+wire [31:0] pipeX [NUM_PIPES-1:0];
+wire [31:0] pipeY [NUM_PIPES-1:0];
+wire [11:0] score_BCD, hiscore_BCD;
 
 wire flap, pause, collision;
 
@@ -156,12 +164,9 @@ score_counter scr
 (
 	.clk				( cLK 			),
 	.rst				( rst				),
-	.game_state 	( game_state	),
 	.score_count	( score_count	),
 	.score_BCD		( score_BCD		),
 	.hiscore_BCD	( hiscore_BCD	),
-	.scoreX			( scoreX			),
-	.scoreY			( scoreY			),
 	.seven_seg		( seven_seg		)
 );
 	
@@ -192,6 +197,8 @@ image_renderer #(
 	.pipeY_2			( pipeY[1]		),
 	.pipeY_3			( pipeY[2]		),
 	.pipeY_4			( pipeY[3]		),
+	.score_BCD		( score_BCD		),
+	.hiscore_BCD	( hiscore_BCD	),
 	.RGB				( {R,G,B} 		)
 );
 

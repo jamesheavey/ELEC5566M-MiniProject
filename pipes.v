@@ -3,9 +3,9 @@ module pipes #(
 )(
 	input clk, FL_clk, rst,
 	input [3:0] game_state,
-	input signed [31:0] birdX,
-	output signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
-	output signed [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	input [31:0] birdX,
+	output [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
+	output [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
 	output reg [31:0] score_count
 );
 
@@ -21,8 +21,8 @@ localparam	START_SCREEN 	= 4'b0001,
 				PAUSE 			= 4'b0100,
 				END_SCREEN 		= 4'b1000;
 
-reg signed [31:0] pipeX [NUM_PIPES-1:0];
-reg signed [31:0] pipeY [NUM_PIPES-1:0];
+reg [31:0] pipeX [NUM_PIPES-1:0];
+reg [31:0] pipeY [NUM_PIPES-1:0];
 reg [31:0] pipeX_reset [NUM_PIPES-1:0];
 
 integer i;

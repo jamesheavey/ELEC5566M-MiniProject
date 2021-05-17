@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Mon May 17 04:32:21 2021
+Mon May 17 05:23:06 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,11 +13,49 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
- 12. Analysis & Synthesis Suppressed Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for Top-level Entity: |flappy_bird
+ 15. Parameter Settings for User Entity Instance: clk_divider:VGA
+ 16. Parameter Settings for User Entity Instance: clk_divider:GAME
+ 17. Parameter Settings for User Entity Instance: clk_divider:FLOOR
+ 18. Parameter Settings for User Entity Instance: bird_physics:phys
+ 19. Parameter Settings for User Entity Instance: collision_detection:coll
+ 20. Parameter Settings for User Entity Instance: pipes:pipe_shift
+ 21. Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_generator:rand
+ 22. Parameter Settings for User Entity Instance: image_renderer:display
+ 23. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div1
+ 24. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div0
+ 25. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div16
+ 26. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div12
+ 27. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div13
+ 28. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div7
+ 29. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div6
+ 30. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div9
+ 31. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div10
+ 32. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div15
+ 33. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div17
+ 34. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div14
+ 35. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div8
+ 36. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div11
+ 37. Port Connectivity Checks: "image_renderer:display|pipe_rom:pipe"
+ 38. Port Connectivity Checks: "image_renderer:display|flap_3_rom:bird3"
+ 39. Port Connectivity Checks: "image_renderer:display|flap_2_rom:bird2"
+ 40. Port Connectivity Checks: "image_renderer:display|flap_1_rom:bird1"
+ 41. Port Connectivity Checks: "score_counter:scr|bin2BCD:scr"
+ 42. Port Connectivity Checks: "pipes:pipe_shift|random_number_generator:rand"
+ 43. Port Connectivity Checks: "pipes:pipe_shift"
+ 44. Port Connectivity Checks: "collision_detection:coll"
+ 45. Port Connectivity Checks: "bird_physics:phys"
+ 46. Port Connectivity Checks: "vga_gen:vga"
+ 47. Post-Synthesis Netlist Statistics for Top Partition
+ 48. Elapsed Time Per Partition
+ 49. Analysis & Synthesis Messages
+ 50. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -43,14 +81,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 17 04:32:21 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 17 05:23:06 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
-; Top-level Entity Name           ; bin2BCD                                     ;
+; Top-level Entity Name           ; flappy_bird                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 22                                          ;
+; Total registers                 ; 476                                         ;
+; Total pins                      ; 85                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +107,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; bin2BCD            ; MiniProject        ;
+; Top-level entity name                                                           ; flappy_bird        ; MiniProject        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -159,57 +197,322 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
-; bin2BCD.v                        ; yes             ; User Verilog HDL File  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; sprites/pipe_rom.v               ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/pipe_rom.v          ;         ;
+; sprites/flap_3_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_3_rom.v        ;         ;
+; sprites/flap_2_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_2_rom.v        ;         ;
+; sprites/flap_1_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_1_rom.v        ;         ;
+; vga_gen.v                        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v                   ;         ;
+; clk_divider.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v               ;         ;
+; key_filter.v                     ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/key_filter.v                ;         ;
+; image_renderer.v                 ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v            ;         ;
+; keyboard_input.v                 ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v            ;         ;
+; bird_physics.v                   ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v              ;         ;
+; game_FSM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v                  ;         ;
+; collision_detection.v            ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/collision_detection.v       ;         ;
+; pipes.v                          ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v                     ;         ;
+; random_number_generator.v        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/random_number_generator.v   ;         ;
+; flappy_bird.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v               ;         ;
+; score_counter.v                  ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v             ;         ;
+; bin2BCD.v                        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v                   ;         ;
+; hex_to_7seg.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_gbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/lpm_divide_gbm.tdf       ;         ;
+; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf  ;         ;
+; db/alt_u_div_ive.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 18           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 23           ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 13           ;
-;     -- 5 input functions                    ; 8            ;
-;     -- 4 input functions                    ; 1            ;
-;     -- <=3 input functions                  ; 1            ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 22           ;
-;                                             ;              ;
-; Total DSP Blocks                            ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; bin[7]~input ;
-; Maximum fan-out                             ; 9            ;
-; Total fan-out                               ; 159          ;
-; Average fan-out                             ; 2.37         ;
-+---------------------------------------------+--------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 2629      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 4527      ;
+;     -- 7 input functions                    ; 40        ;
+;     -- 6 input functions                    ; 685       ;
+;     -- 5 input functions                    ; 233       ;
+;     -- 4 input functions                    ; 557       ;
+;     -- <=3 input functions                  ; 3012      ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 476       ;
+;                                             ;           ;
+; I/O pins                                    ; 85        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 367       ;
+; Total fan-out                               ; 16395     ;
+; Average fan-out                             ; 3.17      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |bin2BCD                   ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 22   ; 0            ; |bin2BCD            ; bin2BCD     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                    ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Entity Name             ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |flappy_bird                                  ; 4527 (1)            ; 476 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                         ; flappy_bird             ; work         ;
+;    |bird_physics:phys|                        ; 137 (137)           ; 51 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:phys                                                                                                       ; bird_physics            ; work         ;
+;    |clk_divider:FLOOR|                        ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:FLOOR                                                                                                       ; clk_divider             ; work         ;
+;    |clk_divider:GAME|                         ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:GAME                                                                                                        ; clk_divider             ; work         ;
+;    |clk_divider:VGA|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:VGA                                                                                                         ; clk_divider             ; work         ;
+;    |collision_detection:coll|                 ; 255 (255)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|collision_detection:coll                                                                                                ; collision_detection     ; work         ;
+;    |game_FSM:FSM|                             ; 10 (10)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|game_FSM:FSM                                                                                                            ; game_FSM                ; work         ;
+;    |image_renderer:display|                   ; 3142 (786)          ; 45 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display                                                                                                  ; image_renderer          ; work         ;
+;       |flap_1_rom:bird1|                      ; 85 (85)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_rom:bird1                                                                                 ; flap_1_rom              ; work         ;
+;       |flap_2_rom:bird2|                      ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_rom:bird2                                                                                 ; flap_2_rom              ; work         ;
+;       |flap_3_rom:bird3|                      ; 70 (70)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_rom:bird3                                                                                 ; flap_3_rom              ; work         ;
+;       |lpm_divide:Div0|                       ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div10|                      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div10                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div10|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div10|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div11|                      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div11                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div11|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div11|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div11|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div12|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div12                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div12|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div12|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div12|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div13|                      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div13                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div13|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div13|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div13|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div14|                      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div14                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div14|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div14|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div14|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div15|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div15                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div15|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div15|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div15|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div16|                      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div16                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div16|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div16|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div16|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div17|                      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div17                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div17|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div17|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div17|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div1|                       ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div6|                       ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div6                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div6|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div6|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div7|                       ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div7                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div7|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 109 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div7|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div8|                       ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div8                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div8|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div8|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div9|                       ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div9                                                                                  ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div9|lpm_divide_gbm:auto_generated                                                    ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div9|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div9|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive           ; work         ;
+;       |pipe_rom:pipe|                         ; 318 (318)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|pipe_rom:pipe                                                                                    ; pipe_rom                ; work         ;
+;    |keyboard_input:kb|                        ; 75 (74)             ; 57 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb                                                                                                       ; keyboard_input          ; work         ;
+;       |key_filter:p_edgeF|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb|key_filter:p_edgeF                                                                                    ; key_filter              ; work         ;
+;    |pipes:pipe_shift|                         ; 734 (733)           ; 216 (184)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift                                                                                                        ; pipes                   ; work         ;
+;       |random_number_generator:rand|          ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift|random_number_generator:rand                                                                           ; random_number_generator ; work         ;
+;    |score_counter:scr|                        ; 42 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr                                                                                                       ; score_counter           ; work         ;
+;       |hex_to_7seg:seven_seg_loop[0].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[0].display                                                                 ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[1].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[1].display                                                                 ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[2].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[2].display                                                                 ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[3].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[3].display                                                                 ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[4].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[4].display                                                                 ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[5].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[5].display                                                                 ; hex_to_7seg             ; work         ;
+;    |vga_gen:vga|                              ; 45 (45)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|vga_gen:vga                                                                                                             ; vga_gen                 ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; image_renderer:display|pipe_row[6]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_col[0]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[1]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[2]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[0]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_col[4]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[4]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[5]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_row[3]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_col[2]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_col[1]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; image_renderer:display|pipe_col[3]                  ; image_renderer:display|pipe_col[3] ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++----------------------------------------------------+----------------------------------------------------------------+
+; Register name                                      ; Reason for Removal                                             ;
++----------------------------------------------------+----------------------------------------------------------------+
+; image_renderer:display|flap_2_rom:bird2|row_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[3] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[3] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[2] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[2] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[1] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[1] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[0] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[0] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[4] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[4] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[4] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[4] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[3] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[3] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[2] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[2] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[1] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[1] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[0] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[0] ;
+; pipes:pipe_shift|pipeY[0][11]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][12]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][13]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][14]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][15]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][16]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][17]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][18]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][19]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][20]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][21]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][22]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][23]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][24]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][25]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][26]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][27]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][28]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][29]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][30]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][31]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][9]                       ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[1][11]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][12]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][13]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][14]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][15]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][16]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][17]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][18]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][19]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][20]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][21]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][22]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][23]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][24]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][25]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][26]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][27]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][28]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][29]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][30]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][31]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][9]                       ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[2][11]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][12]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][13]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][14]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][15]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][16]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][17]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][18]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][19]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][20]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][21]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][22]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][23]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][24]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][25]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][26]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][27]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][28]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][29]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][30]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][31]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][9]                       ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[3][11]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][12]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][13]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][14]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][15]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][16]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][17]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][18]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][19]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][20]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][21]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][22]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][23]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][24]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][25]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][26]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][27]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][28]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][29]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][30]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][31]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][9]                       ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; clk_divider:VGA|count[0..31]                       ; Lost fanout                                                    ;
+; pipes:pipe_shift|pipeY[0][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[1][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[2][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[3][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|score_count[24..31]               ; Lost fanout                                                    ;
+; pipes:pipe_shift|pipeY[0][7]~_emulated             ; Merged with pipes:pipe_shift|pipeY[0][8]~_emulated             ;
+; pipes:pipe_shift|pipeY[1][7]~_emulated             ; Merged with pipes:pipe_shift|pipeY[1][8]~_emulated             ;
+; pipes:pipe_shift|pipeY[2][7]~_emulated             ; Merged with pipes:pipe_shift|pipeY[2][8]~_emulated             ;
+; pipes:pipe_shift|pipeY[3][7]~_emulated             ; Merged with pipes:pipe_shift|pipeY[3][8]~_emulated             ;
+; Total Number of Removed Registers = 154            ;                                                                ;
++----------------------------------------------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; Register name                    ; Reason for Removal ; Registers Removed due to This Register                              ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; pipes:pipe_shift|score_count[31] ; Lost Fanouts       ; pipes:pipe_shift|score_count[30], pipes:pipe_shift|score_count[29], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[28], pipes:pipe_shift|score_count[27], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[26], pipes:pipe_shift|score_count[25], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[24]                                    ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -217,14 +520,683 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 476   ;
+; Number of registers using Synchronous Clear  ; 289   ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 296   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 240   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; game_FSM:FSM|game_state[0]              ; 15      ;
+; pipes:pipe_shift|pipeX[1][4]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][5]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][1]            ; 6       ;
+; pipes:pipe_shift|pipeX[1][2]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][7]            ; 6       ;
+; pipes:pipe_shift|pipeX[1][8]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][9]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][5]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][1]            ; 6       ;
+; pipes:pipe_shift|pipeX[3][3]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][7]            ; 6       ;
+; pipes:pipe_shift|pipeX[3][8]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][10]           ; 5       ;
+; pipes:pipe_shift|pipeX[0][4]            ; 5       ;
+; pipes:pipe_shift|pipeX[0][5]            ; 5       ;
+; pipes:pipe_shift|pipeX[0][2]            ; 5       ;
+; pipes:pipe_shift|pipeX[0][3]            ; 5       ;
+; pipes:pipe_shift|pipeX[0][7]            ; 6       ;
+; pipes:pipe_shift|pipeX[0][9]            ; 5       ;
+; pipes:pipe_shift|pipeX[2][4]            ; 5       ;
+; pipes:pipe_shift|pipeX[2][5]            ; 5       ;
+; pipes:pipe_shift|pipeX[2][7]            ; 6       ;
+; pipes:pipe_shift|pipeX[2][10]           ; 5       ;
+; bird_physics:phys|birdY[4]              ; 11      ;
+; bird_physics:phys|birdY[3]              ; 11      ;
+; bird_physics:phys|birdY[2]              ; 11      ;
+; bird_physics:phys|birdY[6]              ; 12      ;
+; bird_physics:phys|birdY[7]              ; 14      ;
+; bird_physics:phys|birdY[1]              ; 13      ;
+; Total number of inverted registers = 30 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 20:1               ; 8 bits    ; 104 LEs       ; 0 LEs                ; 104 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[12]     ;
+; 21:1               ; 16 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[17]     ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[0][7]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[0][2]       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[1][0]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[1][4]       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[2][1]       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[2][4]       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[3][1]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[3][1]       ;
+; 1:1                ; 2 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux19       ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux13       ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|Y_vel            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|bird_state       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|bird_state       ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_col[2] ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_row[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for Top-level Entity: |flappy_bird ;
++------------+----------+------+------------------------+
+; Assignment ; Value    ; From ; To                     ;
++------------+----------+------+------------------------+
+; LOCATION   ; Pin_F13  ; -    ; R[7]                   ;
+; LOCATION   ; Pin_E12  ; -    ; R[6]                   ;
+; LOCATION   ; Pin_D12  ; -    ; R[5]                   ;
+; LOCATION   ; Pin_C12  ; -    ; R[4]                   ;
+; LOCATION   ; Pin_B12  ; -    ; R[3]                   ;
+; LOCATION   ; Pin_E13  ; -    ; R[2]                   ;
+; LOCATION   ; Pin_C13  ; -    ; R[1]                   ;
+; LOCATION   ; Pin_A13  ; -    ; R[0]                   ;
+; LOCATION   ; Pin_E11  ; -    ; G[7]                   ;
+; LOCATION   ; Pin_F11  ; -    ; G[6]                   ;
+; LOCATION   ; Pin_G12  ; -    ; G[5]                   ;
+; LOCATION   ; Pin_G11  ; -    ; G[4]                   ;
+; LOCATION   ; Pin_G10  ; -    ; G[3]                   ;
+; LOCATION   ; Pin_H12  ; -    ; G[2]                   ;
+; LOCATION   ; Pin_J10  ; -    ; G[1]                   ;
+; LOCATION   ; Pin_J9   ; -    ; G[0]                   ;
+; LOCATION   ; Pin_J14  ; -    ; B[7]                   ;
+; LOCATION   ; Pin_G15  ; -    ; B[6]                   ;
+; LOCATION   ; Pin_F15  ; -    ; B[5]                   ;
+; LOCATION   ; Pin_H14  ; -    ; B[4]                   ;
+; LOCATION   ; Pin_F14  ; -    ; B[3]                   ;
+; LOCATION   ; Pin_H13  ; -    ; B[2]                   ;
+; LOCATION   ; Pin_G13  ; -    ; B[1]                   ;
+; LOCATION   ; Pin_B13  ; -    ; B[0]                   ;
+; LOCATION   ; Pin_Y21  ; -    ; led[9]                 ;
+; LOCATION   ; Pin_W21  ; -    ; led[8]                 ;
+; LOCATION   ; Pin_W20  ; -    ; led[7]                 ;
+; LOCATION   ; Pin_Y19  ; -    ; led[6]                 ;
+; LOCATION   ; Pin_W19  ; -    ; led[5]                 ;
+; LOCATION   ; Pin_W17  ; -    ; led[4]                 ;
+; LOCATION   ; Pin_V18  ; -    ; led[3]                 ;
+; LOCATION   ; Pin_V17  ; -    ; led[2]                 ;
+; LOCATION   ; Pin_W16  ; -    ; led[1]                 ;
+; LOCATION   ; Pin_V16  ; -    ; led[0]                 ;
+; LOCATION   ; Pin_AA25 ; -    ; seven_seg[41]          ;
+; LOCATION   ; Pin_AA26 ; -    ; seven_seg[40]          ;
+; LOCATION   ; Pin_AB26 ; -    ; seven_seg[39]          ;
+; LOCATION   ; Pin_AB27 ; -    ; seven_seg[38]          ;
+; LOCATION   ; Pin_Y27  ; -    ; seven_seg[37]          ;
+; LOCATION   ; Pin_AA28 ; -    ; seven_seg[36]          ;
+; LOCATION   ; Pin_V25  ; -    ; seven_seg[35]          ;
+; LOCATION   ; Pin_W25  ; -    ; seven_seg[34]          ;
+; LOCATION   ; Pin_V23  ; -    ; seven_seg[33]          ;
+; LOCATION   ; Pin_W24  ; -    ; seven_seg[32]          ;
+; LOCATION   ; Pin_W22  ; -    ; seven_seg[31]          ;
+; LOCATION   ; Pin_Y24  ; -    ; seven_seg[30]          ;
+; LOCATION   ; Pin_Y23  ; -    ; seven_seg[29]          ;
+; LOCATION   ; Pin_AA24 ; -    ; seven_seg[28]          ;
+; LOCATION   ; Pin_AB22 ; -    ; seven_seg[27]          ;
+; LOCATION   ; Pin_AB25 ; -    ; seven_seg[26]          ;
+; LOCATION   ; Pin_AB28 ; -    ; seven_seg[25]          ;
+; LOCATION   ; Pin_AC25 ; -    ; seven_seg[24]          ;
+; LOCATION   ; Pin_AD25 ; -    ; seven_seg[23]          ;
+; LOCATION   ; Pin_AC27 ; -    ; seven_seg[22]          ;
+; LOCATION   ; Pin_AD26 ; -    ; seven_seg[21]          ;
+; LOCATION   ; Pin_AC30 ; -    ; seven_seg[20]          ;
+; LOCATION   ; Pin_AC29 ; -    ; seven_seg[19]          ;
+; LOCATION   ; Pin_AD30 ; -    ; seven_seg[18]          ;
+; LOCATION   ; Pin_AC28 ; -    ; seven_seg[17]          ;
+; LOCATION   ; Pin_AD29 ; -    ; seven_seg[16]          ;
+; LOCATION   ; Pin_AE29 ; -    ; seven_seg[15]          ;
+; LOCATION   ; Pin_AB23 ; -    ; seven_seg[14]          ;
+; LOCATION   ; Pin_AD27 ; -    ; seven_seg[13]          ;
+; LOCATION   ; Pin_AF30 ; -    ; seven_seg[12]          ;
+; LOCATION   ; Pin_AF29 ; -    ; seven_seg[11]          ;
+; LOCATION   ; Pin_AG30 ; -    ; seven_seg[10]          ;
+; LOCATION   ; Pin_AH30 ; -    ; seven_seg[9]           ;
+; LOCATION   ; Pin_AH29 ; -    ; seven_seg[8]           ;
+; LOCATION   ; Pin_AJ29 ; -    ; seven_seg[7]           ;
+; LOCATION   ; Pin_AH28 ; -    ; seven_seg[6]           ;
+; LOCATION   ; Pin_AG28 ; -    ; seven_seg[5]           ;
+; LOCATION   ; Pin_AF28 ; -    ; seven_seg[4]           ;
+; LOCATION   ; Pin_AG27 ; -    ; seven_seg[3]           ;
+; LOCATION   ; Pin_AE28 ; -    ; seven_seg[2]           ;
+; LOCATION   ; Pin_AE27 ; -    ; seven_seg[1]           ;
+; LOCATION   ; Pin_AE26 ; -    ; seven_seg[0]           ;
+; LOCATION   ; Pin_AF14 ; -    ; clk                    ;
+; LOCATION   ; Pin_AB12 ; -    ; rst                    ;
+; LOCATION   ; Pin_AD7  ; -    ; PS2_clk                ;
+; LOCATION   ; Pin_AE7  ; -    ; PS2_data               ;
+; LOCATION   ; Pin_B11  ; -    ; h_sync                 ;
+; LOCATION   ; Pin_D11  ; -    ; v_sync                 ;
+; LOCATION   ; Pin_A11  ; -    ; v_clk                  ;
+; LOCATION   ; Pin_F10  ; -    ; display_on             ;
+; LOCATION   ; Pin_C10  ; -    ; sync_n                 ;
++------------+----------+------+------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:VGA ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; DIVISOR        ; 0     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:GAME ;
++----------------+---------+------------------------------------+
+; Parameter Name ; Value   ; Type                               ;
++----------------+---------+------------------------------------+
+; DIVISOR        ; 1666665 ; Signed Integer                     ;
++----------------+---------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:FLOOR ;
++----------------+--------+--------------------------------------+
+; Parameter Name ; Value  ; Type                                 ;
++----------------+--------+--------------------------------------+
+; DIVISOR        ; 199999 ; Signed Integer                       ;
++----------------+--------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bird_physics:phys ;
++----------------+---------+-------------------------------------+
+; Parameter Name ; Value   ; Type                                ;
++----------------+---------+-------------------------------------+
+; BIRD_SIZE_X    ; 0110110 ; Unsigned Binary                     ;
+; BIRD_SIZE_Y    ; 0100100 ; Unsigned Binary                     ;
++----------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: collision_detection:coll ;
++----------------+---------+--------------------------------------------+
+; Parameter Name ; Value   ; Type                                       ;
++----------------+---------+--------------------------------------------+
+; BIRD_SIZE_X    ; 0110110 ; Unsigned Binary                            ;
+; BIRD_SIZE_Y    ; 0100100 ; Unsigned Binary                            ;
+; PIPE_GAP       ; 70      ; Signed Integer                             ;
+; NUM_PIPES      ; 4       ; Signed Integer                             ;
++----------------+---------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipes:pipe_shift ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; NUM_PIPES      ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_generator:rand ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; NUM_BITS       ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: image_renderer:display ;
++----------------+---------+------------------------------------------+
+; Parameter Name ; Value   ; Type                                     ;
++----------------+---------+------------------------------------------+
+; BIRD_SIZE_X    ; 0110110 ; Unsigned Binary                          ;
+; BIRD_SIZE_Y    ; 0100100 ; Unsigned Binary                          ;
+; SCALE          ; 0000011 ; Unsigned Binary                          ;
+; PIPE_GAP       ; 70      ; Signed Integer                           ;
+; NUM_PIPES      ; 4       ; Signed Integer                           ;
++----------------+---------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div16 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div12 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div13 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div7 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div6 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div9 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div10 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div15 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div17 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div14 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div8 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div11 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|pipe_rom:pipe"                                                                                                                                             ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (7 bits) it drives.  The 25 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_3_rom:bird3"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_2_rom:bird2"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_1_rom:bird1"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|bin2BCD:scr"                                                                                                                                                     ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipes:pipe_shift|random_number_generator:rand"                                                ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; random[31..29] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; random[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipes:pipe_shift"                                                                                                                            ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; birdX ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "collision_detection:coll" ;
++--------------+-------+----------+--------------------+
+; Port         ; Type  ; Severity ; Details            ;
++--------------+-------+----------+--------------------+
+; birdX[2..1]  ; Input ; Info     ; Stuck at VCC       ;
+; birdX[31..8] ; Input ; Info     ; Stuck at GND       ;
+; birdX[6..5]  ; Input ; Info     ; Stuck at GND       ;
+; birdX[7]     ; Input ; Info     ; Stuck at VCC       ;
+; birdX[4]     ; Input ; Info     ; Stuck at VCC       ;
+; birdX[3]     ; Input ; Info     ; Stuck at GND       ;
+; birdX[0]     ; Input ; Info     ; Stuck at GND       ;
++--------------+-------+----------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bird_physics:phys"                                                                                                                                                          ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                               ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bird_state ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_gen:vga"                                                                                                                                                              ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; h_pos ; Output ; Warning  ; Output or bidir port (16 bits) is smaller than the port expression (32 bits) it drives.  The 16 most-significant bit(s) in the port expression will be connected to GND. ;
+; v_pos ; Output ; Warning  ; Output or bidir port (16 bits) is smaller than the port expression (32 bits) it drives.  The 16 most-significant bit(s) in the port expression will be connected to GND. ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -232,17 +1204,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 26                          ;
-;     normal            ; 26                          ;
-;         1 data inputs ; 3                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 8                           ;
-;         6 data inputs ; 13                          ;
-; boundary_port         ; 22                          ;
+; arriav_ff             ; 476                         ;
+;     CLR               ; 56                          ;
+;     CLR SCLR          ; 16                          ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 55                          ;
+;     ENA CLR SCLR      ; 137                         ;
+;     ENA CLR SCLR SLD  ; 32                          ;
+;     ENA SCLR          ; 8                           ;
+;     SCLR              ; 96                          ;
+;     plain             ; 68                          ;
+; arriav_lcell_comb     ; 4557                        ;
+;     arith             ; 1996                        ;
+;         0 data inputs ; 332                         ;
+;         1 data inputs ; 1022                        ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 302                         ;
+;         4 data inputs ; 288                         ;
+;     extend            ; 40                          ;
+;         7 data inputs ; 40                          ;
+;     normal            ; 2061                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 46                          ;
+;         2 data inputs ; 677                         ;
+;         3 data inputs ; 150                         ;
+;         4 data inputs ; 269                         ;
+;         5 data inputs ; 233                         ;
+;         6 data inputs ; 685                         ;
+;     shared            ; 460                         ;
+;         0 data inputs ; 16                          ;
+;         1 data inputs ; 220                         ;
+;         2 data inputs ; 224                         ;
+; boundary_port         ; 85                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.11                        ;
+; Max LUT depth         ; 44.20                       ;
+; Average LUT depth     ; 20.17                       ;
 +-----------------------+-----------------------------+
 
 
@@ -251,7 +1247,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -261,7 +1257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 17 04:32:09 2021
+    Info: Processing started: Mon May 17 05:22:46 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -316,29 +1312,413 @@ Info (12021): Found 1 design units, including 1 entities, in source file score_c
     Info (12023): Found entity 1: score_counter File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
     Info (12023): Found entity 1: bin2BCD File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(157): created implicit net for "cLK" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 157
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(161): created implicit net for "score_BCD" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 161
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(162): created implicit net for "hiscore_BCD" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 162
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(163): created implicit net for "scoreX" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 163
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(164): created implicit net for "scoreY" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 164
-Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(165): created implicit net for "seven_seg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 165
-Info (12127): Elaborating entity "bin2BCD" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file hex_to_7seg.v
+    Info (12023): Found entity 1: hex_to_7seg File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at flappy_bird.v(165): created implicit net for "cLK" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 165
+Info (12127): Elaborating entity "flappy_bird" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at flappy_bird.v(55): truncated value with size 32 to match size of target (7) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 55
+Warning (10230): Verilog HDL assignment warning at flappy_bird.v(206): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 206
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 60
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:GAME" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 63
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:FLOOR" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 66
+Info (12128): Elaborating entity "vga_gen" for hierarchy "vga_gen:vga" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 91
+Warning (10230): Verilog HDL assignment warning at vga_gen.v(35): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 35
+Warning (10230): Verilog HDL assignment warning at vga_gen.v(48): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 48
+Warning (10230): Verilog HDL assignment warning at vga_gen.v(60): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 60
+Warning (10230): Verilog HDL assignment warning at vga_gen.v(61): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 61
+Warning (10230): Verilog HDL assignment warning at vga_gen.v(62): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 62
+Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 101
+Info (12128): Elaborating entity "key_filter" for hierarchy "keyboard_input:kb|key_filter:p_edgeF" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 51
+Info (12128): Elaborating entity "game_FSM" for hierarchy "game_FSM:FSM" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 111
+Info (10264): Verilog HDL Case Statement information at game_FSM.v(20): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 20
+Info (12128): Elaborating entity "bird_physics" for hierarchy "bird_physics:phys" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 123
+Warning (10259): Verilog HDL error at bird_physics.v(41): constant value overflow File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 41
+Warning (10230): Verilog HDL assignment warning at bird_physics.v(45): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 45
+Warning (10230): Verilog HDL assignment warning at bird_physics.v(49): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 49
+Warning (10230): Verilog HDL assignment warning at bird_physics.v(51): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 51
+Info (10264): Verilog HDL Case Statement information at bird_physics.v(38): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 38
+Warning (10259): Verilog HDL error at bird_physics.v(80): constant value overflow File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 80
+Info (10264): Verilog HDL Case Statement information at bird_physics.v(74): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 74
+Info (12128): Elaborating entity "collision_detection" for hierarchy "collision_detection:coll" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 143
+Info (12128): Elaborating entity "pipes" for hierarchy "pipes:pipe_shift" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 161
+Info (10264): Verilog HDL Case Statement information at pipes.v(47): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Info (12128): Elaborating entity "random_number_generator" for hierarchy "pipes:pipe_shift|random_number_generator:rand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 13
+Info (12128): Elaborating entity "score_counter" for hierarchy "score_counter:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 171
+Warning (10235): Verilog HDL Always Construct warning at score_counter.v(13): variable "hiscore" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 13
+Warning (10240): Verilog HDL Always Construct warning at score_counter.v(11): inferring latch(es) for variable "hiscore", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Warning (10230): Verilog HDL assignment warning at score_counter.v(19): truncated value with size 32 to match size of target (24) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 19
+Info (10041): Inferred latch for "hiscore[0]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[1]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[2]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[3]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[4]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[5]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[6]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[7]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[8]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[9]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[10]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[11]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[12]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[13]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[14]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[15]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[16]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[17]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[18]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[19]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[20]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[21]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[22]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[23]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[24]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[25]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[26]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[27]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[28]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[29]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[30]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[31]" at score_counter.v(11) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (12128): Elaborating entity "bin2BCD" for hierarchy "score_counter:scr|bin2BCD:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
 Warning (10230): Verilog HDL assignment warning at bin2BCD.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 22
 Warning (10230): Verilog HDL assignment warning at bin2BCD.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 19
 Warning (10230): Verilog HDL assignment warning at bin2BCD.v(16): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 16
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 28
+Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 203
+Info (10264): Verilog HDL Case Statement information at image_renderer.v(58): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(289): variable "pipe_btm_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 289
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(293): variable "pipe_top_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 293
+Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(278): inferring latch(es) for variable "pipe_row", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(278): inferring latch(es) for variable "pipe_col", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[0]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[1]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[2]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[3]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[4]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[5]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[6]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[7]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[8]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[9]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[10]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[11]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[12]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[13]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[14]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[15]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[16]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[17]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[18]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[19]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[20]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[21]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[22]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[23]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[24]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[25]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[26]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[27]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[28]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[29]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[30]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_col[31]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[0]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[1]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[2]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[3]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[4]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[5]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[6]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[7]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[8]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[9]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[10]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[11]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[12]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[13]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[14]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[15]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[16]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[17]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[18]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[19]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[20]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[21]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[22]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[23]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[24]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[25]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[26]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[27]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[28]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[29]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[30]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (10041): Inferred latch for "pipe_row[31]" at image_renderer.v(278) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 151
+Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 159
+Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 167
+Info (12128): Elaborating entity "pipe_rom" for hierarchy "image_renderer:display|pipe_rom:pipe" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 275
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "bird_state[2]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 70
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 72
+Info (13014): Ignored 4 buffer(s)
+    Info (13019): Ignored 4 SOFT buffer(s)
+Info (278001): Inferred 14 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 149
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 148
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div16" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div12" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 290
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div13" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div6" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 290
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 290
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div10" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div15" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 290
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div17" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 295
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div14" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 295
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div8" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 295
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 295
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 149
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 149
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gbm.tdf
+    Info (12023): Found entity 1: lpm_divide_gbm File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/lpm_divide_gbm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
+    Info (12023): Found entity 1: alt_u_div_ive File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 148
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div0" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 148
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div16" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div16" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 294
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch image_renderer:display|pipe_row[6] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_col[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan11~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (13012): Latch image_renderer:display|pipe_row[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_row[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_row[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_col[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan11~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (13012): Latch image_renderer:display|pipe_row[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_row[5] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_row[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 258
+Warning (13012): Latch image_renderer:display|pipe_col[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan11~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (13012): Latch image_renderer:display|pipe_col[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan11~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (13012): Latch image_renderer:display|pipe_col[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 278
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan11~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][8]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][8]~_emulated" and latch "pipes:pipe_shift|pipeY[0][8]~1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][7]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][7]~_emulated" and latch "pipes:pipe_shift|pipeY[0][8]~1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][5]~_emulated" and latch "pipes:pipe_shift|pipeY[0][5]~7" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][6]~_emulated" and latch "pipes:pipe_shift|pipeY[0][6]~11" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][3]~_emulated" and latch "pipes:pipe_shift|pipeY[0][3]~15" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][4]~_emulated" and latch "pipes:pipe_shift|pipeY[0][4]~19" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][8]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][8]~_emulated" and latch "pipes:pipe_shift|pipeY[1][8]~23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][7]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][7]~_emulated" and latch "pipes:pipe_shift|pipeY[1][8]~23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][5]~_emulated" and latch "pipes:pipe_shift|pipeY[1][5]~29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][6]~_emulated" and latch "pipes:pipe_shift|pipeY[1][6]~33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][3]~_emulated" and latch "pipes:pipe_shift|pipeY[1][3]~37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][4]~_emulated" and latch "pipes:pipe_shift|pipeY[1][4]~41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][8]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][8]~_emulated" and latch "pipes:pipe_shift|pipeY[2][8]~45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][7]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][7]~_emulated" and latch "pipes:pipe_shift|pipeY[2][8]~45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][5]~_emulated" and latch "pipes:pipe_shift|pipeY[2][5]~51" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][6]~_emulated" and latch "pipes:pipe_shift|pipeY[2][6]~55" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][3]~_emulated" and latch "pipes:pipe_shift|pipeY[2][3]~59" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][4]~_emulated" and latch "pipes:pipe_shift|pipeY[2][4]~63" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][8]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][8]~_emulated" and latch "pipes:pipe_shift|pipeY[3][8]~67" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][7]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][7]~_emulated" and latch "pipes:pipe_shift|pipeY[3][8]~67" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][5]~_emulated" and latch "pipes:pipe_shift|pipeY[3][5]~73" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][6]~_emulated" and latch "pipes:pipe_shift|pipeY[3][6]~77" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][3]~_emulated" and latch "pipes:pipe_shift|pipeY[3][3]~81" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][4]~_emulated" and latch "pipes:pipe_shift|pipeY[3][4]~85" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][1]~_emulated" and latch "pipes:pipe_shift|pipeY[0][1]~89" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][0]~_emulated" and latch "pipes:pipe_shift|pipeY[0][0]~93" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][1]~_emulated" and latch "pipes:pipe_shift|pipeY[1][1]~97" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][0]~_emulated" and latch "pipes:pipe_shift|pipeY[1][0]~101" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][1]~_emulated" and latch "pipes:pipe_shift|pipeY[2][1]~105" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][0]~_emulated" and latch "pipes:pipe_shift|pipeY[2][0]~109" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][1]~_emulated" and latch "pipes:pipe_shift|pipeY[3][1]~113" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][0]~_emulated" and latch "pipes:pipe_shift|pipeY[3][0]~117" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][2]~_emulated" and latch "pipes:pipe_shift|pipeY[0][2]~121" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][2]~_emulated" and latch "pipes:pipe_shift|pipeY[1][2]~125" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][2]~_emulated" and latch "pipes:pipe_shift|pipeY[2][2]~129" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][2]~_emulated" and latch "pipes:pipe_shift|pipeY[3][2]~133" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 31
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 23 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Mon May 17 04:32:21 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+Info (21057): Implemented 4704 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 4619 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 231 warnings
+    Info: Peak virtual memory: 4898 megabytes
+    Info: Processing ended: Mon May 17 05:23:06 2021
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:31
 
 
 +------------------------------------------+

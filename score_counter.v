@@ -1,19 +1,32 @@
 module score_counter
 (
-	input clk, rst, 
-	input [3:0] game_state,
+	input clk, rst,
 	input	[31:0] score_count,
-	output [31:0] score_BCD, hiscore_BCD,
-	output [42:0] seven_seg,
-	output scoreX, scoreY		// varies from top right in game state to middle at endscreen
+	output [11:0] score_BCD, hiscore_BCD,
+	output [41:0] seven_seg
 );
 
-localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;		
+reg [31:0] hiscore = 0; // load from mem in future
 
-reg [31:0] hiscore, score;
+always @(score_count)
+begin
+	hiscore <= score_count > hiscore ? score_count : hiscore;
+end
 
+bin2BCD scr (score_count, score_BCD);
+bin2BCD hiscr (hiscore, hiscore_BCD);
+
+wire [23:0] hex_score = score_count;
+
+genvar i;
+generate 
+	// generate a HexTo7Seg converter for each available display
+	for (i = 0; i < 6; i = i + 1) begin : seven_seg_loop
+		hex_to_7seg display (
+			.hex			( hex_score[(i*4)+:4] ),
+			.seven_seg	( seven_seg[(i*7)+:7] )
+		);
+	end 
+endgenerate
 
 endmodule
