@@ -1,0 +1,49 @@
+module score_counter
+(
+	input clk, rst, 
+	input [3:0] game_state,
+	input signed [31:0] birdX,
+	input signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
+	input signed [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	output [31:0] score_BCD
+);
+
+localparam PIPE_SIZE_X = 78;
+
+wire signed [31:0] pipeX [3:0];
+wire signed [31:0] pipeY [3:0];
+
+assign {pipeX[3], pipeX[2], pipeX[1], pipeX[0]} = {pipeX_4, pipeX_3, pipeX_2, pipeX_1};
+assign {pipeY[3], pipeY[2], pipeY[1], pipeY[0]} = {pipeY_4, pipeY_3, pipeY_2, pipeY_1};
+
+reg [31:0] hi_score, score;
+
+integer i;
+
+always @(posedge clk or posedge rst)
+begin
+	if (rst) begin
+		score <= 0;
+	end else begin
+		case (game_state)
+		
+			START_SCREEN:
+				score <= 0;
+				
+			IN_GAME: begin
+				for (i=0; i<NUM_PIPES; i=i+1) begin
+					if (pipeX[i] + PIPE_SIZE_X == birdX) begin
+						score <= score + 1;
+					end
+				end
+				hi_score <= score > hi_score ? score:hi_score;
+			end
+			
+		endcase
+	end
+end
+
+// instantiate a bin 2 bcd module
+assign score_BCD = score;
+
+endmodule

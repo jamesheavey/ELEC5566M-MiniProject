@@ -38,11 +38,11 @@ begin
 		case (game_state)
 		
 			START_SCREEN: begin
-				if (birdY > 10 + (480 - BIRD_SIZE_Y)/2)
-					down <= 0;
-				else if (birdY < -10 + (480 - BIRD_SIZE_Y)/2)
+				if (birdY < -10 + (480 - BIRD_SIZE_Y)/2 || birdY + BIRD_SIZE_Y >= 480)
 					down <= 1;
-				Y_vel <= down? 3:-3;
+				else if (birdY > 10 + (480 - BIRD_SIZE_Y)/2)
+					down <= 0;
+				Y_vel <= down? 2:-2;
 			end
 			
 			IN_GAME: begin

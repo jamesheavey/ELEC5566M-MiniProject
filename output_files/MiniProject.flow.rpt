@@ -1,5 +1,5 @@
 Flow report for MiniProject
-Sun May 16 16:47:55 2021
+Mon May 17 01:01:31 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun May 16 16:47:55 2021       ;
+; Flow Status                     ; Successful - Mon May 17 01:01:31 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
-; Top-level Entity Name           ; main                                        ;
+; Top-level Entity Name           ; flappy_bird                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 442                                         ;
+; Total registers                 ; 477                                         ;
 ; Total pins                      ; 43                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/16/2021 16:47:09 ;
+; Start date & time ; 05/17/2021 01:00:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MiniProject         ;
 +-------------------+---------------------+
@@ -78,19 +78,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 70975883156024.162118002909920         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 70975883156024.162120964516320         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; main        ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; main        ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; main        ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; flappy_bird ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; flappy_bird ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; flappy_bird ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; main                                   ; MiniProject   ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; flappy_bird                            ; MiniProject   ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
@@ -99,8 +99,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:45     ; 1.0                     ; 4915 MB             ; 00:00:57                           ;
-; Total                ; 00:00:45     ; --                      ; --                  ; 00:00:57                           ;
+; Analysis & Synthesis ; 00:00:45     ; 1.0                     ; 4904 MB             ; 00:00:58                           ;
+; Total                ; 00:00:45     ; --                      ; --                  ; 00:00:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

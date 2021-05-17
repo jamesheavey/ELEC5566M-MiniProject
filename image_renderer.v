@@ -1,13 +1,15 @@
 module image_renderer #(
 	parameter BIRD_SIZE_X,
 	parameter BIRD_SIZE_Y,
-	parameter SCALE
+	parameter SCALE,
+	parameter PIPE_GAP,
+	parameter NUM_PIPES
 )(
 	input VGA_clk, GAME_clk, FL_clk, rst, display_on, flap,
 	input [3:0] game_state,
 	input [2:0] bird_state,
 	input signed [31:0] X, Y, birdX, birdY,
-	input signed [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4, pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	input signed [32*NUM_PIPES-1:0] pipeX, pipeY,
 	output reg [23:0] RGB
 );
 
@@ -30,9 +32,12 @@ localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE;
 localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
 
 localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 120*SCALE;
-localparam PIPE_GAP = 75; 
-localparam NUM_PIPES = 4;
 
+localparam OVER_SIZE_X = 96*SCALE, OVER_SIZE_Y = 22*SCALE;
+localparam OVER_X = (DISPLAY_SIZE_X-OVER_SIZE_X)/2, OVER_Y = 50;
+
+localparam SCORE_SIZE_X = 112*SCALE, SCORE_SIZE_Y = 56*SCALE;
+localparam SCORE_X = (DISPLAY_SIZE_X-SCORE_SIZE_X)/2, SCORE_Y = 150;
 
 ///////////////////////////////////////////////////////////////////////////////////
 /////										DISPLAY LOGIC											/////
@@ -103,17 +108,22 @@ begin
 				
 			END_SCREEN: begin
 				if (display_on) begin
+//					if			(game_over_gfx)	RGB <= over_colour;
+					
+//					else if	(score_gfx)			RGB <= score_colour;
+					
 					// add dead bird sprite?
-					if			(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+//					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
 					
 //					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
-					
+//					
 //					else if 	(bg0_gfx)	RGB <= bg_colour[0];
 //					else if 	(bg1_gfx)	RGB <= bg_colour[1];
 //					else if 	(bg2_gfx)	RGB <= bg_colour[2];
 //					else if 	(bg3_gfx)	RGB <= bg_colour[3];
 
-					else RGB <= NO_COLOUR;
+//					else RGB <= NO_COLOUR;
+					RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -243,12 +253,6 @@ pause_rom pause_icon
 ///////////////////////////////////////////////////////////////////////////////////
 /////										PIPES														/////
 ///////////////////////////////////////////////////////////////////////////////////
-
-wire signed [31:0] pipeX [3:0];
-wire signed [31:0] pipeY [3:0];
-
-assign {pipeX[3], pipeX[2], pipeX[1], pipeX[0]} = {pipeX_4, pipeX_3, pipeX_2, pipeX_1};
-assign {pipeY[3], pipeY[2], pipeY[1], pipeY[0]} = {pipeY_4, pipeY_3, pipeY_2, pipeY_1};
 									
 reg [3:0] pipe_btm_gfx, pipe_top_gfx;
 
@@ -266,24 +270,50 @@ pipe_rom pipe
 integer i;
 always @(X or Y)
 begin
+	
 	for (i = 0; i < NUM_PIPES; i = i + 1) begin
 	
-		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
-									(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
+		pipe_btm_gfx[i] <= 	(X - (pipeX[(32*(i+1))-1-:31]) < PIPE_SIZE_X) &&
+									(Y - (pipeY[(32*(i+1))-1-:31]+PIPE_GAP) < PIPE_SIZE_Y);
 									
-		pipe_top_gfx[i] <=	(X - (pipeX[i]) < PIPE_SIZE_X) && 
-									(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
+		pipe_top_gfx[i] <=	(X - (pipeX[(32*(i+1))-1-:31]) < PIPE_SIZE_X) && 
+									(-Y + (pipeY[(32*(i+1))-1-:31]-PIPE_GAP) < PIPE_SIZE_Y);
 		
 		if (pipe_btm_gfx[i]) begin
-			pipe_row <= (Y - pipeY[i] - PIPE_GAP)/SCALE;
-			pipe_col <= (X - pipeX[i])/SCALE;
+			pipe_row <= (Y - pipeY[(32*(i+1))-1-:31] - PIPE_GAP)/SCALE;
+			pipe_col <= (X - pipeX[(32*(i+1))-1-:31])/SCALE;
 		
 		end else if (pipe_top_gfx[i]) begin
-			pipe_row <= (-Y + pipeY[i] - PIPE_GAP)/SCALE;
-			pipe_col <= (X - pipeX[i])/SCALE;
+			pipe_row <= (-Y + pipeY[(32*(i+1))-1-:31] - PIPE_GAP)/SCALE;
+			pipe_col <= (X - pipeX[(32*(i+1))-1-:31])/SCALE;
 			
 		end
 	end
 end
+
+///////////////////////////////////////////////////////////////////////////////////
+/////										END SCREEN												/////
+///////////////////////////////////////////////////////////////////////////////////
+
+//wire game_over_gfx = (X - OVER_X-1 < OVER_SIZE_X) && (Y - OVER_Y < OVER_SIZE_Y) && (over_colour != IGNORE_COLOUR);
+//wire [23:0] over_colour;
+//game_over_rom over
+//(
+//	.clk				( VGA_clk 				),
+//	.row				( (Y-OVER_Y)/SCALE 	),
+//	.col				( (X-OVER_X)/SCALE 	),
+//	.colour_data 	( over_colour			)
+//);
+//
+//wire score_gfx = (X - SCORE_X-1 < SCORE_SIZE_X) && (Y - SCORE_Y < SCORE_SIZE_Y) && (score_colour != IGNORE_COLOUR);
+//wire [23:0] score_colour;
+//score_rom scr
+//(
+//	.clk				( VGA_clk 				),
+//	.row				( (Y-SCORE_Y)/SCALE 	),
+//	.col				( (X-SCORE_X)/SCALE 	),
+//	.colour_data 	( score_colour			)
+//);
+
 
 endmodule

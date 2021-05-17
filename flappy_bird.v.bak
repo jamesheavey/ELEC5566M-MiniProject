@@ -1,4 +1,4 @@
-module main
+module flappy_bird
 (	
 	(* chip_pin = "AF14" *)
 	input clk,
