@@ -1,7 +1,8 @@
 module keyboard_input
 (
 	input clk, rst, PS2_clk, PS2_data, 
-	output reg pause, flap
+	output wire pause,
+	output reg flap
 );
 	
 reg [7:0] code, nextCode, prevCode;
@@ -15,17 +16,18 @@ always@(negedge PS2_clk)
 begin
 	keyCode[count] = PS2_data;
 	count = count + 1;
-	code = 0;
 	
 	if(count == 11) begin
+	
 		nextCode = keyCode[8:1];
 		
-		if (nextCode == 8'hF0)
-			code = prevCode;
+		if(nextCode != 8'hF0) begin
+			if (nextCode == code && prevCode == 8'hF0)
+				code = 0;
+			else
+				code = keyCode[8:1];				
+		end
 		
-		if (prevCode == 8'hF0)
-			code = 0;
-
 		prevCode = keyCode[8:1];
 		count = 0;
 	end
@@ -35,18 +37,18 @@ always @(code or rst)
 begin
 	if (rst) begin
 		flap 	= 0;
-		pause 	= 0;
+		raw_pause = 0;
 	end else begin
 		flap 	= 0;
-		pause 	= 0;
+		raw_pause = 0;
 		if (code == 8'h29)
 			flap 	= 1;
 		else if (code == 8'h76)
-			pause 	= 1;
+			raw_pause = 1;
 	end
 end
 
-//key_filter p_edgeF (clk, raw_pause, pause);
+key_filter p_edgeF (clk, raw_pause, pause);
 //key_filter p_edgeP (clk, raw_flap, flap);
 
 endmodule

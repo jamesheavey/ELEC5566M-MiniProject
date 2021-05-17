@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon May 17 01:01:31 2021
+Analysis & Synthesis Status : Successful - Mon May 17 04:32:21 2021
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MiniProject
-Top-level Entity Name : flappy_bird
+Top-level Entity Name : bin2BCD
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 477
-Total pins : 43
+Total registers : 0
+Total pins : 22
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -63,7 +63,9 @@ wire [2:0] bird_state;
 
 wire signed [31:0] X, Y, birdX=150, birdY;
 wire [31:0] score_count;
-wire signed [32*NUM_PIPES-1:0] pipeX, pipeY;
+wire signed [31:0] pipeX [NUM_PIPES-1:0];
+wire signed [31:0] pipeY [NUM_PIPES-1:0];
+
 
 wire flap, pause, collision;
 
@@ -112,18 +114,6 @@ bird_physics #(
 	.bird_state		( bird_state 	)
 );
 
-pipes #(
-	.NUM_PIPES		( NUM_PIPES		)
-) pipe_shift (
-	.clk				( clk 			),
-	.FL_clk			( FL_clk			),
-	.rst				( rst				),
-	.game_state 	( game_state	),
-	.pipeX			( pipeX			),
-	.pipeY			( pipeY			),
-	.score_count	( score_count	)
-);
-
 collision_detection #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
@@ -133,9 +123,33 @@ collision_detection #(
 	.clk				( clk 			),
 	.birdX			( birdX 			),
 	.birdY			( birdY 			),
-	.pipeX			( pipeX			),
-	.pipeY			( pipeY			),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		),
 	.collision		( collision		)
+);
+
+pipes #(
+	.NUM_PIPES		( NUM_PIPES		)
+) pipe_shift (
+	.clk				( clk 			),
+	.FL_clk			( FL_clk			),
+	.rst				( rst				),
+	.game_state 	( game_state	),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		),
+	.score_count	( score_count	)
 );
 
 score_counter scr
@@ -170,8 +184,14 @@ image_renderer #(
 	.Y					( Y 				),
 	.birdX			( birdX 			),
 	.birdY			( birdY 			),
-	.pipeX			( pipeX			),
-	.pipeY			( pipeY			),
+	.pipeX_1			( pipeX[0]		),
+	.pipeX_2			( pipeX[1]		),
+	.pipeX_3			( pipeX[2]		),
+	.pipeX_4			( pipeX[3]		),
+	.pipeY_1			( pipeY[0]		),
+	.pipeY_2			( pipeY[1]		),
+	.pipeY_3			( pipeY[2]		),
+	.pipeY_4			( pipeY[3]		),
 	.RGB				( {R,G,B} 		)
 );
 
