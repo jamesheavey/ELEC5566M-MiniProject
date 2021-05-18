@@ -5,7 +5,7 @@ module image_renderer #(
 	parameter PIPE_GAP,
 	parameter NUM_PIPES
 )(
-	input VGA_clk, GAME_clk, FL_clk, rst, display_on, flap,
+	input VGA_clk, GAME_clk, FL_clk, rst, display_on,
 	input [3:0] game_state,
 	input [2:0] bird_state,
 	input [31:0] X, Y, birdX, birdY,
@@ -62,14 +62,15 @@ begin
 		case(game_state)
 			START_SCREEN: begin
 				if (display_on) begin
-					if			(title_gfx)	RGB <= title_colour;
+//					if			(title_gfx)	RGB <= title_colour;
 					
-					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+//					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+					if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
 		
-					else if 	(bg0_gfx)	RGB <= bg_colour[0];
-					else if 	(bg1_gfx)	RGB <= bg_colour[1];
-					else if 	(bg2_gfx)	RGB <= bg_colour[2];
-					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
 					
 					else RGB <= NO_COLOUR;
 				end else begin
@@ -82,13 +83,13 @@ begin
 					
 					else if (num_gfx && num_colour != IGNORE_COLOUR) RGB <= num_colour;
 					
-					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
-//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= pipe_colour;
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
+					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR)	RGB <= pipe_colour;
 					
-					else if 	(bg0_gfx)	RGB <= bg_colour[0];
-					else if 	(bg1_gfx)	RGB <= bg_colour[1];
-					else if 	(bg2_gfx)	RGB <= bg_colour[2];
-					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
 
 //					else RGB <= 24'h70C5CE;
 					else RGB <= NO_COLOUR;
@@ -98,20 +99,20 @@ begin
 				
 			PAUSE: begin
 				if (display_on) begin
-					if			(pause_gfx)	RGB <= pause_colour;
-					
-					else if (num_gfx && num_colour != IGNORE_COLOUR) RGB <= num_colour;
-					
-					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= (bird_colour[bird_state] & HALF_COLOUR) >> 2;
-					
-					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= (pipe_colour & HALF_COLOUR) >> 2;
-					
-					else if 	(bg0_gfx)	RGB <= (bg_colour[0] & HALF_COLOUR) >> 2;
-					else if 	(bg1_gfx)	RGB <= (bg_colour[1] & HALF_COLOUR) >> 2;
-					else if 	(bg2_gfx)	RGB <= (bg_colour[2] & HALF_COLOUR) >> 2;
-					else if 	(bg3_gfx)	RGB <= (bg_colour[3] & HALF_COLOUR) >> 2;
-
-					else RGB <= NO_COLOUR;
+//					if			(pause_gfx)	RGB <= pause_colour;
+//					
+//					else if (num_gfx && num_colour != IGNORE_COLOUR) RGB <= num_colour;
+//					
+//					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= (bird_colour[bird_state] & HALF_COLOUR) >> 2;
+//					
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= (pipe_colour & HALF_COLOUR) >> 2;
+//					
+//					else if 	(bg0_gfx)	RGB <= (bg_colour[0] & HALF_COLOUR) >> 2;
+//					else if 	(bg1_gfx)	RGB <= (bg_colour[1] & HALF_COLOUR) >> 2;
+//					else if 	(bg2_gfx)	RGB <= (bg_colour[2] & HALF_COLOUR) >> 2;
+//					else if 	(bg3_gfx)	RGB <= (bg_colour[3] & HALF_COLOUR) >> 2;
+//
+//					else RGB <= NO_COLOUR;
 				end else begin
 					RGB <= NO_COLOUR;
 				end end
@@ -126,15 +127,15 @@ begin
 					
 					else if	(score_gfx)			RGB <= score_colour;
 					
-					// add dead bird sprite?
-					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
-					
-					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
-					
-					else if 	(bg0_gfx)	RGB <= bg_colour[0];
-					else if 	(bg1_gfx)	RGB <= bg_colour[1];
-					else if 	(bg2_gfx)	RGB <= bg_colour[2];
-					else if 	(bg3_gfx)	RGB <= bg_colour[3];
+//					// add dead bird sprite?
+//					else if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+//					
+//					else if	(|{pipe_btm_gfx, pipe_top_gfx} && pipe_colour != IGNORE_COLOUR && !bg2_gfx && !bg3_gfx)	RGB <= pipe_colour;
+//					
+//					else if 	(bg0_gfx)	RGB <= bg_colour[0];
+//					else if 	(bg1_gfx)	RGB <= bg_colour[1];
+//					else if 	(bg2_gfx)	RGB <= bg_colour[2];
+//					else if 	(bg3_gfx)	RGB <= bg_colour[3];
 
 					else RGB <= NO_COLOUR;
 				end else begin
@@ -186,81 +187,81 @@ flap_3_rom bird3
 /////										TITLE														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
-wire title_gfx = (X - TITLE_X-1 < TITLE_SIZE_X) && (Y - TITLE_Y < TITLE_SIZE_Y) && (title_colour != IGNORE_COLOUR);
-wire [23:0] title_colour;
-title_rom title
-(
-	.clk				( VGA_clk 					),
-	.row				( (Y - TITLE_Y)/SCALE	),
-	.col				( (X - TITLE_X)/SCALE 	),
-	.colour_data	( title_colour 			)
-);
+//wire title_gfx = (X - TITLE_X-1 < TITLE_SIZE_X) && (Y - TITLE_Y < TITLE_SIZE_Y) && (title_colour != IGNORE_COLOUR);
+//wire [23:0] title_colour;
+//title_rom title
+//(
+//	.clk				( VGA_clk 					),
+//	.row				( (Y - TITLE_Y)/SCALE	),
+//	.col				( (X - TITLE_X)/SCALE 	),
+//	.colour_data	( title_colour 			)
+//);
 
 
 ///////////////////////////////////////////////////////////////////////////////////
 /////										PAUSE														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
-wire pause_gfx = (X - PAUSE_X-1 < PAUSE_SIZE_X) && (Y - PAUSE_Y < PAUSE_SIZE_Y) && (pause_colour != IGNORE_COLOUR);
-wire [23:0] pause_colour;
-pause_rom pause_icon
-(
-	.clk				( VGA_clk 					),
-	.row				( (Y - PAUSE_Y)/SCALE 	),
-	.col				( (X - PAUSE_X)/SCALE 	),
-	.colour_data	( pause_colour 			)
-);
+//wire pause_gfx = (X - PAUSE_X-1 < PAUSE_SIZE_X) && (Y - PAUSE_Y < PAUSE_SIZE_Y) && (pause_colour != IGNORE_COLOUR);
+//wire [23:0] pause_colour;
+//pause_rom pause_icon
+//(
+//	.clk				( VGA_clk 					),
+//	.row				( (Y - PAUSE_Y)/SCALE 	),
+//	.col				( (X - PAUSE_X)/SCALE 	),
+//	.colour_data	( pause_colour 			)
+//);
 
 
 ///////////////////////////////////////////////////////////////////////////////////
 /////										BACKGROUND												/////
 ///////////////////////////////////////////////////////////////////////////////////
 
-reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
-always @(posedge GAME_clk) begin
-	if (game_state != PAUSE && game_state != END_SCREEN) begin
-		if (X_ofs_bg != 640)
-			X_ofs_bg <= X_ofs_bg + 1;
-		else
-			X_ofs_bg <= 0;
-	end
-end
-
-always @(posedge FL_clk) begin
-	if (game_state != PAUSE && game_state != END_SCREEN) begin
-		if (X_ofs_fl != 640)
-			X_ofs_fl <= X_ofs_fl + 1;
-		else
-			X_ofs_fl <= 0;
-	end
-end
-
-wire [23:0] bg_colour [3:0];
-
-wire bg0_gfx = (Y <= BG_Y);
-wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
-wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
-wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
-
-assign bg_colour [0] = 24'h70C5CE;
-
-background_rom bg
-(
-	.clk				( VGA_clk 											),
-	.row				( (Y-BG_Y)/SCALE 									),
-	.col				( ((X + X_ofs_bg)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[1] 									)
-);
-
-floor_rom floor
-(
-	.clk				( VGA_clk 											),
-	.row				( (Y-FLOOR_Y)/SCALE 								),
-	.col				( ((X + X_ofs_fl)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[2] 									)
-);
-
-assign bg_colour [3] = 24'hDED895;
+//reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
+//always @(posedge GAME_clk) begin
+//	if (game_state != PAUSE && game_state != END_SCREEN) begin
+//		if (X_ofs_bg != 640)
+//			X_ofs_bg <= X_ofs_bg + 1;
+//		else
+//			X_ofs_bg <= 0;
+//	end
+//end
+//
+//always @(posedge FL_clk) begin
+//	if (game_state != PAUSE && game_state != END_SCREEN) begin
+//		if (X_ofs_fl != 640)
+//			X_ofs_fl <= X_ofs_fl + 1;
+//		else
+//			X_ofs_fl <= 0;
+//	end
+//end
+//
+//wire [23:0] bg_colour [3:0];
+//
+//wire bg0_gfx = (Y <= BG_Y);
+//wire bg1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+//wire bg2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
+//wire bg3_gfx = (Y > FLOOR_Y + FLOOR_SIZE_Y -1);
+//
+//assign bg_colour [0] = 24'h70C5CE;
+//
+//background_rom bg
+//(
+//	.clk				( VGA_clk 											),
+//	.row				( (Y-BG_Y)/SCALE 									),
+//	.col				( ((X + X_ofs_bg)%DISPLAY_SIZE_X)/SCALE 	),
+//	.colour_data 	( bg_colour[1] 									)
+//);
+//
+//floor_rom floor
+//(
+//	.clk				( VGA_clk 											),
+//	.row				( (Y-FLOOR_Y)/SCALE 								),
+//	.col				( ((X + X_ofs_fl)%DISPLAY_SIZE_X)/SCALE 	),
+//	.colour_data 	( bg_colour[2] 									)
+//);
+//
+//assign bg_colour [3] = 24'hDED895;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -368,49 +369,122 @@ begin
 	case (game_state)
 		IN_GAME: begin
 			
-			for (i = 0; i < 3; i = i + 1) begin
-				if (X >= 550 + i*(NUM_SPACING + NUM_SIZE_X) && X < 550 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
-					num_col = X - (550 + i*(NUM_SPACING + NUM_SIZE_X));
-					num_row = Y - 16 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
-					num_gfx = 1;
-				end
+//			for (i = 0; i < 3; i = i + 1) begin
+//				if (X >= 550 + i*(NUM_SPACING + NUM_SIZE_X) && X < 550 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
+//					num_col = X - (550 + i*(NUM_SPACING + NUM_SIZE_X));
+//					num_row = Y - 16 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+//					num_gfx = 1;
+//				end
+//			end
+
+			// if vga pixel within bcd3 location on screen
+			if(X >= 550 && X < 550 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[11:8] != 0)
+			begin
+				num_col = X - 550;
+				num_row = Y - 16 + ((score_BCD[11:8]-1) * NUM_SIZE_Y); // offset row index by scaled bcd3 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd2 location on screen
+			if(X >= 576 && X < 576 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[7:4] != 0)
+			begin
+				num_col = X - 576;
+				num_row = Y - 16 + ((score_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd2 location on screen
+			if(X >= 602 && X < 602 + NUM_SIZE_X && Y >= 16 && Y < 16 + NUM_SIZE_Y && score_BCD[3:0] != 0)
+			begin
+				num_col = X - 602;
+				num_row = Y - 16 + ((score_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
+				num_gfx = 1;
 			end
 		end
 		
 		END_SCREEN: begin
 			
-			for (i = 0; i < 3; i = i + 1) begin
-				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+40) && Y < (SCORE_Y+40) + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
-					num_col = X - (SCORE_X + 210 + i*(NUM_SPACING + NUM_SIZE_X));
-					num_row = Y - 40 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
-					num_gfx = 1;
-				end
-				
-				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[4*(3-i)-1-:3] != 0) begin
-					num_col = X - (SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X));
-					num_row = Y - 110 + (hiscore_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
-					num_gfx = 1;
-				end
+//			for (i = 0; i < 3; i = i + 1) begin
+//				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+40) && Y < (SCORE_Y+40) + NUM_SIZE_Y && score_BCD[4*(3-i)-1-:3] != 0) begin
+//					num_col = X - (SCORE_X + 210 + i*(NUM_SPACING + NUM_SIZE_X));
+//					num_row = Y - 40 + (score_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+//					num_gfx = 1;
+//				end
+//				
+//				if (X >= SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) && X < SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[4*(3-i)-1-:3] != 0) begin
+//					num_col = X - (SCORE_X + 220 + i*(NUM_SPACING + NUM_SIZE_X));
+//					num_row = Y - 110 + (hiscore_BCD[4*(3-i)-1-:3]-1 * NUM_SIZE_Y);
+//					num_gfx = 1;
+//				end
+//			end
+			// if vga pixel within bcd3 location on screen
+			if(X >= (SCORE_X+235) && X < (SCORE_X+235) + NUM_SIZE_X && Y >= (SCORE_Y+50) && Y < (SCORE_Y+50) + NUM_SIZE_Y && score_BCD[11:8] != 0)
+			begin
+				num_col = X - (SCORE_X+235);
+				num_row = Y - (SCORE_Y+50) + ((score_BCD[11:8]-1) * NUM_SIZE_Y); // offset row index by scaled bcd3 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd2 location on screen
+			if(X >= (SCORE_X+261) && X < (SCORE_X+261) + NUM_SIZE_X && Y >= (SCORE_Y+50) && Y < (SCORE_Y+50) + NUM_SIZE_Y && score_BCD[7:4] != 0)
+			begin
+				num_col = X - (SCORE_X+261);
+				num_row = Y - (SCORE_Y+50) + ((score_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd1 location on screen
+			if(X >= (SCORE_X+287) && X < (SCORE_X+287) + NUM_SIZE_X && Y >= (SCORE_Y+50) && Y < (SCORE_Y+50) + NUM_SIZE_Y && score_BCD[3:0] != 0)
+			begin
+				num_col = X - (SCORE_X+287);
+				num_row = Y - (SCORE_Y+50) + ((score_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd1 value
+				num_gfx = 1;
+			end
+			
+			
+			
+			// if vga pixel within bcd3 location on screen
+			if(X >= (SCORE_X+235) && X < (SCORE_X+235) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[11:8] != 0)
+			begin
+				num_col = X - (SCORE_X+235);
+				num_row = Y - (SCORE_Y+110) + ((hiscore_BCD[11:8]-1) * NUM_SIZE_Y); // offset row index by scaled bcd3 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd2 location on screen
+			if(X >= (SCORE_X+261) && X < (SCORE_X+261) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[7:4] != 0)
+			begin
+				num_col = X - (SCORE_X+261);
+				num_row = Y - (SCORE_Y+110) + ((hiscore_BCD[7:4]-1) * NUM_SIZE_Y); // offset row index by scaled bcd2 value
+				num_gfx = 1;
+			end
+			
+			// if vga pixel within bcd1 location on screen
+			if(X >= (SCORE_X+287) && X < (SCORE_X+287) + NUM_SIZE_X && Y >= (SCORE_Y+110) && Y < (SCORE_Y+110) + NUM_SIZE_Y && hiscore_BCD[3:0] != 0)
+			begin
+				num_col = X - (SCORE_X+287);
+				num_row = Y - (SCORE_Y+110) + ((hiscore_BCD[3:0]-1) * NUM_SIZE_Y); // offset row index by scaled bcd1 value
+				num_gfx = 1;
 			end
 
-			if(X >= (SCORE_X+35) && X < (SCORE_X+35) + MEDAL_SIZE_X && Y >= (SCORE_Y+75) && Y < (SCORE_Y+75) + MEDAL_SIZE_Y) begin
+			if(X >= (SCORE_X+36) && X < (SCORE_X+36) + MEDAL_SIZE_X && Y >= (SCORE_Y+60) && Y < (SCORE_Y+60) + MEDAL_SIZE_Y) begin
 			
 				if (score_BCD[7:4] > 1) begin
 					// GOLD
-					medal_col = X - (SCORE_X+35);
-					medal_row = Y - 75;
+					medal_col = X - (SCORE_X+36);
+					medal_row = Y - (SCORE_Y+60);
 					medal_gfx = 1;
 				
 				end else if (score_BCD[7:4] > 0) begin
 					// SILVER
-					medal_col = X - (SCORE_X+35);
-					medal_row = Y - 75 + (MEDAL_SIZE_Y);
+					medal_col = X - (SCORE_X+36);
+					medal_row = Y - (SCORE_Y+60) + (MEDAL_SIZE_Y);
 					medal_gfx = 1;
 				
 				end else begin
 					// BROnZE
-					medal_col = X - (SCORE_X+35);
-					medal_row = Y - 75 + (2*MEDAL_SIZE_Y);
+					medal_col = X - (SCORE_X+36);
+					medal_row = Y - (SCORE_Y+60) + (2*MEDAL_SIZE_Y);
 					medal_gfx = 1;
 				end
 			end

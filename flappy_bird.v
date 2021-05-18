@@ -10,9 +10,9 @@ module flappy_bird
 	output [41:0] seven_seg
 );
 
-localparam [6:0] SCALE = 3;
-localparam [6:0] BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 12*SCALE;
-localparam PIPE_GAP = 70;
+localparam SCALE = 3;
+localparam BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 12*SCALE;
+localparam PIPE_GAP = 75;
 localparam NUM_PIPES = 4;
 
 wire VGA_clk;
@@ -24,9 +24,8 @@ clk_divider #(1666666-1) GAME (clk, GAME_clk); // 30 Hz
 wire FL_clk;
 clk_divider #(200000-1) FLOOR (clk, FL_clk);
 
-
 wire [3:0] game_state;
-wire [2:0] bird_state;
+wire [1:0] bird_state;
 
 wire [31:0] X, Y, birdX=150, birdY;
 wire [31:0] score_count;
@@ -161,7 +160,6 @@ image_renderer #(
 	.RGB				( {R,G,B} 		)
 );
 
-//assign led = {collision, pause, flap};
 assign LED = GAME_clk ? {9{collision}} : 0;
 
 endmodule
