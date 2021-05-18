@@ -6,7 +6,7 @@ module bird_physics#(
 	input clk, rst, flap, 
 	input [3:0] game_state,
 	output reg [31:0] birdY,
-	output reg [1:0] bird_state
+	output reg [1:0] bird_state, bird_angle
 );
 
 localparam	START_SCREEN 	= 4'b0001,
@@ -22,11 +22,15 @@ localparam	TOP			 	= 4'b0001,
 localparam	FLAP_1 			= 2'd0,
 				FLAP_2			= 2'd1,
 				FLAP_3 			= 2'd2;
+
+localparam	HORZ 				= 2'd0,
+				POS_45			= 2'd1,
+				NEG_45 			= 2'd2;
 				
 				
 localparam TIME_START      =    20000;  // starting time to load when beginning to flap up
 localparam TIME_STEP       =     5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
-localparam TIME_MAX        =   400000;  // start time for fall, end time for rise
+localparam TIME_MAX        =   450000;  // start time for fall, end time for rise
 localparam TIME_TERMINAL   =   150000;  // terminal time reached when falling down
 
 reg [3:0] motion_state, prev_state;
@@ -60,6 +64,7 @@ begin
 			DOWN: begin
 				prev_state	 	<= DOWN;
 				bird_state 		<= FLAP_1;
+				bird_angle		<= POS_45;
 				
 				if (game_state != START_SCREEN || game_state != IN_GAME) begin
 					motion_state <= STOP;
@@ -88,10 +93,13 @@ begin
 			UP: begin
 				prev_state 		<= UP;
 				
-				if (flap_start <= (TIME_MAX/5) * 4)
+				if (flap_start <= (TIME_MAX/10) * 9) begin
 					bird_state 	<= FLAP_3;
-				else
+					bird_angle	<= NEG_45;
+				end else begin
 					bird_state 	<= FLAP_2;
+					bird_angle	<= HORZ;
+				end
 				
 				if (game_state != START_SCREEN || game_state != IN_GAME) begin
 					motion_state <= STOP;

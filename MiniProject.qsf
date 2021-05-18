@@ -230,6 +230,12 @@ set_location_assignment PIN_A11 -to v_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to v_clk
 set_location_assignment PIN_D11 -to v_sync
 set_instance_assignment -name IO_STANDARD "2.5 V" -to v_sync
+set_global_assignment -name VERILOG_FILE sprites/flap_3_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_3_neg45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_2_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_2_neg45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_1_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_1_neg45_rom.v
 set_global_assignment -name SOURCE_FILE pin_config.csv
 set_global_assignment -name VERILOG_FILE sprites/title_rom.v
 set_global_assignment -name VERILOG_FILE sprites/score_rom.v

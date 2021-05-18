@@ -11,7 +11,7 @@ module flappy_bird
 );
 
 localparam SCALE = 3;
-localparam BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 12*SCALE;
+localparam BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 15*SCALE;
 localparam PIPE_GAP = 75;
 localparam NUM_PIPES = 4;
 
@@ -25,7 +25,7 @@ wire FL_clk;
 clk_divider #(200000-1) FLOOR (clk, FL_clk);
 
 wire [3:0] game_state;
-wire [1:0] bird_state;
+wire [1:0] bird_state, bird_angle;
 
 wire [31:0] X, Y, birdX=150, birdY;
 wire [31:0] score_count;
@@ -77,7 +77,8 @@ bird_physics #(
 	.game_state		( game_state 	),
 	.flap				( flap 			),
 	.birdY			( birdY 			),
-	.bird_state		( bird_state 	)
+	.bird_state		( bird_state 	),
+	.bird_angle		( bird_angle	)
 );
 
 collision_detection #(
@@ -142,6 +143,7 @@ image_renderer #(
 	.display_on		( display_on 	),
 	.game_state		( game_state 	),
 	.bird_state		( bird_state 	),
+	.bird_angle		( bird_angle	),
 	.X					( X 				),
 	.Y					( Y 				),
 	.birdX			( birdX 			),

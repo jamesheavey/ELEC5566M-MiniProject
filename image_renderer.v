@@ -7,7 +7,7 @@ module image_renderer #(
 )(
 	input VGA_clk, GAME_clk, FL_clk, rst, display_on,
 	input [3:0] game_state,
-	input [2:0] bird_state,
+	input [1:0] bird_state, bird_angle,
 	input [31:0] X, Y, birdX, birdY,
 	input [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
 	input [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
@@ -64,7 +64,7 @@ begin
 				if (display_on) begin
 //					if			(title_gfx)	RGB <= title_colour;
 					
-					if	(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+					if	(bird_gfx && bird_colour[bird_state][bird_angle] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state][bird_angle];
 		
 //					else if 	(bg0_gfx)	RGB <= bg_colour[0];
 //					else if 	(bg1_gfx)	RGB <= bg_colour[1];
@@ -78,7 +78,7 @@ begin
 				
 			IN_GAME: begin
 				if (display_on) begin
-					if			(bird_gfx && bird_colour[bird_state] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state];
+					if			(bird_gfx && bird_colour[bird_state][bird_angle] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state][bird_angle];
 					
 //					else if (num_gfx && num_colour != IGNORE_COLOUR) RGB <= num_colour;
 //					
@@ -155,13 +155,29 @@ end
 // input an angle, multiply row and column by a transformation matrix
 
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
-wire [23:0] bird_colour [2:0];
+wire [23:0] bird_colour [2:0][2:0];
 flap_1_rom bird1
 (
 	.clk				( VGA_clk 				),
 	.row				( (Y - birdY)/SCALE 	),
 	.col				( (X - birdX)/SCALE 	),
-	.colour_data 	( bird_colour[0] 		)
+	.colour_data 	( bird_colour[0][0] 	)
+);
+
+flap_1_pos45_rom bird1_pos
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE 	),
+	.colour_data 	( bird_colour[0][1]	)
+);
+
+flap_1_neg45_rom bird1_neg
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE 	),
+	.colour_data 	( bird_colour[0][2]	)
 );
 
 flap_2_rom bird2
@@ -169,7 +185,23 @@ flap_2_rom bird2
 	.clk				( VGA_clk 				),
 	.row				( (Y - birdY)/SCALE 	),
 	.col				( (X - birdX)/SCALE	),
-	.colour_data 	( bird_colour[1] 		)
+	.colour_data 	( bird_colour[1][0]	)
+);
+
+flap_2_pos45_rom bird2_pos
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE	),
+	.colour_data 	( bird_colour[1][1]	)
+);
+
+flap_2_neg45_rom bird2_neg
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE	),
+	.colour_data 	( bird_colour[1][2]	)
 );
 
 flap_3_rom bird3
@@ -177,7 +209,23 @@ flap_3_rom bird3
 	.clk				( VGA_clk 				),
 	.row				( (Y - birdY)/SCALE 	),
 	.col				( (X - birdX)/SCALE 	),
-	.colour_data 	( bird_colour[2] 		)
+	.colour_data 	( bird_colour[2][0]	)
+);
+
+flap_3_pos45_rom bird3_pos
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE 	),
+	.colour_data 	( bird_colour[2][1]	)
+);
+
+flap_3_neg45_rom bird3_neg
+(
+	.clk				( VGA_clk 				),
+	.row				( (Y - birdY)/SCALE 	),
+	.col				( (X - birdX)/SCALE 	),
+	.colour_data 	( bird_colour[2][2]	)
 );
 
 
