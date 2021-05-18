@@ -28,10 +28,10 @@ localparam	HORZ 				= 2'd0,
 				NEG_45 			= 2'd2;
 				
 				
-localparam TIME_START      =    20000;  // starting time to load when beginning to flap up
-localparam TIME_STEP       =     5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
-localparam TIME_MAX        =   450000;  // start time for fall, end time for rise
-localparam TIME_TERMINAL   =   150000;  // terminal time reached when falling down
+localparam TIME_START      =    25000;  // starting time to load when beginning to flap up
+localparam TIME_STEP       =     7500;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
+localparam TIME_MAX        =   500000;  // start time for fall, end time for rise
+localparam TIME_TERMINAL   =   100000;  // terminal time reached when falling down
 
 reg [3:0] motion_state, prev_state;
 reg [31:0] flap_elapsed, flap_start;
@@ -48,26 +48,25 @@ begin
 	end else begin
 		case (motion_state)
 		
-			TOP: begin
-				prev_state 		<= TOP;
-				
+			TOP: begin				
 				flap_elapsed 	<= TIME_MAX;
 				flap_start 		<= TIME_MAX;
 				
-				if (game_state != START_SCREEN || game_state != IN_GAME) begin
-					motion_state <= STOP;
+				if (game_state == PAUSE || game_state == END_SCREEN) begin
+					prev_state 		<= TOP;
+					motion_state	<= STOP;
 				end
 				
 				motion_state 	<= DOWN;
 			end
 			
 			DOWN: begin
-				prev_state	 	<= DOWN;
 				bird_state 		<= FLAP_1;
 				bird_angle		<= POS_45;
 				
-				if (game_state != START_SCREEN || game_state != IN_GAME) begin
-					motion_state <= STOP;
+				if (game_state == PAUSE || game_state == END_SCREEN) begin
+					prev_state 		<= DOWN;
+					motion_state	<= STOP;
 				end
 				
 				flap_elapsed 	<= flap_elapsed - 1;
@@ -83,16 +82,14 @@ begin
 					birdY <= birdY + 1;
 				end
 				
-				if (flap || (game_state == START_SCREEN && birdY > 250)) begin
+				if (flap || (game_state == START_SCREEN && birdY > 250 && birdY + BIRD_SIZE_Y <= 480)) begin
 					motion_state 	<= UP;
 					flap_start 		<= TIME_START;
 					flap_elapsed 	<= TIME_START;
 				end
 			end
 			
-			UP: begin
-				prev_state 		<= UP;
-				
+			UP: begin				
 				if (flap_start <= (TIME_MAX/10) * 9) begin
 					bird_state 	<= FLAP_3;
 					bird_angle	<= NEG_45;
@@ -101,8 +98,9 @@ begin
 					bird_angle	<= HORZ;
 				end
 				
-				if (game_state != START_SCREEN || game_state != IN_GAME) begin
-					motion_state <= STOP;
+				if (game_state == PAUSE || game_state == END_SCREEN) begin
+					prev_state 		<= UP;
+					motion_state	<= STOP;
 				end
 				
 				flap_elapsed <= flap_elapsed - 1;
@@ -119,7 +117,6 @@ begin
 			end
 			
 			STOP: begin
-				birdY <= birdY;
 				if (game_state == START_SCREEN || game_state == IN_GAME) begin
 					motion_state <= prev_state;
 				end

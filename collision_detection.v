@@ -30,8 +30,8 @@ begin
 		collision <= 1;
 		
 	for (i = 0; i < NUM_PIPES; i = i + 1) begin
-		if ( (birdX + BIRD_SIZE_X >= pipeX[i]) && (birdX <= pipeX[i] + PIPE_SIZE_X) ) begin
-			if ( (birdY + BIRD_SIZE_Y >= pipeY[i] + PIPE_GAP) || (birdY <= pipeY[i] - PIPE_GAP) ) begin
+		if ( (birdX + BIRD_SIZE_X-3 >= pipeX[i]) && (birdX+3 <= pipeX[i] + PIPE_SIZE_X) ) begin
+			if ( (birdY + BIRD_SIZE_Y-3 >= pipeY[i] + PIPE_GAP) || (birdY+3 <= pipeY[i] - PIPE_GAP) ) begin
 				collision <= 1;
 			end
 		end

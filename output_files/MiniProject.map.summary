@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue May 18 22:24:44 2021
+Analysis & Synthesis Status : Successful - Tue May 18 23:12:45 2021
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : MiniProject
 Top-level Entity Name : flappy_bird
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 501
+Total registers : 647
 Total pins : 85
 Total virtual pins : 0
 Total block memory bits : 0
