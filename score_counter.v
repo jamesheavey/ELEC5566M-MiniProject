@@ -1,23 +1,20 @@
 module score_counter
 (
-	input clk, rst,
+	input rst,
 	input	[31:0] score_count,
 	output [11:0] score_BCD, hiscore_BCD,
 	output [41:0] seven_seg
 );
 
-reg [31:0] hiscore; // load from mem in future
+reg [31:0] hiscore;
 
-always @(posedge clk or posedge rst)
+always @(score_count or rst)
 begin
 	if (rst)
-		hiscore <= 0;
-	else 
-		hiscore <= score_count > hiscore ? score_count : hiscore;
+		hiscore = 0;
+	else
+		hiscore = (score_count > hiscore) ? score_count : hiscore; // load from mem in future
 end
-
-bin2BCD scr (score_count, score_BCD);
-bin2BCD hiscr (hiscore, hiscore_BCD);
 
 genvar i;
 generate 
@@ -29,5 +26,8 @@ generate
 		);
 	end 
 endgenerate
+
+bin2BCD scr (score_count, score_BCD);
+bin2BCD hiscr (hiscore, hiscore_BCD);
 
 endmodule

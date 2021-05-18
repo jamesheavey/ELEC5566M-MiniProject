@@ -121,7 +121,6 @@ pipes #(
 
 score_counter scr
 (
-	.clk				( cLK 			),
 	.rst				( rst				),
 	.score_count	( score_count	),
 	.score_BCD		( score_BCD		),

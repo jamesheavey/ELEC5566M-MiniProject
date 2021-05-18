@@ -65,8 +65,6 @@ begin
 					if (pipeX[i] + PIPE_SIZE_X == birdX) begin
 						score_count <= score_count + 1;
 					end
-					
-					// Add slight y oscillation
 				end
 				
 			end
