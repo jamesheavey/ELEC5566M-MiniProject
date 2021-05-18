@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Tue May 18 07:44:03 2021
+Tue May 18 21:21:38 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,8 +10,45 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |flappy_bird|bird_physics:phys|prev_state
+  9. State Machine - |flappy_bird|bird_physics:phys|motion_state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: clk_divider:VGA
+ 16. Parameter Settings for User Entity Instance: clk_divider:GAME
+ 17. Parameter Settings for User Entity Instance: clk_divider:FLOOR
+ 18. Parameter Settings for User Entity Instance: bird_physics:phys
+ 19. Parameter Settings for User Entity Instance: collision_detection:coll
+ 20. Parameter Settings for User Entity Instance: pipes:pipe_shift
+ 21. Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_generator:rand
+ 22. Parameter Settings for User Entity Instance: image_renderer:display
+ 23. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div1
+ 24. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div0
+ 25. Port Connectivity Checks: "image_renderer:display|flap_3_rom:bird3"
+ 26. Port Connectivity Checks: "image_renderer:display|flap_2_rom:bird2"
+ 27. Port Connectivity Checks: "image_renderer:display|flap_1_rom:bird1"
+ 28. Port Connectivity Checks: "image_renderer:display"
+ 29. Port Connectivity Checks: "score_counter:scr|bin2BCD:hiscr"
+ 30. Port Connectivity Checks: "score_counter:scr|bin2BCD:scr"
+ 31. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[5].display"
+ 32. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[4].display"
+ 33. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[3].display"
+ 34. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[2].display"
+ 35. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[1].display"
+ 36. Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display"
+ 37. Port Connectivity Checks: "pipes:pipe_shift|random_number_generator:rand"
+ 38. Port Connectivity Checks: "collision_detection:coll"
+ 39. Port Connectivity Checks: "vga_gen:vga"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+ 43. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -34,22 +71,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue May 18 07:44:03 2021           ;
-; Quartus Prime Version       ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name               ; MiniProject                                 ;
-; Top-level Entity Name       ; flappy_bird                                 ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May 18 21:21:38 2021       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; MiniProject                                 ;
+; Top-level Entity Name           ; flappy_bird                                 ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 499                                         ;
+; Total pins                      ; 85                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +190,711 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; sprites/flap_3_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_3_rom.v        ;         ;
+; sprites/flap_2_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_2_rom.v        ;         ;
+; sprites/flap_1_rom.v             ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/flap_1_rom.v        ;         ;
+; vga_gen.v                        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v                   ;         ;
+; clk_divider.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v               ;         ;
+; key_filter.v                     ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/key_filter.v                ;         ;
+; image_renderer.v                 ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v            ;         ;
+; keyboard_input.v                 ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v            ;         ;
+; bird_physics.v                   ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v              ;         ;
+; game_FSM.v                       ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v                  ;         ;
+; collision_detection.v            ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/collision_detection.v       ;         ;
+; pipes.v                          ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v                     ;         ;
+; random_number_generator.v        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/random_number_generator.v   ;         ;
+; flappy_bird.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v               ;         ;
+; score_counter.v                  ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v             ;         ;
+; bin2BCD.v                        ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v                   ;         ;
+; hex_to_7seg.v                    ; yes             ; User Verilog HDL File        ; C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_gbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/lpm_divide_gbm.tdf       ;         ;
+; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf  ;         ;
+; db/alt_u_div_ive.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 1320      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 2078      ;
+;     -- 7 input functions                    ; 4         ;
+;     -- 6 input functions                    ; 551       ;
+;     -- 5 input functions                    ; 157       ;
+;     -- 4 input functions                    ; 188       ;
+;     -- <=3 input functions                  ; 1178      ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 499       ;
+;                                             ;           ;
+; I/O pins                                    ; 85        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 394       ;
+; Total fan-out                               ; 9492      ;
+; Average fan-out                             ; 3.46      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name             ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |flappy_bird                                  ; 2078 (2)            ; 499 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                        ; flappy_bird             ; work         ;
+;    |bird_physics:phys|                        ; 232 (232)           ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:phys                                                                                                      ; bird_physics            ; work         ;
+;    |clk_divider:FLOOR|                        ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:FLOOR                                                                                                      ; clk_divider             ; work         ;
+;    |clk_divider:GAME|                         ; 45 (45)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:GAME                                                                                                       ; clk_divider             ; work         ;
+;    |clk_divider:VGA|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:VGA                                                                                                        ; clk_divider             ; work         ;
+;    |collision_detection:coll|                 ; 366 (366)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|collision_detection:coll                                                                                               ; collision_detection     ; work         ;
+;    |game_FSM:FSM|                             ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|game_FSM:FSM                                                                                                           ; game_FSM                ; work         ;
+;    |image_renderer:display|                   ; 640 (152)           ; 33 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display                                                                                                 ; image_renderer          ; work         ;
+;       |flap_1_rom:bird1|                      ; 87 (87)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_rom:bird1                                                                                ; flap_1_rom              ; work         ;
+;       |flap_2_rom:bird2|                      ; 56 (56)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_rom:bird2                                                                                ; flap_2_rom              ; work         ;
+;       |flap_3_rom:bird3|                      ; 67 (67)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_rom:bird3                                                                                ; flap_3_rom              ; work         ;
+;       |lpm_divide:Div0|                       ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 181 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 181 (181)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;       |lpm_divide:Div1|                       ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm          ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh     ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive           ; work         ;
+;    |keyboard_input:kb|                        ; 79 (78)             ; 57 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb                                                                                                      ; keyboard_input          ; work         ;
+;       |key_filter:p_edgeF|                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb|key_filter:p_edgeF                                                                                   ; key_filter              ; work         ;
+;    |pipes:pipe_shift|                         ; 598 (597)           ; 200 (168)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift                                                                                                       ; pipes                   ; work         ;
+;       |random_number_generator:rand|          ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift|random_number_generator:rand                                                                          ; random_number_generator ; work         ;
+;    |score_counter:scr|                        ; 21 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr                                                                                                      ; score_counter           ; work         ;
+;       |hex_to_7seg:seven_seg_loop[0].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[0].display                                                                ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[1].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[1].display                                                                ; hex_to_7seg             ; work         ;
+;       |hex_to_7seg:seven_seg_loop[2].display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|score_counter:scr|hex_to_7seg:seven_seg_loop[2].display                                                                ; hex_to_7seg             ; work         ;
+;    |vga_gen:vga|                              ; 45 (45)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|vga_gen:vga                                                                                                            ; vga_gen                 ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |flappy_bird|bird_physics:phys|prev_state          ;
++-----------------+---------------+-----------------+----------------+
+; Name            ; prev_state.UP ; prev_state.DOWN ; prev_state.TOP ;
++-----------------+---------------+-----------------+----------------+
+; prev_state.DOWN ; 0             ; 0               ; 0              ;
+; prev_state.TOP  ; 0             ; 1               ; 1              ;
+; prev_state.UP   ; 1             ; 1               ; 0              ;
++-----------------+---------------+-----------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |flappy_bird|bird_physics:phys|motion_state                                    ;
++-------------------+-------------------+-----------------+-------------------+------------------+
+; Name              ; motion_state.STOP ; motion_state.UP ; motion_state.DOWN ; motion_state.TOP ;
++-------------------+-------------------+-----------------+-------------------+------------------+
+; motion_state.DOWN ; 0                 ; 0               ; 0                 ; 0                ;
+; motion_state.TOP  ; 0                 ; 0               ; 1                 ; 1                ;
+; motion_state.UP   ; 0                 ; 1               ; 1                 ; 0                ;
+; motion_state.STOP ; 1                 ; 0               ; 1                 ; 0                ;
++-------------------+-------------------+-----------------+-------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++----------------------------------------------------+----------------------------------------------------------------+
+; Register name                                      ; Reason for Removal                                             ;
++----------------------------------------------------+----------------------------------------------------------------+
+; bird_physics:phys|flap_start[1,2]                  ; Merged with bird_physics:phys|flap_start[0]                    ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[3] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[3] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[2] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[2] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[1] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[1] ;
+; image_renderer:display|flap_2_rom:bird2|row_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[0] ;
+; image_renderer:display|flap_3_rom:bird3|row_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|row_reg[0] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[4] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[4] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[4] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[4] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[3] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[3] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[3] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[2] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[2] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[2] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[1] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[1] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[1] ;
+; image_renderer:display|flap_2_rom:bird2|col_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[0] ;
+; image_renderer:display|flap_3_rom:bird3|col_reg[0] ; Merged with image_renderer:display|flap_1_rom:bird1|col_reg[0] ;
+; pipes:pipe_shift|pipeY[0][11]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][12]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][13]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][14]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][15]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][16]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][17]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][18]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][19]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][20]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][21]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][22]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][23]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][24]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][25]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][26]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][27]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][28]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][29]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][30]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][31]                      ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][8]                       ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[0][9]                       ; Merged with pipes:pipe_shift|pipeY[0][10]                      ;
+; pipes:pipe_shift|pipeY[1][11]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][12]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][13]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][14]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][15]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][16]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][17]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][18]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][19]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][20]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][21]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][22]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][23]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][24]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][25]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][26]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][27]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][28]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][29]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][30]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][31]                      ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][8]                       ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[1][9]                       ; Merged with pipes:pipe_shift|pipeY[1][10]                      ;
+; pipes:pipe_shift|pipeY[2][11]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][12]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][13]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][14]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][15]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][16]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][17]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][18]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][19]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][20]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][21]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][22]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][23]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][24]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][25]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][26]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][27]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][28]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][29]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][30]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][31]                      ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][8]                       ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[2][9]                       ; Merged with pipes:pipe_shift|pipeY[2][10]                      ;
+; pipes:pipe_shift|pipeY[3][11]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][12]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][13]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][14]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][15]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][16]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][17]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][18]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][19]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][20]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][21]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][22]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][23]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][24]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][25]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][26]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][27]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][28]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][29]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][30]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][31]                      ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][8]                       ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; pipes:pipe_shift|pipeY[3][9]                       ; Merged with pipes:pipe_shift|pipeY[3][10]                      ;
+; clk_divider:VGA|count[0..31]                       ; Lost fanout                                                    ;
+; pipes:pipe_shift|pipeY[0][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[1][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[2][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[3][10]                      ; Stuck at GND due to stuck port data_in                         ;
+; bird_physics:phys|prev_state~7                     ; Lost fanout                                                    ;
+; pipes:pipe_shift|score_count[12..31]               ; Lost fanout                                                    ;
+; pipes:pipe_shift|pipeY[0][7]                       ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[1][7]                       ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[2][7]                       ; Stuck at GND due to stuck port data_in                         ;
+; pipes:pipe_shift|pipeY[3][7]                       ; Stuck at GND due to stuck port data_in                         ;
+; bird_physics:phys|flap_start[0]                    ; Stuck at GND due to stuck port data_in                         ;
+; Total Number of Removed Registers = 174            ;                                                                ;
++----------------------------------------------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; Register name                    ; Reason for Removal ; Registers Removed due to This Register                              ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+; pipes:pipe_shift|score_count[31] ; Lost Fanouts       ; pipes:pipe_shift|score_count[30], pipes:pipe_shift|score_count[29], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[28], pipes:pipe_shift|score_count[27], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[26], pipes:pipe_shift|score_count[25], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[24], pipes:pipe_shift|score_count[23], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[22], pipes:pipe_shift|score_count[21], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[20], pipes:pipe_shift|score_count[19], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[18], pipes:pipe_shift|score_count[17], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[16], pipes:pipe_shift|score_count[15], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[14], pipes:pipe_shift|score_count[13], ;
+;                                  ;                    ; pipes:pipe_shift|score_count[12]                                    ;
++----------------------------------+--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 499   ;
+; Number of registers using Synchronous Clear  ; 322   ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 333   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 316   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; game_FSM:FSM|game_state[0]              ; 22      ;
+; bird_physics:phys|birdY[6]              ; 8       ;
+; bird_physics:phys|birdY[7]              ; 8       ;
+; bird_physics:phys|birdY[4]              ; 8       ;
+; bird_physics:phys|birdY[3]              ; 8       ;
+; bird_physics:phys|birdY[2]              ; 8       ;
+; bird_physics:phys|birdY[1]              ; 12      ;
+; pipes:pipe_shift|pipeX[0][9]            ; 4       ;
+; pipes:pipe_shift|pipeX[0][7]            ; 5       ;
+; pipes:pipe_shift|pipeX[0][5]            ; 4       ;
+; pipes:pipe_shift|pipeX[0][4]            ; 4       ;
+; pipes:pipe_shift|pipeX[0][3]            ; 4       ;
+; pipes:pipe_shift|pipeX[0][2]            ; 4       ;
+; pipes:pipe_shift|pipeX[1][1]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][9]            ; 4       ;
+; pipes:pipe_shift|pipeX[1][8]            ; 4       ;
+; pipes:pipe_shift|pipeX[1][7]            ; 5       ;
+; pipes:pipe_shift|pipeX[1][5]            ; 4       ;
+; pipes:pipe_shift|pipeX[1][4]            ; 4       ;
+; pipes:pipe_shift|pipeX[1][2]            ; 4       ;
+; pipes:pipe_shift|pipeX[2][10]           ; 4       ;
+; pipes:pipe_shift|pipeX[2][7]            ; 5       ;
+; pipes:pipe_shift|pipeX[2][5]            ; 4       ;
+; pipes:pipe_shift|pipeX[2][4]            ; 4       ;
+; pipes:pipe_shift|pipeX[3][1]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][10]           ; 4       ;
+; pipes:pipe_shift|pipeX[3][8]            ; 4       ;
+; pipes:pipe_shift|pipeX[3][7]            ; 5       ;
+; pipes:pipe_shift|pipeX[3][5]            ; 4       ;
+; pipes:pipe_shift|pipeX[3][3]            ; 4       ;
+; bird_physics:phys|flap_start[18]        ; 6       ;
+; bird_physics:phys|flap_start[17]        ; 5       ;
+; bird_physics:phys|flap_start[9]         ; 5       ;
+; bird_physics:phys|flap_start[7]         ; 5       ;
+; bird_physics:phys|flap_start[12]        ; 5       ;
+; bird_physics:phys|flap_start[11]        ; 5       ;
+; bird_physics:phys|flap_elapsed[18]      ; 2       ;
+; bird_physics:phys|flap_elapsed[17]      ; 2       ;
+; bird_physics:phys|flap_elapsed[12]      ; 2       ;
+; bird_physics:phys|flap_elapsed[11]      ; 2       ;
+; bird_physics:phys|flap_elapsed[9]       ; 2       ;
+; bird_physics:phys|flap_elapsed[7]       ; 2       ;
+; Total number of inverted registers = 42 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 5:1                ; 26 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[23]        ;
+; 17:1               ; 24 bits   ; 264 LEs       ; 0 LEs                ; 264 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[11]     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[2]  ;
+; 7:1                ; 23 bits   ; 92 LEs        ; 46 LEs               ; 46 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[14]   ;
+; 8:1                ; 22 bits   ; 110 LEs       ; 44 LEs               ; 66 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[20] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[0][3]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[0][3]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[1][6]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[1][1]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[2][1]       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[2][4]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[3][1]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[3][3]       ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[3]         ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[12]   ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[17] ;
+; 1:1                ; 2 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux19       ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux4        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|Selector67       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:VGA ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; DIVISOR        ; 0     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:GAME ;
++----------------+---------+------------------------------------+
+; Parameter Name ; Value   ; Type                               ;
++----------------+---------+------------------------------------+
+; DIVISOR        ; 1666665 ; Signed Integer                     ;
++----------------+---------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_divider:FLOOR ;
++----------------+--------+--------------------------------------+
+; Parameter Name ; Value  ; Type                                 ;
++----------------+--------+--------------------------------------+
+; DIVISOR        ; 199999 ; Signed Integer                       ;
++----------------+--------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bird_physics:phys ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; BIRD_SIZE_X    ; 54    ; Signed Integer                        ;
+; BIRD_SIZE_Y    ; 36    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: collision_detection:coll ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; BIRD_SIZE_X    ; 54    ; Signed Integer                               ;
+; BIRD_SIZE_Y    ; 36    ; Signed Integer                               ;
+; PIPE_GAP       ; 75    ; Signed Integer                               ;
+; NUM_PIPES      ; 4     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipes:pipe_shift ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; NUM_PIPES      ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_generator:rand ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; NUM_BITS       ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: image_renderer:display ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; BIRD_SIZE_X    ; 54    ; Signed Integer                             ;
+; BIRD_SIZE_Y    ; 36    ; Signed Integer                             ;
+; SCALE          ; 3     ; Signed Integer                             ;
+; PIPE_GAP       ; 75    ; Signed Integer                             ;
+; NUM_PIPES      ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                       ;
+; LPM_WIDTHD             ; 2              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_3_rom:bird3"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_2_rom:bird2"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display|flap_1_rom:bird1"                                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; row  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; col  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "image_renderer:display"                                                                                                                                 ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                            ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; bird_state ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "bird_state[2..2]" will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|bin2BCD:hiscr"                                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|bin2BCD:scr"                                                                                                                                                     ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[5].display"                                                                                                                               ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; hex[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[4].display"                                                                                                                               ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; hex[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[3].display"                                                                                                                               ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; hex[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[2].display"                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[1].display"                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display"                                                                                                                          ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; hex  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipes:pipe_shift|random_number_generator:rand"                                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                       ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; random ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (24 bits) it drives; bit(s) "random[31..24]" have no fanouts ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "collision_detection:coll" ;
++--------------+-------+----------+--------------------+
+; Port         ; Type  ; Severity ; Details            ;
++--------------+-------+----------+--------------------+
+; birdX[2..1]  ; Input ; Info     ; Stuck at VCC       ;
+; birdX[31..8] ; Input ; Info     ; Stuck at GND       ;
+; birdX[6..5]  ; Input ; Info     ; Stuck at GND       ;
+; birdX[7]     ; Input ; Info     ; Stuck at VCC       ;
+; birdX[4]     ; Input ; Info     ; Stuck at VCC       ;
+; birdX[3]     ; Input ; Info     ; Stuck at GND       ;
+; birdX[0]     ; Input ; Info     ; Stuck at GND       ;
++--------------+-------+----------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_gen:vga"                                                                                                                                                              ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                                                                                  ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; h_pos ; Output ; Warning  ; Output or bidir port (16 bits) is smaller than the port expression (32 bits) it drives.  The 16 most-significant bit(s) in the port expression will be connected to GND. ;
+; v_pos ; Output ; Warning  ; Output or bidir port (16 bits) is smaller than the port expression (32 bits) it drives.  The 16 most-significant bit(s) in the port expression will be connected to GND. ;
++-------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 499                         ;
+;     CLR               ; 17                          ;
+;     CLR SCLR          ; 16                          ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 98                          ;
+;     ENA CLR SCLR      ; 190                         ;
+;     ENA CLR SCLR SLD  ; 12                          ;
+;     ENA SCLR          ; 8                           ;
+;     SCLR              ; 96                          ;
+;     plain             ; 54                          ;
+; arriav_lcell_comb     ; 2094                        ;
+;     arith             ; 934                         ;
+;         0 data inputs ; 70                          ;
+;         1 data inputs ; 708                         ;
+;         2 data inputs ; 66                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 44                          ;
+;     extend            ; 4                           ;
+;         7 data inputs ; 4                           ;
+;     normal            ; 1124                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 159                         ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 144                         ;
+;         5 data inputs ; 157                         ;
+;         6 data inputs ; 551                         ;
+;     shared            ; 32                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 16                          ;
+; boundary_port         ; 85                          ;
+;                       ;                             ;
+; Max LUT depth         ; 43.20                       ;
+; Average LUT depth     ; 9.85                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,7 +903,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 18 07:43:53 2021
+    Info: Processing started: Tue May 18 21:21:20 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -200,7 +942,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file image_r
 Info (12021): Found 1 design units, including 1 entities, in source file keyboard_input.v
     Info (12023): Found entity 1: keyboard_input File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bird_physics.v
-    Info (12023): Found entity 1: bird_physics File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 1
+    Info (12023): Found entity 1: bird_physics File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 86
 Info (12021): Found 1 design units, including 1 entities, in source file game_fsm.v
     Info (12023): Found entity 1: game_FSM File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file collision_detection.v
@@ -219,7 +961,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd
 Info (12021): Found 1 design units, including 1 entities, in source file hex_to_7seg.v
     Info (12023): Found entity 1: hex_to_7seg File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v Line: 15
 Info (12127): Elaborating entity "flappy_bird" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at flappy_bird.v(161): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 161
+Warning (10230): Verilog HDL assignment warning at flappy_bird.v(162): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 162
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 19
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:GAME" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 22
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:FLOOR" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 25
@@ -234,74 +976,276 @@ Info (12128): Elaborating entity "key_filter" for hierarchy "keyboard_input:kb|k
 Info (12128): Elaborating entity "game_FSM" for hierarchy "game_FSM:FSM" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 69
 Info (10264): Verilog HDL Case Statement information at game_FSM.v(20): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 20
 Info (12128): Elaborating entity "bird_physics" for hierarchy "bird_physics:phys" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 81
-Warning (10230): Verilog HDL assignment warning at bird_physics.v(38): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 38
-Warning (10230): Verilog HDL assignment warning at bird_physics.v(42): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 42
-Warning (10230): Verilog HDL assignment warning at bird_physics.v(44): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 44
-Info (10264): Verilog HDL Case Statement information at bird_physics.v(31): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 31
-Info (10264): Verilog HDL Case Statement information at bird_physics.v(62): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bird_physics.v Line: 62
 Info (12128): Elaborating entity "collision_detection" for hierarchy "collision_detection:coll" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 101
 Info (12128): Elaborating entity "pipes" for hierarchy "pipes:pipe_shift" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 120
 Info (10264): Verilog HDL Case Statement information at pipes.v(47): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
 Info (12128): Elaborating entity "random_number_generator" for hierarchy "pipes:pipe_shift|random_number_generator:rand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 13
-Info (12128): Elaborating entity "score_counter" for hierarchy "score_counter:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 128
-Info (10041): Inferred latch for "hiscore[0]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[1]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[2]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[3]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[4]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[5]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[6]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[7]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[8]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[9]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[10]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[11]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[12]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[13]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[14]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[15]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[16]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[17]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[18]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[19]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[20]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[21]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[22]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[23]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[24]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[25]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[26]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[27]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[28]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[29]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[30]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Info (10041): Inferred latch for "hiscore[31]" at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[31]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10029): Constant driver at score_counter.v(10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 10
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[30]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[29]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[28]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[27]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[26]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[25]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[24]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[23]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[22]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[21]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[20]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[19]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[18]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[17]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[16]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[15]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (10028): Can't resolve multiple constant drivers for net "hiscore[14]" at score_counter.v(8) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 8
-Error (12152): Can't elaborate user hierarchy "score_counter:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 128
+Info (12128): Elaborating entity "score_counter" for hierarchy "score_counter:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 129
+Warning (10235): Verilog HDL Always Construct warning at score_counter.v(16): variable "hiscore" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Warning (10240): Verilog HDL Always Construct warning at score_counter.v(11): inferring latch(es) for variable "hiscore", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
+Info (10041): Inferred latch for "hiscore[0]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[1]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[2]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[3]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[4]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[5]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[6]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[7]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[8]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[9]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[10]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[11]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[12]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[13]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[14]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[15]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[16]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[17]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[18]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[19]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[20]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[21]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[22]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[23]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[24]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[25]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[26]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[27]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[28]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[29]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[30]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (10041): Inferred latch for "hiscore[31]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 26
+Info (12128): Elaborating entity "bin2BCD" for hierarchy "score_counter:scr|bin2BCD:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 30
+Warning (10230): Verilog HDL assignment warning at bin2BCD.v(22): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 22
+Warning (10230): Verilog HDL assignment warning at bin2BCD.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 19
+Warning (10230): Verilog HDL assignment warning at bin2BCD.v(16): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v Line: 16
+Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 160
+Info (10264): Verilog HDL Case Statement information at image_renderer.v(62): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 62
+Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 165
+Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
+Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 181
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 163
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 163
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 163
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gbm.tdf
+    Info (12023): Found entity 1: lpm_divide_gbm File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/lpm_divide_gbm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
+    Info (12023): Found entity 1: alt_u_div_ive File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div0" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 162
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][0]~_emulated" and latch "pipes:pipe_shift|pipeY[0][0]~1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][0]~_emulated" and latch "pipes:pipe_shift|pipeY[1][0]~5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][0]~_emulated" and latch "pipes:pipe_shift|pipeY[2][0]~9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][0]~_emulated" and latch "pipes:pipe_shift|pipeY[3][0]~13" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][6]~_emulated" and latch "pipes:pipe_shift|pipeY[0][6]~17" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][5]~_emulated" and latch "pipes:pipe_shift|pipeY[0][5]~21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][4]~_emulated" and latch "pipes:pipe_shift|pipeY[0][4]~25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][3]~_emulated" and latch "pipes:pipe_shift|pipeY[0][3]~29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][2]~_emulated" and latch "pipes:pipe_shift|pipeY[0][2]~33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][1]~_emulated" and latch "pipes:pipe_shift|pipeY[0][1]~37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][6]~_emulated" and latch "pipes:pipe_shift|pipeY[1][6]~41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][5]~_emulated" and latch "pipes:pipe_shift|pipeY[1][5]~45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][4]~_emulated" and latch "pipes:pipe_shift|pipeY[1][4]~49" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][3]~_emulated" and latch "pipes:pipe_shift|pipeY[1][3]~53" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][2]~_emulated" and latch "pipes:pipe_shift|pipeY[1][2]~57" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][1]~_emulated" and latch "pipes:pipe_shift|pipeY[1][1]~61" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][6]~_emulated" and latch "pipes:pipe_shift|pipeY[2][6]~65" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][5]~_emulated" and latch "pipes:pipe_shift|pipeY[2][5]~69" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][4]~_emulated" and latch "pipes:pipe_shift|pipeY[2][4]~73" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][3]~_emulated" and latch "pipes:pipe_shift|pipeY[2][3]~77" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][2]~_emulated" and latch "pipes:pipe_shift|pipeY[2][2]~81" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][1]~_emulated" and latch "pipes:pipe_shift|pipeY[2][1]~85" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][6]~_emulated" and latch "pipes:pipe_shift|pipeY[3][6]~89" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][5]~_emulated" and latch "pipes:pipe_shift|pipeY[3][5]~93" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][4]~_emulated" and latch "pipes:pipe_shift|pipeY[3][4]~97" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][3]~_emulated" and latch "pipes:pipe_shift|pipeY[3][3]~101" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][2]~_emulated" and latch "pipes:pipe_shift|pipeY[3][2]~105" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][1]~_emulated" and latch "pipes:pipe_shift|pipeY[3][1]~109" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 7
+    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 9
+    Warning (13410): Pin "seven_seg[21]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[22]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[23]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[24]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[25]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[26]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[27]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[28]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[29]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[30]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[31]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[32]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[33]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[34]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[35]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[36]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[37]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[38]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[39]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[40]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+    Warning (13410): Pin "seven_seg[41]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 53 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 11 warnings
-    Error: Peak virtual memory: 4850 megabytes
-    Error: Processing ended: Tue May 18 07:44:03 2021
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:22
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2266 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 2181 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 199 warnings
+    Info: Peak virtual memory: 4875 megabytes
+    Info: Processing ended: Tue May 18 21:21:38 2021
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:28
 
 
 +------------------------------------------+

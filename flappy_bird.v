@@ -72,7 +72,7 @@ bird_physics #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
 ) phys (
-	.GAME_clk		( GAME_clk 		),
+	.clk				( clk 			),
 	.rst				( rst				),
 	.game_state		( game_state 	),
 	.flap				( flap 			),
