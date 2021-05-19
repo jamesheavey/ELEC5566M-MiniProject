@@ -4,13 +4,12 @@ module pipes #(
 	input clk, FL_clk, rst,
 	input [3:0] game_state,
 	input [31:0] birdX,
-	output [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
-	output [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	output [(32*NUM_PIPES)-1:0] pipeX_flat, pipeY_flat,
 	output reg [31:0] score_count
 );
 
 wire [23:0] randY;
-random_number_generator rand (clk, randY);
+random_number_gen rand (clk, randY);
 
 localparam PIPE_SIZE_X = 78;
 localparam PIPE_SEPARATION = 250;
@@ -21,8 +20,8 @@ localparam	START_SCREEN 	= 4'b0001,
 				PAUSE 			= 4'b0100,
 				END_SCREEN 		= 4'b1000;
 
-reg [31:0] pipeX [NUM_PIPES-1:0];
-reg [31:0] pipeY [NUM_PIPES-1:0];
+reg signed [31:0] pipeX [NUM_PIPES-1:0];
+reg signed [31:0] pipeY [NUM_PIPES-1:0];
 reg [31:0] pipeX_reset [NUM_PIPES-1:0];
 
 integer i;
@@ -70,11 +69,16 @@ begin
 			end
 		endcase
 		
-	end	
+	end
 end
 
-assign {pipeX_4, pipeX_3, pipeX_2, pipeX_1} = {pipeX[3], pipeX[2], pipeX[1], pipeX[0]};
-assign {pipeY_4, pipeY_3, pipeY_2, pipeY_1} = {pipeY[3], pipeY[2], pipeY[1], pipeY[0]};
+genvar z;
+generate
+	for (z = 0; z < NUM_PIPES; z = z + 1) begin : pipe_assignment
+		assign pipeX_flat[32*(z+1)-1-:32] = pipeX[z];
+		assign pipeY_flat[32*(z+1)-1-:32] = pipeY[z];
+	end
+endgenerate
 		
 endmodule
 			

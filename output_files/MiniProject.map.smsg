@@ -1,3 +1,4 @@
 Warning (10268): Verilog HDL information at clk_divider.v(10): always construct contains both blocking and non-blocking assignments File: C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v Line: 10
 Info (10281): Verilog HDL Declaration information at game_FSM.v(3): object "pause" differs only in case from object "PAUSE" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 3
 Info (10281): Verilog HDL Declaration information at flappy_bird.v(19): object "VGA" differs only in case from object "vga" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 19
+Warning (10030): Net "bg_colour[1]" at image_renderer.v(279) has no driver or initial value, using a default initial value '0' File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 279

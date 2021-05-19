@@ -29,9 +29,9 @@ localparam	HORZ 				= 2'd0,
 				
 				
 localparam TIME_START      =    25000;  // starting time to load when beginning to flap up
-localparam TIME_STEP       =     7500;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
-localparam TIME_MAX        =   500000;  // start time for fall, end time for rise
-localparam TIME_TERMINAL   =   100000;  // terminal time reached when falling down
+localparam TIME_STEP       =     5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
+localparam TIME_MAX        =   450000;  // start time for fall, end time for rise
+localparam TIME_TERMINAL   =   175000;  // terminal time reached when falling down
 
 reg [3:0] motion_state, prev_state;
 reg [31:0] flap_elapsed, flap_start;
@@ -82,7 +82,7 @@ begin
 					birdY <= birdY + 1;
 				end
 				
-				if (flap || (game_state == START_SCREEN && birdY > 250 && birdY + BIRD_SIZE_Y <= 480)) begin
+				if (flap || (game_state == START_SCREEN && birdY > 250 && !(birdY >= 480))) begin
 					motion_state 	<= UP;
 					flap_start 		<= TIME_START;
 					flap_elapsed 	<= TIME_START;
@@ -90,7 +90,7 @@ begin
 			end
 			
 			UP: begin				
-				if (flap_start <= (TIME_MAX/10) * 9) begin
+				if (flap_start <= (TIME_MAX/5)*4) begin
 					bird_state 	<= FLAP_3;
 					bird_angle	<= NEG_45;
 				end else begin

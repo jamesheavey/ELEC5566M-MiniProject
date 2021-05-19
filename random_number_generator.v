@@ -15,7 +15,7 @@
 // Parameters:
 // NUM_BITS - Set to the integer number of bits wide to create your LFSR.
 ///////////////////////////////////////////////////////////////////////////////
-module random_number_generator #(
+module random_number_gen #(
 	parameter NUM_BITS = 32
 )(
    input clk,

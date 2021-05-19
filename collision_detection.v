@@ -6,8 +6,7 @@ module collision_detection #(
 )(
 	input clk, 
 	input [31:0] birdY, birdX,
-	input [31:0] pipeX_1, pipeX_2, pipeX_3, pipeX_4,
-	input [31:0] pipeY_1, pipeY_2, pipeY_3, pipeY_4,
+	input [(32*NUM_PIPES)-1:0] pipeX_flat, pipeY_flat,
 	output reg collision
 );
 
@@ -17,9 +16,6 @@ localparam PIPE_SIZE_X = 78;
 wire signed [31:0] pipeX [NUM_PIPES-1:0]; 
 wire signed [31:0] pipeY [NUM_PIPES-1:0];
 
-assign {pipeX[3], pipeX[2], pipeX[1], pipeX[0]} = {pipeX_4, pipeX_3, pipeX_2, pipeX_1};
-assign {pipeY[3], pipeY[2], pipeY[1], pipeY[0]} = {pipeY_4, pipeY_3, pipeY_2, pipeY_1};
-
 integer i;
 
 always @(posedge clk)
@@ -28,9 +24,10 @@ begin
 	
 	if (birdY + BIRD_SIZE_Y >= FLOOR_Y && birdY + BIRD_SIZE_Y <= 480)
 		collision <= 1;
-		
+	
+	// hitboxes adjusted for sprite padding
 	for (i = 0; i < NUM_PIPES; i = i + 1) begin
-		if ( (birdX + BIRD_SIZE_X-3 >= pipeX[i]) && (birdX+3 <= pipeX[i] + PIPE_SIZE_X) ) begin
+		if ( (birdX + BIRD_SIZE_X-6 >= pipeX[i]) && (birdX+6 <= pipeX[i] + PIPE_SIZE_X) ) begin
 			if ( (birdY + BIRD_SIZE_Y-3 >= pipeY[i] + PIPE_GAP) || (birdY+3 <= pipeY[i] - PIPE_GAP) ) begin
 				collision <= 1;
 			end
@@ -38,5 +35,13 @@ begin
 	end
 	
 end
+
+genvar z;
+generate
+	for (z = 0; z < NUM_PIPES; z = z + 1) begin : pipe_assignment
+		assign pipeX[z] = pipeX_flat[32*(z+1)-1-:32];
+		assign pipeY[z] = pipeY_flat[32*(z+1)-1-:32];
+	end
+endgenerate
 
 endmodule

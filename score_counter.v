@@ -17,17 +17,16 @@ begin
 end
 
 genvar i;
-generate 
-	// generate a HexTo7Seg converter for each available display
+generate
 	for (i = 0; i < 6; i = i + 1) begin : seven_seg_loop
 		hex_to_7seg display (
-			.hex			( i < 3 ? score_count[(i*4)+:4] : 0 ),
+			.hex			( i < 3 ? score_BCD[(i*4)+:4] : 0 ),
 			.seven_seg	( seven_seg[(i*7)+:7] )
 		);
 	end 
 endgenerate
 
-bin2BCD scr (score_count, score_BCD);
-bin2BCD hiscr (hiscore, hiscore_BCD);
+bin_to_BCD scr (score_count, score_BCD);
+bin_to_BCD hiscr (hiscore, hiscore_BCD);
 
 endmodule

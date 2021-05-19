@@ -1,25 +1,21 @@
 module vga_gen
 (
 	input clk, rst,
-	
 	output reg h_sync, v_sync,
-	
 	output v_clk, sync_n, 
-	
 	output reg display_on,
-
 	output reg [15:0] h_pos, v_pos
 );
 
-localparam [15:0]	H_DISPLAY = 640;
-localparam [7:0]	H_BACK = 48;
-localparam [7:0]	H_sync_n = 96;
-localparam [7:0]	H_FRONT = 16;
+localparam [15:0]	H_DISPLAY 	= 640;
+localparam [7:0]	H_BACK 		= 48;
+localparam [7:0]	H_sync_n 	= 96;
+localparam [7:0]	H_FRONT 		= 16;
 
-localparam [15:0]	V_DISPLAY = 480;
-localparam [7:0]	V_BACK = 33;
-localparam [7:0]	V_sync_n = 2;
-localparam [7:0]	V_FRONT = 10;
+localparam [15:0]	V_DISPLAY 	= 480;
+localparam [7:0]	V_BACK 		= 33;
+localparam [7:0]	V_sync_n		= 2;
+localparam [7:0]	V_FRONT 		= 10;
 
 assign v_clk = clk;
 assign sync_n = 0;

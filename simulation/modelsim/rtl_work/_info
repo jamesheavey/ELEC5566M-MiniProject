@@ -8,49 +8,49 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/James/Workspace/ELEC5566M-MiniProject/simulation/modelsim
-vbin2BCD
-Z1 !s110 1621222350
+vbin_to_BCD
+!s110 1621396870
 !i10b 1
-!s100 0CmRa;MjO0WCN@CfoBlKL1
-IDS[3F]T2lPED^8N1UbA:Z0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 EQbzmohFVHN6j>Nb8fo@50
+I?7i4^`:9chWJUKePJcPRP2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1621222326
-8C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v
-FC:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v
+w1621396842
+8C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v
+FC:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v
 L0 1
-Z3 OV;L;10.5b;63
+Z2 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1621222350.000000
-!s107 C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject|C:/Users/James/Workspace/ELEC5566M-MiniProject/bin2BCD.v|
+!s108 1621396870.000000
+!s107 C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject|C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v|
 !i113 1
-Z5 o-vlog01compat -work work
+Z3 o-vlog01compat -work work
 !s92 -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject
-Z6 tCvgOpt 0
-nbin2@b@c@d
-vbin2BCD_tb
-R1
+Z4 tCvgOpt 0
+nbin_to_@b@c@d
+vbin_to_BCD_tb
+!s110 1621396871
 !i10b 1
-!s100 j8Eag`f[=`8dd`1R@[HMD0
-Imabb;[fW2ZF[C^zBcz]Ti0
-R2
+!s100 o]lTgQe_DzOQO?`6[n4jd0
+IckeSIUP?X0cfif8f4jlGi1
+R1
 R0
-w1621219640
-8C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin2BCD_tb.v
-FC:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin2BCD_tb.v
+w1621386991
+8C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v
+FC:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v
 L0 5
-R3
+R2
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin2BCD_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches|C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin2BCD_tb.v|
+!s108 1621396871.000000
+!s107 C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches|C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v|
 !i113 1
-R5
+R3
 !s92 -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches
-R6
-nbin2@b@c@d_tb
+R4
+nbin_to_@b@c@d_tb

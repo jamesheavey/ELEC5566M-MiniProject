@@ -8,7 +8,7 @@ module keyboard_input
 reg [7:0] code, nextCode, prevCode;
 reg [10:0] keyCode;
 
-reg raw_flap, raw_pause;
+reg raw_pause;
 
 integer count = 0;
 
@@ -48,7 +48,6 @@ begin
 	end
 end
 
-key_filter p_edgeF (clk, raw_pause, pause);
-//key_filter p_edgeP (clk, raw_flap, flap);
+key_filter p_edge (clk, raw_pause, pause);
 
 endmodule
