@@ -5,6 +5,7 @@ module bird_physics#(
 )(
 	input clk, rst, flap, 
 	input [3:0] game_state,
+	
 	output reg [31:0] birdY,
 	output reg [1:0] bird_state, bird_angle
 );
@@ -30,7 +31,7 @@ localparam	HORZ 				= 2'd0,
 				
 localparam TIME_START      =    25000;  // starting time to load when beginning to flap up
 localparam TIME_STEP       =     5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
-localparam TIME_MAX        =   450000;  // start time for fall, end time for rise
+localparam TIME_MAX        =   475000;  // start time for fall, end time for rise
 localparam TIME_TERMINAL   =   175000;  // terminal time reached when falling down
 
 reg [3:0] motion_state, prev_state;
@@ -44,11 +45,15 @@ begin
 		flap_elapsed 	<= TIME_MAX;
 		flap_start		<= TIME_MAX;
 		bird_state 		<= FLAP_1;
+		bird_angle 		<= HORZ;
 		birdY 			<= (480 - BIRD_SIZE_Y)/2;
 	end else begin
 		case (motion_state)
 		
-			TOP: begin				
+			TOP: begin
+				bird_angle		<= HORZ;
+				bird_state 		<= FLAP_2;
+				
 				flap_elapsed 	<= TIME_MAX;
 				flap_start 		<= TIME_MAX;
 				
@@ -61,8 +66,8 @@ begin
 			end
 			
 			DOWN: begin
-				bird_state 		<= FLAP_1;
-				bird_angle		<= POS_45;
+				bird_state 	<= (flap_start >= (TIME_MAX/5)*3) ? FLAP_2 : FLAP_1;
+				bird_angle	<= (flap_start >= (TIME_MAX/5)*4) ? HORZ : POS_45;
 				
 				if (game_state == PAUSE || game_state == END_SCREEN) begin
 					prev_state 		<= DOWN;
@@ -86,17 +91,14 @@ begin
 					motion_state 	<= UP;
 					flap_start 		<= TIME_START;
 					flap_elapsed 	<= TIME_START;
+					bird_state 		<= FLAP_3;
 				end
 			end
 			
-			UP: begin				
-				if (flap_start <= (TIME_MAX/5)*4) begin
-					bird_state 	<= FLAP_3;
-					bird_angle	<= NEG_45;
-				end else begin
-					bird_state 	<= FLAP_2;
-					bird_angle	<= HORZ;
-				end
+			UP: begin
+
+				bird_state 	<= (flap_start <= (TIME_MAX/5)*3) ? FLAP_3 : FLAP_2;
+				bird_angle	<= (flap_start <= (TIME_MAX/5)*4) ? NEG_45 : HORZ;
 				
 				if (game_state == PAUSE || game_state == END_SCREEN) begin
 					prev_state 		<= UP;
@@ -111,7 +113,7 @@ begin
 						flap_elapsed 	<= flap_start;
 						birdY 			<= birdY - 1;
 					end else begin
-						motion_state <= TOP;
+						motion_state 	<= TOP;
 					end
 				end				
 			end

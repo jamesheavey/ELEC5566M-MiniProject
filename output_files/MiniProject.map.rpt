@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Wed May 19 05:09:02 2021
+Wed May 19 06:15:11 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -30,19 +30,19 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: image_renderer:display
  23. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div47
  24. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div45
- 25. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div37
- 26. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div41
- 27. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div39
+ 25. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div41
+ 26. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div39
+ 27. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div37
  28. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div43
- 29. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div33
- 30. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div31
- 31. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div35
- 32. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div40
- 33. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div36
- 34. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div38
- 35. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div32
- 36. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div30
- 37. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div34
+ 29. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div35
+ 30. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div33
+ 31. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div31
+ 32. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div44
+ 33. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div38
+ 34. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div42
+ 35. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div34
+ 36. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div32
+ 37. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div30
  38. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div4
  39. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div5
  40. Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div28
@@ -109,7 +109,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 19 05:09:02 2021       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 19 06:15:10 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; flappy_bird                                 ;
@@ -281,14 +281,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------+
 ; Resource                                    ; Usage                                                        ;
 +---------------------------------------------+--------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 4582                                                         ;
+; Estimate of Logic utilization (ALMs needed) ; 4589                                                         ;
 ;                                             ;                                                              ;
-; Combinational ALUT usage for logic          ; 7625                                                         ;
-;     -- 7 input functions                    ; 84                                                           ;
-;     -- 6 input functions                    ; 1449                                                         ;
-;     -- 5 input functions                    ; 372                                                          ;
-;     -- 4 input functions                    ; 846                                                          ;
-;     -- <=3 input functions                  ; 4874                                                         ;
+; Combinational ALUT usage for logic          ; 7623                                                         ;
+;     -- 7 input functions                    ; 80                                                           ;
+;     -- 6 input functions                    ; 1469                                                         ;
+;     -- 5 input functions                    ; 359                                                          ;
+;     -- 4 input functions                    ; 845                                                          ;
+;     -- <=3 input functions                  ; 4870                                                         ;
 ;                                             ;                                                              ;
 ; Dedicated logic registers                   ; 543                                                          ;
 ;                                             ;                                                              ;
@@ -297,9 +297,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0                                                            ;
 ;                                             ;                                                              ;
 ; Maximum fan-out node                        ; image_renderer:display|flap_1_neg45_rom:bird1_neg|col_reg[0] ;
-; Maximum fan-out                             ; 631                                                          ;
-; Total fan-out                               ; 27462                                                        ;
-; Average fan-out                             ; 3.29                                                         ;
+; Maximum fan-out                             ; 628                                                          ;
+; Total fan-out                               ; 27472                                                        ;
+; Average fan-out                             ; 3.30                                                         ;
 +---------------------------------------------+--------------------------------------------------------------+
 
 
@@ -308,21 +308,21 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Entity Name         ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |flappy_bird                                  ; 7625 (1)            ; 543 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                         ; flappy_bird         ; work         ;
-;    |bird_physics:phys|                        ; 237 (237)           ; 104 (104)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:phys                                                                                                       ; bird_physics        ; work         ;
+; |flappy_bird                                  ; 7623 (1)            ; 543 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                         ; flappy_bird         ; work         ;
+;    |bird_physics:phys|                        ; 246 (246)           ; 104 (104)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:phys                                                                                                       ; bird_physics        ; work         ;
 ;    |clk_divider:FLOOR|                        ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:FLOOR                                                                                                       ; clk_divider         ; work         ;
 ;    |clk_divider:GAME|                         ; 45 (45)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:GAME                                                                                                        ; clk_divider         ; work         ;
 ;    |clk_divider:VGA|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:VGA                                                                                                         ; clk_divider         ; work         ;
 ;    |collision_detection:coll|                 ; 482 (482)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|collision_detection:coll                                                                                                ; collision_detection ; work         ;
 ;    |game_FSM:FSM|                             ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|game_FSM:FSM                                                                                                            ; game_FSM            ; work         ;
-;    |image_renderer:display|                   ; 6008 (1429)         ; 55 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display                                                                                                  ; image_renderer      ; work         ;
-;       |flap_1_neg45_rom:bird1_neg|            ; 117 (117)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_neg45_rom:bird1_neg                                                                       ; flap_1_neg45_rom    ; work         ;
+;    |image_renderer:display|                   ; 6002 (1428)         ; 55 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display                                                                                                  ; image_renderer      ; work         ;
+;       |flap_1_neg45_rom:bird1_neg|            ; 116 (116)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_neg45_rom:bird1_neg                                                                       ; flap_1_neg45_rom    ; work         ;
 ;       |flap_1_pos45_rom:bird1_pos|            ; 110 (110)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_pos45_rom:bird1_pos                                                                       ; flap_1_pos45_rom    ; work         ;
-;       |flap_1_rom:bird1|                      ; 107 (107)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
-;       |flap_2_neg45_rom:bird2_neg|            ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_neg45_rom:bird2_neg                                                                       ; flap_2_neg45_rom    ; work         ;
-;       |flap_2_pos45_rom:bird2_pos|            ; 90 (90)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_pos45_rom:bird2_pos                                                                       ; flap_2_pos45_rom    ; work         ;
+;       |flap_1_rom:bird1|                      ; 106 (106)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
+;       |flap_2_neg45_rom:bird2_neg|            ; 105 (105)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_neg45_rom:bird2_neg                                                                       ; flap_2_neg45_rom    ; work         ;
+;       |flap_2_pos45_rom:bird2_pos|            ; 88 (88)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_pos45_rom:bird2_pos                                                                       ; flap_2_pos45_rom    ; work         ;
 ;       |flap_2_rom:bird2|                      ; 65 (65)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_2_rom:bird2                                                                                 ; flap_2_rom          ; work         ;
-;       |flap_3_neg45_rom:bird3_neg|            ; 106 (106)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_neg45_rom:bird3_neg                                                                       ; flap_3_neg45_rom    ; work         ;
+;       |flap_3_neg45_rom:bird3_neg|            ; 105 (105)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_neg45_rom:bird3_neg                                                                       ; flap_3_neg45_rom    ; work         ;
 ;       |flap_3_pos45_rom:bird3_pos|            ; 111 (111)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_pos45_rom:bird3_pos                                                                       ; flap_3_pos45_rom    ; work         ;
 ;       |flap_3_rom:bird3|                      ; 134 (134)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
 ;       |lpm_divide:Div18|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div18                                                                                 ; lpm_divide          ; work         ;
@@ -397,10 +397,6 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div35|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div35|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div35|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div36|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div36                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div36|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div36|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div36|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div37|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div37                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div37|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div37|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
@@ -413,18 +409,22 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div39|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div39|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div39|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div40|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div40                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div40|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div40|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div40|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div41|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div41                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div41|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div41|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div41|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div42|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div42                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div42|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div42|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div42|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div43|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div43                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div43|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div43|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div43|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;       |lpm_divide:Div44|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div44                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div44|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div44|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div44|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div45|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div45                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div45|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div45|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
@@ -442,8 +442,8 @@ refer to the applicable agreement for further details.
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div5|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                        ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 97 (97)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|lpm_divide:Div5|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider  ; alt_u_div_ive       ; work         ;
 ;       |numbers_rom:num|                       ; 30 (30)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|numbers_rom:num                                                                                  ; numbers_rom         ; work         ;
-;       |pipe_rom:pipe|                         ; 319 (319)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|pipe_rom:pipe                                                                                    ; pipe_rom            ; work         ;
-;    |keyboard_input:kb|                        ; 80 (79)             ; 57 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb                                                                                                       ; keyboard_input      ; work         ;
+;       |pipe_rom:pipe|                         ; 323 (323)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_renderer:display|pipe_rom:pipe                                                                                    ; pipe_rom            ; work         ;
+;    |keyboard_input:kb|                        ; 75 (74)             ; 57 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb                                                                                                       ; keyboard_input      ; work         ;
 ;       |key_filter:p_edge|                     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb|key_filter:p_edge                                                                                     ; key_filter          ; work         ;
 ;    |pipes:pipe_shift|                         ; 541 (540)           ; 220 (188)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift                                                                                                        ; pipes               ; work         ;
 ;       |random_number_gen:rand|                ; 1 (1)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift|random_number_gen:rand                                                                                 ; random_number_gen   ; work         ;
@@ -483,57 +483,57 @@ Encoding Type:  One-Hot
 +-------------------+-------------------+-----------------+-------------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                 ; Free of Timing Hazards ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
-; score_counter:scr|hiscore[6]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[7]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[9]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[8]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[5]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[4]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[3]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[2]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[1]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; image_renderer:display|pipe_row[6]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_col[0]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[1]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[2]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[0]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_col[4]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[4]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[5]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_row[3]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_col[2]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_col[1]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; image_renderer:display|pipe_col[3]                  ; image_renderer:display|pipe_col[27] ; yes                    ;
-; score_counter:scr|hiscore[31]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[30]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[29]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[28]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[27]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[26]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[25]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[24]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[23]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[22]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[21]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[20]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[19]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[18]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[17]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[16]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[15]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[14]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[13]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[12]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[11]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[10]                       ; score_counter:scr|LessThan0         ; yes                    ;
-; score_counter:scr|hiscore[0]                        ; score_counter:scr|LessThan0         ; yes                    ;
-; Number of user-specified and inferred latches = 44  ;                                     ;                        ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                               ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------+------------------------+
+; score_counter:scr|hiscore[5]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[6]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[7]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[9]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[8]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[4]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[3]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[2]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[1]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; image_renderer:display|pipe_row[6]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_col[0]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[1]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[2]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[0]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_col[4]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[4]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[5]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_row[3]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_col[2]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_col[1]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; image_renderer:display|pipe_col[3]                  ; image_renderer:display|pipe_row[4] ; yes                    ;
+; score_counter:scr|hiscore[31]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[30]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[29]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[28]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[27]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[26]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[25]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[24]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[23]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[22]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[21]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[20]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[19]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[18]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[17]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[16]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[15]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[14]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[13]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[12]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[11]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[10]                       ; score_counter:scr|LessThan0        ; yes                    ;
+; score_counter:scr|hiscore[0]                        ; score_counter:scr|LessThan0        ; yes                    ;
+; Number of user-specified and inferred latches = 44  ;                                    ;                        ;
++-----------------------------------------------------+------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -728,11 +728,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 543   ;
-; Number of registers using Synchronous Clear  ; 355   ;
+; Number of registers using Synchronous Clear  ; 351   ;
 ; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 353   ;
+; Number of registers using Asynchronous Clear ; 355   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 338   ;
+; Number of registers using Clock Enable       ; 336   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -767,33 +767,37 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; pipes:pipe_shift|pipeX[3][3]            ; 5       ;
 ; game_FSM:FSM|game_state[0]              ; 19      ;
 ; bird_physics:phys|birdY[0]              ; 9       ;
-; bird_physics:phys|flap_start[18]        ; 7       ;
-; bird_physics:phys|flap_start[17]        ; 7       ;
-; bird_physics:phys|flap_start[15]        ; 5       ;
-; bird_physics:phys|flap_start[8]         ; 6       ;
-; bird_physics:phys|flap_start[7]         ; 5       ;
-; bird_physics:phys|flap_start[6]         ; 5       ;
+; bird_physics:phys|flap_start[18]        ; 9       ;
+; bird_physics:phys|flap_start[17]        ; 8       ;
+; bird_physics:phys|flap_start[6]         ; 8       ;
+; bird_physics:phys|flap_start[5]         ; 8       ;
 ; bird_physics:phys|flap_start[4]         ; 5       ;
-; bird_physics:phys|flap_start[14]        ; 5       ;
-; bird_physics:phys|flap_start[12]        ; 4       ;
-; bird_physics:phys|flap_start[11]        ; 4       ;
-; bird_physics:phys|flap_start[10]        ; 4       ;
-; bird_physics:phys|birdY[4]              ; 5       ;
-; bird_physics:phys|birdY[3]              ; 5       ;
+; bird_physics:phys|flap_start[3]         ; 4       ;
+; bird_physics:phys|flap_start[9]         ; 7       ;
+; bird_physics:phys|flap_start[8]         ; 8       ;
+; bird_physics:phys|flap_start[11]        ; 7       ;
+; bird_physics:phys|flap_start[10]        ; 7       ;
+; bird_physics:phys|flap_start[13]        ; 9       ;
+; bird_physics:phys|flap_start[12]        ; 8       ;
+; bird_physics:phys|flap_start[16]        ; 7       ;
 ; bird_physics:phys|birdY[6]              ; 6       ;
 ; bird_physics:phys|birdY[7]              ; 6       ;
+; bird_physics:phys|birdY[4]              ; 5       ;
+; bird_physics:phys|birdY[3]              ; 5       ;
+; bird_physics:phys|flap_elapsed[4]       ; 2       ;
+; bird_physics:phys|flap_elapsed[3]       ; 2       ;
 ; bird_physics:phys|flap_elapsed[18]      ; 2       ;
 ; bird_physics:phys|flap_elapsed[17]      ; 2       ;
-; bird_physics:phys|flap_elapsed[15]      ; 2       ;
-; bird_physics:phys|flap_elapsed[14]      ; 2       ;
+; bird_physics:phys|flap_elapsed[16]      ; 2       ;
+; bird_physics:phys|flap_elapsed[13]      ; 2       ;
 ; bird_physics:phys|flap_elapsed[12]      ; 2       ;
 ; bird_physics:phys|flap_elapsed[11]      ; 2       ;
 ; bird_physics:phys|flap_elapsed[10]      ; 2       ;
+; bird_physics:phys|flap_elapsed[9]       ; 2       ;
 ; bird_physics:phys|flap_elapsed[8]       ; 2       ;
-; bird_physics:phys|flap_elapsed[7]       ; 2       ;
 ; bird_physics:phys|flap_elapsed[6]       ; 2       ;
-; bird_physics:phys|flap_elapsed[4]       ; 2       ;
-; Total number of inverted registers = 51 ;         ;
+; bird_physics:phys|flap_elapsed[5]       ; 2       ;
+; Total number of inverted registers = 55 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -802,31 +806,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[1]         ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[23]        ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[1]  ;
-; 7:1                ; 18 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[26]   ;
-; 8:1                ; 17 bits   ; 85 LEs        ; 34 LEs               ; 51 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[28] ;
-; 20:1               ; 10 bits   ; 130 LEs       ; 0 LEs                ; 130 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[17]     ;
-; 22:1               ; 14 bits   ; 196 LEs       ; 28 LEs               ; 168 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[7]      ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[0][6]       ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[0][9]       ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[1][3]       ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[1][4]       ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[2][0]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[2][4]       ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[3][6]       ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[20]   ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 30 LEs               ; 45 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[26] ;
+; 20:1               ; 10 bits   ; 130 LEs       ; 0 LEs                ; 130 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[4]      ;
+; 22:1               ; 14 bits   ; 196 LEs       ; 28 LEs               ; 168 LEs                ; Yes        ; |flappy_bird|image_renderer:display|RGB[8]      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[0][1]       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[0][5]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[1][4]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[1][1]       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[2][6]       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[2][10]      ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[3][1]       ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[3][10]      ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[4]         ;
-; 7:1                ; 11 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[10]   ;
-; 8:1                ; 11 bits   ; 55 LEs        ; 33 LEs               ; 22 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[11] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|birdY[3]         ;
+; 7:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_start[6]    ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 39 LEs               ; 26 LEs                 ; Yes        ; |flappy_bird|bird_physics:phys|flap_elapsed[9]  ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|RGB         ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_row     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_col[1] ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_col     ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_row     ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_row[4] ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|Selector68       ;
-; 9:1                ; 22 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux80       ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_col[4] ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_col     ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|pipe_row[0] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_col     ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|num_row     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:phys|Selector73       ;
+; 9:1                ; 22 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |flappy_bird|image_renderer:display|Mux78       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -965,29 +969,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div37 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                        ;
-; LPM_WIDTHD             ; 2              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div41 ;
 +------------------------+----------------+------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                           ;
@@ -1034,7 +1015,53 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div37 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div43 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div35 ;
 +------------------------+----------------+------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                           ;
 +------------------------+----------------+------------------------------------------------+
@@ -1103,53 +1130,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div35 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                        ;
-; LPM_WIDTHD             ; 2              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div40 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                        ;
-; LPM_WIDTHD             ; 2              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div36 ;
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div44 ;
 +------------------------+----------------+------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                           ;
 +------------------------+----------------+------------------------------------------------+
@@ -1173,6 +1154,52 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div38 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div42 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div34 ;
 +------------------------+----------------+------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                           ;
 +------------------------+----------------+------------------------------------------------+
@@ -1219,29 +1246,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div30 ;
-+------------------------+----------------+------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                           ;
-+------------------------+----------------+------------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                        ;
-; LPM_WIDTHD             ; 2              ; Untyped                                        ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
-; LPM_PIPELINE           ; 0              ; Untyped                                        ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                        ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
-+------------------------+----------------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: image_renderer:display|lpm_divide:Div34 ;
 +------------------------+----------------+------------------------------------------------+
 ; Parameter Name         ; Value          ; Type                                           ;
 +------------------------+----------------+------------------------------------------------+
@@ -1821,16 +1825,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 543                         ;
-;     CLR               ; 17                          ;
+;     CLR               ; 19                          ;
 ;     CLR SCLR          ; 16                          ;
-;     ENA               ; 10                          ;
-;     ENA CLR           ; 85                          ;
-;     ENA CLR SCLR      ; 225                         ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 89                          ;
+;     ENA CLR SCLR      ; 221                         ;
 ;     ENA CLR SCLR SLD  ; 10                          ;
 ;     ENA SCLR          ; 8                           ;
 ;     SCLR              ; 96                          ;
 ;     plain             ; 76                          ;
-; arriav_lcell_comb     ; 7633                        ;
+; arriav_lcell_comb     ; 7631                        ;
 ;     arith             ; 3477                        ;
 ;         0 data inputs ; 617                         ;
 ;         1 data inputs ; 1644                        ;
@@ -1838,16 +1842,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 548                         ;
 ;         4 data inputs ; 525                         ;
 ;         5 data inputs ; 12                          ;
-;     extend            ; 84                          ;
-;         7 data inputs ; 84                          ;
-;     normal            ; 3527                        ;
+;     extend            ; 80                          ;
+;         7 data inputs ; 80                          ;
+;     normal            ; 3529                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 21                          ;
-;         2 data inputs ; 1143                        ;
-;         3 data inputs ; 234                         ;
-;         4 data inputs ; 318                         ;
-;         5 data inputs ; 360                         ;
-;         6 data inputs ; 1449                        ;
+;         2 data inputs ; 1140                        ;
+;         3 data inputs ; 233                         ;
+;         4 data inputs ; 317                         ;
+;         5 data inputs ; 347                         ;
+;         6 data inputs ; 1469                        ;
 ;     shared            ; 545                         ;
 ;         0 data inputs ; 26                          ;
 ;         1 data inputs ; 319                         ;
@@ -1857,7 +1861,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 85                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 44.20                       ;
-; Average LUT depth     ; 20.32                       ;
+; Average LUT depth     ; 20.34                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1876,7 +1880,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed May 19 05:08:33 2021
+    Info: Processing started: Wed May 19 06:14:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1932,7 +1936,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file game_fs
     Info (12023): Found entity 1: game_FSM File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file collision_detection.v
     Info (12023): Found entity 1: collision_detection File: C:/Users/James/Workspace/ELEC5566M-MiniProject/collision_detection.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at pipes.v(12): "rand" is SystemVerilog-2005 keyword File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 12
+Warning (10463): Verilog HDL Declaration warning at pipes.v(13): "rand" is SystemVerilog-2005 keyword File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file pipes.v
     Info (12023): Found entity 1: pipes File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file flappy_bird.v
@@ -1957,161 +1961,153 @@ Warning (10230): Verilog HDL assignment warning at vga_gen.v(56): truncated valu
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(57): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 57
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(58): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/vga_gen.v Line: 58
 Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 57
-Info (12128): Elaborating entity "key_filter" for hierarchy "keyboard_input:kb|key_filter:p_edge" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 51
+Info (12128): Elaborating entity "key_filter" for hierarchy "keyboard_input:kb|key_filter:p_edge" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/keyboard_input.v Line: 52
 Info (12128): Elaborating entity "game_FSM" for hierarchy "game_FSM:FSM" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 67
-Info (10264): Verilog HDL Case Statement information at game_FSM.v(20): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 20
+Info (10264): Verilog HDL Case Statement information at game_FSM.v(21): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 21
 Info (12128): Elaborating entity "bird_physics" for hierarchy "bird_physics:phys" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 80
 Info (12128): Elaborating entity "collision_detection" for hierarchy "collision_detection:coll" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 94
 Info (12128): Elaborating entity "pipes" for hierarchy "pipes:pipe_shift" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 107
-Info (10264): Verilog HDL Case Statement information at pipes.v(46): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-Info (12128): Elaborating entity "random_number_gen" for hierarchy "pipes:pipe_shift|random_number_gen:rand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 12
+Info (10264): Verilog HDL Case Statement information at pipes.v(47): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Info (12128): Elaborating entity "random_number_gen" for hierarchy "pipes:pipe_shift|random_number_gen:rand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 13
 Info (12128): Elaborating entity "score_counter" for hierarchy "score_counter:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 116
-Warning (10235): Verilog HDL Always Construct warning at score_counter.v(16): variable "hiscore" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Warning (10240): Verilog HDL Always Construct warning at score_counter.v(11): inferring latch(es) for variable "hiscore", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 11
-Info (10041): Inferred latch for "hiscore[0]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[1]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[2]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[3]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[4]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[5]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[6]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[7]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[8]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[9]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[10]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[11]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[12]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[13]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[14]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[15]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[16]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[17]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[18]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[19]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[20]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[21]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[22]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[23]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[24]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[25]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[26]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[27]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[28]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[29]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[30]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (10041): Inferred latch for "hiscore[31]" at score_counter.v(16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 25
-Info (12128): Elaborating entity "bin_to_BCD" for hierarchy "score_counter:scr|bin_to_BCD:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at score_counter.v(17): variable "hiscore" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at score_counter.v(12): inferring latch(es) for variable "hiscore", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 12
+Info (10041): Inferred latch for "hiscore[0]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[1]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[2]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[3]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[4]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[5]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[6]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[7]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[8]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[9]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[10]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[11]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[12]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[13]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[14]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[15]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[16]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[17]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[18]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[19]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[20]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[21]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[22]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[23]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[24]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[25]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[26]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[27]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[28]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[29]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[30]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (10041): Inferred latch for "hiscore[31]" at score_counter.v(17) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_counter:scr|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 26
+Info (12128): Elaborating entity "bin_to_BCD" for hierarchy "score_counter:scr|bin_to_BCD:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 30
 Warning (10230): Verilog HDL assignment warning at bin_to_BCD.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v Line: 19
 Info (12128): Elaborating entity "image_renderer" for hierarchy "image_renderer:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 142
-Warning (10858): Verilog HDL warning at image_renderer.v(279): object bg_colour used but never assigned File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 279
-Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(281): object "bg0_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 281
-Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(282): object "bg1_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 282
-Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(388): object "medal_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 388
-Info (10264): Verilog HDL Case Statement information at image_renderer.v(62): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 62
-Warning (10230): Verilog HDL assignment warning at image_renderer.v(264): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 264
-Warning (10230): Verilog HDL assignment warning at image_renderer.v(273): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 273
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(344): variable "pipe_btm_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 344
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(348): variable "pipe_top_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 348
-Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(335): inferring latch(es) for variable "pipe_row", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(335): inferring latch(es) for variable "pipe_col", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(413): variable "game_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 413
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(416): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 416
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(419): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 419
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(423): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 423
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(426): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 426
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(433): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 433
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(440): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 440
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(443): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 443
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(447): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 447
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(450): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 450
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(457): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 457
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(462): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 462
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(465): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 465
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(470): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 470
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(473): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 473
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(481): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 481
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(487): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 487
-Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(493): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 493
-Warning (10270): Verilog HDL Case Statement warning at image_renderer.v(413): incomplete case statement has no default case item File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 413
-Info (10264): Verilog HDL Case Statement information at image_renderer.v(413): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 413
-Info (10041): Inferred latch for "pipe_col[0]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[1]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[2]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[3]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[4]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[5]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[6]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[7]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[8]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[9]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[10]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[11]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[12]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[13]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[14]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[15]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[16]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[17]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[18]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[19]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[20]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[21]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[22]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[23]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[24]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[25]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[26]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[27]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[28]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[29]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[30]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_col[31]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[0]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[1]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[2]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[3]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[4]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[5]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[6]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[7]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[8]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[9]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[10]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[11]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[12]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[13]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[14]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[15]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[16]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[17]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[18]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[19]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[20]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[21]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[22]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[23]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[24]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[25]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[26]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[27]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[28]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[29]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[30]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-Info (10041): Inferred latch for "pipe_row[31]" at image_renderer.v(335) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
+Warning (10858): Verilog HDL warning at image_renderer.v(280): object bg_colour used but never assigned File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 280
+Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(282): object "bg0_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 282
+Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(283): object "bg1_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 283
+Warning (10036): Verilog HDL or VHDL warning at image_renderer.v(389): object "medal_gfx" assigned a value but never read File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 389
+Info (10264): Verilog HDL Case Statement information at image_renderer.v(63): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 63
+Warning (10230): Verilog HDL assignment warning at image_renderer.v(265): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 265
+Warning (10230): Verilog HDL assignment warning at image_renderer.v(274): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 274
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(345): variable "pipe_btm_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 345
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(349): variable "pipe_top_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 349
+Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(336): inferring latch(es) for variable "pipe_row", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(336): inferring latch(es) for variable "pipe_col", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(510): variable "game_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 510
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(515): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 515
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(517): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 517
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(528): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 528
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(530): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 530
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(536): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 536
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(538): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(546): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 546
+Warning (10235): Verilog HDL Always Construct warning at image_renderer.v(552): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 552
+Warning (10270): Verilog HDL Case Statement warning at image_renderer.v(510): incomplete case statement has no default case item File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 510
+Info (10264): Verilog HDL Case Statement information at image_renderer.v(510): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 510
+Warning (10240): Verilog HDL Always Construct warning at image_renderer.v(409): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 409
+Info (10041): Inferred latch for "pipe_col[0]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[1]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[2]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[3]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[4]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[5]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[6]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[7]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[8]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[9]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[10]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[11]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[12]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[13]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[14]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[15]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[16]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[17]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[18]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[19]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[20]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[21]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[22]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[23]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[24]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[25]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[26]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[27]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[28]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[29]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[30]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_col[31]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[0]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[1]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[2]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[3]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[4]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[5]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[6]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[7]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[8]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[9]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[10]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[11]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[12]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[13]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[14]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[15]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[16]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[17]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[18]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[19]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[20]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[21]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[22]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[23]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[24]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[25]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[26]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[27]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[28]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[29]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[30]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+Info (10041): Inferred latch for "pipe_row[31]" at image_renderer.v(336) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "bird_colour" into its bus
-Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 159
-Info (12128): Elaborating entity "flap_1_pos45_rom" for hierarchy "image_renderer:display|flap_1_pos45_rom:bird1_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 167
-Info (12128): Elaborating entity "flap_1_neg45_rom" for hierarchy "image_renderer:display|flap_1_neg45_rom:bird1_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 175
-Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 183
-Info (12128): Elaborating entity "flap_2_pos45_rom" for hierarchy "image_renderer:display|flap_2_pos45_rom:bird2_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 191
-Info (12128): Elaborating entity "flap_2_neg45_rom" for hierarchy "image_renderer:display|flap_2_neg45_rom:bird2_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 199
-Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 207
-Info (12128): Elaborating entity "flap_3_pos45_rom" for hierarchy "image_renderer:display|flap_3_pos45_rom:bird3_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 215
-Info (12128): Elaborating entity "flap_3_neg45_rom" for hierarchy "image_renderer:display|flap_3_neg45_rom:bird3_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 223
-Info (12128): Elaborating entity "pipe_rom" for hierarchy "image_renderer:display|pipe_rom:pipe" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 332
-Info (12128): Elaborating entity "numbers_rom" for hierarchy "image_renderer:display|numbers_rom:num" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 396
-Info (12128): Elaborating entity "medals_rom" for hierarchy "image_renderer:display|medals_rom:medal" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 404
+Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_renderer:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 160
+Info (12128): Elaborating entity "flap_1_pos45_rom" for hierarchy "image_renderer:display|flap_1_pos45_rom:bird1_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 168
+Info (12128): Elaborating entity "flap_1_neg45_rom" for hierarchy "image_renderer:display|flap_1_neg45_rom:bird1_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 176
+Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_renderer:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 184
+Info (12128): Elaborating entity "flap_2_pos45_rom" for hierarchy "image_renderer:display|flap_2_pos45_rom:bird2_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 192
+Info (12128): Elaborating entity "flap_2_neg45_rom" for hierarchy "image_renderer:display|flap_2_neg45_rom:bird2_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 200
+Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_renderer:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 208
+Info (12128): Elaborating entity "flap_3_pos45_rom" for hierarchy "image_renderer:display|flap_3_pos45_rom:bird3_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 216
+Info (12128): Elaborating entity "flap_3_neg45_rom" for hierarchy "image_renderer:display|flap_3_neg45_rom:bird3_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 224
+Info (12128): Elaborating entity "pipe_rom" for hierarchy "image_renderer:display|pipe_rom:pipe" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 333
+Info (12128): Elaborating entity "numbers_rom" for hierarchy "image_renderer:display|numbers_rom:num" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 397
+Info (12128): Elaborating entity "medals_rom" for hierarchy "image_renderer:display|medals_rom:medal" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 405
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
     Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
@@ -2245,37 +2241,37 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
     Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 30
 Info (278001): Inferred 29 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 481
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 473
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 443
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 457
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div39" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 450
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div43" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 465
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 426
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div31" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 419
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div35" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 433
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 456
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 442
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div38" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 449
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div32" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 425
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div30" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 418
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div34" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 432
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 172
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div28" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 345
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div19" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div18" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 345
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 345
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div22" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div27" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 345
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div26" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div20" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
-Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 481
-Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div47" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 481
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 530
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 530
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div39" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 530
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div43" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div35" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 517
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 517
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div31" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 517
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div44" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 529
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div38" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 537
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div42" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 537
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div34" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 516
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div32" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 516
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div30" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 516
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 174
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div28" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 346
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div19" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div18" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 346
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 346
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div22" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 350
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div27" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 346
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 351
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div26" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 351
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div20" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 351
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_renderer:display|Div23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 351
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div47" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 538
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2286,84 +2282,84 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
     Info (12023): Found entity 1: alt_u_div_ive File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 456
-Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div40" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 456
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div44" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 529
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div44" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 529
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 172
-Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div4" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 172
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div4" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
-Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div5" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 173
+Info (12130): Elaborated megafunction instantiation "image_renderer:display|lpm_divide:Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 174
+Info (12133): Instantiated megafunction "image_renderer:display|lpm_divide:Div5" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 174
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Warning (12241): 22 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch image_renderer:display|pipe_row[6] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_col[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 338
-Warning (13012): Latch image_renderer:display|pipe_row[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_row[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_row[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_col[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 338
-Warning (13012): Latch image_renderer:display|pipe_row[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_row[5] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_row[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 311
-Warning (13012): Latch image_renderer:display|pipe_col[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 338
-Warning (13012): Latch image_renderer:display|pipe_col[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 338
-Warning (13012): Latch image_renderer:display|pipe_col[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 335
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 338
-Warning (13012): Latch score_counter:scr|hiscore[31] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[31] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-Warning (13012): Latch score_counter:scr|hiscore[30] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[30] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-Warning (13012): Latch score_counter:scr|hiscore[29] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 16
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[29] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
+Warning (13012): Latch image_renderer:display|pipe_row[6] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_col[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 339
+Warning (13012): Latch image_renderer:display|pipe_row[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_row[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_row[0] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_col[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 339
+Warning (13012): Latch image_renderer:display|pipe_row[4] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_row[5] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_row[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|pipe_btm_gfx[3] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 312
+Warning (13012): Latch image_renderer:display|pipe_col[2] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 339
+Warning (13012): Latch image_renderer:display|pipe_col[1] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 339
+Warning (13012): Latch image_renderer:display|pipe_col[3] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 336
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal image_renderer:display|LessThan14~synth File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_renderer.v Line: 339
+Warning (13012): Latch score_counter:scr|hiscore[31] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[31] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Warning (13012): Latch score_counter:scr|hiscore[30] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[30] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+Warning (13012): Latch score_counter:scr|hiscore[29] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_counter.v Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[29] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][0]~_emulated" and latch "pipes:pipe_shift|pipeY[0][0]~1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][0]~_emulated" and latch "pipes:pipe_shift|pipeY[1][0]~5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][0]~_emulated" and latch "pipes:pipe_shift|pipeY[2][0]~9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][0]~_emulated" and latch "pipes:pipe_shift|pipeY[3][0]~13" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][5]~_emulated" and latch "pipes:pipe_shift|pipeY[0][5]~17" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][6]~_emulated" and latch "pipes:pipe_shift|pipeY[0][6]~21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][3]~_emulated" and latch "pipes:pipe_shift|pipeY[0][3]~25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][4]~_emulated" and latch "pipes:pipe_shift|pipeY[0][4]~29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][5]~_emulated" and latch "pipes:pipe_shift|pipeY[1][5]~33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][6]~_emulated" and latch "pipes:pipe_shift|pipeY[1][6]~37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][3]~_emulated" and latch "pipes:pipe_shift|pipeY[1][3]~41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][4]~_emulated" and latch "pipes:pipe_shift|pipeY[1][4]~45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][5]~_emulated" and latch "pipes:pipe_shift|pipeY[2][5]~49" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][6]~_emulated" and latch "pipes:pipe_shift|pipeY[2][6]~53" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][3]~_emulated" and latch "pipes:pipe_shift|pipeY[2][3]~57" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][4]~_emulated" and latch "pipes:pipe_shift|pipeY[2][4]~61" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][5]~_emulated" and latch "pipes:pipe_shift|pipeY[3][5]~65" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][6]~_emulated" and latch "pipes:pipe_shift|pipeY[3][6]~69" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][3]~_emulated" and latch "pipes:pipe_shift|pipeY[3][3]~73" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][4]~_emulated" and latch "pipes:pipe_shift|pipeY[3][4]~77" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][2]~_emulated" and latch "pipes:pipe_shift|pipeY[0][2]~81" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[0][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][1]~_emulated" and latch "pipes:pipe_shift|pipeY[0][1]~85" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][2]~_emulated" and latch "pipes:pipe_shift|pipeY[1][2]~89" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[1][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][1]~_emulated" and latch "pipes:pipe_shift|pipeY[1][1]~93" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][2]~_emulated" and latch "pipes:pipe_shift|pipeY[2][2]~97" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[2][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][1]~_emulated" and latch "pipes:pipe_shift|pipeY[2][1]~101" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][2]~_emulated" and latch "pipes:pipe_shift|pipeY[3][2]~105" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
-    Warning (13310): Register "pipes:pipe_shift|pipeY[3][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][1]~_emulated" and latch "pipes:pipe_shift|pipeY[3][1]~109" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 46
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][0]~_emulated" and latch "pipes:pipe_shift|pipeY[0][0]~1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][0]~_emulated" and latch "pipes:pipe_shift|pipeY[1][0]~5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][0]~_emulated" and latch "pipes:pipe_shift|pipeY[2][0]~9" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][0]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][0]~_emulated" and latch "pipes:pipe_shift|pipeY[3][0]~13" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][5]~_emulated" and latch "pipes:pipe_shift|pipeY[0][5]~17" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][6]~_emulated" and latch "pipes:pipe_shift|pipeY[0][6]~21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][3]~_emulated" and latch "pipes:pipe_shift|pipeY[0][3]~25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][4]~_emulated" and latch "pipes:pipe_shift|pipeY[0][4]~29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][5]~_emulated" and latch "pipes:pipe_shift|pipeY[1][5]~33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][6]~_emulated" and latch "pipes:pipe_shift|pipeY[1][6]~37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][3]~_emulated" and latch "pipes:pipe_shift|pipeY[1][3]~41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][4]~_emulated" and latch "pipes:pipe_shift|pipeY[1][4]~45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][5]~_emulated" and latch "pipes:pipe_shift|pipeY[2][5]~49" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][6]~_emulated" and latch "pipes:pipe_shift|pipeY[2][6]~53" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][3]~_emulated" and latch "pipes:pipe_shift|pipeY[2][3]~57" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][4]~_emulated" and latch "pipes:pipe_shift|pipeY[2][4]~61" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][5]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][5]~_emulated" and latch "pipes:pipe_shift|pipeY[3][5]~65" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][6]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][6]~_emulated" and latch "pipes:pipe_shift|pipeY[3][6]~69" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][3]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][3]~_emulated" and latch "pipes:pipe_shift|pipeY[3][3]~73" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][4]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][4]~_emulated" and latch "pipes:pipe_shift|pipeY[3][4]~77" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][2]~_emulated" and latch "pipes:pipe_shift|pipeY[0][2]~81" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[0][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[0][1]~_emulated" and latch "pipes:pipe_shift|pipeY[0][1]~85" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][2]~_emulated" and latch "pipes:pipe_shift|pipeY[1][2]~89" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[1][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[1][1]~_emulated" and latch "pipes:pipe_shift|pipeY[1][1]~93" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][2]~_emulated" and latch "pipes:pipe_shift|pipeY[2][2]~97" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[2][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[2][1]~_emulated" and latch "pipes:pipe_shift|pipeY[2][1]~101" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][2]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][2]~_emulated" and latch "pipes:pipe_shift|pipeY[3][2]~105" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
+    Warning (13310): Register "pipes:pipe_shift|pipeY[3][1]" is converted into an equivalent circuit using register "pipes:pipe_shift|pipeY[3][1]~_emulated" and latch "pipes:pipe_shift|pipeY[3][1]~109" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/pipes.v Line: 47
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 7
     Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 9
@@ -2393,15 +2389,15 @@ Info (17049): 33 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7806 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7804 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 7721 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 256 warnings
-    Info: Peak virtual memory: 4934 megabytes
-    Info: Processing ended: Wed May 19 05:09:02 2021
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:40
+    Info (21061): Implemented 7719 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 248 warnings
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Wed May 19 06:15:11 2021
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+

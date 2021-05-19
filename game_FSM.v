@@ -1,6 +1,7 @@
 module game_FSM
 (
-	input clk, rst, collision, pause, flap, 
+	input clk, rst, collision, pause, flap,
+	
 	output reg [3:0] game_state
 );
 

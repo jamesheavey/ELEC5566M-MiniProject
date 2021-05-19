@@ -7,6 +7,7 @@ module collision_detection #(
 	input clk, 
 	input [31:0] birdY, birdX,
 	input [(32*NUM_PIPES)-1:0] pipeX_flat, pipeY_flat,
+	
 	output reg collision
 );
 

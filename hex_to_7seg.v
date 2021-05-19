@@ -12,11 +12,11 @@
  *
  */
  
-module hex_to_7seg ( 
-
-	input			[3:0] hex, 
-	output reg	[6:0] seven_seg
+module hex_to_7seg 
+( 
+	input			[3:0] hex,
 	
+	output reg	[6:0] seven_seg
 );
 
 always @(*) begin

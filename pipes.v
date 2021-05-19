@@ -4,6 +4,7 @@ module pipes #(
 	input clk, FL_clk, rst,
 	input [3:0] game_state,
 	input [31:0] birdX,
+	
 	output [(32*NUM_PIPES)-1:0] pipeX_flat, pipeY_flat,
 	output reg [31:0] score_count
 );

@@ -3,179 +3,179 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'rst'
-Slack : -46.202
-TNS   : -545.484
+Slack : -46.236
+TNS   : -538.181
 
 Type  : Slow 1100mV 85C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -44.893
-TNS   : -1380.170
+Slack : -45.552
+TNS   : -1381.011
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -8.757
-TNS   : -1207.449
+Slack : -8.894
+TNS   : -1264.741
 
 Type  : Slow 1100mV 85C Model Setup 'clk_divider:FLOOR|out_clk'
-Slack : -7.543
-TNS   : -1198.564
+Slack : -7.222
+TNS   : -1080.862
 
 Type  : Slow 1100mV 85C Model Setup 'pipes:pipe_shift|score_count[0]'
-Slack : -6.481
-TNS   : -45.377
+Slack : -6.532
+TNS   : -56.050
 
 Type  : Slow 1100mV 85C Model Setup 'PS2_clk'
-Slack : -4.907
-TNS   : -252.033
+Slack : -5.021
+TNS   : -259.090
 
 Type  : Slow 1100mV 85C Model Hold 'pipes:pipe_shift|score_count[0]'
-Slack : -7.311
-TNS   : -151.657
+Slack : -7.280
+TNS   : -136.417
 
 Type  : Slow 1100mV 85C Model Hold 'rst'
-Slack : -6.632
-TNS   : -57.839
+Slack : -6.869
+TNS   : -60.564
 
 Type  : Slow 1100mV 85C Model Hold 'clk_divider:VGA|out_clk'
-Slack : -1.570
-TNS   : -20.005
+Slack : -2.503
+TNS   : -21.424
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.203
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'PS2_clk'
-Slack : 0.222
-TNS   : 0.000
+Slack : -1.670
+TNS   : -12.883
 
 Type  : Slow 1100mV 85C Model Hold 'clk_divider:FLOOR|out_clk'
-Slack : 0.275
+Slack : -1.655
+TNS   : -37.334
+
+Type  : Slow 1100mV 85C Model Hold 'PS2_clk'
+Slack : 0.219
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clk_divider:FLOOR|out_clk'
-Slack : -6.718
-TNS   : -1211.507
+Slack : -7.116
+TNS   : -1257.680
 
 Type  : Slow 1100mV 85C Model Recovery 'clk_divider:VGA|out_clk'
-Slack : -5.053
-TNS   : -296.234
+Slack : -5.386
+TNS   : -316.074
 
 Type  : Slow 1100mV 85C Model Recovery 'clk'
-Slack : -4.728
-TNS   : -640.702
+Slack : -4.859
+TNS   : -646.336
 
 Type  : Slow 1100mV 85C Model Recovery 'pipes:pipe_shift|score_count[0]'
-Slack : 2.272
+Slack : 2.507
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'pipes:pipe_shift|score_count[0]'
-Slack : -6.309
-TNS   : -178.444
+Slack : -5.857
+TNS   : -172.027
 
 Type  : Slow 1100mV 85C Model Removal 'clk_divider:VGA|out_clk'
-Slack : 0.307
+Slack : 0.529
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'clk'
-Slack : 1.739
+Slack : 1.719
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'clk_divider:FLOOR|out_clk'
-Slack : 3.192
+Slack : 3.340
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'rst'
-Slack : -3.610
-TNS   : -1517.446
+Slack : -3.638
+TNS   : -1249.209
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.502
-TNS   : -137.624
+Slack : -0.500
+TNS   : -138.297
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:FLOOR|out_clk'
-Slack : -0.458
-TNS   : -128.787
+Slack : -0.404
+TNS   : -130.673
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
 Slack : -0.394
-TNS   : -48.943
+TNS   : -54.216
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
 Slack : -0.394
-TNS   : -33.780
+TNS   : -34.313
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pipes:pipe_shift|score_count[0]'
-Slack : 0.006
-TNS   : 0.000
+Slack : -0.330
+TNS   : -7.989
 
 Type  : Slow 1100mV 0C Model Setup 'rst'
-Slack : -48.265
-TNS   : -564.473
+Slack : -48.362
+TNS   : -556.764
 
 Type  : Slow 1100mV 0C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -46.613
-TNS   : -1370.141
+Slack : -47.218
+TNS   : -1361.998
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -8.389
-TNS   : -1164.378
+Slack : -8.532
+TNS   : -1215.511
 
 Type  : Slow 1100mV 0C Model Setup 'clk_divider:FLOOR|out_clk'
-Slack : -7.349
-TNS   : -1184.180
+Slack : -7.103
+TNS   : -1068.172
 
 Type  : Slow 1100mV 0C Model Setup 'pipes:pipe_shift|score_count[0]'
-Slack : -6.316
-TNS   : -43.866
+Slack : -6.283
+TNS   : -54.545
 
 Type  : Slow 1100mV 0C Model Setup 'PS2_clk'
-Slack : -4.840
-TNS   : -249.993
+Slack : -4.951
+TNS   : -256.541
 
 Type  : Slow 1100mV 0C Model Hold 'pipes:pipe_shift|score_count[0]'
-Slack : -7.014
-TNS   : -145.020
+Slack : -6.840
+TNS   : -128.294
 
 Type  : Slow 1100mV 0C Model Hold 'rst'
-Slack : -6.710
-TNS   : -59.317
+Slack : -6.836
+TNS   : -61.025
 
 Type  : Slow 1100mV 0C Model Hold 'clk_divider:VGA|out_clk'
-Slack : -1.607
-TNS   : -21.557
+Slack : -2.555
+TNS   : -24.494
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.190
-TNS   : 0.000
+Slack : -1.598
+TNS   : -23.714
 
 Type  : Slow 1100mV 0C Model Hold 'clk_divider:FLOOR|out_clk'
-Slack : 0.279
-TNS   : 0.000
+Slack : -1.508
+TNS   : -31.074
 
 Type  : Slow 1100mV 0C Model Hold 'PS2_clk'
-Slack : 0.284
+Slack : 0.270
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clk_divider:FLOOR|out_clk'
-Slack : -6.681
-TNS   : -1208.304
+Slack : -7.033
+TNS   : -1247.805
 
 Type  : Slow 1100mV 0C Model Recovery 'clk_divider:VGA|out_clk'
-Slack : -4.892
-TNS   : -286.842
+Slack : -5.206
+TNS   : -305.351
 
 Type  : Slow 1100mV 0C Model Recovery 'clk'
-Slack : -4.523
-TNS   : -612.636
+Slack : -4.632
+TNS   : -616.811
 
 Type  : Slow 1100mV 0C Model Recovery 'pipes:pipe_shift|score_count[0]'
-Slack : 2.019
+Slack : 2.162
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'pipes:pipe_shift|score_count[0]'
-Slack : -5.976
-TNS   : -166.978
+Slack : -5.450
+TNS   : -157.873
 
 Type  : Slow 1100mV 0C Model Removal 'clk_divider:VGA|out_clk'
-Slack : 0.248
+Slack : 0.477
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'clk'
@@ -183,239 +183,239 @@ Slack : 1.572
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'clk_divider:FLOOR|out_clk'
-Slack : 3.226
+Slack : 3.383
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'rst'
-Slack : -3.687
-TNS   : -1582.789
+Slack : -3.667
+TNS   : -1323.438
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.533
-TNS   : -148.263
+Slack : -0.527
+TNS   : -149.361
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_divider:FLOOR|out_clk'
-Slack : -0.441
-TNS   : -129.674
+Slack : -0.394
+TNS   : -127.998
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
 Slack : -0.394
-TNS   : -51.369
+TNS   : -59.152
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PS2_clk'
 Slack : -0.394
-TNS   : -34.894
+TNS   : -35.060
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pipes:pipe_shift|score_count[0]'
-Slack : 0.144
-TNS   : 0.000
+Slack : -0.171
+TNS   : -2.111
 
 Type  : Fast 1100mV 85C Model Setup 'rst'
-Slack : -24.472
-TNS   : -287.924
+Slack : -24.769
+TNS   : -286.038
 
 Type  : Fast 1100mV 85C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -23.963
-TNS   : -813.664
+Slack : -24.610
+TNS   : -817.691
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -5.280
-TNS   : -657.959
+Slack : -5.359
+TNS   : -690.503
 
 Type  : Fast 1100mV 85C Model Setup 'pipes:pipe_shift|score_count[0]'
-Slack : -4.784
-TNS   : -33.138
+Slack : -4.800
+TNS   : -39.905
 
 Type  : Fast 1100mV 85C Model Setup 'clk_divider:FLOOR|out_clk'
-Slack : -4.142
-TNS   : -656.786
+Slack : -4.064
+TNS   : -595.978
 
 Type  : Fast 1100mV 85C Model Setup 'PS2_clk'
-Slack : -2.259
-TNS   : -113.458
+Slack : -2.465
+TNS   : -122.253
 
 Type  : Fast 1100mV 85C Model Hold 'pipes:pipe_shift|score_count[0]'
-Slack : -4.577
-TNS   : -94.636
+Slack : -4.519
+TNS   : -89.837
 
 Type  : Fast 1100mV 85C Model Hold 'rst'
-Slack : -4.050
-TNS   : -36.252
+Slack : -4.360
+TNS   : -39.877
 
 Type  : Fast 1100mV 85C Model Hold 'clk_divider:VGA|out_clk'
-Slack : -0.812
-TNS   : -11.898
+Slack : -1.373
+TNS   : -11.868
 
 Type  : Fast 1100mV 85C Model Hold 'clk_divider:FLOOR|out_clk'
-Slack : 0.091
-TNS   : 0.000
+Slack : -1.135
+TNS   : -26.948
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.127
-TNS   : 0.000
+Slack : -1.001
+TNS   : -12.694
 
 Type  : Fast 1100mV 85C Model Hold 'PS2_clk'
-Slack : 0.141
+Slack : 0.139
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clk_divider:FLOOR|out_clk'
-Slack : -3.975
-TNS   : -716.207
+Slack : -4.305
+TNS   : -756.481
 
 Type  : Fast 1100mV 85C Model Recovery 'clk_divider:VGA|out_clk'
-Slack : -3.000
-TNS   : -176.024
+Slack : -3.265
+TNS   : -191.705
 
 Type  : Fast 1100mV 85C Model Recovery 'clk'
-Slack : -2.882
-TNS   : -390.254
+Slack : -3.019
+TNS   : -401.594
 
 Type  : Fast 1100mV 85C Model Recovery 'pipes:pipe_shift|score_count[0]'
-Slack : 1.969
+Slack : 2.064
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'pipes:pipe_shift|score_count[0]'
-Slack : -3.902
-TNS   : -110.967
+Slack : -3.795
+TNS   : -111.154
 
 Type  : Fast 1100mV 85C Model Removal 'clk_divider:VGA|out_clk'
-Slack : 0.118
+Slack : 0.318
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clk'
-Slack : 0.878
+Slack : 0.929
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clk_divider:FLOOR|out_clk'
-Slack : 1.527
+Slack : 1.709
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'rst'
-Slack : -2.291
-TNS   : -911.725
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.518
-TNS   : -23.837
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
-Slack : -0.383
-TNS   : -24.636
+Slack : -2.427
+TNS   : -795.447
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pipes:pipe_shift|score_count[0]'
-Slack : -0.289
-TNS   : -9.217
+Slack : -0.603
+TNS   : -28.701
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.501
+TNS   : -22.975
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PS2_clk'
+Slack : -0.375
+TNS   : -24.829
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_divider:FLOOR|out_clk'
-Slack : -0.226
-TNS   : -15.739
+Slack : -0.171
+TNS   : -14.873
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : 0.137
+Slack : 0.059
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'rst'
-Slack : -23.529
-TNS   : -270.477
+Slack : -23.801
+TNS   : -270.311
 
 Type  : Fast 1100mV 0C Model Setup 'clk_divider:VGA|out_clk'
-Slack : -22.975
-TNS   : -734.611
+Slack : -23.527
+TNS   : -735.371
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -4.902
-TNS   : -589.989
+Slack : -4.954
+TNS   : -620.361
 
 Type  : Fast 1100mV 0C Model Setup 'pipes:pipe_shift|score_count[0]'
-Slack : -3.952
-TNS   : -27.792
+Slack : -4.069
+TNS   : -34.014
 
 Type  : Fast 1100mV 0C Model Setup 'clk_divider:FLOOR|out_clk'
-Slack : -3.714
-TNS   : -587.837
+Slack : -3.589
+TNS   : -530.828
 
 Type  : Fast 1100mV 0C Model Setup 'PS2_clk'
-Slack : -1.983
-TNS   : -100.197
-
-Type  : Fast 1100mV 0C Model Hold 'pipes:pipe_shift|score_count[0]'
-Slack : -4.118
-TNS   : -84.698
+Slack : -2.152
+TNS   : -106.283
 
 Type  : Fast 1100mV 0C Model Hold 'rst'
-Slack : -3.789
-TNS   : -34.460
+Slack : -4.020
+TNS   : -37.037
+
+Type  : Fast 1100mV 0C Model Hold 'pipes:pipe_shift|score_count[0]'
+Slack : -3.965
+TNS   : -78.857
 
 Type  : Fast 1100mV 0C Model Hold 'clk_divider:VGA|out_clk'
-Slack : -0.949
-TNS   : -16.414
+Slack : -1.462
+TNS   : -17.728
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : -0.044
-TNS   : -0.044
+Slack : -1.029
+TNS   : -18.380
 
 Type  : Fast 1100mV 0C Model Hold 'clk_divider:FLOOR|out_clk'
-Slack : 0.080
-TNS   : 0.000
+Slack : -1.027
+TNS   : -23.131
 
 Type  : Fast 1100mV 0C Model Hold 'PS2_clk'
-Slack : 0.148
+Slack : 0.146
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clk_divider:FLOOR|out_clk'
-Slack : -3.937
-TNS   : -712.897
+Slack : -4.205
+TNS   : -744.676
 
 Type  : Fast 1100mV 0C Model Recovery 'clk_divider:VGA|out_clk'
-Slack : -2.915
-TNS   : -170.992
+Slack : -3.139
+TNS   : -184.361
 
 Type  : Fast 1100mV 0C Model Recovery 'clk'
-Slack : -2.774
-TNS   : -376.101
+Slack : -2.889
+TNS   : -384.239
 
 Type  : Fast 1100mV 0C Model Recovery 'pipes:pipe_shift|score_count[0]'
-Slack : 1.671
+Slack : 1.713
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'pipes:pipe_shift|score_count[0]'
-Slack : -3.395
-TNS   : -96.081
+Slack : -3.182
+TNS   : -93.593
 
 Type  : Fast 1100mV 0C Model Removal 'clk_divider:VGA|out_clk'
-Slack : 0.031
+Slack : 0.217
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clk'
-Slack : 0.766
+Slack : 0.821
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clk_divider:FLOOR|out_clk'
-Slack : 1.529
+Slack : 1.699
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'rst'
-Slack : -2.081
-TNS   : -819.220
+Slack : -2.188
+TNS   : -719.939
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.530
-TNS   : -23.658
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PS2_clk'
-Slack : -0.372
-TNS   : -23.356
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:FLOOR|out_clk'
-Slack : -0.143
-TNS   : -8.319
+Slack : -0.513
+TNS   : -23.001
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pipes:pipe_shift|score_count[0]'
-Slack : -0.141
-TNS   : -2.392
+Slack : -0.371
+TNS   : -15.858
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PS2_clk'
+Slack : -0.367
+TNS   : -23.481
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:FLOOR|out_clk'
+Slack : -0.106
+TNS   : -6.569
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_divider:VGA|out_clk'
-Slack : 0.113
+Slack : 0.051
 TNS   : 0.000
 
 ------------------------------------------------------------

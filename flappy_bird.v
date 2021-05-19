@@ -10,10 +10,10 @@ module flappy_bird
 	output [41:0] seven_seg
 );
 
-localparam SCALE = 3;
+localparam SCALE 		=  3;
+localparam PIPE_GAP 	= 75;
+localparam NUM_PIPES =  4;
 localparam BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 15*SCALE;
-localparam PIPE_GAP = 75;
-localparam NUM_PIPES = 4;
 
 wire VGA_clk;
 clk_divider VGA (clk, VGA_clk);
@@ -69,7 +69,7 @@ game_FSM FSM
 bird_physics #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
-) phys (
+) physics (
 	.clk				( clk 			),
 	.rst				( rst				),
 	.game_state		( game_state 	),
@@ -84,7 +84,7 @@ collision_detection #(
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
 	.PIPE_GAP		( PIPE_GAP		),
 	.NUM_PIPES		( NUM_PIPES		)
-) coll (
+) detect (
 	.clk				( clk 			),
 	.birdX			( birdX 			),
 	.birdY			( birdY 			),
@@ -106,7 +106,7 @@ pipes #(
 	.score_count	( score_count	)
 );
 
-score_counter scr
+score_counter score
 (
 	.rst				( rst				),
 	.score_count	( score_count	),

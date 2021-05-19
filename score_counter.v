@@ -2,6 +2,7 @@ module score_counter
 (
 	input rst,
 	input	[31:0] score_count,
+	
 	output [11:0] score_BCD, hiscore_BCD,
 	output [41:0] seven_seg
 );

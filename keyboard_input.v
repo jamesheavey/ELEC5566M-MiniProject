@@ -1,6 +1,7 @@
 module keyboard_input
 (
-	input clk, rst, PS2_clk, PS2_data, 
+	input clk, rst, PS2_clk, PS2_data,
+	
 	output wire pause,
 	output reg flap
 );

@@ -19,6 +19,7 @@ module random_number_gen #(
 	parameter NUM_BITS = 32
 )(
    input clk,
+	
    output [NUM_BITS-1:0] random
 );
  

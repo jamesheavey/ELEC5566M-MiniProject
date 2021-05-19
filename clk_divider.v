@@ -2,6 +2,7 @@ module clk_divider #(
 	parameter DIVISOR = 0
 )(
 	input in_clk,
+	
 	output reg out_clk = 0
 );
 

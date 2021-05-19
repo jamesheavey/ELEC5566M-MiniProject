@@ -12,12 +12,11 @@
  *
  */
 
-module key_filter (
-
+module key_filter
+(
 	input clock, key,
 
 	output p_key
-	
 ); 
 
 reg delay;
