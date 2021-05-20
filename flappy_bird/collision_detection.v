@@ -30,7 +30,7 @@ module collision_detection #(
 	output reg collision
 );
 
-localparam FLOOR_Y 		= 418;
+localparam FLOOR_Y 	= 418;
 localparam PIPE_SIZE_X 	=  78;
 
 // 2D array to store pipe coordinates
