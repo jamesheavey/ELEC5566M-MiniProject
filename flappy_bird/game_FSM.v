@@ -7,12 +7,10 @@
  *
  * Description
  * ---------------------------------
- * This module contains a FSM that 
- * determines the current state of the game
- * at the top-level. The game-state is output
- * and used as an input for other modules to
- * drive logic. This FSM is the parent module 
- * for game functionality.
+ * This module contains a FSM that determines the current 
+ * state of the game at the top-level. The game-state is
+ * output and used as an input for other modules to drive
+ * logic. This FSM is the parent module for game functionality.
  *
  */
 
@@ -27,9 +25,9 @@ module game_FSM
 
 // Symbolic state definitions
 localparam	START_SCREEN 	= 4'b0001,
-			IN_GAME			= 4'b0010,
-			PAUSE 			= 4'b0100,
-			END_SCREEN 		= 4'b1000;
+		IN_GAME		= 4'b0010,
+		PAUSE 		= 4'b0100,
+		END_SCREEN 	= 4'b1000;
 				
 
 always @(posedge clk or posedge rst) begin
@@ -67,7 +65,8 @@ always @(posedge clk or posedge rst) begin
 				else
 					game_state 	<= END_SCREEN;
 	
-			default:game_state	<= START_SCREEN;
+			default:
+				game_state	<= START_SCREEN;
 					
 		endcase
 	end
