@@ -35,25 +35,25 @@ module bird_physics#(
 
 // Symbolic game FSM state definitions 
 localparam	START_SCREEN 	= 4'b0001,
-			IN_GAME			= 4'b0010,
-			PAUSE 			= 4'b0100,
-			END_SCREEN 		= 4'b1000;
+		IN_GAME		= 4'b0010,
+		PAUSE 		= 4'b0100,
+		END_SCREEN 	= 4'b1000;
 
 // Symbolic bird motion state definitions 
-localparam	TOP			 	= 4'b0001,
-			DOWN			= 4'b0010,
-			UP		 		= 4'b0100,
-			STOP			= 4'b1000;
+localparam	TOP		= 4'b0001,
+		DOWN		= 4'b0010,
+		UP		= 4'b0100,
+		STOP		= 4'b1000;
 
 // Symbolic bird flapping state definitions 
-localparam	FLAP_1 			= 2'd0,
-			FLAP_2			= 2'd1,
-			FLAP_3 			= 2'd2;
+localparam	FLAP_1 		= 2'd0,
+		FLAP_2		= 2'd1,
+		FLAP_3 		= 2'd2;
 
 // Symbolic bird angle state definitions 
-localparam	HORZ 			= 2'd0,
-			POS_45			= 2'd1,
-			NEG_45 			= 2'd2;
+localparam	HORZ 		= 2'd0,
+		POS_45		= 2'd1,
+		NEG_45 		= 2'd2;
 				
 // Constant definitions dictating the motion of the bird under 'gravity'			
 localparam TIME_START      	=  25000;  // starting time to load when beginning to flap up
@@ -68,27 +68,27 @@ always @(posedge clk or posedge rst)
 begin
 	if (rst) begin
 		motion_state 	<= DOWN;
-		prev_state	 	<= DOWN;
+		prev_state	<= DOWN;
 		flap_elapsed 	<= TIME_MAX;
-		flap_start		<= TIME_MAX;
-		bird_state 		<= FLAP_1;
-		bird_angle 		<= HORZ;
-		birdY 			<= (480 - BIRD_SIZE_Y)/2;
+		flap_start	<= TIME_MAX;
+		bird_state 	<= FLAP_1;
+		bird_angle 	<= HORZ;
+		birdY 		<= (480 - BIRD_SIZE_Y)/2;
 	end else begin
 		case (motion_state)
 
 			TOP: begin
 				// set bird state and angle
-				bird_angle		<= HORZ;
-				bird_state 		<= FLAP_2;
+				bird_angle	<= HORZ;
+				bird_state 	<= FLAP_2;
 				
 				// reset time registers to max value
 				flap_elapsed 	<= TIME_MAX;
-				flap_start 		<= TIME_MAX;
+				flap_start 	<= TIME_MAX;
 				
 				if (game_state == PAUSE || game_state == END_SCREEN) begin
 					// If paused or game over, stop motion
-					prev_state 		<= TOP;
+					prev_state 	<= TOP;
 					motion_state	<= STOP;
 				end
 				
@@ -103,7 +103,7 @@ begin
 				
 				if (game_state == PAUSE || game_state == END_SCREEN) begin
 					// If paused or game over, stop motion
-					prev_state 		<= DOWN;
+					prev_state 	<= DOWN;
 					motion_state	<= STOP;
 				end
 				
@@ -115,7 +115,7 @@ begin
 					// and decrease the starting load value, decreasing the amount of time
 					// before elapsed time reaches 0 again, thereby simulating downward acceleration.
 					if (flap_start > TIME_TERMINAL) begin
-						flap_start 		<= flap_start - TIME_STEP;
+						flap_start 	<= flap_start - TIME_STEP;
 						flap_elapsed 	<= flap_start;
 					end else begin
 						flap_elapsed 	<= TIME_TERMINAL;
@@ -128,9 +128,9 @@ begin
 					// if user input flap is high, transition to UP state. This is forced in the 
 					// START_SCREEN game state
 					motion_state 	<= UP;
-					flap_start 		<= TIME_START;
+					flap_start 	<= TIME_START;
 					flap_elapsed 	<= TIME_START;
-					bird_state 		<= FLAP_3;
+					bird_state 	<= FLAP_3;
 				end
 			end
 			
@@ -141,7 +141,7 @@ begin
 				
 				if (game_state == PAUSE || game_state == END_SCREEN) begin
 					// If paused or game over, stop motion
-					prev_state 		<= UP;
+					prev_state 	<= UP;
 					motion_state	<= STOP;
 				end
 				
@@ -153,9 +153,9 @@ begin
 					// and decrease the starting load value, decreasing the amount of time
 					// before elapsed time reaches 0 again, thereby simulating downward acceleration.
 					if (flap_start <= TIME_MAX) begin
-						flap_start 		<= flap_start + TIME_STEP;
+						flap_start 	<= flap_start + TIME_STEP;
 						flap_elapsed 	<= flap_start;
-						birdY 			<= birdY - 1;
+						birdY 		<= birdY - 1;
 					end else begin
 						motion_state 	<= TOP;
 					end
