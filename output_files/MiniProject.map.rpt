@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Thu May 20 06:39:51 2021
+Thu May 20 16:17:03 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,99 +13,100 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |flappy_bird|bird_physics:physics|prev_state
-  9. State Machine - |flappy_bird|bird_physics:physics|motion_state
+  8. State Machine - |flappy_bird|bird_physics:physics|motion_state
+  9. State Machine - |flappy_bird|bird_physics:physics|prev_state
  10. User-Specified and Inferred Latches
  11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: clk_divider:VGA
- 16. Parameter Settings for User Entity Instance: clk_divider:BG
- 17. Parameter Settings for User Entity Instance: clk_divider:FLOOR
- 18. Parameter Settings for User Entity Instance: bird_physics:physics
- 19. Parameter Settings for User Entity Instance: collision_detection:detect
- 20. Parameter Settings for User Entity Instance: pipes:pipe_shift
- 21. Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_gen:rand
- 22. Parameter Settings for User Entity Instance: image_rendering:display
- 23. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div36
- 24. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div32
- 25. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div33
- 26. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div29
- 27. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div30
- 28. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div27
- 29. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div26
- 30. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div35
- 31. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div37
- 32. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div34
- 33. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div28
- 34. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div31
- 35. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div43
- 36. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div47
- 37. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div45
- 38. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div59
- 39. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div57
- 40. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div49
- 41. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div53
- 42. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div51
- 43. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div55
- 44. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div56
- 45. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div48
- 46. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div52
- 47. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div46
- 48. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div44
- 49. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div42
- 50. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div61
- 51. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div65
- 52. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div63
- 53. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div64
- 54. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div41
- 55. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div40
- 56. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div38
- 57. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div39
- 58. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div24
- 59. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Mod1
- 60. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div25
- 61. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div22
- 62. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Mod0
- 63. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div23
- 64. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div20
- 65. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div21
- 66. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div4
- 67. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div5
- 68. Port Connectivity Checks: "image_rendering:display|medals_rom:medal"
- 69. Port Connectivity Checks: "image_rendering:display|numbers_rom:num"
- 70. Port Connectivity Checks: "image_rendering:display|score_rom:scr"
- 71. Port Connectivity Checks: "image_rendering:display|game_over_rom:over"
- 72. Port Connectivity Checks: "image_rendering:display|pipe_rom:pipe"
- 73. Port Connectivity Checks: "image_rendering:display|floor_rom:floor"
- 74. Port Connectivity Checks: "image_rendering:display|background_rom:bg"
- 75. Port Connectivity Checks: "image_rendering:display|pause_rom:pause_icon"
- 76. Port Connectivity Checks: "image_rendering:display|title_rom:title"
- 77. Port Connectivity Checks: "image_rendering:display|flap_3_neg45_rom:bird3_neg"
- 78. Port Connectivity Checks: "image_rendering:display|flap_3_pos45_rom:bird3_pos"
- 79. Port Connectivity Checks: "image_rendering:display|flap_3_rom:bird3"
- 80. Port Connectivity Checks: "image_rendering:display|flap_2_neg45_rom:bird2_neg"
- 81. Port Connectivity Checks: "image_rendering:display|flap_2_pos45_rom:bird2_pos"
- 82. Port Connectivity Checks: "image_rendering:display|flap_2_rom:bird2"
- 83. Port Connectivity Checks: "image_rendering:display|flap_1_neg45_rom:bird1_neg"
- 84. Port Connectivity Checks: "image_rendering:display|flap_1_pos45_rom:bird1_pos"
- 85. Port Connectivity Checks: "image_rendering:display|flap_1_rom:bird1"
- 86. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[5].display"
- 87. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[4].display"
- 88. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[3].display"
- 89. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[2].display"
- 90. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[1].display"
- 91. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[0].display"
- 92. Port Connectivity Checks: "score_display:score|bin_to_BCD:hiscr"
- 93. Port Connectivity Checks: "score_display:score|bin_to_BCD:scr"
- 94. Port Connectivity Checks: "pipes:pipe_shift|random_number_gen:rand"
- 95. Port Connectivity Checks: "collision_detection:detect"
- 96. Port Connectivity Checks: "vga_gen:vga"
- 97. Post-Synthesis Netlist Statistics for Top Partition
- 98. Elapsed Time Per Partition
- 99. Analysis & Synthesis Messages
-100. Analysis & Synthesis Suppressed Messages
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |flappy_bird
+ 16. Parameter Settings for User Entity Instance: clk_divider:VGA
+ 17. Parameter Settings for User Entity Instance: clk_divider:BG
+ 18. Parameter Settings for User Entity Instance: clk_divider:FLOOR
+ 19. Parameter Settings for User Entity Instance: bird_physics:physics
+ 20. Parameter Settings for User Entity Instance: collision_detection:detect
+ 21. Parameter Settings for User Entity Instance: pipes:pipe_shift
+ 22. Parameter Settings for User Entity Instance: pipes:pipe_shift|random_number_gen:rand
+ 23. Parameter Settings for User Entity Instance: image_rendering:display
+ 24. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div36
+ 25. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div32
+ 26. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div33
+ 27. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div29
+ 28. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div30
+ 29. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div27
+ 30. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div26
+ 31. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div35
+ 32. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div37
+ 33. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div34
+ 34. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div28
+ 35. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div31
+ 36. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div43
+ 37. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div47
+ 38. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div45
+ 39. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div59
+ 40. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div57
+ 41. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div49
+ 42. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div53
+ 43. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div51
+ 44. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div55
+ 45. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div56
+ 46. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div48
+ 47. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div52
+ 48. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div46
+ 49. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div44
+ 50. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div42
+ 51. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div61
+ 52. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div65
+ 53. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div63
+ 54. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div64
+ 55. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div41
+ 56. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div40
+ 57. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div38
+ 58. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div39
+ 59. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div24
+ 60. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Mod1
+ 61. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div25
+ 62. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div22
+ 63. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Mod0
+ 64. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div23
+ 65. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div20
+ 66. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div21
+ 67. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div4
+ 68. Parameter Settings for Inferred Entity Instance: image_rendering:display|lpm_divide:Div5
+ 69. Port Connectivity Checks: "image_rendering:display|medals_rom:medal"
+ 70. Port Connectivity Checks: "image_rendering:display|numbers_rom:num"
+ 71. Port Connectivity Checks: "image_rendering:display|score_rom:scr"
+ 72. Port Connectivity Checks: "image_rendering:display|game_over_rom:over"
+ 73. Port Connectivity Checks: "image_rendering:display|pipe_rom:pipe"
+ 74. Port Connectivity Checks: "image_rendering:display|floor_rom:floor"
+ 75. Port Connectivity Checks: "image_rendering:display|background_rom:bg"
+ 76. Port Connectivity Checks: "image_rendering:display|pause_rom:pause_icon"
+ 77. Port Connectivity Checks: "image_rendering:display|title_rom:title"
+ 78. Port Connectivity Checks: "image_rendering:display|flap_3_neg45_rom:bird3_neg"
+ 79. Port Connectivity Checks: "image_rendering:display|flap_3_pos45_rom:bird3_pos"
+ 80. Port Connectivity Checks: "image_rendering:display|flap_3_rom:bird3"
+ 81. Port Connectivity Checks: "image_rendering:display|flap_2_neg45_rom:bird2_neg"
+ 82. Port Connectivity Checks: "image_rendering:display|flap_2_pos45_rom:bird2_pos"
+ 83. Port Connectivity Checks: "image_rendering:display|flap_2_rom:bird2"
+ 84. Port Connectivity Checks: "image_rendering:display|flap_1_neg45_rom:bird1_neg"
+ 85. Port Connectivity Checks: "image_rendering:display|flap_1_pos45_rom:bird1_pos"
+ 86. Port Connectivity Checks: "image_rendering:display|flap_1_rom:bird1"
+ 87. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[5].display"
+ 88. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[4].display"
+ 89. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[3].display"
+ 90. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[2].display"
+ 91. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[1].display"
+ 92. Port Connectivity Checks: "score_display:score|hex_to_7seg:seven_seg_loop[0].display"
+ 93. Port Connectivity Checks: "score_display:score|bin_to_BCD:hiscr"
+ 94. Port Connectivity Checks: "score_display:score|bin_to_BCD:scr"
+ 95. Port Connectivity Checks: "pipes:pipe_shift|random_number_gen:rand"
+ 96. Port Connectivity Checks: "collision_detection:detect"
+ 97. Port Connectivity Checks: "vga_gen:vga"
+ 98. Post-Synthesis Netlist Statistics for Top Partition
+ 99. Elapsed Time Per Partition
+100. Analysis & Synthesis Messages
+101. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -131,7 +132,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 20 06:39:50 2021       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 20 16:17:02 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; flappy_bird                                 ;
@@ -246,14 +247,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.70        ;
+; Average used               ; 1.70        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  56.6%      ;
-;     Processor 3            ;  56.6%      ;
-;     Processor 4            ;  56.6%      ;
+;     Processor 2            ;  23.3%      ;
+;     Processor 3            ;  23.3%      ;
+;     Processor 4            ;  23.2%      ;
 +----------------------------+-------------+
 
 
@@ -315,14 +316,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------------+
 ; Resource                                    ; Usage                                                ;
 +---------------------------------------------+------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 15423                                                ;
+; Estimate of Logic utilization (ALMs needed) ; 15398                                                ;
 ;                                             ;                                                      ;
-; Combinational ALUT usage for logic          ; 24350                                                ;
-;     -- 7 input functions                    ; 241                                                  ;
-;     -- 6 input functions                    ; 6248                                                 ;
-;     -- 5 input functions                    ; 4259                                                 ;
-;     -- 4 input functions                    ; 3902                                                 ;
-;     -- <=3 input functions                  ; 9700                                                 ;
+; Combinational ALUT usage for logic          ; 24280                                                ;
+;     -- 7 input functions                    ; 231                                                  ;
+;     -- 6 input functions                    ; 6279                                                 ;
+;     -- 5 input functions                    ; 4167                                                 ;
+;     -- 4 input functions                    ; 3849                                                 ;
+;     -- <=3 input functions                  ; 9754                                                 ;
 ;                                             ;                                                      ;
 ; Dedicated logic registers                   ; 644                                                  ;
 ;                                             ;                                                      ;
@@ -330,9 +331,9 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                      ;
 ; Total DSP Blocks                            ; 0                                                    ;
 ;                                             ;                                                      ;
-; Maximum fan-out node                        ; image_rendering:display|background_rom:bg|col_reg[2] ;
-; Maximum fan-out                             ; 1600                                                 ;
-; Total fan-out                               ; 100760                                               ;
+; Maximum fan-out node                        ; image_rendering:display|background_rom:bg|col_reg[1] ;
+; Maximum fan-out                             ; 1624                                                 ;
+; Total fan-out                               ; 100286                                               ;
 ; Average fan-out                             ; 4.00                                                 ;
 +---------------------------------------------+------------------------------------------------------+
 
@@ -342,15 +343,15 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |flappy_bird                                  ; 24350 (1)           ; 644 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                          ; flappy_bird         ; work         ;
-;    |bird_physics:physics|                     ; 242 (242)           ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:physics                                                                                                     ; bird_physics        ; work         ;
+; |flappy_bird                                  ; 24280 (1)           ; 644 (0)                   ; 0                 ; 0          ; 85   ; 0            ; |flappy_bird                                                                                                                          ; flappy_bird         ; work         ;
+;    |bird_physics:physics|                     ; 243 (243)           ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|bird_physics:physics                                                                                                     ; bird_physics        ; work         ;
 ;    |clk_divider:BG|                           ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:BG                                                                                                           ; clk_divider         ; work         ;
 ;    |clk_divider:FLOOR|                        ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:FLOOR                                                                                                        ; clk_divider         ; work         ;
 ;    |clk_divider:VGA|                          ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|clk_divider:VGA                                                                                                          ; clk_divider         ; work         ;
 ;    |collision_detection:detect|               ; 464 (464)           ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|collision_detection:detect                                                                                               ; collision_detection ; work         ;
 ;    |game_FSM:FSM|                             ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|game_FSM:FSM                                                                                                             ; game_FSM            ; work         ;
-;    |image_rendering:display|                  ; 22402 (4532)        ; 158 (56)                  ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display                                                                                                  ; image_rendering     ; work         ;
-;       |background_rom:bg|                     ; 4659 (4659)         ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|background_rom:bg                                                                                ; background_rom      ; work         ;
+;    |image_rendering:display|                  ; 22331 (4536)        ; 158 (56)                  ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display                                                                                                  ; image_rendering     ; work         ;
+;       |background_rom:bg|                     ; 4505 (4505)         ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|background_rom:bg                                                                                ; background_rom      ; work         ;
 ;       |flap_1_neg45_rom:bird1_neg|            ; 115 (115)           ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_1_neg45_rom:bird1_neg                                                                       ; flap_1_neg45_rom    ; work         ;
 ;       |flap_1_pos45_rom:bird1_pos|            ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_1_pos45_rom:bird1_pos                                                                       ; flap_1_pos45_rom    ; work         ;
 ;       |flap_1_rom:bird1|                      ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_1_rom:bird1                                                                                 ; flap_1_rom          ; work         ;
@@ -360,8 +361,8 @@ refer to the applicable agreement for further details.
 ;       |flap_3_neg45_rom:bird3_neg|            ; 83 (83)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_3_neg45_rom:bird3_neg                                                                       ; flap_3_neg45_rom    ; work         ;
 ;       |flap_3_pos45_rom:bird3_pos|            ; 110 (110)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_3_pos45_rom:bird3_pos                                                                       ; flap_3_pos45_rom    ; work         ;
 ;       |flap_3_rom:bird3|                      ; 133 (133)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|flap_3_rom:bird3                                                                                 ; flap_3_rom          ; work         ;
-;       |floor_rom:floor|                       ; 543 (543)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
-;       |game_over_rom:over|                    ; 1506 (1506)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|game_over_rom:over                                                                               ; game_over_rom       ; work         ;
+;       |floor_rom:floor|                       ; 547 (547)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|floor_rom:floor                                                                                  ; floor_rom           ; work         ;
+;       |game_over_rom:over|                    ; 1507 (1507)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|game_over_rom:over                                                                               ; game_over_rom       ; work         ;
 ;       |lpm_divide:Div20|                      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Div20                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Div20|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 97 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Div20|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
@@ -542,12 +543,12 @@ refer to the applicable agreement for further details.
 ;          |lpm_divide_25m:auto_generated|      ; 257 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Mod1|lpm_divide_25m:auto_generated                                                    ; lpm_divide_25m      ; work         ;
 ;             |sign_div_unsign_5nh:divider|     ; 257 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Mod1|lpm_divide_25m:auto_generated|sign_div_unsign_5nh:divider                        ; sign_div_unsign_5nh ; work         ;
 ;                |alt_u_div_g2f:divider|        ; 257 (257)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|lpm_divide:Mod1|lpm_divide_25m:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_g2f:divider  ; alt_u_div_g2f       ; work         ;
-;       |medals_rom:medal|                      ; 1827 (1827)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|medals_rom:medal                                                                                 ; medals_rom          ; work         ;
+;       |medals_rom:medal|                      ; 1870 (1870)         ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|medals_rom:medal                                                                                 ; medals_rom          ; work         ;
 ;       |numbers_rom:num|                       ; 38 (38)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|numbers_rom:num                                                                                  ; numbers_rom         ; work         ;
 ;       |pause_rom:pause_icon|                  ; 58 (58)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|pause_rom:pause_icon                                                                             ; pause_rom           ; work         ;
 ;       |pipe_rom:pipe|                         ; 321 (321)           ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|pipe_rom:pipe                                                                                    ; pipe_rom            ; work         ;
 ;       |score_rom:scr|                         ; 565 (565)           ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|score_rom:scr                                                                                    ; score_rom           ; work         ;
-;       |title_rom:title|                       ; 2391 (2391)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|title_rom:title                                                                                  ; title_rom           ; work         ;
+;       |title_rom:title|                       ; 2422 (2422)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|image_rendering:display|title_rom:title                                                                                  ; title_rom           ; work         ;
 ;    |keyboard_input:kb|                        ; 75 (74)             ; 57 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb                                                                                                        ; keyboard_input      ; work         ;
 ;       |key_filter:p_edge|                     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|keyboard_input:kb|key_filter:p_edge                                                                                      ; key_filter          ; work         ;
 ;    |pipes:pipe_shift|                         ; 892 (891)           ; 220 (188)                 ; 0                 ; 0          ; 0    ; 0            ; |flappy_bird|pipes:pipe_shift                                                                                                         ; pipes               ; work         ;
@@ -564,17 +565,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------+
-; State Machine - |flappy_bird|bird_physics:physics|prev_state ;
-+-----------------+--------------------------------------------+
-; Name            ; prev_state.UP                              ;
-+-----------------+--------------------------------------------+
-; prev_state.DOWN ; 0                                          ;
-; prev_state.UP   ; 1                                          ;
-+-----------------+--------------------------------------------+
-
-
-Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------+
 ; State Machine - |flappy_bird|bird_physics:physics|motion_state                                 ;
 +-------------------+-------------------+-----------------+-------------------+------------------+
@@ -585,6 +575,17 @@ Encoding Type:  One-Hot
 ; motion_state.UP   ; 0                 ; 1               ; 1                 ; 0                ;
 ; motion_state.STOP ; 1                 ; 0               ; 1                 ; 0                ;
 +-------------------+-------------------+-----------------+-------------------+------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |flappy_bird|bird_physics:physics|prev_state ;
++-----------------+--------------------------------------------+
+; Name            ; prev_state.UP                              ;
++-----------------+--------------------------------------------+
+; prev_state.DOWN ; 0                                          ;
+; prev_state.UP   ; 1                                          ;
++-----------------+--------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -860,7 +861,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; game_FSM:FSM|game_state[0]              ; 177     ;
+; game_FSM:FSM|game_state[0]              ; 173     ;
 ; pipes:pipe_shift|pipeX[3][1]            ; 8       ;
 ; bird_physics:physics|birdY[0]           ; 9       ;
 ; pipes:pipe_shift|pipeX[0][9]            ; 6       ;
@@ -939,7 +940,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_rendering:display|pipe_row[4]                 ;
 ; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |flappy_bird|image_rendering:display|num_row                     ;
 ; 9:1                ; 22 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |flappy_bird|image_rendering:display|Mux85                       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |flappy_bird|bird_physics:physics|Selector72                     ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|image_rendering:display|medals_rom:medal|col_reg[0] ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|image_rendering:display|medals_rom:medal|row_reg[6] ;
 ; 4:1                ; 7 bits    ; 14 LEs        ; 0 LEs                ; 14 LEs                 ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeY[3][3]                        ;
@@ -950,16 +950,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[1][4]                        ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[2][5]                        ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flappy_bird|pipes:pipe_shift|pipeX[3][7]                        ;
-; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|birdY[24]                      ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|birdY[27]                      ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |flappy_bird|bird_physics:physics|flap_elapsed[0]                ;
 ; 7:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|flap_start[14]                 ;
 ; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|flap_elapsed[31]               ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|birdY[0]                       ;
 ; 7:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|flap_start[11]                 ;
 ; 8:1                ; 13 bits   ; 65 LEs        ; 39 LEs               ; 26 LEs                 ; Yes        ; |flappy_bird|bird_physics:physics|flap_elapsed[18]               ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:physics|Selector68                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |flappy_bird|bird_physics:physics|Selector72                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:physics|Selector71                     ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |flappy_bird|bird_physics:physics|Selector70                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |flappy_bird ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; SCALE          ; 3     ; Signed Integer                                     ;
+; PIPE_GAP       ; 75    ; Signed Integer                                     ;
+; NUM_PIPES      ; 4     ; Signed Integer                                     ;
+; PIPE_SEP       ; 250   ; Signed Integer                                     ;
+; BIRD_SIZE_X    ; 54    ; Signed Integer                                     ;
+; BIRD_SIZE_Y    ; 45    ; Signed Integer                                     ;
+; BIRD_X         ; 150   ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------+
@@ -2389,7 +2406,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 40                          ;
 ;     SCLR              ; 96                          ;
 ;     plain             ; 147                         ;
-; arriav_lcell_comb     ; 24362                       ;
+; arriav_lcell_comb     ; 24292                       ;
 ;     arith             ; 4975                        ;
 ;         0 data inputs ; 915                         ;
 ;         1 data inputs ; 2212                        ;
@@ -2397,16 +2414,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 872                         ;
 ;         4 data inputs ; 779                         ;
 ;         5 data inputs ; 4                           ;
-;     extend            ; 241                         ;
-;         7 data inputs ; 241                         ;
-;     normal            ; 18547                       ;
+;     extend            ; 231                         ;
+;         7 data inputs ; 231                         ;
+;     normal            ; 18487                       ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 84                          ;
-;         2 data inputs ; 2833                        ;
-;         3 data inputs ; 2006                        ;
-;         4 data inputs ; 3119                        ;
-;         5 data inputs ; 4255                        ;
-;         6 data inputs ; 6248                        ;
+;         2 data inputs ; 2913                        ;
+;         3 data inputs ; 1980                        ;
+;         4 data inputs ; 3066                        ;
+;         5 data inputs ; 4163                        ;
+;         6 data inputs ; 6279                        ;
 ;     shared            ; 599                         ;
 ;         0 data inputs ; 26                          ;
 ;         1 data inputs ; 291                         ;
@@ -2416,7 +2433,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 85                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 44.20                       ;
-; Average LUT depth     ; 17.48                       ;
+; Average LUT depth     ; 17.49                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2425,7 +2442,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:03:25     ;
+; Top            ; 00:03:33     ;
 +----------------+--------------+
 
 
@@ -2435,7 +2452,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 20 06:36:11 2021
+    Info: Processing started: Thu May 20 16:13:06 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2505,26 +2522,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file sprites
 Info (12021): Found 1 design units, including 1 entities, in source file sprites/background_rom.v
     Info (12023): Found entity 1: background_rom File: C:/Users/James/Workspace/ELEC5566M-MiniProject/sprites/background_rom.v Line: 1
 Info (12127): Elaborating entity "flappy_bird" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at flappy_bird.v(209): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 209
-Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 51
-Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:BG" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 55
-Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:FLOOR" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 59
-Info (12128): Elaborating entity "vga_gen" for hierarchy "vga_gen:vga" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 87
+Warning (10230): Verilog HDL assignment warning at flappy_bird.v(206): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 206
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 48
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:BG" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 52
+Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:FLOOR" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 56
+Info (12128): Elaborating entity "vga_gen" for hierarchy "vga_gen:vga" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 84
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(31): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/vga_gen.v Line: 31
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(44): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/vga_gen.v Line: 44
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(56): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/vga_gen.v Line: 56
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(57): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/vga_gen.v Line: 57
 Warning (10230): Verilog HDL assignment warning at vga_gen.v(58): truncated value with size 32 to match size of target (1) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/vga_gen.v Line: 58
-Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 100
+Info (12128): Elaborating entity "keyboard_input" for hierarchy "keyboard_input:kb" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 97
 Info (12128): Elaborating entity "key_filter" for hierarchy "keyboard_input:kb|key_filter:p_edge" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/keyboard_input.v Line: 84
-Info (12128): Elaborating entity "game_FSM" for hierarchy "game_FSM:FSM" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 114
+Info (12128): Elaborating entity "game_FSM" for hierarchy "game_FSM:FSM" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 111
 Info (10264): Verilog HDL Case Statement information at game_FSM.v(40): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/game_FSM.v Line: 40
-Info (12128): Elaborating entity "bird_physics" for hierarchy "bird_physics:physics" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 130
-Info (12128): Elaborating entity "collision_detection" for hierarchy "collision_detection:detect" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 147
-Info (12128): Elaborating entity "pipes" for hierarchy "pipes:pipe_shift" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 164
+Info (12128): Elaborating entity "bird_physics" for hierarchy "bird_physics:physics" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 127
+Info (12128): Elaborating entity "collision_detection" for hierarchy "collision_detection:detect" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 144
+Info (12128): Elaborating entity "pipes" for hierarchy "pipes:pipe_shift" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 161
 Info (10264): Verilog HDL Case Statement information at pipes.v(75): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/pipes.v Line: 75
 Info (12128): Elaborating entity "random_number_gen" for hierarchy "pipes:pipe_shift|random_number_gen:rand" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/pipes.v Line: 47
-Info (12128): Elaborating entity "score_display" for hierarchy "score_display:score" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 176
+Info (12128): Elaborating entity "score_display" for hierarchy "score_display:score" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 173
 Warning (10235): Verilog HDL Always Construct warning at score_display.v(37): variable "hiscore" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 37
 Warning (10240): Verilog HDL Always Construct warning at score_display.v(32): inferring latch(es) for variable "hiscore", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 32
 Info (10041): Inferred latch for "hiscore[0]" at score_display.v(37) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 37
@@ -2562,7 +2579,7 @@ Info (10041): Inferred latch for "hiscore[31]" at score_display.v(37) File: C:/U
 Info (12128): Elaborating entity "bin_to_BCD" for hierarchy "score_display:score|bin_to_BCD:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 41
 Warning (10230): Verilog HDL assignment warning at bin_to_BCD.v(41): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/bin_to_BCD.v Line: 41
 Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_display:score|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 52
-Info (12128): Elaborating entity "image_rendering" for hierarchy "image_rendering:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 206
+Info (12128): Elaborating entity "image_rendering" for hierarchy "image_rendering:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 203
 Info (10264): Verilog HDL Case Statement information at image_rendering.v(105): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 105
 Warning (10230): Verilog HDL assignment warning at image_rendering.v(327): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 327
 Warning (10230): Verilog HDL assignment warning at image_rendering.v(337): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 337
@@ -2667,137 +2684,137 @@ Info (12128): Elaborating entity "score_rom" for hierarchy "image_rendering:disp
 Info (12128): Elaborating entity "numbers_rom" for hierarchy "image_rendering:display|numbers_rom:num" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 465
 Info (12128): Elaborating entity "medals_rom" for hierarchy "image_rendering:display|medals_rom:medal" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 473
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
-    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 66
+    Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "X[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[29]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[28]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[27]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[26]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[25]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[24]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[23]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[22]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[21]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[20]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[19]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[18]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
+    Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 63
 Info (278001): Inferred 45 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 417
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div32" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/image_rendering.v Line: 412
@@ -2941,43 +2958,43 @@ Warning (13012): Latch score_display:score|hiscore[30] has unsafe behavior File:
 Warning (13012): Latch score_display:score|hiscore[29] has unsafe behavior File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/score_display.v Line: 37
     Warning (13013): Ports D and ENA on the latch are fed by the same signal pipes:pipe_shift|score_count[29] File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/pipes.v Line: 75
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 32
-    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 34
-    Warning (13410): Pin "seven_seg[21]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[22]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[23]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[24]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[25]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[26]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[27]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[28]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[29]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[30]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[31]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[32]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[33]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[34]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[35]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[36]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[37]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[38]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[39]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[40]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
-    Warning (13410): Pin "seven_seg[41]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 36
+    Warning (13410): Pin "sync_n" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 40
+    Warning (13410): Pin "LED[9]" is stuck at GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 42
+    Warning (13410): Pin "seven_seg[21]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[22]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[23]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[24]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[25]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[26]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[27]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[28]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[29]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[30]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[31]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[32]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[33]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[34]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[35]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[36]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[37]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[38]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[39]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[40]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
+    Warning (13410): Pin "seven_seg[41]" is stuck at VCC File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird/flappy_bird.v Line: 44
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 35 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/James/Workspace/ELEC5566M-MiniProject/output_files/MiniProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 24523 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 24453 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 24438 logic cells
+    Info (21061): Implemented 24368 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 221 warnings
-    Info: Peak virtual memory: 5142 megabytes
-    Info: Processing ended: Thu May 20 06:39:51 2021
-    Info: Elapsed time: 00:03:40
-    Info: Total CPU time (on all processors): 00:04:16
+    Info: Peak virtual memory: 5143 megabytes
+    Info: Processing ended: Thu May 20 16:17:03 2021
+    Info: Elapsed time: 00:03:57
+    Info: Total CPU time (on all processors): 00:04:22
 
 
 +------------------------------------------+

@@ -68,7 +68,7 @@ wire flap, pause, collision;
 
 
 // Instantiation of the vga generator module. This module outputs the relevant VGA port
-// outputs as well as the current update pixel coordinates (X,Y). These coordinates are
+// signals as well as the current update pixel coordinates (X,Y). These coordinates are
 // used by the image renderer to time sprite display.
 vga_gen vga
 (

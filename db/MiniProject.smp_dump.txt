@@ -1,12 +1,12 @@
 
-State Machine - |flappy_bird|bird_physics:physics|prev_state
-Name prev_state.UP 
-prev_state.DOWN 0 
-prev_state.UP 1 
-
 State Machine - |flappy_bird|bird_physics:physics|motion_state
 Name motion_state.STOP motion_state.UP motion_state.DOWN motion_state.TOP 
 motion_state.DOWN 0 0 0 0 
 motion_state.TOP 0 0 1 1 
 motion_state.UP 0 1 1 0 
 motion_state.STOP 1 0 1 0 
+
+State Machine - |flappy_bird|bird_physics:physics|prev_state
+Name prev_state.UP 
+prev_state.DOWN 0 
+prev_state.UP 1 
