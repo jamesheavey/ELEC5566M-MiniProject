@@ -4,15 +4,79 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "seven_seg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seven_seg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "v_clk",
+					"strict" : false
+				},
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[8]",
+					"strict" : false
+				},
+				{
 					"name" : "h_sync",
 					"strict" : false
 				},
 				{
 					"name" : "v_sync",
-					"strict" : false
-				},
-				{
-					"name" : "v_clk",
 					"strict" : false
 				},
 				{
@@ -113,70 +177,6 @@
 				},
 				{
 					"name" : "B[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[7]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[8]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[0]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[1]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[3]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[4]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[5]",
-					"strict" : false
-				},
-				{
-					"name" : "seven_seg[6]",
 					"strict" : false
 				},
 				{

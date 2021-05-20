@@ -1,6 +1,6 @@
 /*
- * ELEC5566 Assignment 2:
- * Key Press Filter
+ * ELEC5566 MINI-PROJECT:
+ * KEY-PRESS FILTER
  * ---------------------------------
  * For: University of Leeds
  * Date: 10/3/2021
@@ -14,7 +14,7 @@
 
 module key_filter
 (
-	input clock, key,
+	input clk, key,
 
 	output p_key
 ); 
@@ -22,7 +22,7 @@ module key_filter
 reg delay;
 
 // delay the signal by 1 clock cycle
-always @(posedge clock) begin
+always @(posedge clk) begin
 	
 	// delay is 1 if any key is pressed, preventing
 	// multiple key presses

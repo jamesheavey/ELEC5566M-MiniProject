@@ -11,33 +11,71 @@
 # Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject {C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:20:24 on May 20,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject" C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v 
+# -- Compiling module score_display
+# 
+# Top level modules:
+# 	score_display
+# End time: 01:20:24 on May 20,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject {C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:20:24 on May 20,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject" C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v 
+# -- Compiling module hex_to_7seg
+# 
+# Top level modules:
+# 	hex_to_7seg
+# End time: 01:20:24 on May 20,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject {C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:01:10 on May 19,2021
+# Start time: 01:20:24 on May 20,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject" C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v 
 # -- Compiling module bin_to_BCD
 # 
 # Top level modules:
 # 	bin_to_BCD
-# End time: 05:01:10 on May 19,2021, Elapsed time: 0:00:00
+# End time: 01:20:24 on May 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches {C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches {C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/score_display_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:01:11 on May 19,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches" C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/bin_to_BCD_tb.v 
-# -- Compiling module bin_to_BCD_tb
+# Start time: 01:20:24 on May 20,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches" C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/score_display_tb.v 
+# -- Compiling module score_display_tb
 # 
 # Top level modules:
-# 	bin_to_BCD_tb
-# End time: 05:01:11 on May 19,2021, Elapsed time: 0:00:00
+# 	score_display_tb
+# End time: 01:20:24 on May 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  bin_to_BCD_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" bin_to_BCD_tb 
-# Start time: 05:01:11 on May 19,2021
-# Loading work.bin_to_BCD_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  score_display_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" score_display_tb 
+# Start time: 01:20:25 on May 20,2021
+# Loading work.score_display_tb
+# Loading work.score_display
 # Loading work.bin_to_BCD
+# Loading work.hex_to_7seg
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[0]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[1]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[2]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[3]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[4]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(39): [PCDPC] - Port size (4) does not match connection size (32) for port 'hex'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v(17).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/seven_seg_loop[5]/display File: C:/Users/James/Workspace/ELEC5566M-MiniProject/hex_to_7seg.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(46): [PCDPC] - Port size (10) does not match connection size (32) for port 'bin'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/scr File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v
+# ** Warning: (vsim-3015) C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v(47): [PCDPC] - Port size (10) does not match connection size (32) for port 'bin'. The port definition is at: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /score_display_tb/dut/hiscr File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v
 # 
 # add wave *
 # view structure
@@ -45,1007 +83,108 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-#                    0 ns	Simulation Started
-# BINARY=    1. 100ths=  0. 10s=  0. 1s=  0.
-# BINARY=    2. 100ths=  0. 10s=  0. 1s=  1.
-# BINARY=    3. 100ths=  0. 10s=  0. 1s=  2.
-# BINARY=    4. 100ths=  0. 10s=  0. 1s=  3.
-# BINARY=    5. 100ths=  0. 10s=  0. 1s=  4.
-# BINARY=    6. 100ths=  0. 10s=  0. 1s=  5.
-# BINARY=    7. 100ths=  0. 10s=  0. 1s=  6.
-# BINARY=    8. 100ths=  0. 10s=  0. 1s=  7.
-# BINARY=    9. 100ths=  0. 10s=  0. 1s=  8.
-# BINARY=   10. 100ths=  0. 10s=  0. 1s=  9.
-# BINARY=   11. 100ths=  0. 10s=  1. 1s=  0.
-# BINARY=   12. 100ths=  0. 10s=  1. 1s=  1.
-# BINARY=   13. 100ths=  0. 10s=  1. 1s=  2.
-# BINARY=   14. 100ths=  0. 10s=  1. 1s=  3.
-# BINARY=   15. 100ths=  0. 10s=  1. 1s=  4.
-# BINARY=   16. 100ths=  0. 10s=  1. 1s=  5.
-# BINARY=   17. 100ths=  0. 10s=  1. 1s=  6.
-# BINARY=   18. 100ths=  0. 10s=  1. 1s=  7.
-# BINARY=   19. 100ths=  0. 10s=  1. 1s=  8.
-# BINARY=   20. 100ths=  0. 10s=  1. 1s=  9.
-# BINARY=   21. 100ths=  0. 10s=  2. 1s=  0.
-# BINARY=   22. 100ths=  0. 10s=  2. 1s=  1.
-# BINARY=   23. 100ths=  0. 10s=  2. 1s=  2.
-# BINARY=   24. 100ths=  0. 10s=  2. 1s=  3.
-# BINARY=   25. 100ths=  0. 10s=  2. 1s=  4.
-# BINARY=   26. 100ths=  0. 10s=  2. 1s=  5.
-# BINARY=   27. 100ths=  0. 10s=  2. 1s=  6.
-# BINARY=   28. 100ths=  0. 10s=  2. 1s=  7.
-# BINARY=   29. 100ths=  0. 10s=  2. 1s=  8.
-# BINARY=   30. 100ths=  0. 10s=  2. 1s=  9.
-# BINARY=   31. 100ths=  0. 10s=  3. 1s=  0.
-# BINARY=   32. 100ths=  0. 10s=  3. 1s=  1.
-# BINARY=   33. 100ths=  0. 10s=  3. 1s=  2.
-# BINARY=   34. 100ths=  0. 10s=  3. 1s=  3.
-# BINARY=   35. 100ths=  0. 10s=  3. 1s=  4.
-# BINARY=   36. 100ths=  0. 10s=  3. 1s=  5.
-# BINARY=   37. 100ths=  0. 10s=  3. 1s=  6.
-# BINARY=   38. 100ths=  0. 10s=  3. 1s=  7.
-# BINARY=   39. 100ths=  0. 10s=  3. 1s=  8.
-# BINARY=   40. 100ths=  0. 10s=  3. 1s=  9.
-# BINARY=   41. 100ths=  0. 10s=  4. 1s=  0.
-# BINARY=   42. 100ths=  0. 10s=  4. 1s=  1.
-# BINARY=   43. 100ths=  0. 10s=  4. 1s=  2.
-# BINARY=   44. 100ths=  0. 10s=  4. 1s=  3.
-# BINARY=   45. 100ths=  0. 10s=  4. 1s=  4.
-# BINARY=   46. 100ths=  0. 10s=  4. 1s=  5.
-# BINARY=   47. 100ths=  0. 10s=  4. 1s=  6.
-# BINARY=   48. 100ths=  0. 10s=  4. 1s=  7.
-# BINARY=   49. 100ths=  0. 10s=  4. 1s=  8.
-# BINARY=   50. 100ths=  0. 10s=  4. 1s=  9.
-# BINARY=   51. 100ths=  0. 10s=  5. 1s=  0.
-# BINARY=   52. 100ths=  0. 10s=  5. 1s=  1.
-# BINARY=   53. 100ths=  0. 10s=  5. 1s=  2.
-# BINARY=   54. 100ths=  0. 10s=  5. 1s=  3.
-# BINARY=   55. 100ths=  0. 10s=  5. 1s=  4.
-# BINARY=   56. 100ths=  0. 10s=  5. 1s=  5.
-# BINARY=   57. 100ths=  0. 10s=  5. 1s=  6.
-# BINARY=   58. 100ths=  0. 10s=  5. 1s=  7.
-# BINARY=   59. 100ths=  0. 10s=  5. 1s=  8.
-# BINARY=   60. 100ths=  0. 10s=  5. 1s=  9.
-# BINARY=   61. 100ths=  0. 10s=  6. 1s=  0.
-# BINARY=   62. 100ths=  0. 10s=  6. 1s=  1.
-# BINARY=   63. 100ths=  0. 10s=  6. 1s=  2.
-# BINARY=   64. 100ths=  0. 10s=  6. 1s=  3.
-# BINARY=   65. 100ths=  0. 10s=  6. 1s=  4.
-# BINARY=   66. 100ths=  0. 10s=  6. 1s=  5.
-# BINARY=   67. 100ths=  0. 10s=  6. 1s=  6.
-# BINARY=   68. 100ths=  0. 10s=  6. 1s=  7.
-# BINARY=   69. 100ths=  0. 10s=  6. 1s=  8.
-# BINARY=   70. 100ths=  0. 10s=  6. 1s=  9.
-# BINARY=   71. 100ths=  0. 10s=  7. 1s=  0.
-# BINARY=   72. 100ths=  0. 10s=  7. 1s=  1.
-# BINARY=   73. 100ths=  0. 10s=  7. 1s=  2.
-# BINARY=   74. 100ths=  0. 10s=  7. 1s=  3.
-# BINARY=   75. 100ths=  0. 10s=  7. 1s=  4.
-# BINARY=   76. 100ths=  0. 10s=  7. 1s=  5.
-# BINARY=   77. 100ths=  0. 10s=  7. 1s=  6.
-# BINARY=   78. 100ths=  0. 10s=  7. 1s=  7.
-# BINARY=   79. 100ths=  0. 10s=  7. 1s=  8.
-# BINARY=   80. 100ths=  0. 10s=  7. 1s=  9.
-# BINARY=   81. 100ths=  0. 10s=  8. 1s=  0.
-# BINARY=   82. 100ths=  0. 10s=  8. 1s=  1.
-# BINARY=   83. 100ths=  0. 10s=  8. 1s=  2.
-# BINARY=   84. 100ths=  0. 10s=  8. 1s=  3.
-# BINARY=   85. 100ths=  0. 10s=  8. 1s=  4.
-# BINARY=   86. 100ths=  0. 10s=  8. 1s=  5.
-# BINARY=   87. 100ths=  0. 10s=  8. 1s=  6.
-# BINARY=   88. 100ths=  0. 10s=  8. 1s=  7.
-# BINARY=   89. 100ths=  0. 10s=  8. 1s=  8.
-# BINARY=   90. 100ths=  0. 10s=  8. 1s=  9.
-# BINARY=   91. 100ths=  0. 10s=  9. 1s=  0.
-# BINARY=   92. 100ths=  0. 10s=  9. 1s=  1.
-# BINARY=   93. 100ths=  0. 10s=  9. 1s=  2.
-# BINARY=   94. 100ths=  0. 10s=  9. 1s=  3.
-# BINARY=   95. 100ths=  0. 10s=  9. 1s=  4.
-# BINARY=   96. 100ths=  0. 10s=  9. 1s=  5.
-# BINARY=   97. 100ths=  0. 10s=  9. 1s=  6.
-# BINARY=   98. 100ths=  0. 10s=  9. 1s=  7.
-# BINARY=   99. 100ths=  0. 10s=  9. 1s=  8.
-# BINARY=  100. 100ths=  0. 10s=  9. 1s=  9.
-# BINARY=  101. 100ths=  1. 10s=  0. 1s=  0.
-# BINARY=  102. 100ths=  1. 10s=  0. 1s=  1.
-# BINARY=  103. 100ths=  1. 10s=  0. 1s=  2.
-# BINARY=  104. 100ths=  1. 10s=  0. 1s=  3.
-# BINARY=  105. 100ths=  1. 10s=  0. 1s=  4.
-# BINARY=  106. 100ths=  1. 10s=  0. 1s=  5.
-# BINARY=  107. 100ths=  1. 10s=  0. 1s=  6.
-# BINARY=  108. 100ths=  1. 10s=  0. 1s=  7.
-# BINARY=  109. 100ths=  1. 10s=  0. 1s=  8.
-# BINARY=  110. 100ths=  1. 10s=  0. 1s=  9.
-# BINARY=  111. 100ths=  1. 10s=  1. 1s=  0.
-# BINARY=  112. 100ths=  1. 10s=  1. 1s=  1.
-# BINARY=  113. 100ths=  1. 10s=  1. 1s=  2.
-# BINARY=  114. 100ths=  1. 10s=  1. 1s=  3.
-# BINARY=  115. 100ths=  1. 10s=  1. 1s=  4.
-# BINARY=  116. 100ths=  1. 10s=  1. 1s=  5.
-# BINARY=  117. 100ths=  1. 10s=  1. 1s=  6.
-# BINARY=  118. 100ths=  1. 10s=  1. 1s=  7.
-# BINARY=  119. 100ths=  1. 10s=  1. 1s=  8.
-# BINARY=  120. 100ths=  1. 10s=  1. 1s=  9.
-# BINARY=  121. 100ths=  1. 10s=  2. 1s=  0.
-# BINARY=  122. 100ths=  1. 10s=  2. 1s=  1.
-# BINARY=  123. 100ths=  1. 10s=  2. 1s=  2.
-# BINARY=  124. 100ths=  1. 10s=  2. 1s=  3.
-# BINARY=  125. 100ths=  1. 10s=  2. 1s=  4.
-# BINARY=  126. 100ths=  1. 10s=  2. 1s=  5.
-# BINARY=  127. 100ths=  1. 10s=  2. 1s=  6.
-# BINARY=  128. 100ths=  1. 10s=  2. 1s=  7.
-# BINARY=  129. 100ths=  1. 10s=  2. 1s=  8.
-# BINARY=  130. 100ths=  1. 10s=  2. 1s=  9.
-# BINARY=  131. 100ths=  1. 10s=  3. 1s=  0.
-# BINARY=  132. 100ths=  1. 10s=  3. 1s=  1.
-# BINARY=  133. 100ths=  1. 10s=  3. 1s=  2.
-# BINARY=  134. 100ths=  1. 10s=  3. 1s=  3.
-# BINARY=  135. 100ths=  1. 10s=  3. 1s=  4.
-# BINARY=  136. 100ths=  1. 10s=  3. 1s=  5.
-# BINARY=  137. 100ths=  1. 10s=  3. 1s=  6.
-# BINARY=  138. 100ths=  1. 10s=  3. 1s=  7.
-# BINARY=  139. 100ths=  1. 10s=  3. 1s=  8.
-# BINARY=  140. 100ths=  1. 10s=  3. 1s=  9.
-# BINARY=  141. 100ths=  1. 10s=  4. 1s=  0.
-# BINARY=  142. 100ths=  1. 10s=  4. 1s=  1.
-# BINARY=  143. 100ths=  1. 10s=  4. 1s=  2.
-# BINARY=  144. 100ths=  1. 10s=  4. 1s=  3.
-# BINARY=  145. 100ths=  1. 10s=  4. 1s=  4.
-# BINARY=  146. 100ths=  1. 10s=  4. 1s=  5.
-# BINARY=  147. 100ths=  1. 10s=  4. 1s=  6.
-# BINARY=  148. 100ths=  1. 10s=  4. 1s=  7.
-# BINARY=  149. 100ths=  1. 10s=  4. 1s=  8.
-# BINARY=  150. 100ths=  1. 10s=  4. 1s=  9.
-# BINARY=  151. 100ths=  1. 10s=  5. 1s=  0.
-# BINARY=  152. 100ths=  1. 10s=  5. 1s=  1.
-# BINARY=  153. 100ths=  1. 10s=  5. 1s=  2.
-# BINARY=  154. 100ths=  1. 10s=  5. 1s=  3.
-# BINARY=  155. 100ths=  1. 10s=  5. 1s=  4.
-# BINARY=  156. 100ths=  1. 10s=  5. 1s=  5.
-# BINARY=  157. 100ths=  1. 10s=  5. 1s=  6.
-# BINARY=  158. 100ths=  1. 10s=  5. 1s=  7.
-# BINARY=  159. 100ths=  1. 10s=  5. 1s=  8.
-# BINARY=  160. 100ths=  1. 10s=  5. 1s=  9.
-# BINARY=  161. 100ths=  1. 10s=  6. 1s=  0.
-# BINARY=  162. 100ths=  1. 10s=  6. 1s=  1.
-# BINARY=  163. 100ths=  1. 10s=  6. 1s=  2.
-# BINARY=  164. 100ths=  1. 10s=  6. 1s=  3.
-# BINARY=  165. 100ths=  1. 10s=  6. 1s=  4.
-# BINARY=  166. 100ths=  1. 10s=  6. 1s=  5.
-# BINARY=  167. 100ths=  1. 10s=  6. 1s=  6.
-# BINARY=  168. 100ths=  1. 10s=  6. 1s=  7.
-# BINARY=  169. 100ths=  1. 10s=  6. 1s=  8.
-# BINARY=  170. 100ths=  1. 10s=  6. 1s=  9.
-# BINARY=  171. 100ths=  1. 10s=  7. 1s=  0.
-# BINARY=  172. 100ths=  1. 10s=  7. 1s=  1.
-# BINARY=  173. 100ths=  1. 10s=  7. 1s=  2.
-# BINARY=  174. 100ths=  1. 10s=  7. 1s=  3.
-# BINARY=  175. 100ths=  1. 10s=  7. 1s=  4.
-# BINARY=  176. 100ths=  1. 10s=  7. 1s=  5.
-# BINARY=  177. 100ths=  1. 10s=  7. 1s=  6.
-# BINARY=  178. 100ths=  1. 10s=  7. 1s=  7.
-# BINARY=  179. 100ths=  1. 10s=  7. 1s=  8.
-# BINARY=  180. 100ths=  1. 10s=  7. 1s=  9.
-# BINARY=  181. 100ths=  1. 10s=  8. 1s=  0.
-# BINARY=  182. 100ths=  1. 10s=  8. 1s=  1.
-# BINARY=  183. 100ths=  1. 10s=  8. 1s=  2.
-# BINARY=  184. 100ths=  1. 10s=  8. 1s=  3.
-# BINARY=  185. 100ths=  1. 10s=  8. 1s=  4.
-# BINARY=  186. 100ths=  1. 10s=  8. 1s=  5.
-# BINARY=  187. 100ths=  1. 10s=  8. 1s=  6.
-# BINARY=  188. 100ths=  1. 10s=  8. 1s=  7.
-# BINARY=  189. 100ths=  1. 10s=  8. 1s=  8.
-# BINARY=  190. 100ths=  1. 10s=  8. 1s=  9.
-# BINARY=  191. 100ths=  1. 10s=  9. 1s=  0.
-# BINARY=  192. 100ths=  1. 10s=  9. 1s=  1.
-# BINARY=  193. 100ths=  1. 10s=  9. 1s=  2.
-# BINARY=  194. 100ths=  1. 10s=  9. 1s=  3.
-# BINARY=  195. 100ths=  1. 10s=  9. 1s=  4.
-# BINARY=  196. 100ths=  1. 10s=  9. 1s=  5.
-# BINARY=  197. 100ths=  1. 10s=  9. 1s=  6.
-# BINARY=  198. 100ths=  1. 10s=  9. 1s=  7.
-# BINARY=  199. 100ths=  1. 10s=  9. 1s=  8.
-# BINARY=  200. 100ths=  1. 10s=  9. 1s=  9.
-# BINARY=  201. 100ths=  2. 10s=  0. 1s=  0.
-# BINARY=  202. 100ths=  2. 10s=  0. 1s=  1.
-# BINARY=  203. 100ths=  2. 10s=  0. 1s=  2.
-# BINARY=  204. 100ths=  2. 10s=  0. 1s=  3.
-# BINARY=  205. 100ths=  2. 10s=  0. 1s=  4.
-# BINARY=  206. 100ths=  2. 10s=  0. 1s=  5.
-# BINARY=  207. 100ths=  2. 10s=  0. 1s=  6.
-# BINARY=  208. 100ths=  2. 10s=  0. 1s=  7.
-# BINARY=  209. 100ths=  2. 10s=  0. 1s=  8.
-# BINARY=  210. 100ths=  2. 10s=  0. 1s=  9.
-# BINARY=  211. 100ths=  2. 10s=  1. 1s=  0.
-# BINARY=  212. 100ths=  2. 10s=  1. 1s=  1.
-# BINARY=  213. 100ths=  2. 10s=  1. 1s=  2.
-# BINARY=  214. 100ths=  2. 10s=  1. 1s=  3.
-# BINARY=  215. 100ths=  2. 10s=  1. 1s=  4.
-# BINARY=  216. 100ths=  2. 10s=  1. 1s=  5.
-# BINARY=  217. 100ths=  2. 10s=  1. 1s=  6.
-# BINARY=  218. 100ths=  2. 10s=  1. 1s=  7.
-# BINARY=  219. 100ths=  2. 10s=  1. 1s=  8.
-# BINARY=  220. 100ths=  2. 10s=  1. 1s=  9.
-# BINARY=  221. 100ths=  2. 10s=  2. 1s=  0.
-# BINARY=  222. 100ths=  2. 10s=  2. 1s=  1.
-# BINARY=  223. 100ths=  2. 10s=  2. 1s=  2.
-# BINARY=  224. 100ths=  2. 10s=  2. 1s=  3.
-# BINARY=  225. 100ths=  2. 10s=  2. 1s=  4.
-# BINARY=  226. 100ths=  2. 10s=  2. 1s=  5.
-# BINARY=  227. 100ths=  2. 10s=  2. 1s=  6.
-# BINARY=  228. 100ths=  2. 10s=  2. 1s=  7.
-# BINARY=  229. 100ths=  2. 10s=  2. 1s=  8.
-# BINARY=  230. 100ths=  2. 10s=  2. 1s=  9.
-# BINARY=  231. 100ths=  2. 10s=  3. 1s=  0.
-# BINARY=  232. 100ths=  2. 10s=  3. 1s=  1.
-# BINARY=  233. 100ths=  2. 10s=  3. 1s=  2.
-# BINARY=  234. 100ths=  2. 10s=  3. 1s=  3.
-# BINARY=  235. 100ths=  2. 10s=  3. 1s=  4.
-# BINARY=  236. 100ths=  2. 10s=  3. 1s=  5.
-# BINARY=  237. 100ths=  2. 10s=  3. 1s=  6.
-# BINARY=  238. 100ths=  2. 10s=  3. 1s=  7.
-# BINARY=  239. 100ths=  2. 10s=  3. 1s=  8.
-# BINARY=  240. 100ths=  2. 10s=  3. 1s=  9.
-# BINARY=  241. 100ths=  2. 10s=  4. 1s=  0.
-# BINARY=  242. 100ths=  2. 10s=  4. 1s=  1.
-# BINARY=  243. 100ths=  2. 10s=  4. 1s=  2.
-# BINARY=  244. 100ths=  2. 10s=  4. 1s=  3.
-# BINARY=  245. 100ths=  2. 10s=  4. 1s=  4.
-# BINARY=  246. 100ths=  2. 10s=  4. 1s=  5.
-# BINARY=  247. 100ths=  2. 10s=  4. 1s=  6.
-# BINARY=  248. 100ths=  2. 10s=  4. 1s=  7.
-# BINARY=  249. 100ths=  2. 10s=  4. 1s=  8.
-# BINARY=  250. 100ths=  2. 10s=  4. 1s=  9.
-# BINARY=  251. 100ths=  2. 10s=  5. 1s=  0.
-# BINARY=  252. 100ths=  2. 10s=  5. 1s=  1.
-# BINARY=  253. 100ths=  2. 10s=  5. 1s=  2.
-# BINARY=  254. 100ths=  2. 10s=  5. 1s=  3.
-# BINARY=  255. 100ths=  2. 10s=  5. 1s=  4.
-# BINARY=  256. 100ths=  2. 10s=  5. 1s=  5.
-# BINARY=  257. 100ths=  2. 10s=  5. 1s=  6.
-# BINARY=  258. 100ths=  2. 10s=  5. 1s=  7.
-# BINARY=  259. 100ths=  2. 10s=  5. 1s=  8.
-# BINARY=  260. 100ths=  2. 10s=  5. 1s=  9.
-# BINARY=  261. 100ths=  2. 10s=  6. 1s=  0.
-# BINARY=  262. 100ths=  2. 10s=  6. 1s=  1.
-# BINARY=  263. 100ths=  2. 10s=  6. 1s=  2.
-# BINARY=  264. 100ths=  2. 10s=  6. 1s=  3.
-# BINARY=  265. 100ths=  2. 10s=  6. 1s=  4.
-# BINARY=  266. 100ths=  2. 10s=  6. 1s=  5.
-# BINARY=  267. 100ths=  2. 10s=  6. 1s=  6.
-# BINARY=  268. 100ths=  2. 10s=  6. 1s=  7.
-# BINARY=  269. 100ths=  2. 10s=  6. 1s=  8.
-# BINARY=  270. 100ths=  2. 10s=  6. 1s=  9.
-# BINARY=  271. 100ths=  2. 10s=  7. 1s=  0.
-# BINARY=  272. 100ths=  2. 10s=  7. 1s=  1.
-# BINARY=  273. 100ths=  2. 10s=  7. 1s=  2.
-# BINARY=  274. 100ths=  2. 10s=  7. 1s=  3.
-# BINARY=  275. 100ths=  2. 10s=  7. 1s=  4.
-# BINARY=  276. 100ths=  2. 10s=  7. 1s=  5.
-# BINARY=  277. 100ths=  2. 10s=  7. 1s=  6.
-# BINARY=  278. 100ths=  2. 10s=  7. 1s=  7.
-# BINARY=  279. 100ths=  2. 10s=  7. 1s=  8.
-# BINARY=  280. 100ths=  2. 10s=  7. 1s=  9.
-# BINARY=  281. 100ths=  2. 10s=  8. 1s=  0.
-# BINARY=  282. 100ths=  2. 10s=  8. 1s=  1.
-# BINARY=  283. 100ths=  2. 10s=  8. 1s=  2.
-# BINARY=  284. 100ths=  2. 10s=  8. 1s=  3.
-# BINARY=  285. 100ths=  2. 10s=  8. 1s=  4.
-# BINARY=  286. 100ths=  2. 10s=  8. 1s=  5.
-# BINARY=  287. 100ths=  2. 10s=  8. 1s=  6.
-# BINARY=  288. 100ths=  2. 10s=  8. 1s=  7.
-# BINARY=  289. 100ths=  2. 10s=  8. 1s=  8.
-# BINARY=  290. 100ths=  2. 10s=  8. 1s=  9.
-# BINARY=  291. 100ths=  2. 10s=  9. 1s=  0.
-# BINARY=  292. 100ths=  2. 10s=  9. 1s=  1.
-# BINARY=  293. 100ths=  2. 10s=  9. 1s=  2.
-# BINARY=  294. 100ths=  2. 10s=  9. 1s=  3.
-# BINARY=  295. 100ths=  2. 10s=  9. 1s=  4.
-# BINARY=  296. 100ths=  2. 10s=  9. 1s=  5.
-# BINARY=  297. 100ths=  2. 10s=  9. 1s=  6.
-# BINARY=  298. 100ths=  2. 10s=  9. 1s=  7.
-# BINARY=  299. 100ths=  2. 10s=  9. 1s=  8.
-# BINARY=  300. 100ths=  2. 10s=  9. 1s=  9.
-# BINARY=  301. 100ths=  3. 10s=  0. 1s=  0.
-# BINARY=  302. 100ths=  3. 10s=  0. 1s=  1.
-# BINARY=  303. 100ths=  3. 10s=  0. 1s=  2.
-# BINARY=  304. 100ths=  3. 10s=  0. 1s=  3.
-# BINARY=  305. 100ths=  3. 10s=  0. 1s=  4.
-# BINARY=  306. 100ths=  3. 10s=  0. 1s=  5.
-# BINARY=  307. 100ths=  3. 10s=  0. 1s=  6.
-# BINARY=  308. 100ths=  3. 10s=  0. 1s=  7.
-# BINARY=  309. 100ths=  3. 10s=  0. 1s=  8.
-# BINARY=  310. 100ths=  3. 10s=  0. 1s=  9.
-# BINARY=  311. 100ths=  3. 10s=  1. 1s=  0.
-# BINARY=  312. 100ths=  3. 10s=  1. 1s=  1.
-# BINARY=  313. 100ths=  3. 10s=  1. 1s=  2.
-# BINARY=  314. 100ths=  3. 10s=  1. 1s=  3.
-# BINARY=  315. 100ths=  3. 10s=  1. 1s=  4.
-# BINARY=  316. 100ths=  3. 10s=  1. 1s=  5.
-# BINARY=  317. 100ths=  3. 10s=  1. 1s=  6.
-# BINARY=  318. 100ths=  3. 10s=  1. 1s=  7.
-# BINARY=  319. 100ths=  3. 10s=  1. 1s=  8.
-# BINARY=  320. 100ths=  3. 10s=  1. 1s=  9.
-# BINARY=  321. 100ths=  3. 10s=  2. 1s=  0.
-# BINARY=  322. 100ths=  3. 10s=  2. 1s=  1.
-# BINARY=  323. 100ths=  3. 10s=  2. 1s=  2.
-# BINARY=  324. 100ths=  3. 10s=  2. 1s=  3.
-# BINARY=  325. 100ths=  3. 10s=  2. 1s=  4.
-# BINARY=  326. 100ths=  3. 10s=  2. 1s=  5.
-# BINARY=  327. 100ths=  3. 10s=  2. 1s=  6.
-# BINARY=  328. 100ths=  3. 10s=  2. 1s=  7.
-# BINARY=  329. 100ths=  3. 10s=  2. 1s=  8.
-# BINARY=  330. 100ths=  3. 10s=  2. 1s=  9.
-# BINARY=  331. 100ths=  3. 10s=  3. 1s=  0.
-# BINARY=  332. 100ths=  3. 10s=  3. 1s=  1.
-# BINARY=  333. 100ths=  3. 10s=  3. 1s=  2.
-# BINARY=  334. 100ths=  3. 10s=  3. 1s=  3.
-# BINARY=  335. 100ths=  3. 10s=  3. 1s=  4.
-# BINARY=  336. 100ths=  3. 10s=  3. 1s=  5.
-# BINARY=  337. 100ths=  3. 10s=  3. 1s=  6.
-# BINARY=  338. 100ths=  3. 10s=  3. 1s=  7.
-# BINARY=  339. 100ths=  3. 10s=  3. 1s=  8.
-# BINARY=  340. 100ths=  3. 10s=  3. 1s=  9.
-# BINARY=  341. 100ths=  3. 10s=  4. 1s=  0.
-# BINARY=  342. 100ths=  3. 10s=  4. 1s=  1.
-# BINARY=  343. 100ths=  3. 10s=  4. 1s=  2.
-# BINARY=  344. 100ths=  3. 10s=  4. 1s=  3.
-# BINARY=  345. 100ths=  3. 10s=  4. 1s=  4.
-# BINARY=  346. 100ths=  3. 10s=  4. 1s=  5.
-# BINARY=  347. 100ths=  3. 10s=  4. 1s=  6.
-# BINARY=  348. 100ths=  3. 10s=  4. 1s=  7.
-# BINARY=  349. 100ths=  3. 10s=  4. 1s=  8.
-# BINARY=  350. 100ths=  3. 10s=  4. 1s=  9.
-# BINARY=  351. 100ths=  3. 10s=  5. 1s=  0.
-# BINARY=  352. 100ths=  3. 10s=  5. 1s=  1.
-# BINARY=  353. 100ths=  3. 10s=  5. 1s=  2.
-# BINARY=  354. 100ths=  3. 10s=  5. 1s=  3.
-# BINARY=  355. 100ths=  3. 10s=  5. 1s=  4.
-# BINARY=  356. 100ths=  3. 10s=  5. 1s=  5.
-# BINARY=  357. 100ths=  3. 10s=  5. 1s=  6.
-# BINARY=  358. 100ths=  3. 10s=  5. 1s=  7.
-# BINARY=  359. 100ths=  3. 10s=  5. 1s=  8.
-# BINARY=  360. 100ths=  3. 10s=  5. 1s=  9.
-# BINARY=  361. 100ths=  3. 10s=  6. 1s=  0.
-# BINARY=  362. 100ths=  3. 10s=  6. 1s=  1.
-# BINARY=  363. 100ths=  3. 10s=  6. 1s=  2.
-# BINARY=  364. 100ths=  3. 10s=  6. 1s=  3.
-# BINARY=  365. 100ths=  3. 10s=  6. 1s=  4.
-# BINARY=  366. 100ths=  3. 10s=  6. 1s=  5.
-# BINARY=  367. 100ths=  3. 10s=  6. 1s=  6.
-# BINARY=  368. 100ths=  3. 10s=  6. 1s=  7.
-# BINARY=  369. 100ths=  3. 10s=  6. 1s=  8.
-# BINARY=  370. 100ths=  3. 10s=  6. 1s=  9.
-# BINARY=  371. 100ths=  3. 10s=  7. 1s=  0.
-# BINARY=  372. 100ths=  3. 10s=  7. 1s=  1.
-# BINARY=  373. 100ths=  3. 10s=  7. 1s=  2.
-# BINARY=  374. 100ths=  3. 10s=  7. 1s=  3.
-# BINARY=  375. 100ths=  3. 10s=  7. 1s=  4.
-# BINARY=  376. 100ths=  3. 10s=  7. 1s=  5.
-# BINARY=  377. 100ths=  3. 10s=  7. 1s=  6.
-# BINARY=  378. 100ths=  3. 10s=  7. 1s=  7.
-# BINARY=  379. 100ths=  3. 10s=  7. 1s=  8.
-# BINARY=  380. 100ths=  3. 10s=  7. 1s=  9.
-# BINARY=  381. 100ths=  3. 10s=  8. 1s=  0.
-# BINARY=  382. 100ths=  3. 10s=  8. 1s=  1.
-# BINARY=  383. 100ths=  3. 10s=  8. 1s=  2.
-# BINARY=  384. 100ths=  3. 10s=  8. 1s=  3.
-# BINARY=  385. 100ths=  3. 10s=  8. 1s=  4.
-# BINARY=  386. 100ths=  3. 10s=  8. 1s=  5.
-# BINARY=  387. 100ths=  3. 10s=  8. 1s=  6.
-# BINARY=  388. 100ths=  3. 10s=  8. 1s=  7.
-# BINARY=  389. 100ths=  3. 10s=  8. 1s=  8.
-# BINARY=  390. 100ths=  3. 10s=  8. 1s=  9.
-# BINARY=  391. 100ths=  3. 10s=  9. 1s=  0.
-# BINARY=  392. 100ths=  3. 10s=  9. 1s=  1.
-# BINARY=  393. 100ths=  3. 10s=  9. 1s=  2.
-# BINARY=  394. 100ths=  3. 10s=  9. 1s=  3.
-# BINARY=  395. 100ths=  3. 10s=  9. 1s=  4.
-# BINARY=  396. 100ths=  3. 10s=  9. 1s=  5.
-# BINARY=  397. 100ths=  3. 10s=  9. 1s=  6.
-# BINARY=  398. 100ths=  3. 10s=  9. 1s=  7.
-# BINARY=  399. 100ths=  3. 10s=  9. 1s=  8.
-# BINARY=  400. 100ths=  3. 10s=  9. 1s=  9.
-# BINARY=  401. 100ths=  4. 10s=  0. 1s=  0.
-# BINARY=  402. 100ths=  4. 10s=  0. 1s=  1.
-# BINARY=  403. 100ths=  4. 10s=  0. 1s=  2.
-# BINARY=  404. 100ths=  4. 10s=  0. 1s=  3.
-# BINARY=  405. 100ths=  4. 10s=  0. 1s=  4.
-# BINARY=  406. 100ths=  4. 10s=  0. 1s=  5.
-# BINARY=  407. 100ths=  4. 10s=  0. 1s=  6.
-# BINARY=  408. 100ths=  4. 10s=  0. 1s=  7.
-# BINARY=  409. 100ths=  4. 10s=  0. 1s=  8.
-# BINARY=  410. 100ths=  4. 10s=  0. 1s=  9.
-# BINARY=  411. 100ths=  4. 10s=  1. 1s=  0.
-# BINARY=  412. 100ths=  4. 10s=  1. 1s=  1.
-# BINARY=  413. 100ths=  4. 10s=  1. 1s=  2.
-# BINARY=  414. 100ths=  4. 10s=  1. 1s=  3.
-# BINARY=  415. 100ths=  4. 10s=  1. 1s=  4.
-# BINARY=  416. 100ths=  4. 10s=  1. 1s=  5.
-# BINARY=  417. 100ths=  4. 10s=  1. 1s=  6.
-# BINARY=  418. 100ths=  4. 10s=  1. 1s=  7.
-# BINARY=  419. 100ths=  4. 10s=  1. 1s=  8.
-# BINARY=  420. 100ths=  4. 10s=  1. 1s=  9.
-# BINARY=  421. 100ths=  4. 10s=  2. 1s=  0.
-# BINARY=  422. 100ths=  4. 10s=  2. 1s=  1.
-# BINARY=  423. 100ths=  4. 10s=  2. 1s=  2.
-# BINARY=  424. 100ths=  4. 10s=  2. 1s=  3.
-# BINARY=  425. 100ths=  4. 10s=  2. 1s=  4.
-# BINARY=  426. 100ths=  4. 10s=  2. 1s=  5.
-# BINARY=  427. 100ths=  4. 10s=  2. 1s=  6.
-# BINARY=  428. 100ths=  4. 10s=  2. 1s=  7.
-# BINARY=  429. 100ths=  4. 10s=  2. 1s=  8.
-# BINARY=  430. 100ths=  4. 10s=  2. 1s=  9.
-# BINARY=  431. 100ths=  4. 10s=  3. 1s=  0.
-# BINARY=  432. 100ths=  4. 10s=  3. 1s=  1.
-# BINARY=  433. 100ths=  4. 10s=  3. 1s=  2.
-# BINARY=  434. 100ths=  4. 10s=  3. 1s=  3.
-# BINARY=  435. 100ths=  4. 10s=  3. 1s=  4.
-# BINARY=  436. 100ths=  4. 10s=  3. 1s=  5.
-# BINARY=  437. 100ths=  4. 10s=  3. 1s=  6.
-# BINARY=  438. 100ths=  4. 10s=  3. 1s=  7.
-# BINARY=  439. 100ths=  4. 10s=  3. 1s=  8.
-# BINARY=  440. 100ths=  4. 10s=  3. 1s=  9.
-# BINARY=  441. 100ths=  4. 10s=  4. 1s=  0.
-# BINARY=  442. 100ths=  4. 10s=  4. 1s=  1.
-# BINARY=  443. 100ths=  4. 10s=  4. 1s=  2.
-# BINARY=  444. 100ths=  4. 10s=  4. 1s=  3.
-# BINARY=  445. 100ths=  4. 10s=  4. 1s=  4.
-# BINARY=  446. 100ths=  4. 10s=  4. 1s=  5.
-# BINARY=  447. 100ths=  4. 10s=  4. 1s=  6.
-# BINARY=  448. 100ths=  4. 10s=  4. 1s=  7.
-# BINARY=  449. 100ths=  4. 10s=  4. 1s=  8.
-# BINARY=  450. 100ths=  4. 10s=  4. 1s=  9.
-# BINARY=  451. 100ths=  4. 10s=  5. 1s=  0.
-# BINARY=  452. 100ths=  4. 10s=  5. 1s=  1.
-# BINARY=  453. 100ths=  4. 10s=  5. 1s=  2.
-# BINARY=  454. 100ths=  4. 10s=  5. 1s=  3.
-# BINARY=  455. 100ths=  4. 10s=  5. 1s=  4.
-# BINARY=  456. 100ths=  4. 10s=  5. 1s=  5.
-# BINARY=  457. 100ths=  4. 10s=  5. 1s=  6.
-# BINARY=  458. 100ths=  4. 10s=  5. 1s=  7.
-# BINARY=  459. 100ths=  4. 10s=  5. 1s=  8.
-# BINARY=  460. 100ths=  4. 10s=  5. 1s=  9.
-# BINARY=  461. 100ths=  4. 10s=  6. 1s=  0.
-# BINARY=  462. 100ths=  4. 10s=  6. 1s=  1.
-# BINARY=  463. 100ths=  4. 10s=  6. 1s=  2.
-# BINARY=  464. 100ths=  4. 10s=  6. 1s=  3.
-# BINARY=  465. 100ths=  4. 10s=  6. 1s=  4.
-# BINARY=  466. 100ths=  4. 10s=  6. 1s=  5.
-# BINARY=  467. 100ths=  4. 10s=  6. 1s=  6.
-# BINARY=  468. 100ths=  4. 10s=  6. 1s=  7.
-# BINARY=  469. 100ths=  4. 10s=  6. 1s=  8.
-# BINARY=  470. 100ths=  4. 10s=  6. 1s=  9.
-# BINARY=  471. 100ths=  4. 10s=  7. 1s=  0.
-# BINARY=  472. 100ths=  4. 10s=  7. 1s=  1.
-# BINARY=  473. 100ths=  4. 10s=  7. 1s=  2.
-# BINARY=  474. 100ths=  4. 10s=  7. 1s=  3.
-# BINARY=  475. 100ths=  4. 10s=  7. 1s=  4.
-# BINARY=  476. 100ths=  4. 10s=  7. 1s=  5.
-# BINARY=  477. 100ths=  4. 10s=  7. 1s=  6.
-# BINARY=  478. 100ths=  4. 10s=  7. 1s=  7.
-# BINARY=  479. 100ths=  4. 10s=  7. 1s=  8.
-# BINARY=  480. 100ths=  4. 10s=  7. 1s=  9.
-# BINARY=  481. 100ths=  4. 10s=  8. 1s=  0.
-# BINARY=  482. 100ths=  4. 10s=  8. 1s=  1.
-# BINARY=  483. 100ths=  4. 10s=  8. 1s=  2.
-# BINARY=  484. 100ths=  4. 10s=  8. 1s=  3.
-# BINARY=  485. 100ths=  4. 10s=  8. 1s=  4.
-# BINARY=  486. 100ths=  4. 10s=  8. 1s=  5.
-# BINARY=  487. 100ths=  4. 10s=  8. 1s=  6.
-# BINARY=  488. 100ths=  4. 10s=  8. 1s=  7.
-# BINARY=  489. 100ths=  4. 10s=  8. 1s=  8.
-# BINARY=  490. 100ths=  4. 10s=  8. 1s=  9.
-# BINARY=  491. 100ths=  4. 10s=  9. 1s=  0.
-# BINARY=  492. 100ths=  4. 10s=  9. 1s=  1.
-# BINARY=  493. 100ths=  4. 10s=  9. 1s=  2.
-# BINARY=  494. 100ths=  4. 10s=  9. 1s=  3.
-# BINARY=  495. 100ths=  4. 10s=  9. 1s=  4.
-# BINARY=  496. 100ths=  4. 10s=  9. 1s=  5.
-# BINARY=  497. 100ths=  4. 10s=  9. 1s=  6.
-# BINARY=  498. 100ths=  4. 10s=  9. 1s=  7.
-# BINARY=  499. 100ths=  4. 10s=  9. 1s=  8.
-# BINARY=  500. 100ths=  4. 10s=  9. 1s=  9.
-# BINARY=  501. 100ths=  5. 10s=  0. 1s=  0.
-# BINARY=  502. 100ths=  5. 10s=  0. 1s=  1.
-# BINARY=  503. 100ths=  5. 10s=  0. 1s=  2.
-# BINARY=  504. 100ths=  5. 10s=  0. 1s=  3.
-# BINARY=  505. 100ths=  5. 10s=  0. 1s=  4.
-# BINARY=  506. 100ths=  5. 10s=  0. 1s=  5.
-# BINARY=  507. 100ths=  5. 10s=  0. 1s=  6.
-# BINARY=  508. 100ths=  5. 10s=  0. 1s=  7.
-# BINARY=  509. 100ths=  5. 10s=  0. 1s=  8.
-# BINARY=  510. 100ths=  5. 10s=  0. 1s=  9.
-# BINARY=  511. 100ths=  5. 10s=  1. 1s=  0.
-# BINARY=  512. 100ths=  5. 10s=  1. 1s=  1.
-# BINARY=  513. 100ths=  5. 10s=  1. 1s=  2.
-# BINARY=  514. 100ths=  5. 10s=  1. 1s=  3.
-# BINARY=  515. 100ths=  5. 10s=  1. 1s=  4.
-# BINARY=  516. 100ths=  5. 10s=  1. 1s=  5.
-# BINARY=  517. 100ths=  5. 10s=  1. 1s=  6.
-# BINARY=  518. 100ths=  5. 10s=  1. 1s=  7.
-# BINARY=  519. 100ths=  5. 10s=  1. 1s=  8.
-# BINARY=  520. 100ths=  5. 10s=  1. 1s=  9.
-# BINARY=  521. 100ths=  5. 10s=  2. 1s=  0.
-# BINARY=  522. 100ths=  5. 10s=  2. 1s=  1.
-# BINARY=  523. 100ths=  5. 10s=  2. 1s=  2.
-# BINARY=  524. 100ths=  5. 10s=  2. 1s=  3.
-# BINARY=  525. 100ths=  5. 10s=  2. 1s=  4.
-# BINARY=  526. 100ths=  5. 10s=  2. 1s=  5.
-# BINARY=  527. 100ths=  5. 10s=  2. 1s=  6.
-# BINARY=  528. 100ths=  5. 10s=  2. 1s=  7.
-# BINARY=  529. 100ths=  5. 10s=  2. 1s=  8.
-# BINARY=  530. 100ths=  5. 10s=  2. 1s=  9.
-# BINARY=  531. 100ths=  5. 10s=  3. 1s=  0.
-# BINARY=  532. 100ths=  5. 10s=  3. 1s=  1.
-# BINARY=  533. 100ths=  5. 10s=  3. 1s=  2.
-# BINARY=  534. 100ths=  5. 10s=  3. 1s=  3.
-# BINARY=  535. 100ths=  5. 10s=  3. 1s=  4.
-# BINARY=  536. 100ths=  5. 10s=  3. 1s=  5.
-# BINARY=  537. 100ths=  5. 10s=  3. 1s=  6.
-# BINARY=  538. 100ths=  5. 10s=  3. 1s=  7.
-# BINARY=  539. 100ths=  5. 10s=  3. 1s=  8.
-# BINARY=  540. 100ths=  5. 10s=  3. 1s=  9.
-# BINARY=  541. 100ths=  5. 10s=  4. 1s=  0.
-# BINARY=  542. 100ths=  5. 10s=  4. 1s=  1.
-# BINARY=  543. 100ths=  5. 10s=  4. 1s=  2.
-# BINARY=  544. 100ths=  5. 10s=  4. 1s=  3.
-# BINARY=  545. 100ths=  5. 10s=  4. 1s=  4.
-# BINARY=  546. 100ths=  5. 10s=  4. 1s=  5.
-# BINARY=  547. 100ths=  5. 10s=  4. 1s=  6.
-# BINARY=  548. 100ths=  5. 10s=  4. 1s=  7.
-# BINARY=  549. 100ths=  5. 10s=  4. 1s=  8.
-# BINARY=  550. 100ths=  5. 10s=  4. 1s=  9.
-# BINARY=  551. 100ths=  5. 10s=  5. 1s=  0.
-# BINARY=  552. 100ths=  5. 10s=  5. 1s=  1.
-# BINARY=  553. 100ths=  5. 10s=  5. 1s=  2.
-# BINARY=  554. 100ths=  5. 10s=  5. 1s=  3.
-# BINARY=  555. 100ths=  5. 10s=  5. 1s=  4.
-# BINARY=  556. 100ths=  5. 10s=  5. 1s=  5.
-# BINARY=  557. 100ths=  5. 10s=  5. 1s=  6.
-# BINARY=  558. 100ths=  5. 10s=  5. 1s=  7.
-# BINARY=  559. 100ths=  5. 10s=  5. 1s=  8.
-# BINARY=  560. 100ths=  5. 10s=  5. 1s=  9.
-# BINARY=  561. 100ths=  5. 10s=  6. 1s=  0.
-# BINARY=  562. 100ths=  5. 10s=  6. 1s=  1.
-# BINARY=  563. 100ths=  5. 10s=  6. 1s=  2.
-# BINARY=  564. 100ths=  5. 10s=  6. 1s=  3.
-# BINARY=  565. 100ths=  5. 10s=  6. 1s=  4.
-# BINARY=  566. 100ths=  5. 10s=  6. 1s=  5.
-# BINARY=  567. 100ths=  5. 10s=  6. 1s=  6.
-# BINARY=  568. 100ths=  5. 10s=  6. 1s=  7.
-# BINARY=  569. 100ths=  5. 10s=  6. 1s=  8.
-# BINARY=  570. 100ths=  5. 10s=  6. 1s=  9.
-# BINARY=  571. 100ths=  5. 10s=  7. 1s=  0.
-# BINARY=  572. 100ths=  5. 10s=  7. 1s=  1.
-# BINARY=  573. 100ths=  5. 10s=  7. 1s=  2.
-# BINARY=  574. 100ths=  5. 10s=  7. 1s=  3.
-# BINARY=  575. 100ths=  5. 10s=  7. 1s=  4.
-# BINARY=  576. 100ths=  5. 10s=  7. 1s=  5.
-# BINARY=  577. 100ths=  5. 10s=  7. 1s=  6.
-# BINARY=  578. 100ths=  5. 10s=  7. 1s=  7.
-# BINARY=  579. 100ths=  5. 10s=  7. 1s=  8.
-# BINARY=  580. 100ths=  5. 10s=  7. 1s=  9.
-# BINARY=  581. 100ths=  5. 10s=  8. 1s=  0.
-# BINARY=  582. 100ths=  5. 10s=  8. 1s=  1.
-# BINARY=  583. 100ths=  5. 10s=  8. 1s=  2.
-# BINARY=  584. 100ths=  5. 10s=  8. 1s=  3.
-# BINARY=  585. 100ths=  5. 10s=  8. 1s=  4.
-# BINARY=  586. 100ths=  5. 10s=  8. 1s=  5.
-# BINARY=  587. 100ths=  5. 10s=  8. 1s=  6.
-# BINARY=  588. 100ths=  5. 10s=  8. 1s=  7.
-# BINARY=  589. 100ths=  5. 10s=  8. 1s=  8.
-# BINARY=  590. 100ths=  5. 10s=  8. 1s=  9.
-# BINARY=  591. 100ths=  5. 10s=  9. 1s=  0.
-# BINARY=  592. 100ths=  5. 10s=  9. 1s=  1.
-# BINARY=  593. 100ths=  5. 10s=  9. 1s=  2.
-# BINARY=  594. 100ths=  5. 10s=  9. 1s=  3.
-# BINARY=  595. 100ths=  5. 10s=  9. 1s=  4.
-# BINARY=  596. 100ths=  5. 10s=  9. 1s=  5.
-# BINARY=  597. 100ths=  5. 10s=  9. 1s=  6.
-# BINARY=  598. 100ths=  5. 10s=  9. 1s=  7.
-# BINARY=  599. 100ths=  5. 10s=  9. 1s=  8.
-# BINARY=  600. 100ths=  5. 10s=  9. 1s=  9.
-# BINARY=  601. 100ths=  6. 10s=  0. 1s=  0.
-# BINARY=  602. 100ths=  6. 10s=  0. 1s=  1.
-# BINARY=  603. 100ths=  6. 10s=  0. 1s=  2.
-# BINARY=  604. 100ths=  6. 10s=  0. 1s=  3.
-# BINARY=  605. 100ths=  6. 10s=  0. 1s=  4.
-# BINARY=  606. 100ths=  6. 10s=  0. 1s=  5.
-# BINARY=  607. 100ths=  6. 10s=  0. 1s=  6.
-# BINARY=  608. 100ths=  6. 10s=  0. 1s=  7.
-# BINARY=  609. 100ths=  6. 10s=  0. 1s=  8.
-# BINARY=  610. 100ths=  6. 10s=  0. 1s=  9.
-# BINARY=  611. 100ths=  6. 10s=  1. 1s=  0.
-# BINARY=  612. 100ths=  6. 10s=  1. 1s=  1.
-# BINARY=  613. 100ths=  6. 10s=  1. 1s=  2.
-# BINARY=  614. 100ths=  6. 10s=  1. 1s=  3.
-# BINARY=  615. 100ths=  6. 10s=  1. 1s=  4.
-# BINARY=  616. 100ths=  6. 10s=  1. 1s=  5.
-# BINARY=  617. 100ths=  6. 10s=  1. 1s=  6.
-# BINARY=  618. 100ths=  6. 10s=  1. 1s=  7.
-# BINARY=  619. 100ths=  6. 10s=  1. 1s=  8.
-# BINARY=  620. 100ths=  6. 10s=  1. 1s=  9.
-# BINARY=  621. 100ths=  6. 10s=  2. 1s=  0.
-# BINARY=  622. 100ths=  6. 10s=  2. 1s=  1.
-# BINARY=  623. 100ths=  6. 10s=  2. 1s=  2.
-# BINARY=  624. 100ths=  6. 10s=  2. 1s=  3.
-# BINARY=  625. 100ths=  6. 10s=  2. 1s=  4.
-# BINARY=  626. 100ths=  6. 10s=  2. 1s=  5.
-# BINARY=  627. 100ths=  6. 10s=  2. 1s=  6.
-# BINARY=  628. 100ths=  6. 10s=  2. 1s=  7.
-# BINARY=  629. 100ths=  6. 10s=  2. 1s=  8.
-# BINARY=  630. 100ths=  6. 10s=  2. 1s=  9.
-# BINARY=  631. 100ths=  6. 10s=  3. 1s=  0.
-# BINARY=  632. 100ths=  6. 10s=  3. 1s=  1.
-# BINARY=  633. 100ths=  6. 10s=  3. 1s=  2.
-# BINARY=  634. 100ths=  6. 10s=  3. 1s=  3.
-# BINARY=  635. 100ths=  6. 10s=  3. 1s=  4.
-# BINARY=  636. 100ths=  6. 10s=  3. 1s=  5.
-# BINARY=  637. 100ths=  6. 10s=  3. 1s=  6.
-# BINARY=  638. 100ths=  6. 10s=  3. 1s=  7.
-# BINARY=  639. 100ths=  6. 10s=  3. 1s=  8.
-# BINARY=  640. 100ths=  6. 10s=  3. 1s=  9.
-# BINARY=  641. 100ths=  6. 10s=  4. 1s=  0.
-# BINARY=  642. 100ths=  6. 10s=  4. 1s=  1.
-# BINARY=  643. 100ths=  6. 10s=  4. 1s=  2.
-# BINARY=  644. 100ths=  6. 10s=  4. 1s=  3.
-# BINARY=  645. 100ths=  6. 10s=  4. 1s=  4.
-# BINARY=  646. 100ths=  6. 10s=  4. 1s=  5.
-# BINARY=  647. 100ths=  6. 10s=  4. 1s=  6.
-# BINARY=  648. 100ths=  6. 10s=  4. 1s=  7.
-# BINARY=  649. 100ths=  6. 10s=  4. 1s=  8.
-# BINARY=  650. 100ths=  6. 10s=  4. 1s=  9.
-# BINARY=  651. 100ths=  6. 10s=  5. 1s=  0.
-# BINARY=  652. 100ths=  6. 10s=  5. 1s=  1.
-# BINARY=  653. 100ths=  6. 10s=  5. 1s=  2.
-# BINARY=  654. 100ths=  6. 10s=  5. 1s=  3.
-# BINARY=  655. 100ths=  6. 10s=  5. 1s=  4.
-# BINARY=  656. 100ths=  6. 10s=  5. 1s=  5.
-# BINARY=  657. 100ths=  6. 10s=  5. 1s=  6.
-# BINARY=  658. 100ths=  6. 10s=  5. 1s=  7.
-# BINARY=  659. 100ths=  6. 10s=  5. 1s=  8.
-# BINARY=  660. 100ths=  6. 10s=  5. 1s=  9.
-# BINARY=  661. 100ths=  6. 10s=  6. 1s=  0.
-# BINARY=  662. 100ths=  6. 10s=  6. 1s=  1.
-# BINARY=  663. 100ths=  6. 10s=  6. 1s=  2.
-# BINARY=  664. 100ths=  6. 10s=  6. 1s=  3.
-# BINARY=  665. 100ths=  6. 10s=  6. 1s=  4.
-# BINARY=  666. 100ths=  6. 10s=  6. 1s=  5.
-# BINARY=  667. 100ths=  6. 10s=  6. 1s=  6.
-# BINARY=  668. 100ths=  6. 10s=  6. 1s=  7.
-# BINARY=  669. 100ths=  6. 10s=  6. 1s=  8.
-# BINARY=  670. 100ths=  6. 10s=  6. 1s=  9.
-# BINARY=  671. 100ths=  6. 10s=  7. 1s=  0.
-# BINARY=  672. 100ths=  6. 10s=  7. 1s=  1.
-# BINARY=  673. 100ths=  6. 10s=  7. 1s=  2.
-# BINARY=  674. 100ths=  6. 10s=  7. 1s=  3.
-# BINARY=  675. 100ths=  6. 10s=  7. 1s=  4.
-# BINARY=  676. 100ths=  6. 10s=  7. 1s=  5.
-# BINARY=  677. 100ths=  6. 10s=  7. 1s=  6.
-# BINARY=  678. 100ths=  6. 10s=  7. 1s=  7.
-# BINARY=  679. 100ths=  6. 10s=  7. 1s=  8.
-# BINARY=  680. 100ths=  6. 10s=  7. 1s=  9.
-# BINARY=  681. 100ths=  6. 10s=  8. 1s=  0.
-# BINARY=  682. 100ths=  6. 10s=  8. 1s=  1.
-# BINARY=  683. 100ths=  6. 10s=  8. 1s=  2.
-# BINARY=  684. 100ths=  6. 10s=  8. 1s=  3.
-# BINARY=  685. 100ths=  6. 10s=  8. 1s=  4.
-# BINARY=  686. 100ths=  6. 10s=  8. 1s=  5.
-# BINARY=  687. 100ths=  6. 10s=  8. 1s=  6.
-# BINARY=  688. 100ths=  6. 10s=  8. 1s=  7.
-# BINARY=  689. 100ths=  6. 10s=  8. 1s=  8.
-# BINARY=  690. 100ths=  6. 10s=  8. 1s=  9.
-# BINARY=  691. 100ths=  6. 10s=  9. 1s=  0.
-# BINARY=  692. 100ths=  6. 10s=  9. 1s=  1.
-# BINARY=  693. 100ths=  6. 10s=  9. 1s=  2.
-# BINARY=  694. 100ths=  6. 10s=  9. 1s=  3.
-# BINARY=  695. 100ths=  6. 10s=  9. 1s=  4.
-# BINARY=  696. 100ths=  6. 10s=  9. 1s=  5.
-# BINARY=  697. 100ths=  6. 10s=  9. 1s=  6.
-# BINARY=  698. 100ths=  6. 10s=  9. 1s=  7.
-# BINARY=  699. 100ths=  6. 10s=  9. 1s=  8.
-# BINARY=  700. 100ths=  6. 10s=  9. 1s=  9.
-# BINARY=  701. 100ths=  7. 10s=  0. 1s=  0.
-# BINARY=  702. 100ths=  7. 10s=  0. 1s=  1.
-# BINARY=  703. 100ths=  7. 10s=  0. 1s=  2.
-# BINARY=  704. 100ths=  7. 10s=  0. 1s=  3.
-# BINARY=  705. 100ths=  7. 10s=  0. 1s=  4.
-# BINARY=  706. 100ths=  7. 10s=  0. 1s=  5.
-# BINARY=  707. 100ths=  7. 10s=  0. 1s=  6.
-# BINARY=  708. 100ths=  7. 10s=  0. 1s=  7.
-# BINARY=  709. 100ths=  7. 10s=  0. 1s=  8.
-# BINARY=  710. 100ths=  7. 10s=  0. 1s=  9.
-# BINARY=  711. 100ths=  7. 10s=  1. 1s=  0.
-# BINARY=  712. 100ths=  7. 10s=  1. 1s=  1.
-# BINARY=  713. 100ths=  7. 10s=  1. 1s=  2.
-# BINARY=  714. 100ths=  7. 10s=  1. 1s=  3.
-# BINARY=  715. 100ths=  7. 10s=  1. 1s=  4.
-# BINARY=  716. 100ths=  7. 10s=  1. 1s=  5.
-# BINARY=  717. 100ths=  7. 10s=  1. 1s=  6.
-# BINARY=  718. 100ths=  7. 10s=  1. 1s=  7.
-# BINARY=  719. 100ths=  7. 10s=  1. 1s=  8.
-# BINARY=  720. 100ths=  7. 10s=  1. 1s=  9.
-# BINARY=  721. 100ths=  7. 10s=  2. 1s=  0.
-# BINARY=  722. 100ths=  7. 10s=  2. 1s=  1.
-# BINARY=  723. 100ths=  7. 10s=  2. 1s=  2.
-# BINARY=  724. 100ths=  7. 10s=  2. 1s=  3.
-# BINARY=  725. 100ths=  7. 10s=  2. 1s=  4.
-# BINARY=  726. 100ths=  7. 10s=  2. 1s=  5.
-# BINARY=  727. 100ths=  7. 10s=  2. 1s=  6.
-# BINARY=  728. 100ths=  7. 10s=  2. 1s=  7.
-# BINARY=  729. 100ths=  7. 10s=  2. 1s=  8.
-# BINARY=  730. 100ths=  7. 10s=  2. 1s=  9.
-# BINARY=  731. 100ths=  7. 10s=  3. 1s=  0.
-# BINARY=  732. 100ths=  7. 10s=  3. 1s=  1.
-# BINARY=  733. 100ths=  7. 10s=  3. 1s=  2.
-# BINARY=  734. 100ths=  7. 10s=  3. 1s=  3.
-# BINARY=  735. 100ths=  7. 10s=  3. 1s=  4.
-# BINARY=  736. 100ths=  7. 10s=  3. 1s=  5.
-# BINARY=  737. 100ths=  7. 10s=  3. 1s=  6.
-# BINARY=  738. 100ths=  7. 10s=  3. 1s=  7.
-# BINARY=  739. 100ths=  7. 10s=  3. 1s=  8.
-# BINARY=  740. 100ths=  7. 10s=  3. 1s=  9.
-# BINARY=  741. 100ths=  7. 10s=  4. 1s=  0.
-# BINARY=  742. 100ths=  7. 10s=  4. 1s=  1.
-# BINARY=  743. 100ths=  7. 10s=  4. 1s=  2.
-# BINARY=  744. 100ths=  7. 10s=  4. 1s=  3.
-# BINARY=  745. 100ths=  7. 10s=  4. 1s=  4.
-# BINARY=  746. 100ths=  7. 10s=  4. 1s=  5.
-# BINARY=  747. 100ths=  7. 10s=  4. 1s=  6.
-# BINARY=  748. 100ths=  7. 10s=  4. 1s=  7.
-# BINARY=  749. 100ths=  7. 10s=  4. 1s=  8.
-# BINARY=  750. 100ths=  7. 10s=  4. 1s=  9.
-# BINARY=  751. 100ths=  7. 10s=  5. 1s=  0.
-# BINARY=  752. 100ths=  7. 10s=  5. 1s=  1.
-# BINARY=  753. 100ths=  7. 10s=  5. 1s=  2.
-# BINARY=  754. 100ths=  7. 10s=  5. 1s=  3.
-# BINARY=  755. 100ths=  7. 10s=  5. 1s=  4.
-# BINARY=  756. 100ths=  7. 10s=  5. 1s=  5.
-# BINARY=  757. 100ths=  7. 10s=  5. 1s=  6.
-# BINARY=  758. 100ths=  7. 10s=  5. 1s=  7.
-# BINARY=  759. 100ths=  7. 10s=  5. 1s=  8.
-# BINARY=  760. 100ths=  7. 10s=  5. 1s=  9.
-# BINARY=  761. 100ths=  7. 10s=  6. 1s=  0.
-# BINARY=  762. 100ths=  7. 10s=  6. 1s=  1.
-# BINARY=  763. 100ths=  7. 10s=  6. 1s=  2.
-# BINARY=  764. 100ths=  7. 10s=  6. 1s=  3.
-# BINARY=  765. 100ths=  7. 10s=  6. 1s=  4.
-# BINARY=  766. 100ths=  7. 10s=  6. 1s=  5.
-# BINARY=  767. 100ths=  7. 10s=  6. 1s=  6.
-# BINARY=  768. 100ths=  7. 10s=  6. 1s=  7.
-# BINARY=  769. 100ths=  7. 10s=  6. 1s=  8.
-# BINARY=  770. 100ths=  7. 10s=  6. 1s=  9.
-# BINARY=  771. 100ths=  7. 10s=  7. 1s=  0.
-# BINARY=  772. 100ths=  7. 10s=  7. 1s=  1.
-# BINARY=  773. 100ths=  7. 10s=  7. 1s=  2.
-# BINARY=  774. 100ths=  7. 10s=  7. 1s=  3.
-# BINARY=  775. 100ths=  7. 10s=  7. 1s=  4.
-# BINARY=  776. 100ths=  7. 10s=  7. 1s=  5.
-# BINARY=  777. 100ths=  7. 10s=  7. 1s=  6.
-# BINARY=  778. 100ths=  7. 10s=  7. 1s=  7.
-# BINARY=  779. 100ths=  7. 10s=  7. 1s=  8.
-# BINARY=  780. 100ths=  7. 10s=  7. 1s=  9.
-# BINARY=  781. 100ths=  7. 10s=  8. 1s=  0.
-# BINARY=  782. 100ths=  7. 10s=  8. 1s=  1.
-# BINARY=  783. 100ths=  7. 10s=  8. 1s=  2.
-# BINARY=  784. 100ths=  7. 10s=  8. 1s=  3.
-# BINARY=  785. 100ths=  7. 10s=  8. 1s=  4.
-# BINARY=  786. 100ths=  7. 10s=  8. 1s=  5.
-# BINARY=  787. 100ths=  7. 10s=  8. 1s=  6.
-# BINARY=  788. 100ths=  7. 10s=  8. 1s=  7.
-# BINARY=  789. 100ths=  7. 10s=  8. 1s=  8.
-# BINARY=  790. 100ths=  7. 10s=  8. 1s=  9.
-# BINARY=  791. 100ths=  7. 10s=  9. 1s=  0.
-# BINARY=  792. 100ths=  7. 10s=  9. 1s=  1.
-# BINARY=  793. 100ths=  7. 10s=  9. 1s=  2.
-# BINARY=  794. 100ths=  7. 10s=  9. 1s=  3.
-# BINARY=  795. 100ths=  7. 10s=  9. 1s=  4.
-# BINARY=  796. 100ths=  7. 10s=  9. 1s=  5.
-# BINARY=  797. 100ths=  7. 10s=  9. 1s=  6.
-# BINARY=  798. 100ths=  7. 10s=  9. 1s=  7.
-# BINARY=  799. 100ths=  7. 10s=  9. 1s=  8.
-# BINARY=  800. 100ths=  7. 10s=  9. 1s=  9.
-# BINARY=  801. 100ths=  8. 10s=  0. 1s=  0.
-# BINARY=  802. 100ths=  8. 10s=  0. 1s=  1.
-# BINARY=  803. 100ths=  8. 10s=  0. 1s=  2.
-# BINARY=  804. 100ths=  8. 10s=  0. 1s=  3.
-# BINARY=  805. 100ths=  8. 10s=  0. 1s=  4.
-# BINARY=  806. 100ths=  8. 10s=  0. 1s=  5.
-# BINARY=  807. 100ths=  8. 10s=  0. 1s=  6.
-# BINARY=  808. 100ths=  8. 10s=  0. 1s=  7.
-# BINARY=  809. 100ths=  8. 10s=  0. 1s=  8.
-# BINARY=  810. 100ths=  8. 10s=  0. 1s=  9.
-# BINARY=  811. 100ths=  8. 10s=  1. 1s=  0.
-# BINARY=  812. 100ths=  8. 10s=  1. 1s=  1.
-# BINARY=  813. 100ths=  8. 10s=  1. 1s=  2.
-# BINARY=  814. 100ths=  8. 10s=  1. 1s=  3.
-# BINARY=  815. 100ths=  8. 10s=  1. 1s=  4.
-# BINARY=  816. 100ths=  8. 10s=  1. 1s=  5.
-# BINARY=  817. 100ths=  8. 10s=  1. 1s=  6.
-# BINARY=  818. 100ths=  8. 10s=  1. 1s=  7.
-# BINARY=  819. 100ths=  8. 10s=  1. 1s=  8.
-# BINARY=  820. 100ths=  8. 10s=  1. 1s=  9.
-# BINARY=  821. 100ths=  8. 10s=  2. 1s=  0.
-# BINARY=  822. 100ths=  8. 10s=  2. 1s=  1.
-# BINARY=  823. 100ths=  8. 10s=  2. 1s=  2.
-# BINARY=  824. 100ths=  8. 10s=  2. 1s=  3.
-# BINARY=  825. 100ths=  8. 10s=  2. 1s=  4.
-# BINARY=  826. 100ths=  8. 10s=  2. 1s=  5.
-# BINARY=  827. 100ths=  8. 10s=  2. 1s=  6.
-# BINARY=  828. 100ths=  8. 10s=  2. 1s=  7.
-# BINARY=  829. 100ths=  8. 10s=  2. 1s=  8.
-# BINARY=  830. 100ths=  8. 10s=  2. 1s=  9.
-# BINARY=  831. 100ths=  8. 10s=  3. 1s=  0.
-# BINARY=  832. 100ths=  8. 10s=  3. 1s=  1.
-# BINARY=  833. 100ths=  8. 10s=  3. 1s=  2.
-# BINARY=  834. 100ths=  8. 10s=  3. 1s=  3.
-# BINARY=  835. 100ths=  8. 10s=  3. 1s=  4.
-# BINARY=  836. 100ths=  8. 10s=  3. 1s=  5.
-# BINARY=  837. 100ths=  8. 10s=  3. 1s=  6.
-# BINARY=  838. 100ths=  8. 10s=  3. 1s=  7.
-# BINARY=  839. 100ths=  8. 10s=  3. 1s=  8.
-# BINARY=  840. 100ths=  8. 10s=  3. 1s=  9.
-# BINARY=  841. 100ths=  8. 10s=  4. 1s=  0.
-# BINARY=  842. 100ths=  8. 10s=  4. 1s=  1.
-# BINARY=  843. 100ths=  8. 10s=  4. 1s=  2.
-# BINARY=  844. 100ths=  8. 10s=  4. 1s=  3.
-# BINARY=  845. 100ths=  8. 10s=  4. 1s=  4.
-# BINARY=  846. 100ths=  8. 10s=  4. 1s=  5.
-# BINARY=  847. 100ths=  8. 10s=  4. 1s=  6.
-# BINARY=  848. 100ths=  8. 10s=  4. 1s=  7.
-# BINARY=  849. 100ths=  8. 10s=  4. 1s=  8.
-# BINARY=  850. 100ths=  8. 10s=  4. 1s=  9.
-# BINARY=  851. 100ths=  8. 10s=  5. 1s=  0.
-# BINARY=  852. 100ths=  8. 10s=  5. 1s=  1.
-# BINARY=  853. 100ths=  8. 10s=  5. 1s=  2.
-# BINARY=  854. 100ths=  8. 10s=  5. 1s=  3.
-# BINARY=  855. 100ths=  8. 10s=  5. 1s=  4.
-# BINARY=  856. 100ths=  8. 10s=  5. 1s=  5.
-# BINARY=  857. 100ths=  8. 10s=  5. 1s=  6.
-# BINARY=  858. 100ths=  8. 10s=  5. 1s=  7.
-# BINARY=  859. 100ths=  8. 10s=  5. 1s=  8.
-# BINARY=  860. 100ths=  8. 10s=  5. 1s=  9.
-# BINARY=  861. 100ths=  8. 10s=  6. 1s=  0.
-# BINARY=  862. 100ths=  8. 10s=  6. 1s=  1.
-# BINARY=  863. 100ths=  8. 10s=  6. 1s=  2.
-# BINARY=  864. 100ths=  8. 10s=  6. 1s=  3.
-# BINARY=  865. 100ths=  8. 10s=  6. 1s=  4.
-# BINARY=  866. 100ths=  8. 10s=  6. 1s=  5.
-# BINARY=  867. 100ths=  8. 10s=  6. 1s=  6.
-# BINARY=  868. 100ths=  8. 10s=  6. 1s=  7.
-# BINARY=  869. 100ths=  8. 10s=  6. 1s=  8.
-# BINARY=  870. 100ths=  8. 10s=  6. 1s=  9.
-# BINARY=  871. 100ths=  8. 10s=  7. 1s=  0.
-# BINARY=  872. 100ths=  8. 10s=  7. 1s=  1.
-# BINARY=  873. 100ths=  8. 10s=  7. 1s=  2.
-# BINARY=  874. 100ths=  8. 10s=  7. 1s=  3.
-# BINARY=  875. 100ths=  8. 10s=  7. 1s=  4.
-# BINARY=  876. 100ths=  8. 10s=  7. 1s=  5.
-# BINARY=  877. 100ths=  8. 10s=  7. 1s=  6.
-# BINARY=  878. 100ths=  8. 10s=  7. 1s=  7.
-# BINARY=  879. 100ths=  8. 10s=  7. 1s=  8.
-# BINARY=  880. 100ths=  8. 10s=  7. 1s=  9.
-# BINARY=  881. 100ths=  8. 10s=  8. 1s=  0.
-# BINARY=  882. 100ths=  8. 10s=  8. 1s=  1.
-# BINARY=  883. 100ths=  8. 10s=  8. 1s=  2.
-# BINARY=  884. 100ths=  8. 10s=  8. 1s=  3.
-# BINARY=  885. 100ths=  8. 10s=  8. 1s=  4.
-# BINARY=  886. 100ths=  8. 10s=  8. 1s=  5.
-# BINARY=  887. 100ths=  8. 10s=  8. 1s=  6.
-# BINARY=  888. 100ths=  8. 10s=  8. 1s=  7.
-# BINARY=  889. 100ths=  8. 10s=  8. 1s=  8.
-# BINARY=  890. 100ths=  8. 10s=  8. 1s=  9.
-# BINARY=  891. 100ths=  8. 10s=  9. 1s=  0.
-# BINARY=  892. 100ths=  8. 10s=  9. 1s=  1.
-# BINARY=  893. 100ths=  8. 10s=  9. 1s=  2.
-# BINARY=  894. 100ths=  8. 10s=  9. 1s=  3.
-# BINARY=  895. 100ths=  8. 10s=  9. 1s=  4.
-# BINARY=  896. 100ths=  8. 10s=  9. 1s=  5.
-# BINARY=  897. 100ths=  8. 10s=  9. 1s=  6.
-# BINARY=  898. 100ths=  8. 10s=  9. 1s=  7.
-# BINARY=  899. 100ths=  8. 10s=  9. 1s=  8.
-# BINARY=  900. 100ths=  8. 10s=  9. 1s=  9.
-# BINARY=  901. 100ths=  9. 10s=  0. 1s=  0.
-# BINARY=  902. 100ths=  9. 10s=  0. 1s=  1.
-# BINARY=  903. 100ths=  9. 10s=  0. 1s=  2.
-# BINARY=  904. 100ths=  9. 10s=  0. 1s=  3.
-# BINARY=  905. 100ths=  9. 10s=  0. 1s=  4.
-# BINARY=  906. 100ths=  9. 10s=  0. 1s=  5.
-# BINARY=  907. 100ths=  9. 10s=  0. 1s=  6.
-# BINARY=  908. 100ths=  9. 10s=  0. 1s=  7.
-# BINARY=  909. 100ths=  9. 10s=  0. 1s=  8.
-# BINARY=  910. 100ths=  9. 10s=  0. 1s=  9.
-# BINARY=  911. 100ths=  9. 10s=  1. 1s=  0.
-# BINARY=  912. 100ths=  9. 10s=  1. 1s=  1.
-# BINARY=  913. 100ths=  9. 10s=  1. 1s=  2.
-# BINARY=  914. 100ths=  9. 10s=  1. 1s=  3.
-# BINARY=  915. 100ths=  9. 10s=  1. 1s=  4.
-# BINARY=  916. 100ths=  9. 10s=  1. 1s=  5.
-# BINARY=  917. 100ths=  9. 10s=  1. 1s=  6.
-# BINARY=  918. 100ths=  9. 10s=  1. 1s=  7.
-# BINARY=  919. 100ths=  9. 10s=  1. 1s=  8.
-# BINARY=  920. 100ths=  9. 10s=  1. 1s=  9.
-# BINARY=  921. 100ths=  9. 10s=  2. 1s=  0.
-# BINARY=  922. 100ths=  9. 10s=  2. 1s=  1.
-# BINARY=  923. 100ths=  9. 10s=  2. 1s=  2.
-# BINARY=  924. 100ths=  9. 10s=  2. 1s=  3.
-# BINARY=  925. 100ths=  9. 10s=  2. 1s=  4.
-# BINARY=  926. 100ths=  9. 10s=  2. 1s=  5.
-# BINARY=  927. 100ths=  9. 10s=  2. 1s=  6.
-# BINARY=  928. 100ths=  9. 10s=  2. 1s=  7.
-# BINARY=  929. 100ths=  9. 10s=  2. 1s=  8.
-# BINARY=  930. 100ths=  9. 10s=  2. 1s=  9.
-# BINARY=  931. 100ths=  9. 10s=  3. 1s=  0.
-# BINARY=  932. 100ths=  9. 10s=  3. 1s=  1.
-# BINARY=  933. 100ths=  9. 10s=  3. 1s=  2.
-# BINARY=  934. 100ths=  9. 10s=  3. 1s=  3.
-# BINARY=  935. 100ths=  9. 10s=  3. 1s=  4.
-# BINARY=  936. 100ths=  9. 10s=  3. 1s=  5.
-# BINARY=  937. 100ths=  9. 10s=  3. 1s=  6.
-# BINARY=  938. 100ths=  9. 10s=  3. 1s=  7.
-# BINARY=  939. 100ths=  9. 10s=  3. 1s=  8.
-# BINARY=  940. 100ths=  9. 10s=  3. 1s=  9.
-# BINARY=  941. 100ths=  9. 10s=  4. 1s=  0.
-# BINARY=  942. 100ths=  9. 10s=  4. 1s=  1.
-# BINARY=  943. 100ths=  9. 10s=  4. 1s=  2.
-# BINARY=  944. 100ths=  9. 10s=  4. 1s=  3.
-# BINARY=  945. 100ths=  9. 10s=  4. 1s=  4.
-# BINARY=  946. 100ths=  9. 10s=  4. 1s=  5.
-# BINARY=  947. 100ths=  9. 10s=  4. 1s=  6.
-# BINARY=  948. 100ths=  9. 10s=  4. 1s=  7.
-# BINARY=  949. 100ths=  9. 10s=  4. 1s=  8.
-# BINARY=  950. 100ths=  9. 10s=  4. 1s=  9.
-# BINARY=  951. 100ths=  9. 10s=  5. 1s=  0.
-# BINARY=  952. 100ths=  9. 10s=  5. 1s=  1.
-# BINARY=  953. 100ths=  9. 10s=  5. 1s=  2.
-# BINARY=  954. 100ths=  9. 10s=  5. 1s=  3.
-# BINARY=  955. 100ths=  9. 10s=  5. 1s=  4.
-# BINARY=  956. 100ths=  9. 10s=  5. 1s=  5.
-# BINARY=  957. 100ths=  9. 10s=  5. 1s=  6.
-# BINARY=  958. 100ths=  9. 10s=  5. 1s=  7.
-# BINARY=  959. 100ths=  9. 10s=  5. 1s=  8.
-# BINARY=  960. 100ths=  9. 10s=  5. 1s=  9.
-# BINARY=  961. 100ths=  9. 10s=  6. 1s=  0.
-# BINARY=  962. 100ths=  9. 10s=  6. 1s=  1.
-# BINARY=  963. 100ths=  9. 10s=  6. 1s=  2.
-# BINARY=  964. 100ths=  9. 10s=  6. 1s=  3.
-# BINARY=  965. 100ths=  9. 10s=  6. 1s=  4.
-# BINARY=  966. 100ths=  9. 10s=  6. 1s=  5.
-# BINARY=  967. 100ths=  9. 10s=  6. 1s=  6.
-# BINARY=  968. 100ths=  9. 10s=  6. 1s=  7.
-# BINARY=  969. 100ths=  9. 10s=  6. 1s=  8.
-# BINARY=  970. 100ths=  9. 10s=  6. 1s=  9.
-# BINARY=  971. 100ths=  9. 10s=  7. 1s=  0.
-# BINARY=  972. 100ths=  9. 10s=  7. 1s=  1.
-# BINARY=  973. 100ths=  9. 10s=  7. 1s=  2.
-# BINARY=  974. 100ths=  9. 10s=  7. 1s=  3.
-# BINARY=  975. 100ths=  9. 10s=  7. 1s=  4.
-# BINARY=  976. 100ths=  9. 10s=  7. 1s=  5.
-# BINARY=  977. 100ths=  9. 10s=  7. 1s=  6.
-# BINARY=  978. 100ths=  9. 10s=  7. 1s=  7.
-# BINARY=  979. 100ths=  9. 10s=  7. 1s=  8.
-# BINARY=  980. 100ths=  9. 10s=  7. 1s=  9.
-# BINARY=  981. 100ths=  9. 10s=  8. 1s=  0.
-# BINARY=  982. 100ths=  9. 10s=  8. 1s=  1.
-# BINARY=  983. 100ths=  9. 10s=  8. 1s=  2.
-# BINARY=  984. 100ths=  9. 10s=  8. 1s=  3.
-# BINARY=  985. 100ths=  9. 10s=  8. 1s=  4.
-# BINARY=  986. 100ths=  9. 10s=  8. 1s=  5.
-# BINARY=  987. 100ths=  9. 10s=  8. 1s=  6.
-# BINARY=  988. 100ths=  9. 10s=  8. 1s=  7.
-# BINARY=  989. 100ths=  9. 10s=  8. 1s=  8.
-# BINARY=  990. 100ths=  9. 10s=  8. 1s=  9.
-# BINARY=  991. 100ths=  9. 10s=  9. 1s=  0.
-# BINARY=  992. 100ths=  9. 10s=  9. 1s=  1.
-# BINARY=  993. 100ths=  9. 10s=  9. 1s=  2.
-# BINARY=  994. 100ths=  9. 10s=  9. 1s=  3.
-# BINARY=  995. 100ths=  9. 10s=  9. 1s=  4.
-# BINARY=  996. 100ths=  9. 10s=  9. 1s=  5.
-# BINARY=  997. 100ths=  9. 10s=  9. 1s=  6.
-# BINARY=  998. 100ths=  9. 10s=  9. 1s=  7.
-# BINARY=  999. 100ths=  9. 10s=  9. 1s=  8.
-# BINARY= 1000. 100ths=  9. 10s=  9. 1s=  9.
-#                10010 ns	Simulation Finished
-# End time: 05:01:27 on May 19,2021, Elapsed time: 0:00:16
-# Errors: 0, Warnings: 0
+#                    0 ns score =         54 score_BCD = 054 hiscore_BCD = 000 seg = 111111111111111111111111111100100100011001
+#                   10 ns score =         76 score_BCD = 076 hiscore_BCD = 076 seg = 111111111111111111111111111101110000000010
+#                   30 ns score =          8 score_BCD = 008 hiscore_BCD = 076 seg = 111111111111111111111111111111111110000000
+#                   50 ns score =         13 score_BCD = 013 hiscore_BCD = 076 seg = 111111111111111111111111111111110010110000
+#                   70 ns score =         62 score_BCD = 062 hiscore_BCD = 076 seg = 111111111111111111111111111100000100100100
+#                   90 ns score =         88 score_BCD = 088 hiscore_BCD = 088 seg = 111111111111111111111111111100000000000000
+#                  110 ns score =         23 score_BCD = 023 hiscore_BCD = 088 seg = 111111111111111111111111111101001000110000
+#                  130 ns score =         39 score_BCD = 039 hiscore_BCD = 088 seg = 111111111111111111111111111101100000010000
+#                  150 ns score =         15 score_BCD = 015 hiscore_BCD = 088 seg = 111111111111111111111111111111110010010010
+#                  170 ns score =         25 score_BCD = 025 hiscore_BCD = 088 seg = 111111111111111111111111111101001000010010
+#                  190 ns score =         44 score_BCD = 044 hiscore_BCD = 088 seg = 111111111111111111111111111100110010011001
+#                  210 ns score =          6 score_BCD = 006 hiscore_BCD = 088 seg = 111111111111111111111111111111111110000010
+#                  230 ns score =         75 score_BCD = 075 hiscore_BCD = 088 seg = 111111111111111111111111111101110000010010
+#                  250 ns score =         76 score_BCD = 076 hiscore_BCD = 088 seg = 111111111111111111111111111101110000000010
+#                  270 ns score =         85 score_BCD = 085 hiscore_BCD = 088 seg = 111111111111111111111111111100000000010010
+#                  290 ns score =          9 score_BCD = 009 hiscore_BCD = 088 seg = 111111111111111111111111111111111110010000
+#                  310 ns score =         74 score_BCD = 074 hiscore_BCD = 088 seg = 111111111111111111111111111101110000011001
+#                  330 ns score =         58 score_BCD = 058 hiscore_BCD = 088 seg = 111111111111111111111111111100100100000000
+#                  350 ns score =         23 score_BCD = 023 hiscore_BCD = 088 seg = 111111111111111111111111111101001000110000
+#                  370 ns score =          3 score_BCD = 003 hiscore_BCD = 088 seg = 111111111111111111111111111111111110110000
+#                  390 ns score =         12 score_BCD = 012 hiscore_BCD = 088 seg = 111111111111111111111111111111110010100100
+#                  410 ns score =         44 score_BCD = 044 hiscore_BCD = 088 seg = 111111111111111111111111111100110010011001
+#                  430 ns score =          5 score_BCD = 005 hiscore_BCD = 088 seg = 111111111111111111111111111111111110010010
+#                  450 ns score =         30 score_BCD = 030 hiscore_BCD = 088 seg = 111111111111111111111111111101100001111111
+#                  470 ns score =         19 score_BCD = 019 hiscore_BCD = 088 seg = 111111111111111111111111111111110010010000
+#                  490 ns score =         90 score_BCD = 090 hiscore_BCD = 090 seg = 111111111111111111111111111100100001111111
+#                  510 ns score =         25 score_BCD = 025 hiscore_BCD = 090 seg = 111111111111111111111111111101001000010010
+#                  530 ns score =         49 score_BCD = 049 hiscore_BCD = 090 seg = 111111111111111111111111111100110010010000
+#                  550 ns score =          0 score_BCD = 000 hiscore_BCD = 090 seg = 111111111111111111111111111111111111111111
+#                  570 ns score =         87 score_BCD = 087 hiscore_BCD = 090 seg = 111111111111111111111111111100000000111000
+#                  590 ns score =         46 score_BCD = 046 hiscore_BCD = 090 seg = 111111111111111111111111111100110010000010
+#                  610 ns score =         41 score_BCD = 041 hiscore_BCD = 090 seg = 111111111111111111111111111100110011111001
+#                  630 ns score =         86 score_BCD = 086 hiscore_BCD = 090 seg = 111111111111111111111111111100000000000010
+#                  650 ns score =         90 score_BCD = 090 hiscore_BCD = 090 seg = 111111111111111111111111111100100001111111
+#                  670 ns score =         77 score_BCD = 077 hiscore_BCD = 090 seg = 111111111111111111111111111101110000111000
+#                  690 ns score =         70 score_BCD = 070 hiscore_BCD = 090 seg = 111111111111111111111111111101110001111111
+#                  710 ns score =         88 score_BCD = 088 hiscore_BCD = 090 seg = 111111111111111111111111111100000000000000
+#                  750 ns score =          9 score_BCD = 009 hiscore_BCD = 090 seg = 111111111111111111111111111111111110010000
+#                  770 ns score =         19 score_BCD = 019 hiscore_BCD = 090 seg = 111111111111111111111111111111110010010000
+#                  790 ns score =         49 score_BCD = 049 hiscore_BCD = 090 seg = 111111111111111111111111111100110010010000
+#                  810 ns score =         46 score_BCD = 046 hiscore_BCD = 090 seg = 111111111111111111111111111100110010000010
+#                  830 ns score =         93 score_BCD = 093 hiscore_BCD = 093 seg = 111111111111111111111111111100100000110000
+#                  850 ns score =         36 score_BCD = 036 hiscore_BCD = 093 seg = 111111111111111111111111111101100000000010
+#                  870 ns score =         21 score_BCD = 021 hiscore_BCD = 093 seg = 111111111111111111111111111101001001111001
+#                  890 ns score =         80 score_BCD = 080 hiscore_BCD = 093 seg = 111111111111111111111111111100000001111111
+#                  910 ns score =         39 score_BCD = 039 hiscore_BCD = 093 seg = 111111111111111111111111111101100000010000
+#                  930 ns score =         12 score_BCD = 012 hiscore_BCD = 093 seg = 111111111111111111111111111111110010100100
+#                  950 ns score =         16 score_BCD = 016 hiscore_BCD = 093 seg = 111111111111111111111111111111110010000010
+#                  970 ns score =         68 score_BCD = 068 hiscore_BCD = 093 seg = 111111111111111111111111111100000100000000
+#                  990 ns score =         16 score_BCD = 016 hiscore_BCD = 093 seg = 111111111111111111111111111111110010000010
+#                 1010 ns score =         29 score_BCD = 029 hiscore_BCD = 093 seg = 111111111111111111111111111101001000010000
+#                 1030 ns score =          5 score_BCD = 005 hiscore_BCD = 093 seg = 111111111111111111111111111111111110010010
+#                 1050 ns score =         45 score_BCD = 045 hiscore_BCD = 093 seg = 111111111111111111111111111100110010010010
+#                 1070 ns score =         34 score_BCD = 034 hiscore_BCD = 093 seg = 111111111111111111111111111101100000011001
+#                 1090 ns score =         65 score_BCD = 065 hiscore_BCD = 093 seg = 111111111111111111111111111100000100010010
+#                 1110 ns score =         50 score_BCD = 050 hiscore_BCD = 093 seg = 111111111111111111111111111100100101111111
+#                 1130 ns score =         11 score_BCD = 011 hiscore_BCD = 093 seg = 111111111111111111111111111111110011111001
+#                 1150 ns score =         25 score_BCD = 025 hiscore_BCD = 093 seg = 111111111111111111111111111101001000010010
+#                 1170 ns score =          6 score_BCD = 006 hiscore_BCD = 093 seg = 111111111111111111111111111111111110000010
+#                 1190 ns score =         41 score_BCD = 041 hiscore_BCD = 093 seg = 111111111111111111111111111100110011111001
+#                 1210 ns score =         86 score_BCD = 086 hiscore_BCD = 093 seg = 111111111111111111111111111100000000000010
+#                 1230 ns score =         64 score_BCD = 064 hiscore_BCD = 093 seg = 111111111111111111111111111100000100011001
+#                 1250 ns score =         47 score_BCD = 047 hiscore_BCD = 093 seg = 111111111111111111111111111100110010111000
+#                 1270 ns score =         91 score_BCD = 091 hiscore_BCD = 093 seg = 111111111111111111111111111100100001111001
+#                 1290 ns score =         55 score_BCD = 055 hiscore_BCD = 093 seg = 111111111111111111111111111100100100010010
+#                 1310 ns score =         57 score_BCD = 057 hiscore_BCD = 093 seg = 111111111111111111111111111100100100111000
+#                 1330 ns score =         32 score_BCD = 032 hiscore_BCD = 093 seg = 111111111111111111111111111101100000100100
+#                 1350 ns score =         25 score_BCD = 025 hiscore_BCD = 093 seg = 111111111111111111111111111101001000010010
+#                 1370 ns score =         19 score_BCD = 019 hiscore_BCD = 093 seg = 111111111111111111111111111111110010010000
+#                 1390 ns score =         24 score_BCD = 024 hiscore_BCD = 093 seg = 111111111111111111111111111101001000011001
+#                 1410 ns score =         92 score_BCD = 092 hiscore_BCD = 093 seg = 111111111111111111111111111100100000100100
+#                 1430 ns score =         80 score_BCD = 080 hiscore_BCD = 093 seg = 111111111111111111111111111100000001111111
+#                 1450 ns score =         60 score_BCD = 060 hiscore_BCD = 093 seg = 111111111111111111111111111100000101111111
+#                 1470 ns score =         96 score_BCD = 096 hiscore_BCD = 096 seg = 111111111111111111111111111100100000000010
+#                 1490 ns score =          9 score_BCD = 009 hiscore_BCD = 096 seg = 111111111111111111111111111111111110010000
+#                 1510 ns score =         55 score_BCD = 055 hiscore_BCD = 096 seg = 111111111111111111111111111100100100010010
+#                 1530 ns score =         58 score_BCD = 058 hiscore_BCD = 096 seg = 111111111111111111111111111100100100000000
+#                 1550 ns score =         60 score_BCD = 060 hiscore_BCD = 096 seg = 111111111111111111111111111100000101111111
+#                 1570 ns score =         67 score_BCD = 067 hiscore_BCD = 096 seg = 111111111111111111111111111100000100111000
+#                 1590 ns score =         31 score_BCD = 031 hiscore_BCD = 096 seg = 111111111111111111111111111101100001111001
+#                 1610 ns score =         78 score_BCD = 078 hiscore_BCD = 096 seg = 111111111111111111111111111101110000000000
+#                 1630 ns score =         93 score_BCD = 093 hiscore_BCD = 096 seg = 111111111111111111111111111100100000110000
+#                 1650 ns score =         52 score_BCD = 052 hiscore_BCD = 096 seg = 111111111111111111111111111100100100100100
+#                 1670 ns score =         28 score_BCD = 028 hiscore_BCD = 096 seg = 111111111111111111111111111101001000000000
+#                 1690 ns score =          1 score_BCD = 001 hiscore_BCD = 096 seg = 111111111111111111111111111111111111111001
+#                 1710 ns score =         74 score_BCD = 074 hiscore_BCD = 096 seg = 111111111111111111111111111101110000011001
+#                 1730 ns score =          6 score_BCD = 006 hiscore_BCD = 096 seg = 111111111111111111111111111111111110000010
+#                 1750 ns score =          5 score_BCD = 005 hiscore_BCD = 096 seg = 111111111111111111111111111111111110010010
+#                 1770 ns score =         51 score_BCD = 051 hiscore_BCD = 096 seg = 111111111111111111111111111100100101111001
+#                 1790 ns score =         78 score_BCD = 078 hiscore_BCD = 096 seg = 111111111111111111111111111101110000000000
+#                 1810 ns score =         69 score_BCD = 069 hiscore_BCD = 096 seg = 111111111111111111111111111100000100010000
+#                 1830 ns score =         76 score_BCD = 076 hiscore_BCD = 096 seg = 111111111111111111111111111101110000000010
+#                 1850 ns score =         91 score_BCD = 091 hiscore_BCD = 096 seg = 111111111111111111111111111100100001111001
+#                 1870 ns score =         84 score_BCD = 084 hiscore_BCD = 096 seg = 111111111111111111111111111100000000011001
+#                 1890 ns score =         50 score_BCD = 050 hiscore_BCD = 096 seg = 111111111111111111111111111100100101111111
+#                 1910 ns score =         26 score_BCD = 026 hiscore_BCD = 096 seg = 111111111111111111111111111101001000000010
+#                 1930 ns score =         63 score_BCD = 063 hiscore_BCD = 096 seg = 111111111111111111111111111100000100110000
+#                 1950 ns score =         49 score_BCD = 049 hiscore_BCD = 096 seg = 111111111111111111111111111100110010010000
+#                 1970 ns score =         28 score_BCD = 028 hiscore_BCD = 096 seg = 111111111111111111111111111101001000000000
+# ** Note: $stop    : C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/score_display_tb.v(46)
+#    Time: 1990 ns  Iteration: 1  Instance: /score_display_tb
+# Break in Module score_display_tb at C:/Users/James/Workspace/ELEC5566M-MiniProject/testbenches/score_display_tb.v line 46
+# altEditor error: couldn't execute "C:\Program Files (x86)\Notepad++\notepad++.exe": no such file or directory
+# End time: 01:20:36 on May 20,2021, Elapsed time: 0:00:11
+# Errors: 1, Warnings: 8

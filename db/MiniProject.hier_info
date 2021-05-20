@@ -8,30 +8,30 @@ v_sync <= vga_gen:vga.v_sync
 v_clk <= vga_gen:vga.v_clk
 display_on <= display_on.DB_MAX_OUTPUT_PORT_TYPE
 sync_n <= vga_gen:vga.sync_n
-R[0] <= image_renderer:display.RGB
-R[1] <= image_renderer:display.RGB
-R[2] <= image_renderer:display.RGB
-R[3] <= image_renderer:display.RGB
-R[4] <= image_renderer:display.RGB
-R[5] <= image_renderer:display.RGB
-R[6] <= image_renderer:display.RGB
-R[7] <= image_renderer:display.RGB
-G[0] <= image_renderer:display.RGB
-G[1] <= image_renderer:display.RGB
-G[2] <= image_renderer:display.RGB
-G[3] <= image_renderer:display.RGB
-G[4] <= image_renderer:display.RGB
-G[5] <= image_renderer:display.RGB
-G[6] <= image_renderer:display.RGB
-G[7] <= image_renderer:display.RGB
-B[0] <= image_renderer:display.RGB
-B[1] <= image_renderer:display.RGB
-B[2] <= image_renderer:display.RGB
-B[3] <= image_renderer:display.RGB
-B[4] <= image_renderer:display.RGB
-B[5] <= image_renderer:display.RGB
-B[6] <= image_renderer:display.RGB
-B[7] <= image_renderer:display.RGB
+R[0] <= image_rendering:display.RGB
+R[1] <= image_rendering:display.RGB
+R[2] <= image_rendering:display.RGB
+R[3] <= image_rendering:display.RGB
+R[4] <= image_rendering:display.RGB
+R[5] <= image_rendering:display.RGB
+R[6] <= image_rendering:display.RGB
+R[7] <= image_rendering:display.RGB
+G[0] <= image_rendering:display.RGB
+G[1] <= image_rendering:display.RGB
+G[2] <= image_rendering:display.RGB
+G[3] <= image_rendering:display.RGB
+G[4] <= image_rendering:display.RGB
+G[5] <= image_rendering:display.RGB
+G[6] <= image_rendering:display.RGB
+G[7] <= image_rendering:display.RGB
+B[0] <= image_rendering:display.RGB
+B[1] <= image_rendering:display.RGB
+B[2] <= image_rendering:display.RGB
+B[3] <= image_rendering:display.RGB
+B[4] <= image_rendering:display.RGB
+B[5] <= image_rendering:display.RGB
+B[6] <= image_rendering:display.RGB
+B[7] <= image_rendering:display.RGB
 LED[0] <= LED.DB_MAX_OUTPUT_PORT_TYPE
 LED[1] <= LED.DB_MAX_OUTPUT_PORT_TYPE
 LED[2] <= LED.DB_MAX_OUTPUT_PORT_TYPE
@@ -42,48 +42,48 @@ LED[6] <= LED.DB_MAX_OUTPUT_PORT_TYPE
 LED[7] <= LED.DB_MAX_OUTPUT_PORT_TYPE
 LED[8] <= LED.DB_MAX_OUTPUT_PORT_TYPE
 LED[9] <= <GND>
-seven_seg[0] <= score_counter:score.seven_seg
-seven_seg[1] <= score_counter:score.seven_seg
-seven_seg[2] <= score_counter:score.seven_seg
-seven_seg[3] <= score_counter:score.seven_seg
-seven_seg[4] <= score_counter:score.seven_seg
-seven_seg[5] <= score_counter:score.seven_seg
-seven_seg[6] <= score_counter:score.seven_seg
-seven_seg[7] <= score_counter:score.seven_seg
-seven_seg[8] <= score_counter:score.seven_seg
-seven_seg[9] <= score_counter:score.seven_seg
-seven_seg[10] <= score_counter:score.seven_seg
-seven_seg[11] <= score_counter:score.seven_seg
-seven_seg[12] <= score_counter:score.seven_seg
-seven_seg[13] <= score_counter:score.seven_seg
-seven_seg[14] <= score_counter:score.seven_seg
-seven_seg[15] <= score_counter:score.seven_seg
-seven_seg[16] <= score_counter:score.seven_seg
-seven_seg[17] <= score_counter:score.seven_seg
-seven_seg[18] <= score_counter:score.seven_seg
-seven_seg[19] <= score_counter:score.seven_seg
-seven_seg[20] <= score_counter:score.seven_seg
-seven_seg[21] <= score_counter:score.seven_seg
-seven_seg[22] <= score_counter:score.seven_seg
-seven_seg[23] <= score_counter:score.seven_seg
-seven_seg[24] <= score_counter:score.seven_seg
-seven_seg[25] <= score_counter:score.seven_seg
-seven_seg[26] <= score_counter:score.seven_seg
-seven_seg[27] <= score_counter:score.seven_seg
-seven_seg[28] <= score_counter:score.seven_seg
-seven_seg[29] <= score_counter:score.seven_seg
-seven_seg[30] <= score_counter:score.seven_seg
-seven_seg[31] <= score_counter:score.seven_seg
-seven_seg[32] <= score_counter:score.seven_seg
-seven_seg[33] <= score_counter:score.seven_seg
-seven_seg[34] <= score_counter:score.seven_seg
-seven_seg[35] <= score_counter:score.seven_seg
-seven_seg[36] <= score_counter:score.seven_seg
-seven_seg[37] <= score_counter:score.seven_seg
-seven_seg[38] <= score_counter:score.seven_seg
-seven_seg[39] <= score_counter:score.seven_seg
-seven_seg[40] <= score_counter:score.seven_seg
-seven_seg[41] <= score_counter:score.seven_seg
+seven_seg[0] <= score_display:score.seven_seg
+seven_seg[1] <= score_display:score.seven_seg
+seven_seg[2] <= score_display:score.seven_seg
+seven_seg[3] <= score_display:score.seven_seg
+seven_seg[4] <= score_display:score.seven_seg
+seven_seg[5] <= score_display:score.seven_seg
+seven_seg[6] <= score_display:score.seven_seg
+seven_seg[7] <= score_display:score.seven_seg
+seven_seg[8] <= score_display:score.seven_seg
+seven_seg[9] <= score_display:score.seven_seg
+seven_seg[10] <= score_display:score.seven_seg
+seven_seg[11] <= score_display:score.seven_seg
+seven_seg[12] <= score_display:score.seven_seg
+seven_seg[13] <= score_display:score.seven_seg
+seven_seg[14] <= score_display:score.seven_seg
+seven_seg[15] <= score_display:score.seven_seg
+seven_seg[16] <= score_display:score.seven_seg
+seven_seg[17] <= score_display:score.seven_seg
+seven_seg[18] <= score_display:score.seven_seg
+seven_seg[19] <= score_display:score.seven_seg
+seven_seg[20] <= score_display:score.seven_seg
+seven_seg[21] <= score_display:score.seven_seg
+seven_seg[22] <= score_display:score.seven_seg
+seven_seg[23] <= score_display:score.seven_seg
+seven_seg[24] <= score_display:score.seven_seg
+seven_seg[25] <= score_display:score.seven_seg
+seven_seg[26] <= score_display:score.seven_seg
+seven_seg[27] <= score_display:score.seven_seg
+seven_seg[28] <= score_display:score.seven_seg
+seven_seg[29] <= score_display:score.seven_seg
+seven_seg[30] <= score_display:score.seven_seg
+seven_seg[31] <= score_display:score.seven_seg
+seven_seg[32] <= score_display:score.seven_seg
+seven_seg[33] <= score_display:score.seven_seg
+seven_seg[34] <= score_display:score.seven_seg
+seven_seg[35] <= score_display:score.seven_seg
+seven_seg[36] <= score_display:score.seven_seg
+seven_seg[37] <= score_display:score.seven_seg
+seven_seg[38] <= score_display:score.seven_seg
+seven_seg[39] <= score_display:score.seven_seg
+seven_seg[40] <= score_display:score.seven_seg
+seven_seg[41] <= score_display:score.seven_seg
 
 
 |flappy_bird|clk_divider:VGA
@@ -123,7 +123,7 @@ in_clk => count[31].CLK
 out_clk <= out_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|clk_divider:GAME
+|flappy_bird|clk_divider:BG
 in_clk => out_clk~reg0.CLK
 in_clk => count[0].CLK
 in_clk => count[1].CLK
@@ -312,14 +312,14 @@ v_pos[15] <= v_pos[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clk => clk.IN1
 rst => flap.OUTPUTSELECT
 rst => raw_pause.OUTPUTSELECT
-PS2_clk => prevCode[0].CLK
-PS2_clk => prevCode[1].CLK
-PS2_clk => prevCode[2].CLK
-PS2_clk => prevCode[3].CLK
-PS2_clk => prevCode[4].CLK
-PS2_clk => prevCode[5].CLK
-PS2_clk => prevCode[6].CLK
-PS2_clk => prevCode[7].CLK
+PS2_clk => prev_code[0].CLK
+PS2_clk => prev_code[1].CLK
+PS2_clk => prev_code[2].CLK
+PS2_clk => prev_code[3].CLK
+PS2_clk => prev_code[4].CLK
+PS2_clk => prev_code[5].CLK
+PS2_clk => prev_code[6].CLK
+PS2_clk => prev_code[7].CLK
 PS2_clk => code[0].CLK
 PS2_clk => code[1].CLK
 PS2_clk => code[2].CLK
@@ -360,28 +360,28 @@ PS2_clk => count[28].CLK
 PS2_clk => count[29].CLK
 PS2_clk => count[30].CLK
 PS2_clk => count[31].CLK
-PS2_clk => keyCode[1].CLK
-PS2_clk => keyCode[2].CLK
-PS2_clk => keyCode[3].CLK
-PS2_clk => keyCode[4].CLK
-PS2_clk => keyCode[5].CLK
-PS2_clk => keyCode[6].CLK
-PS2_clk => keyCode[7].CLK
-PS2_clk => keyCode[8].CLK
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
-PS2_data => keyCode.DATAB
+PS2_clk => key[1].CLK
+PS2_clk => key[2].CLK
+PS2_clk => key[3].CLK
+PS2_clk => key[4].CLK
+PS2_clk => key[5].CLK
+PS2_clk => key[6].CLK
+PS2_clk => key[7].CLK
+PS2_clk => key[8].CLK
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
+PS2_data => key.DATAB
 pause <= key_filter:p_edge.port2
 flap <= flap.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |flappy_bird|keyboard_input:kb|key_filter:p_edge
-clock => delay.CLK
+clk => delay.CLK
 key => p_key.IN1
 key => delay.DATAIN
 p_key <= p_key.DB_MAX_OUTPUT_PORT_TYPE
@@ -676,69 +676,72 @@ bird_angle[1] <= bird_angle[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 |flappy_bird|collision_detection:detect
 clk => collision~reg0.CLK
 birdY[0] => Add0.IN64
-birdY[0] => Add7.IN64
+birdY[0] => LessThan5.IN64
+birdY[0] => LessThan9.IN64
+birdY[0] => LessThan13.IN64
+birdY[0] => LessThan17.IN64
 birdY[1] => Add0.IN63
-birdY[1] => Add7.IN63
+birdY[1] => Add7.IN62
 birdY[2] => Add0.IN62
-birdY[2] => Add7.IN62
+birdY[2] => Add7.IN61
 birdY[3] => Add0.IN61
-birdY[3] => Add7.IN61
+birdY[3] => Add7.IN60
 birdY[4] => Add0.IN60
-birdY[4] => Add7.IN60
+birdY[4] => Add7.IN59
 birdY[5] => Add0.IN59
-birdY[5] => Add7.IN59
+birdY[5] => Add7.IN58
 birdY[6] => Add0.IN58
-birdY[6] => Add7.IN58
+birdY[6] => Add7.IN57
 birdY[7] => Add0.IN57
-birdY[7] => Add7.IN57
+birdY[7] => Add7.IN56
 birdY[8] => Add0.IN56
-birdY[8] => Add7.IN56
+birdY[8] => Add7.IN55
 birdY[9] => Add0.IN55
-birdY[9] => Add7.IN55
+birdY[9] => Add7.IN54
 birdY[10] => Add0.IN54
-birdY[10] => Add7.IN54
+birdY[10] => Add7.IN53
 birdY[11] => Add0.IN53
-birdY[11] => Add7.IN53
+birdY[11] => Add7.IN52
 birdY[12] => Add0.IN52
-birdY[12] => Add7.IN52
+birdY[12] => Add7.IN51
 birdY[13] => Add0.IN51
-birdY[13] => Add7.IN51
+birdY[13] => Add7.IN50
 birdY[14] => Add0.IN50
-birdY[14] => Add7.IN50
+birdY[14] => Add7.IN49
 birdY[15] => Add0.IN49
-birdY[15] => Add7.IN49
+birdY[15] => Add7.IN48
 birdY[16] => Add0.IN48
-birdY[16] => Add7.IN48
+birdY[16] => Add7.IN47
 birdY[17] => Add0.IN47
-birdY[17] => Add7.IN47
+birdY[17] => Add7.IN46
 birdY[18] => Add0.IN46
-birdY[18] => Add7.IN46
+birdY[18] => Add7.IN45
 birdY[19] => Add0.IN45
-birdY[19] => Add7.IN45
+birdY[19] => Add7.IN44
 birdY[20] => Add0.IN44
-birdY[20] => Add7.IN44
+birdY[20] => Add7.IN43
 birdY[21] => Add0.IN43
-birdY[21] => Add7.IN43
+birdY[21] => Add7.IN42
 birdY[22] => Add0.IN42
-birdY[22] => Add7.IN42
+birdY[22] => Add7.IN41
 birdY[23] => Add0.IN41
-birdY[23] => Add7.IN41
+birdY[23] => Add7.IN40
 birdY[24] => Add0.IN40
-birdY[24] => Add7.IN40
+birdY[24] => Add7.IN39
 birdY[25] => Add0.IN39
-birdY[25] => Add7.IN39
+birdY[25] => Add7.IN38
 birdY[26] => Add0.IN38
-birdY[26] => Add7.IN38
+birdY[26] => Add7.IN37
 birdY[27] => Add0.IN37
-birdY[27] => Add7.IN37
+birdY[27] => Add7.IN36
 birdY[28] => Add0.IN36
-birdY[28] => Add7.IN36
+birdY[28] => Add7.IN35
 birdY[29] => Add0.IN35
-birdY[29] => Add7.IN35
+birdY[29] => Add7.IN34
 birdY[30] => Add0.IN34
-birdY[30] => Add7.IN34
+birdY[30] => Add7.IN33
 birdY[31] => Add0.IN33
-birdY[31] => Add7.IN33
+birdY[31] => Add7.IN32
 birdX[0] => LessThan2.IN32
 birdX[0] => LessThan3.IN63
 birdX[0] => LessThan6.IN32
@@ -2395,7 +2398,7 @@ random[30] <= r_LFSR[31].DB_MAX_OUTPUT_PORT_TYPE
 random[31] <= r_LFSR[32].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|score_counter:score
+|flappy_bird|score_display:score
 rst => hiscore[0].ACLR
 rst => hiscore[1].ACLR
 rst => hiscore[2].ACLR
@@ -2528,127 +2531,7 @@ seven_seg[40] <= hex_to_7seg:seven_seg_loop[5].display.seven_seg
 seven_seg[41] <= hex_to_7seg:seven_seg_loop[5].display.seven_seg
 
 
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[0].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[1].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[2].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[3].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[4].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|hex_to_7seg:seven_seg_loop[5].display
-hex[0] => Decoder1.IN3
-hex[0] => Decoder2.IN2
-hex[1] => Decoder0.IN2
-hex[1] => Decoder1.IN2
-hex[2] => Decoder0.IN1
-hex[2] => Decoder1.IN1
-hex[2] => Decoder2.IN1
-hex[3] => Decoder0.IN0
-hex[3] => Decoder1.IN0
-hex[3] => Decoder2.IN0
-seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|flappy_bird|score_counter:score|bin_to_BCD:scr
+|flappy_bird|score_display:score|bin_to_BCD:scr
 bin[0] => BCD[0].DATAIN
 bin[1] => LessThan11.IN8
 bin[1] => Add11.IN8
@@ -2691,7 +2574,7 @@ BCD[10] <= units.DB_MAX_OUTPUT_PORT_TYPE
 BCD[11] <= units.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|score_counter:score|bin_to_BCD:hiscr
+|flappy_bird|score_display:score|bin_to_BCD:hiscr
 bin[0] => BCD[0].DATAIN
 bin[1] => LessThan11.IN8
 bin[1] => Add11.IN8
@@ -2734,24 +2617,144 @@ BCD[10] <= units.DB_MAX_OUTPUT_PORT_TYPE
 BCD[11] <= units.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[0].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[1].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[2].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[3].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[4].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|score_display:score|hex_to_7seg:seven_seg_loop[5].display
+hex[0] => Decoder1.IN3
+hex[0] => Decoder2.IN2
+hex[1] => Decoder0.IN2
+hex[1] => Decoder1.IN2
+hex[2] => Decoder0.IN1
+hex[2] => Decoder1.IN1
+hex[2] => Decoder2.IN1
+hex[3] => Decoder0.IN0
+hex[3] => Decoder1.IN0
+hex[3] => Decoder2.IN0
+seven_seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[2] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|flappy_bird|image_rendering:display
 VGA_clk => VGA_clk.IN18
-GAME_clk => X_ofs_bg[0].CLK
-GAME_clk => X_ofs_bg[1].CLK
-GAME_clk => X_ofs_bg[2].CLK
-GAME_clk => X_ofs_bg[3].CLK
-GAME_clk => X_ofs_bg[4].CLK
-GAME_clk => X_ofs_bg[5].CLK
-GAME_clk => X_ofs_bg[6].CLK
-GAME_clk => X_ofs_bg[7].CLK
-GAME_clk => X_ofs_bg[8].CLK
-GAME_clk => X_ofs_bg[9].CLK
-GAME_clk => X_ofs_bg[10].CLK
-GAME_clk => X_ofs_bg[11].CLK
-GAME_clk => X_ofs_bg[12].CLK
-GAME_clk => X_ofs_bg[13].CLK
-GAME_clk => X_ofs_bg[14].CLK
-GAME_clk => X_ofs_bg[15].CLK
+BG_clk => X_ofs_bg[0].CLK
+BG_clk => X_ofs_bg[1].CLK
+BG_clk => X_ofs_bg[2].CLK
+BG_clk => X_ofs_bg[3].CLK
+BG_clk => X_ofs_bg[4].CLK
+BG_clk => X_ofs_bg[5].CLK
+BG_clk => X_ofs_bg[6].CLK
+BG_clk => X_ofs_bg[7].CLK
+BG_clk => X_ofs_bg[8].CLK
+BG_clk => X_ofs_bg[9].CLK
+BG_clk => X_ofs_bg[10].CLK
+BG_clk => X_ofs_bg[11].CLK
+BG_clk => X_ofs_bg[12].CLK
+BG_clk => X_ofs_bg[13].CLK
+BG_clk => X_ofs_bg[14].CLK
+BG_clk => X_ofs_bg[15].CLK
 FL_clk => X_ofs_fl[0].CLK
 FL_clk => X_ofs_fl[1].CLK
 FL_clk => X_ofs_fl[2].CLK
@@ -2912,10 +2915,13 @@ game_state[0] => Mux116.IN19
 game_state[0] => Mux117.IN19
 game_state[0] => Mux118.IN19
 game_state[0] => Mux119.IN19
-game_state[0] => Equal16.IN7
-game_state[0] => Equal17.IN7
-game_state[0] => Equal5.IN2
+game_state[0] => Decoder0.IN3
+game_state[0] => Decoder1.IN3
+game_state[0] => Decoder2.IN3
+game_state[0] => Decoder3.IN3
+game_state[0] => Decoder4.IN3
 game_state[0] => Equal6.IN2
+game_state[0] => Equal7.IN2
 game_state[1] => Mux96.IN18
 game_state[1] => Mux97.IN18
 game_state[1] => Mux98.IN18
@@ -2940,10 +2946,13 @@ game_state[1] => Mux116.IN18
 game_state[1] => Mux117.IN18
 game_state[1] => Mux118.IN18
 game_state[1] => Mux119.IN18
-game_state[1] => Equal16.IN6
-game_state[1] => Equal17.IN6
-game_state[1] => Equal5.IN1
+game_state[1] => Decoder0.IN2
+game_state[1] => Decoder1.IN2
+game_state[1] => Decoder2.IN2
+game_state[1] => Decoder3.IN2
+game_state[1] => Decoder4.IN2
 game_state[1] => Equal6.IN1
+game_state[1] => Equal7.IN1
 game_state[2] => Mux96.IN17
 game_state[2] => Mux97.IN17
 game_state[2] => Mux98.IN17
@@ -2968,10 +2977,13 @@ game_state[2] => Mux116.IN17
 game_state[2] => Mux117.IN17
 game_state[2] => Mux118.IN17
 game_state[2] => Mux119.IN17
-game_state[2] => Equal16.IN5
-game_state[2] => Equal17.IN5
-game_state[2] => Equal5.IN3
-game_state[2] => Equal6.IN0
+game_state[2] => Decoder0.IN1
+game_state[2] => Decoder1.IN1
+game_state[2] => Decoder2.IN1
+game_state[2] => Decoder3.IN1
+game_state[2] => Decoder4.IN1
+game_state[2] => Equal6.IN3
+game_state[2] => Equal7.IN0
 game_state[3] => Mux96.IN16
 game_state[3] => Mux97.IN16
 game_state[3] => Mux98.IN16
@@ -2996,10 +3008,13 @@ game_state[3] => Mux116.IN16
 game_state[3] => Mux117.IN16
 game_state[3] => Mux118.IN16
 game_state[3] => Mux119.IN16
-game_state[3] => Equal16.IN4
-game_state[3] => Equal17.IN4
-game_state[3] => Equal5.IN0
-game_state[3] => Equal6.IN3
+game_state[3] => Decoder0.IN0
+game_state[3] => Decoder1.IN0
+game_state[3] => Decoder2.IN0
+game_state[3] => Decoder3.IN0
+game_state[3] => Decoder4.IN0
+game_state[3] => Equal6.IN0
+game_state[3] => Equal7.IN3
 bird_state[0] => Mux69.IN5
 bird_state[0] => Mux70.IN5
 bird_state[0] => Mux71.IN5
@@ -7756,49 +7771,49 @@ score_BCD[4] => Add91.IN56
 score_BCD[4] => Add111.IN56
 score_BCD[4] => LessThan47.IN8
 score_BCD[4] => LessThan48.IN8
-score_BCD[4] => Equal13.IN31
 score_BCD[4] => Add90.IN33
+score_BCD[4] => Equal15.IN31
 score_BCD[4] => Add110.IN33
 score_BCD[5] => Add91.IN55
 score_BCD[5] => Add111.IN55
 score_BCD[5] => LessThan47.IN7
 score_BCD[5] => LessThan48.IN7
-score_BCD[5] => Equal13.IN30
 score_BCD[5] => Add90.IN32
+score_BCD[5] => Equal15.IN30
 score_BCD[5] => Add110.IN32
 score_BCD[6] => Add91.IN54
 score_BCD[6] => Add111.IN54
 score_BCD[6] => LessThan47.IN6
 score_BCD[6] => LessThan48.IN6
-score_BCD[6] => Equal13.IN29
 score_BCD[6] => Add90.IN31
+score_BCD[6] => Equal15.IN29
 score_BCD[6] => Add110.IN31
 score_BCD[7] => Add91.IN53
 score_BCD[7] => Add111.IN53
 score_BCD[7] => LessThan47.IN5
 score_BCD[7] => LessThan48.IN5
-score_BCD[7] => Equal13.IN28
 score_BCD[7] => Add90.IN30
+score_BCD[7] => Equal15.IN28
 score_BCD[7] => Add110.IN30
 score_BCD[8] => Add86.IN56
 score_BCD[8] => Add101.IN56
-score_BCD[8] => Equal12.IN31
 score_BCD[8] => Add85.IN33
+score_BCD[8] => Equal13.IN31
 score_BCD[8] => Add100.IN33
 score_BCD[9] => Add86.IN55
 score_BCD[9] => Add101.IN55
-score_BCD[9] => Equal12.IN30
 score_BCD[9] => Add85.IN32
+score_BCD[9] => Equal13.IN30
 score_BCD[9] => Add100.IN32
 score_BCD[10] => Add86.IN54
 score_BCD[10] => Add101.IN54
-score_BCD[10] => Equal12.IN29
 score_BCD[10] => Add85.IN31
+score_BCD[10] => Equal13.IN29
 score_BCD[10] => Add100.IN31
 score_BCD[11] => Add86.IN53
 score_BCD[11] => Add101.IN53
-score_BCD[11] => Equal12.IN28
 score_BCD[11] => Add85.IN30
+score_BCD[11] => Equal13.IN28
 score_BCD[11] => Add100.IN30
 hiscore_BCD[0] => Add126.IN56
 hiscore_BCD[0] => Add125.IN33
@@ -7809,16 +7824,16 @@ hiscore_BCD[2] => Add125.IN31
 hiscore_BCD[3] => Add126.IN53
 hiscore_BCD[3] => Add125.IN30
 hiscore_BCD[4] => Add116.IN56
-hiscore_BCD[4] => Equal15.IN31
+hiscore_BCD[4] => Equal16.IN31
 hiscore_BCD[4] => Add115.IN33
 hiscore_BCD[5] => Add116.IN55
-hiscore_BCD[5] => Equal15.IN30
+hiscore_BCD[5] => Equal16.IN30
 hiscore_BCD[5] => Add115.IN32
 hiscore_BCD[6] => Add116.IN54
-hiscore_BCD[6] => Equal15.IN29
+hiscore_BCD[6] => Equal16.IN29
 hiscore_BCD[6] => Add115.IN31
 hiscore_BCD[7] => Add116.IN53
-hiscore_BCD[7] => Equal15.IN28
+hiscore_BCD[7] => Equal16.IN28
 hiscore_BCD[7] => Add115.IN30
 hiscore_BCD[8] => Add106.IN56
 hiscore_BCD[8] => Equal14.IN31
@@ -7858,7 +7873,7 @@ RGB[22] <= RGB[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 RGB[23] <= RGB[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_1_rom:bird1
+|flappy_bird|image_rendering:display|flap_1_rom:bird1
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -7903,7 +7918,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_1_pos45_rom:bird1_pos
+|flappy_bird|image_rendering:display|flap_1_pos45_rom:bird1_pos
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -7948,7 +7963,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_1_neg45_rom:bird1_neg
+|flappy_bird|image_rendering:display|flap_1_neg45_rom:bird1_neg
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -7993,7 +8008,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_2_rom:bird2
+|flappy_bird|image_rendering:display|flap_2_rom:bird2
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8038,7 +8053,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_2_pos45_rom:bird2_pos
+|flappy_bird|image_rendering:display|flap_2_pos45_rom:bird2_pos
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8083,7 +8098,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_2_neg45_rom:bird2_neg
+|flappy_bird|image_rendering:display|flap_2_neg45_rom:bird2_neg
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8128,7 +8143,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_3_rom:bird3
+|flappy_bird|image_rendering:display|flap_3_rom:bird3
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8173,7 +8188,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_3_pos45_rom:bird3_pos
+|flappy_bird|image_rendering:display|flap_3_pos45_rom:bird3_pos
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8218,7 +8233,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|flap_3_neg45_rom:bird3_neg
+|flappy_bird|image_rendering:display|flap_3_neg45_rom:bird3_neg
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8263,7 +8278,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|title_rom:title
+|flappy_bird|image_rendering:display|title_rom:title
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8314,7 +8329,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|pause_rom:pause_icon
+|flappy_bird|image_rendering:display|pause_rom:pause_icon
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8357,7 +8372,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|background_rom:bg
+|flappy_bird|image_rendering:display|background_rom:bg
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8412,7 +8427,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|floor_rom:floor
+|flappy_bird|image_rendering:display|floor_rom:floor
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8463,7 +8478,7 @@ colour_data[22] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|pipe_rom:pipe
+|flappy_bird|image_rendering:display|pipe_rom:pipe
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8514,7 +8529,7 @@ colour_data[22] <= Ram0.DATAOUT22
 colour_data[23] <= Ram0.DATAOUT23
 
 
-|flappy_bird|image_renderer:display|game_over_rom:over
+|flappy_bird|image_rendering:display|game_over_rom:over
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8565,7 +8580,7 @@ colour_data[22] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|score_rom:scr
+|flappy_bird|image_rendering:display|score_rom:scr
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8618,7 +8633,7 @@ colour_data[22] <= Ram0.DATAOUT22
 colour_data[23] <= Ram0.DATAOUT23
 
 
-|flappy_bird|image_renderer:display|numbers_rom:num
+|flappy_bird|image_rendering:display|numbers_rom:num
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK
@@ -8665,7 +8680,7 @@ colour_data[22] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 colour_data[23] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|flappy_bird|image_renderer:display|medals_rom:medal
+|flappy_bird|image_rendering:display|medals_rom:medal
 clk => col_reg[0].CLK
 clk => col_reg[1].CLK
 clk => col_reg[2].CLK

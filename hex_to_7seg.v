@@ -1,21 +1,25 @@
 /*
- * Hex to 7-Seg
- * ----------------
- * By: James Heavey
+ * ELEC5566 MINI-PROJECT:
+ * HEX TO 7SEG CONVERTER
+ * ---------------------------------
  * For: University of Leeds
- * Date: 2/12/2021
+ * Date: 19/5/2021
  *
  * Description
- * -----------
- * The module takes a 4 bit hex value and
- * outputs 7 bit binary
+ * ---------------------------------
+ * This module takes a 4-bit, single
+ * digit number, and converts it to
+ * the required format for display on
+ * the 7segmnets.
  *
  */
  
 module hex_to_7seg 
 ( 
+	// INPUT
 	input			[3:0] hex,
 	
+	// OUTPUT
 	output reg	[6:0] seven_seg
 );
 

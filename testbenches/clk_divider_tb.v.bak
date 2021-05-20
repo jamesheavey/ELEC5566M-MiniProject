@@ -1,0 +1,30 @@
+
+`timescale 1 ns/100 ps
+
+module clk_divider_tb;
+
+reg divide = 0;
+
+reg in_clk;
+
+wire out_clk;
+
+clk_divider #(
+	.DIVISOR		( divide		)
+) dut (
+	.in_clk		( in_clk 	),
+	.out_clk		( out_clk 	)
+);
+
+// Alternate clock every 10ns
+always #10 clk = ~clk;
+
+reg num_cycles = 0;
+
+always @(posedge clk) begin
+	num_cycles = num_cycles + 1;
+	if (num_cycles%10 == 0) divide = divide + 1;
+	if (num_cycles == 5000) $stop;
+end
+
+endmodule

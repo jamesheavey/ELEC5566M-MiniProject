@@ -1,10 +1,31 @@
+/*
+ * ELEC5566 MINI-PROJECT:
+ * GAME FSM
+ * ---------------------------------
+ * For: University of Leeds
+ * Date: 19/5/2021
+ *
+ * Description
+ * ---------------------------------
+ * This module contains a FSM that 
+ * determines the current state of the game
+ * at the top-level. The game-state is output
+ * and used as an input for other modules to
+ * drive logic. This FSM is the parent module 
+ * for game functionality.
+ *
+ */
+
 module game_FSM
 (
+	// INPUTS
 	input clk, rst, collision, pause, flap,
 	
+	// OUTPUT
 	output reg [3:0] game_state
 );
 
+// Symbolic state definitions
 localparam	START_SCREEN 	= 4'b0001,
 				IN_GAME			= 4'b0010,
 				PAUSE 			= 4'b0100,

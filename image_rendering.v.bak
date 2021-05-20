@@ -1,11 +1,11 @@
-module image_renderer #(
+module image_rendering #(
 	parameter BIRD_SIZE_X,
 	parameter BIRD_SIZE_Y,
 	parameter SCALE,
 	parameter PIPE_GAP,
 	parameter NUM_PIPES
 )(
-	input VGA_clk, GAME_clk, FL_clk, rst, display_on,
+	input VGA_clk, BG_clk, FL_clk, rst, display_on,
 	input [3:0] game_state,
 	input [1:0] bird_state, bird_angle,
 	input [31:0] X, Y, birdX, birdY,
@@ -15,9 +15,15 @@ module image_renderer #(
 	output reg [23:0] RGB
 );
 
-localparam NO_COLOUR = 		24'h000000;
-localparam IGNORE_COLOUR = 24'hFF0096;
-localparam HALF_COLOUR = 	24'hF0F0F0;
+localparam	START_SCREEN 	= 4'b0001,
+				IN_GAME			= 4'b0010,
+				PAUSE 			= 4'b0100,
+				END_SCREEN 		= 4'b1000;
+				
+
+localparam NO_COLOUR 		= 24'h000000;
+localparam IGNORE_COLOUR 	= 24'hFF0096;
+localparam HALF_COLOUR 		= 24'hF0F0F0;
 
 localparam DISPLAY_SIZE_X = 640, DISPLAY_SIZE_Y = 480;
 
@@ -41,19 +47,17 @@ localparam OVER_X = (DISPLAY_SIZE_X-OVER_SIZE_X)/2, OVER_Y = 50;
 localparam SCORE_SIZE_X = 112*SCALE, SCORE_SIZE_Y = 56*SCALE;
 localparam SCORE_X = (DISPLAY_SIZE_X-SCORE_SIZE_X)/2, SCORE_Y = 150;
 
-localparam NUM_SIZE_X = 7*SCALE, NUM_SIZE_Y = 10*SCALE; // total Y size is 100
+localparam NUM_SIZE_X = 7*SCALE, NUM_SIZE_Y = 10*SCALE;
+localparam NUM_SPACING = 5;
 
-localparam MEDAL_SIZE_X = 22*SCALE, MEDAL_SIZE_Y = 22*SCALE; // total Y size is 66
+localparam MEDAL_SIZE_X = 22*SCALE, MEDAL_SIZE_Y = 22*SCALE;
+
+integer i;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
 /////										DISPLAY LOGIC											/////
 ///////////////////////////////////////////////////////////////////////////////////
-
-localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;
 
 always @(posedge VGA_clk or posedge rst)
 begin
@@ -65,7 +69,7 @@ begin
 				if (display_on) begin
 					if			(title_gfx)	RGB <= title_colour;
 					
-					if	(bird_gfx && bird_colour[bird_state][bird_angle] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state][bird_angle];
+					else if	(bird_gfx && bird_colour[bird_state][bird_angle] != IGNORE_COLOUR)	RGB <= bird_colour[bird_state][bird_angle];
 		
 					else if 	(bg0_gfx)	RGB <= bg_colour[0];
 					else if 	(bg1_gfx)	RGB <= bg_colour[1];
@@ -259,7 +263,7 @@ pause_rom pause_icon
 ///////////////////////////////////////////////////////////////////////////////////
 
 reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
-always @(posedge GAME_clk) begin
+always @(posedge BG_clk) begin
 	if (game_state != PAUSE && game_state != END_SCREEN) begin
 		if (X_ofs_bg != 640)
 			X_ofs_bg <= X_ofs_bg + 1;
@@ -332,7 +336,6 @@ pipe_rom pipe
 	.colour_data 	( pipe_colour	)
 );
 
-integer i;
 always @(X or Y)
 begin
 	for (i = 0; i < NUM_PIPES; i = i + 1) begin
@@ -384,7 +387,6 @@ score_rom scr
 /////										SCORE														/////
 ///////////////////////////////////////////////////////////////////////////////////
 
-
 reg [31:0] num_col, num_row, medal_col, medal_row;
 reg num_gfx, medal_gfx;
 wire [23:0] num_colour, medal_colour;
@@ -404,15 +406,13 @@ medals_rom medal
 	.colour_data 	( medal_colour			)
 );
 
-localparam NUM_SPACING = 5;
-
 always@(X or Y)
 begin
 	
 	{num_row, num_col, num_gfx, medal_row, medal_col, medal_gfx} = 0;
 	
 	case (game_state)
-		IN_GAME: begin
+		IN_GAME, PAUSE: begin
 			
 			for (i = 0; i < 3; i = i + 1) begin
 			
