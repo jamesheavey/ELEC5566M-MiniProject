@@ -38,9 +38,9 @@ localparam CENTRE = (420-128)/2; // (play area - maximum random value)/2
 
 // Symbolic game FSM state definitions
 localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;
+		IN_GAME		= 4'b0010,
+		PAUSE 		= 4'b0100,
+		END_SCREEN 	= 4'b1000;
 				
 // Instatiate a LFSR random number generator to determine pipe Y offsets
 wire [23:0] randY;
