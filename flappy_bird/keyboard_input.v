@@ -65,10 +65,10 @@ end
 always @(code or rst)
 begin
 	if (rst) begin
-		flap 	= 0;
+		flap = 0;
 		raw_pause = 0;
 	end else begin
-		flap 	= 0;
+		flap = 0;
 		raw_pause = 0;
 		
 		// space code
