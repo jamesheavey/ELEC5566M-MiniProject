@@ -1,3 +1,3 @@
 Warning (10268): Verilog HDL information at clk_divider.v(31): always construct contains both blocking and non-blocking assignments File: C:/Users/James/Workspace/ELEC5566M-MiniProject/clk_divider.v Line: 31
 Info (10281): Verilog HDL Declaration information at game_FSM.v(22): object "pause" differs only in case from object "PAUSE" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/game_FSM.v Line: 22
-Info (10281): Verilog HDL Declaration information at flappy_bird.v(52): object "VGA" differs only in case from object "vga" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 52
+Info (10281): Verilog HDL Declaration information at flappy_bird.v(53): object "VGA" differs only in case from object "vga" in the same scope File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 53

@@ -231,7 +231,30 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME clk_divider_tb -section_i
 set_global_assignment -name EDA_TEST_BENCH_NAME game_FSM_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id game_FSM_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME game_FSM_tb -section_id game_FSM_tb
-set_global_assignment -name VERILOG_FILE score_display.v
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/bin_to_BCD_tb.v -section_id bin_to_BCD_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/clk_divider_tb.v -section_id clk_divider_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME score_display_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id score_display_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME score_display_tb -section_id score_display_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/score_display_tb.v -section_id score_display_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/game_FSM_tb.v -section_id game_FSM_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE flappy_bird/vga_gen.v
+set_global_assignment -name VERILOG_FILE flappy_bird/score_display.v
+set_global_assignment -name VERILOG_FILE flappy_bird/random_number_gen.v
+set_global_assignment -name VERILOG_FILE flappy_bird/pipes.v
+set_global_assignment -name VERILOG_FILE flappy_bird/keyboard_input.v
+set_global_assignment -name VERILOG_FILE flappy_bird/key_filter.v
+set_global_assignment -name VERILOG_FILE flappy_bird/image_rendering.v
+set_global_assignment -name VERILOG_FILE flappy_bird/hex_to_7seg.v
+set_global_assignment -name VERILOG_FILE flappy_bird/game_FSM.v
+set_global_assignment -name VERILOG_FILE flappy_bird/flappy_bird.v
+set_global_assignment -name VERILOG_FILE flappy_bird/collision_detection.v
+set_global_assignment -name VERILOG_FILE flappy_bird/clk_divider.v
+set_global_assignment -name VERILOG_FILE flappy_bird/bird_physics.v
+set_global_assignment -name VERILOG_FILE flappy_bird/bin_to_BCD.v
 set_global_assignment -name VERILOG_FILE sprites/flap_3_pos45_rom.v
 set_global_assignment -name VERILOG_FILE sprites/flap_3_neg45_rom.v
 set_global_assignment -name VERILOG_FILE sprites/flap_2_pos45_rom.v
@@ -251,28 +274,4 @@ set_global_assignment -name VERILOG_FILE sprites/flap_3_rom.v
 set_global_assignment -name VERILOG_FILE sprites/flap_2_rom.v
 set_global_assignment -name VERILOG_FILE sprites/flap_1_rom.v
 set_global_assignment -name VERILOG_FILE sprites/background_rom.v
-set_global_assignment -name VERILOG_FILE vga_gen.v
-set_global_assignment -name VERILOG_FILE clk_divider.v
-set_global_assignment -name VERILOG_FILE key_filter.v
-set_global_assignment -name VERILOG_FILE image_renderer.v
-set_global_assignment -name VERILOG_FILE keyboard_input.v
-set_global_assignment -name VERILOG_FILE bird_physics.v
-set_global_assignment -name VERILOG_FILE game_FSM.v
-set_global_assignment -name VERILOG_FILE collision_detection.v
-set_global_assignment -name VERILOG_FILE pipes.v
-set_global_assignment -name VERILOG_FILE flappy_bird.v
-set_global_assignment -name VERILOG_FILE hex_to_7seg.v
-set_global_assignment -name VERILOG_FILE bin_to_BCD.v
-set_global_assignment -name VERILOG_FILE random_number_gen.v
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/bin_to_BCD_tb.v -section_id bin_to_BCD_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/clk_divider_tb.v -section_id clk_divider_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME score_display_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME score_display_tb -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/score_display_tb.v -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/game_FSM_tb.v -section_id game_FSM_tb
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE image_rendering.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
