@@ -64,7 +64,7 @@ wire [31:0] X, Y, birdX=BIRD_X, birdY, score_count;
 wire [(32*NUM_PIPES)-1:0] pipeX_flat, pipeY_flat;
 wire [11:0] score_BCD, hiscore_BCD;
 
-wire flap, pause, collision;
+wire space, esc, collision;
 
 
 // Instantiation of the vga generator module. This module outputs the relevant VGA port
@@ -92,8 +92,8 @@ keyboard_input kb
 	.rst		( rst 		),
 	.PS2_clk	( PS2_clk 	),
 	.PS2_data	( PS2_data 	),
-	.flap		( flap 		),
-	.pause		( pause 	)
+	.space		( space 		),
+	.esc		( esc 	)
 );
 
 
@@ -105,8 +105,8 @@ game_FSM FSM
 	.clk		( clk 		),
 	.rst		( rst 		),
 	.collision	( collision 	),
-	.pause		( pause 	),
-	.flap		( flap 		),
+	.esc		( esc 	),
+	.space		( space 		),
 	.game_state	( game_state 	)
 );
 
@@ -120,7 +120,7 @@ bird_physics #(
 	.clk		( clk 		),
 	.rst		( rst		),
 	.game_state	( game_state 	),
-	.flap		( flap 		),
+	.space		( space 		),
 	.birdY		( birdY 	),
 	.bird_state	( bird_state 	),
 	.bird_angle	( bird_angle	)
@@ -173,7 +173,7 @@ score_display score
 );
 
 
-// Instantiation of the image renderer module. This module outs a 24-bit RGB pixel colour at
+// Instantiation of the image renderer module. This module outputs a 24-bit RGB pixel colour at
 // every VGA clk cycle. The colour is selected via logic using the VGA pixel coordinates (X,Y),
 // the object positions and sizes, and the display priority of each sprite.
 image_rendering #(

@@ -21,15 +21,15 @@ module keyboard_input
 	input clk, rst, PS2_clk, PS2_data,
 	
 	// OUTPUTS
-	output wire pause,
-	output reg flap
+	output wire esc,
+	output reg space
 );
 
 // Registers to store PS2 codes
 reg [7:0] code, next_code, prev_code;
 reg [10:0] key;
 
-reg raw_pause;
+reg raw_esc;
 
 integer count = 0;
 
@@ -65,22 +65,22 @@ end
 always @(code or rst)
 begin
 	if (rst) begin
-		flap = 0;
-		raw_pause = 0;
+		space = 0;
+		raw_esc = 0;
 	end else begin
-		flap = 0;
-		raw_pause = 0;
+		space = 0;
+		raw_esc = 0;
 		
 		// space code
 		if (code == 8'h29)
-			flap 	= 1;
+			space 	= 1;
 			
 		// esc code
 		else if (code == 8'h76)
-			raw_pause = 1;
+			raw_esc = 1;
 	end
 end
 
-key_filter p_edge (clk, raw_pause, pause);
+key_filter p_edge (clk, raw_esc, esc);
 
 endmodule

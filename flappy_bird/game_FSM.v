@@ -17,7 +17,7 @@
 module game_FSM
 (
 	// INPUTS
-	input clk, rst, collision, pause, flap,
+	input clk, rst, collision, esc, space,
 	
 	// OUTPUT
 	output reg [3:0] game_state
@@ -40,7 +40,7 @@ always @(posedge clk or posedge rst) begin
 		case (game_state)
 		  
 			START_SCREEN:
-				if (flap)
+				if (space)
 					game_state <= IN_GAME;
 				else
 					game_state <= START_SCREEN;
@@ -48,19 +48,19 @@ always @(posedge clk or posedge rst) begin
 			IN_GAME: 
 				if (collision)
 					game_state <= END_SCREEN;
-				else if (pause)
+				else if (esc)
 					game_state <= PAUSE;
 				else
 					game_state <= IN_GAME;
 
 			PAUSE:
-				if (pause)
+				if (esc)
 					game_state <= IN_GAME;
 				else
 					game_state <= PAUSE;
 			
 			END_SCREEN:
-				if (pause)
+				if (esc)
 					game_state <= START_SCREEN;
 				else
 					game_state <= END_SCREEN;
