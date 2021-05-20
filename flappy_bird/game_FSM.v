@@ -34,39 +34,39 @@ always @(posedge clk or posedge rst) begin
 
 	if (rst) begin
 	
-		game_state	<= START_SCREEN;
+		game_state <= START_SCREEN;
 		
 	end else begin
 		case (game_state)
 		  
 			START_SCREEN:
 				if (flap)
-					game_state	<= IN_GAME;
+					game_state <= IN_GAME;
 				else
-					game_state	<= START_SCREEN;
+					game_state <= START_SCREEN;
 	
 			IN_GAME: 
 				if (collision)
-					game_state 	<= END_SCREEN;
+					game_state <= END_SCREEN;
 				else if (pause)
-					game_state 	<= PAUSE;
+					game_state <= PAUSE;
 				else
-					game_state 	<= IN_GAME;
+					game_state <= IN_GAME;
 
 			PAUSE:
 				if (pause)
-					game_state	<= IN_GAME;
+					game_state <= IN_GAME;
 				else
-					game_state 	<= PAUSE;
+					game_state <= PAUSE;
 			
 			END_SCREEN:
 				if (pause)
-					game_state 	<= START_SCREEN;
+					game_state <= START_SCREEN;
 				else
-					game_state 	<= END_SCREEN;
+					game_state <= END_SCREEN;
 	
 			default:
-				game_state	<= START_SCREEN;
+				game_state <= START_SCREEN;
 					
 		endcase
 	end
