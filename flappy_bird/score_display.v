@@ -45,9 +45,10 @@ bin_to_BCD hiscr (hiscore, hiscore_BCD);
 genvar i;
 generate
 	for (i = 0; i < 6; i = i + 1) begin : seven_seg_loop
-		hex_to_7seg display (
-			.hex			( i < 3 ? score_BCD[(i*4)+:4] : 0 ),
-			.seven_seg	( seven_seg[(i*7)+:7] )
+		hex_to_7seg display
+		(
+			.hex		( i < 3 ? score_BCD[(i*4)+:4] : 0 	),
+			.seven_seg	( seven_seg[(i*7)+:7] 			)
 		);
 	end 
 endgenerate
