@@ -35,31 +35,31 @@ module bird_physics#(
 
 // Symbolic game FSM state definitions 
 localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;
+			IN_GAME			= 4'b0010,
+			PAUSE 			= 4'b0100,
+			END_SCREEN 		= 4'b1000;
 
 // Symbolic bird motion state definitions 
 localparam	TOP			 	= 4'b0001,
-				DOWN				= 4'b0010,
-				UP		 			= 4'b0100,
-				STOP				= 4'b1000;
+			DOWN			= 4'b0010,
+			UP		 		= 4'b0100,
+			STOP			= 4'b1000;
 
 // Symbolic bird flapping state definitions 
 localparam	FLAP_1 			= 2'd0,
-				FLAP_2			= 2'd1,
-				FLAP_3 			= 2'd2;
+			FLAP_2			= 2'd1,
+			FLAP_3 			= 2'd2;
 
 // Symbolic bird angle state definitions 
-localparam	HORZ 				= 2'd0,
-				POS_45			= 2'd1,
-				NEG_45 			= 2'd2;
+localparam	HORZ 			= 2'd0,
+			POS_45			= 2'd1,
+			NEG_45 			= 2'd2;
 				
 // Constant definitions dictating the motion of the bird under 'gravity'			
-localparam TIME_START      =    25000;  // starting time to load when beginning to flap up
-localparam TIME_STEP       =     5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
-localparam TIME_MAX        =   475000;  // start time for fall, end time for rise
-localparam TIME_TERMINAL   =   150000;  // terminal time reached when falling down
+localparam TIME_START      	=  25000;  // starting time to load when beginning to flap up
+localparam TIME_STEP       	=   5000;  // value to decrement or incremnt start time until above or below MAX or TERMINAL
+localparam TIME_MAX        	= 475000;  // start time for fall, end time for rise
+localparam TIME_TERMINAL   	= 150000;  // terminal time reached when falling down
 
 reg [3:0] motion_state, prev_state;
 reg [31:0] flap_elapsed, flap_start;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MiniProject
-Thu May 20 02:04:00 2021
+Thu May 20 03:12:58 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -131,7 +131,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 20 02:04:00 2021       ;
+; Analysis & Synthesis Status     ; Successful - Thu May 20 03:12:57 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; flappy_bird                                 ;
@@ -251,9 +251,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  56.3%      ;
-;     Processor 3            ;  22.0%      ;
-;     Processor 4            ;   4.9%      ;
+;     Processor 2            ;  38.6%      ;
+;     Processor 3            ;  38.6%      ;
+;     Processor 4            ;   6.1%      ;
 +----------------------------+-------------+
 
 
@@ -2422,7 +2422,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:03:21     ;
+; Top            ; 00:03:45     ;
 +----------------+--------------+
 
 
@@ -2432,7 +2432,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 20 02:00:24 2021
+    Info: Processing started: Thu May 20 03:08:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MiniProject -c MiniProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2501,7 +2501,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file bin_to_
 Info (12021): Found 1 design units, including 1 entities, in source file random_number_gen.v
     Info (12023): Found entity 1: random_number_gen File: C:/Users/James/Workspace/ELEC5566M-MiniProject/random_number_gen.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file image_rendering.v
-    Info (12023): Found entity 1: image_rendering File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 1
+    Info (12023): Found entity 1: image_rendering File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 16
 Info (12127): Elaborating entity "flappy_bird" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at flappy_bird.v(227): truncated value with size 32 to match size of target (10) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 227
 Info (12128): Elaborating entity "clk_divider" for hierarchy "clk_divider:VGA" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 52
@@ -2561,108 +2561,108 @@ Info (12128): Elaborating entity "bin_to_BCD" for hierarchy "score_display:score
 Warning (10230): Verilog HDL assignment warning at bin_to_BCD.v(19): truncated value with size 32 to match size of target (4) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/bin_to_BCD.v Line: 19
 Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "score_display:score|hex_to_7seg:seven_seg_loop[0].display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/score_display.v Line: 51
 Info (12128): Elaborating entity "image_rendering" for hierarchy "image_rendering:display" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 224
-Info (10264): Verilog HDL Case Statement information at image_rendering.v(67): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 67
-Warning (10230): Verilog HDL assignment warning at image_rendering.v(269): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 269
-Warning (10230): Verilog HDL assignment warning at image_rendering.v(278): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 278
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(348): variable "pipe_btm_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 348
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(352): variable "pipe_top_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 352
-Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(339): inferring latch(es) for variable "pipe_row", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(339): inferring latch(es) for variable "pipe_col", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(414): variable "game_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 414
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(425): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 425
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(427): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 427
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(444): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 444
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(446): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 446
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(457): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 457
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(459): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 459
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(472): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 472
-Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(478): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 478
-Warning (10270): Verilog HDL Case Statement warning at image_rendering.v(414): incomplete case statement has no default case item File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 414
-Info (10264): Verilog HDL Case Statement information at image_rendering.v(414): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 414
-Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(409): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 409
-Info (10041): Inferred latch for "pipe_col[0]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[1]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[2]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[3]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[4]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[5]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[6]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[7]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[8]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[9]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[10]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[11]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[12]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[13]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[14]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[15]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[16]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[17]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[18]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[19]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[20]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[21]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[22]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[23]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[24]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[25]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[26]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[27]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[28]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[29]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[30]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_col[31]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[0]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[1]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[2]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[3]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[4]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[5]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[6]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[7]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[8]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[9]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[10]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[11]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[12]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[13]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[14]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[15]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[16]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[17]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[18]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[19]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[20]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[21]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[22]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[23]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[24]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[25]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[26]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[27]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[28]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[29]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[30]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
-Info (10041): Inferred latch for "pipe_row[31]" at image_rendering.v(339) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 339
+Info (10264): Verilog HDL Case Statement information at image_rendering.v(89): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 89
+Warning (10230): Verilog HDL assignment warning at image_rendering.v(291): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 291
+Warning (10230): Verilog HDL assignment warning at image_rendering.v(300): truncated value with size 32 to match size of target (16) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 300
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(372): variable "pipe_btm_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 372
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(376): variable "pipe_top_gfx" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(363): inferring latch(es) for variable "pipe_row", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(363): inferring latch(es) for variable "pipe_col", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(438): variable "game_state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 438
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(449): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 449
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(451): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 451
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(468): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 468
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(470): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 470
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(481): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 481
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(483): variable "hiscore_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 483
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(496): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 496
+Warning (10235): Verilog HDL Always Construct warning at image_rendering.v(502): variable "score_BCD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 502
+Warning (10270): Verilog HDL Case Statement warning at image_rendering.v(438): incomplete case statement has no default case item File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 438
+Info (10264): Verilog HDL Case Statement information at image_rendering.v(438): all case item expressions in this case statement are onehot File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 438
+Warning (10240): Verilog HDL Always Construct warning at image_rendering.v(433): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 433
+Info (10041): Inferred latch for "pipe_col[0]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[1]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[2]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[3]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[4]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[5]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[6]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[7]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[8]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[9]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[10]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[11]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[12]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[13]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[14]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[15]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[16]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[17]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[18]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[19]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[20]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[21]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[22]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[23]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[24]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[25]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[26]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[27]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[28]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[29]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[30]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_col[31]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[0]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[1]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[2]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[3]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[4]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[5]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[6]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[7]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[8]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[9]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[10]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[11]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[12]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[13]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[14]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[15]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[16]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[17]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[18]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[19]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[20]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[21]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[22]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[23]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[24]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[25]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[26]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[27]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[28]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[29]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[30]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
+Info (10041): Inferred latch for "pipe_row[31]" at image_rendering.v(363) File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 363
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "bird_colour" into its bus
-Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_rendering:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 164
-Info (12128): Elaborating entity "flap_1_pos45_rom" for hierarchy "image_rendering:display|flap_1_pos45_rom:bird1_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 172
-Info (12128): Elaborating entity "flap_1_neg45_rom" for hierarchy "image_rendering:display|flap_1_neg45_rom:bird1_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 180
-Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_rendering:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 188
-Info (12128): Elaborating entity "flap_2_pos45_rom" for hierarchy "image_rendering:display|flap_2_pos45_rom:bird2_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 196
-Info (12128): Elaborating entity "flap_2_neg45_rom" for hierarchy "image_rendering:display|flap_2_neg45_rom:bird2_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 204
-Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_rendering:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 212
-Info (12128): Elaborating entity "flap_3_pos45_rom" for hierarchy "image_rendering:display|flap_3_pos45_rom:bird3_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 220
-Info (12128): Elaborating entity "flap_3_neg45_rom" for hierarchy "image_rendering:display|flap_3_neg45_rom:bird3_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 228
-Info (12128): Elaborating entity "title_rom" for hierarchy "image_rendering:display|title_rom:title" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 243
-Info (12128): Elaborating entity "pause_rom" for hierarchy "image_rendering:display|pause_rom:pause_icon" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 258
-Info (12128): Elaborating entity "background_rom" for hierarchy "image_rendering:display|background_rom:bg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 299
-Info (12128): Elaborating entity "floor_rom" for hierarchy "image_rendering:display|floor_rom:floor" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 307
-Info (12128): Elaborating entity "pipe_rom" for hierarchy "image_rendering:display|pipe_rom:pipe" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 337
-Info (12128): Elaborating entity "game_over_rom" for hierarchy "image_rendering:display|game_over_rom:over" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 373
-Info (12128): Elaborating entity "score_rom" for hierarchy "image_rendering:display|score_rom:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 383
-Info (12128): Elaborating entity "numbers_rom" for hierarchy "image_rendering:display|numbers_rom:num" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 399
-Info (12128): Elaborating entity "medals_rom" for hierarchy "image_rendering:display|medals_rom:medal" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 407
+Info (12128): Elaborating entity "flap_1_rom" for hierarchy "image_rendering:display|flap_1_rom:bird1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 186
+Info (12128): Elaborating entity "flap_1_pos45_rom" for hierarchy "image_rendering:display|flap_1_pos45_rom:bird1_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 194
+Info (12128): Elaborating entity "flap_1_neg45_rom" for hierarchy "image_rendering:display|flap_1_neg45_rom:bird1_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 202
+Info (12128): Elaborating entity "flap_2_rom" for hierarchy "image_rendering:display|flap_2_rom:bird2" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 210
+Info (12128): Elaborating entity "flap_2_pos45_rom" for hierarchy "image_rendering:display|flap_2_pos45_rom:bird2_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 218
+Info (12128): Elaborating entity "flap_2_neg45_rom" for hierarchy "image_rendering:display|flap_2_neg45_rom:bird2_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 226
+Info (12128): Elaborating entity "flap_3_rom" for hierarchy "image_rendering:display|flap_3_rom:bird3" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 234
+Info (12128): Elaborating entity "flap_3_pos45_rom" for hierarchy "image_rendering:display|flap_3_pos45_rom:bird3_pos" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 242
+Info (12128): Elaborating entity "flap_3_neg45_rom" for hierarchy "image_rendering:display|flap_3_neg45_rom:bird3_neg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 250
+Info (12128): Elaborating entity "title_rom" for hierarchy "image_rendering:display|title_rom:title" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 265
+Info (12128): Elaborating entity "pause_rom" for hierarchy "image_rendering:display|pause_rom:pause_icon" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 280
+Info (12128): Elaborating entity "background_rom" for hierarchy "image_rendering:display|background_rom:bg" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 321
+Info (12128): Elaborating entity "floor_rom" for hierarchy "image_rendering:display|floor_rom:floor" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 329
+Info (12128): Elaborating entity "pipe_rom" for hierarchy "image_rendering:display|pipe_rom:pipe" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 360
+Info (12128): Elaborating entity "game_over_rom" for hierarchy "image_rendering:display|game_over_rom:over" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 397
+Info (12128): Elaborating entity "score_rom" for hierarchy "image_rendering:display|score_rom:scr" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 407
+Info (12128): Elaborating entity "numbers_rom" for hierarchy "image_rendering:display|numbers_rom:num" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 423
+Info (12128): Elaborating entity "medals_rom" for hierarchy "image_rendering:display|medals_rom:medal" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 431
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "X[31]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 67
     Warning (12110): Net "X[30]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 67
@@ -2796,53 +2796,53 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Y[17]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 67
     Warning (12110): Net "Y[16]" is missing source, defaulting to GND File: C:/Users/James/Workspace/ELEC5566M-MiniProject/flappy_bird.v Line: 67
 Info (278001): Inferred 45 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div32" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div30" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div27" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div26" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div35" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 349
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div34" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div28" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div31" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 427
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 427
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div43" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 427
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div59" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 459
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div57" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 446
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div53" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 446
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div51" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 459
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div49" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 446
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div55" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 459
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div56" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 445
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div50" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 458
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div54" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 458
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div46" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 426
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div42" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 426
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div44" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 426
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div61" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 475
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div65" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 487
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div63" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 481
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div64" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 486
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 381
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 380
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div38" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 370
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div39" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 371
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 304
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div22" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 296
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Mod0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 297
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 297
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div20" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 255
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 256
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 177
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 178
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div36" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 353
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div32" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 373
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div33" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div29" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 373
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div30" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div27" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div26" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 373
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div35" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 373
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div34" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div28" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div31" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div47" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 451
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div45" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 451
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div43" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 451
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div59" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 483
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div57" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 470
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div53" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 470
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div51" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 483
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div49" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 470
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div55" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 483
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div56" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 469
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div50" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 482
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div54" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 482
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div46" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 450
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div42" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 450
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div44" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 450
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div61" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 499
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div65" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 511
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div63" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 505
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div64" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 510
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div41" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 405
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 404
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div38" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 394
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div39" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 395
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 326
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div22" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 318
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Mod0" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 319
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div23" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 319
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div20" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 277
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div21" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 278
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div4" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 199
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "image_rendering:display|Div5" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 200
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div36" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div36" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 377
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2853,32 +2853,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_mlh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_mlh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
     Info (12023): Found entity 1: alt_u_div_ive File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_ive.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div37" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 354
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div37" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div37" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 378
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div56" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 445
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div56" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 445
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div56" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 469
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div56" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 469
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 380
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div40" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 380
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div40" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 404
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div40" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 404
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 304
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div24" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 304
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div24" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 326
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div24" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 326
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Mod1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Mod1" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Mod1" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2889,8 +2889,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_5nh File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/sign_div_unsign_5nh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g2f.tdf
     Info (12023): Found entity 1: alt_u_div_g2f File: C:/Users/James/Workspace/ELEC5566M-MiniProject/db/alt_u_div_g2f.tdf Line: 22
-Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
-Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div25" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 305
+Info (12130): Elaborated megafunction instantiation "image_rendering:display|lpm_divide:Div25" File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
+Info (12133): Instantiated megafunction "image_rendering:display|lpm_divide:Div25" with the following parameter: File: C:/Users/James/Workspace/ELEC5566M-MiniProject/image_rendering.v Line: 327
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "2"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -2971,10 +2971,10 @@ Info (21057): Implemented 24459 device resources after synthesis - the final res
     Info (21059): Implemented 81 output pins
     Info (21061): Implemented 24374 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 221 warnings
-    Info: Peak virtual memory: 5149 megabytes
-    Info: Processing ended: Thu May 20 02:04:00 2021
-    Info: Elapsed time: 00:03:36
-    Info: Total CPU time (on all processors): 00:04:14
+    Info: Peak virtual memory: 5152 megabytes
+    Info: Processing ended: Thu May 20 03:12:58 2021
+    Info: Elapsed time: 00:04:05
+    Info: Total CPU time (on all processors): 00:04:28
 
 
 +------------------------------------------+

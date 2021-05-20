@@ -27,9 +27,9 @@ module game_FSM
 
 // Symbolic state definitions
 localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;
+			IN_GAME			= 4'b0010,
+			PAUSE 			= 4'b0100,
+			END_SCREEN 		= 4'b1000;
 				
 
 always @(posedge clk or posedge rst) begin
@@ -49,25 +49,25 @@ always @(posedge clk or posedge rst) begin
 	
 			IN_GAME: 
 				if (collision)
-					game_state <= END_SCREEN;
+					game_state 	<= END_SCREEN;
 				else if (pause)
-					game_state <= PAUSE;
+					game_state 	<= PAUSE;
 				else
-					game_state <= IN_GAME;
+					game_state 	<= IN_GAME;
 
 			PAUSE:
 				if (pause)
-					game_state <= IN_GAME;
+					game_state	<= IN_GAME;
 				else
-					game_state <= PAUSE;
+					game_state 	<= PAUSE;
 			
 			END_SCREEN:
 				if (pause)
-					game_state <= START_SCREEN;
+					game_state 	<= START_SCREEN;
 				else
-					game_state <= END_SCREEN;
+					game_state 	<= END_SCREEN;
 	
-			default:	game_state	<= START_SCREEN;
+			default:game_state	<= START_SCREEN;
 					
 		endcase
 	end

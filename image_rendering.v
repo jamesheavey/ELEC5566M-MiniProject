@@ -35,9 +35,9 @@ module image_rendering #(
 
 // Symbolic game FSM state definitions 
 localparam	START_SCREEN 	= 4'b0001,
-				IN_GAME			= 4'b0010,
-				PAUSE 			= 4'b0100,
-				END_SCREEN 		= 4'b1000;
+			IN_GAME			= 4'b0010,
+			PAUSE 			= 4'b0100,
+			END_SCREEN 		= 4'b1000;
 				
 // RGB24 colour definitions
 localparam NO_COLOUR 		= 24'h000000;	// RGB off
@@ -45,38 +45,54 @@ localparam IGNORE_COLOUR 	= 24'hFF0096;	// Preset RGB colour to ignore in sprite
 localparam HALF_COLOUR 		= 24'hF0F0F0;	// RGB colour used to half the colour output via right shift
 
 
-// SPRITE LOCATION & SIZE DEFINITIONS
+///////////////////////////////////////////////////////////////////////////////////
+/////				SPRITE LOCATION & SIZE DEFINITIONS						  /////
+///////////////////////////////////////////////////////////////////////////////////
 
-localparam DISPLAY_SIZE_X = 640, DISPLAY_SIZE_Y = 480;
+localparam DISP_SIZE_X 	= 640;
+localparam DISP_SIZE_Y 	= 480;
 
-localparam BG_SIZE_X = 214*SCALE, BG_SIZE_Y = 40*SCALE;
-localparam BG_Y = 300;
+localparam BG_SIZE_X 	= 214*SCALE;
+localparam BG_SIZE_Y 	= 40*SCALE;
+localparam BG_Y 		= 300;
 
-localparam FLOOR_SIZE_X = 214*SCALE, FLOOR_SIZE_Y = 10*SCALE; 
-localparam FLOOR_Y = BG_SIZE_Y + BG_Y - 2;
+localparam FLOOR_SIZE_X = 214*SCALE; 
+localparam FLOOR_SIZE_Y	= 10*SCALE; 
+localparam FLOOR_Y 		= BG_SIZE_Y + BG_Y - 2;
 
-localparam TITLE_SIZE_X = 96*SCALE, TITLE_SIZE_Y = 22*SCALE;
-localparam TITLE_X = (DISPLAY_SIZE_X-TITLE_SIZE_X)/2, TITLE_Y = 50;
+localparam TITLE_SIZE_X = 96*SCALE;
+localparam TITLE_SIZE_Y = 22*SCALE;
+localparam TITLE_X 		= (DISP_SIZE_X-TITLE_SIZE_X)/2;
+localparam TITLE_Y 		= 50;
 
-localparam PAUSE_SIZE_X = 13*SCALE, PAUSE_SIZE_Y = 13*SCALE; 
-localparam PAUSE_X = (DISPLAY_SIZE_X-PAUSE_SIZE_X)/2, PAUSE_Y = (DISPLAY_SIZE_Y-PAUSE_SIZE_Y)/2;
+localparam PAUSE_SIZE_X = 13*SCALE;
+localparam PAUSE_SIZE_Y = 13*SCALE; 
+localparam PAUSE_X 		= (DISP_SIZE_X-PAUSE_SIZE_X)/2;
+localparam PAUSE_Y 		= (DISP_SIZE_Y-PAUSE_SIZE_Y)/2;
 
-localparam PIPE_SIZE_X = 26*SCALE, PIPE_SIZE_Y = 120*SCALE;
+localparam PIPE_SIZE_X 	= 26*SCALE;
+localparam PIPE_SIZE_Y 	= 120*SCALE;
 
-localparam OVER_SIZE_X = 96*SCALE, OVER_SIZE_Y = 22*SCALE;
-localparam OVER_X = (DISPLAY_SIZE_X-OVER_SIZE_X)/2, OVER_Y = 50;
+localparam OVER_SIZE_X 	= 96*SCALE;
+localparam OVER_SIZE_Y 	= 22*SCALE;
+localparam OVER_X 		= (DISP_SIZE_X-OVER_SIZE_X)/2;
+localparam OVER_Y 		= 50;
 
-localparam SCORE_SIZE_X = 112*SCALE, SCORE_SIZE_Y = 56*SCALE;
-localparam SCORE_X = (DISPLAY_SIZE_X-SCORE_SIZE_X)/2, SCORE_Y = 150;
+localparam SCORE_SIZE_X = 112*SCALE;
+localparam SCORE_SIZE_Y = 56*SCALE;
+localparam SCORE_X 		= (DISP_SIZE_X-SCORE_SIZE_X)/2;
+localparam SCORE_Y 		= 150;
 
-localparam NUM_SIZE_X = 7*SCALE, NUM_SIZE_Y = 10*SCALE;
-localparam NUM_SPACING = 5;
+localparam NUM_SIZE_X 	= 7*SCALE;
+localparam NUM_SIZE_Y 	= 10*SCALE;
+localparam NUM_SPACING 	= 5;
 
-localparam MEDAL_SIZE_X = 22*SCALE, MEDAL_SIZE_Y = 22*SCALE;
+localparam MEDAL_SIZE_X = 22*SCALE;
+localparam MEDAL_SIZE_Y = 22*SCALE;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										DISPLAY LOGIC											/////
+/////							DISPLAY LOGIC								  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
 // Logic block determining the display priority of the relevant sprites in each top-level game state
@@ -172,88 +188,90 @@ end
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										BIRD														/////
+/////							BIRD										  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
+// wire to determine whether VGA pixel is within bird sprite
 wire bird_gfx = (X - birdX-1 < BIRD_SIZE_X) && (Y - birdY < BIRD_SIZE_Y);
 wire [23:0] bird_colour [2:0][2:0];
 flap_1_rom bird1
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
-	.colour_data 	( bird_colour[0][0] 	)
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
+	.colour_data 	( bird_colour[0][0] )
 );
 
 flap_1_pos45_rom bird1_pos
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
 	.colour_data 	( bird_colour[0][1]	)
 );
 
 flap_1_neg45_rom bird1_neg
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
 	.colour_data 	( bird_colour[0][2]	)
 );
 
 flap_2_rom bird2
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE	),
 	.colour_data 	( bird_colour[1][0]	)
 );
 
 flap_2_pos45_rom bird2_pos
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE	),
 	.colour_data 	( bird_colour[1][1]	)
 );
 
 flap_2_neg45_rom bird2_neg
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE	),
 	.colour_data 	( bird_colour[1][2]	)
 );
 
 flap_3_rom bird3
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
 	.colour_data 	( bird_colour[2][0]	)
 );
 
 flap_3_pos45_rom bird3_pos
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
 	.colour_data 	( bird_colour[2][1]	)
 );
 
 flap_3_neg45_rom bird3_neg
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-birdY)/SCALE 	),
-	.col				( (X-birdX)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-birdY)/SCALE 	),
+	.col			( (X-birdX)/SCALE 	),
 	.colour_data 	( bird_colour[2][2]	)
 );
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										TITLE														/////
+/////							TITLE										  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
+// wire to determine whether VGA pixel is within title sprite
 wire title_gfx = (X-TITLE_X-1 < TITLE_SIZE_X) && (Y-TITLE_Y < TITLE_SIZE_Y) && (title_colour != IGNORE_COLOUR);
 wire [23:0] title_colour;
 title_rom title
@@ -266,26 +284,29 @@ title_rom title
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										PAUSE														/////
+/////							PAUSE										  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
+// wire to determine whether VGA pixel is within pause sprite
 wire pause_gfx = (X-PAUSE_X-1 < PAUSE_SIZE_X) && (Y-PAUSE_Y < PAUSE_SIZE_Y) && (pause_colour != IGNORE_COLOUR);
 wire [23:0] pause_colour;
 pause_rom pause_icon
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-PAUSE_Y)/SCALE 	),
-	.col				( (X-PAUSE_X)/SCALE 	),
+	.clk			( VGA_clk 			),
+	.row			( (Y-PAUSE_Y)/SCALE ),
+	.col			( (X-PAUSE_X)/SCALE ),
 	.colour_data	( pause_colour 		)
 );
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										BACKGROUND												/////
+/////							BACKGROUND									  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
+// always blocks to scroll background sprites at specified frequency
 reg [15:0] X_ofs_bg = 0, X_ofs_fl = 0;
-always @(posedge BG_clk) begin
+always @(posedge BG_clk)
+begin
 	if (game_state != PAUSE && game_state != END_SCREEN) begin
 		if (X_ofs_bg != 640)
 			X_ofs_bg <= X_ofs_bg + 1;
@@ -294,7 +315,8 @@ always @(posedge BG_clk) begin
 	end
 end
 
-always @(posedge FL_clk) begin
+always @(posedge FL_clk)
+begin
 	if (game_state != PAUSE && game_state != END_SCREEN) begin
 		if (X_ofs_fl != 640)
 			X_ofs_fl <= X_ofs_fl + 1;
@@ -305,6 +327,7 @@ end
 
 wire [23:0] bg_colour [3:0];
 
+// wire to determine whether VGA pixel is within background sprites
 wire bg_0_gfx = (Y <= BG_Y);
 wire bg_1_gfx = (X < BG_SIZE_X) && (Y - (BG_Y) < BG_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
 wire bg_2_gfx = (X < FLOOR_SIZE_X) && (Y - (FLOOR_Y) < FLOOR_SIZE_Y) && (bg_colour[1] != IGNORE_COLOUR);
@@ -314,25 +337,25 @@ assign bg_colour [0] = 24'h70C5CE;
 
 background_rom bg
 (
-	.clk				( VGA_clk 											),
-	.row				( (Y-BG_Y)/SCALE 									),
-	.col				( ((X + X_ofs_bg)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[1] 									)
+	.clk			( VGA_clk 								),
+	.row			( (Y-BG_Y)/SCALE 						),
+	.col			( ((X + X_ofs_bg)%DISP_SIZE_X)/SCALE 	),
+	.colour_data 	( bg_colour[1] 							)
 );
 
 floor_rom floor
 (
-	.clk				( VGA_clk 											),
-	.row				( (Y-FLOOR_Y)/SCALE 								),
-	.col				( ((X + X_ofs_fl)%DISPLAY_SIZE_X)/SCALE 	),
-	.colour_data 	( bg_colour[2] 									)
+	.clk			( VGA_clk 								),
+	.row			( (Y-FLOOR_Y)/SCALE 					),
+	.col			( ((X + X_ofs_fl)%DISP_SIZE_X)/SCALE 	),
+	.colour_data 	( bg_colour[2] 							)
 );
 
 assign bg_colour [3] = 24'hDED895;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										PIPES														/////
+/////							PIPES										  /////
 ///////////////////////////////////////////////////////////////////////////////////
 									
 reg [3:0] pipe_btm_gfx, pipe_top_gfx;
@@ -353,9 +376,9 @@ endgenerate
  
 pipe_rom pipe
 (
-	.clk				( VGA_clk 		),
-	.row				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_row : 16 ),
-	.col				( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_col : 25 ),
+	.clk			( VGA_clk 		),
+	.row			( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_row : 16 ),
+	.col			( |{pipe_btm_gfx, pipe_top_gfx} ? pipe_col : 25 ),
 	.colour_data 	( pipe_colour	)
 );
 
@@ -363,19 +386,21 @@ integer i;
 always @(X or Y)
 begin
 	for (i = 0; i < NUM_PIPES; i = i + 1) begin
+		// determine whether VGA pixel is within top or bottom pipe locations
 		pipe_btm_gfx[i] <= 	(X - (pipeX[i]) < PIPE_SIZE_X) &&
-									(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
+							(Y - (pipeY[i]+PIPE_GAP) < PIPE_SIZE_Y);
 									
 		pipe_top_gfx[i] <=	(X - (pipeX[i]) < PIPE_SIZE_X) && 
-									(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
+							(-Y + (pipeY[i]-PIPE_GAP) < PIPE_SIZE_Y);
 		
 		if (pipe_btm_gfx[i]) begin
-			pipe_row <= (Y - pipeY[i] - PIPE_GAP)/SCALE;
-			pipe_col <= (X - pipeX[i])/SCALE;
+			pipe_row 	<= 	(Y - pipeY[i] - PIPE_GAP)/SCALE;
+			pipe_col 	<= 	(X - pipeX[i])/SCALE;
 		
+		// invert the sprite for the top pipe
 		end else if (pipe_top_gfx[i]) begin
-			pipe_row <= (-Y + pipeY[i] - PIPE_GAP)/SCALE;
-			pipe_col <= (X - pipeX[i])/SCALE;
+			pipe_row 	<= 	(-Y + pipeY[i] - PIPE_GAP)/SCALE;
+			pipe_col 	<= 	(X - pipeX[i])/SCALE;
 			
 		end
 	end
@@ -383,32 +408,34 @@ end
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										END SCREEN												/////
+/////							END SCREEN									  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
+// wire to determine whether VGA pixel is within game over sprite
 wire game_over_gfx = (X-OVER_X-1 < OVER_SIZE_X) && (Y-OVER_Y < OVER_SIZE_Y) && (over_colour != IGNORE_COLOUR);
 wire [23:0] over_colour;
 game_over_rom over
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-OVER_Y)/SCALE 	),
-	.col				( (X-OVER_X)/SCALE 	),
-	.colour_data 	( over_colour			)
+	.clk			( VGA_clk 			),
+	.row			( (Y-OVER_Y)/SCALE 	),
+	.col			( (X-OVER_X)/SCALE 	),
+	.colour_data 	( over_colour		)
 );
 
+// wire to determine whether VGA pixel is within score board sprite
 wire score_gfx = (X-SCORE_X-1 < SCORE_SIZE_X) && (Y-SCORE_Y < SCORE_SIZE_Y) && (score_colour != IGNORE_COLOUR);
 wire [23:0] score_colour;
 score_rom scr
 (
-	.clk				( VGA_clk 				),
-	.row				( (Y-SCORE_Y)/SCALE 	),
-	.col				( (X-SCORE_X)/SCALE 	),
-	.colour_data 	( score_colour			)
+	.clk			( VGA_clk 			),
+	.row			( (Y-SCORE_Y)/SCALE ),
+	.col			( (X-SCORE_X)/SCALE ),
+	.colour_data 	( score_colour		)
 );
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-/////										SCORE														/////
+/////								SCORE									  /////
 ///////////////////////////////////////////////////////////////////////////////////
 
 reg [31:0] num_col, num_row, medal_col, medal_row;
@@ -416,20 +443,21 @@ reg num_gfx, medal_gfx;
 wire [23:0] num_colour, medal_colour;
 numbers_rom num
 (
-	.clk				( VGA_clk 					),
-	.row				( num_gfx ? num_row: 11	),
-	.col				( num_gfx ? num_col: 0 	),
-	.colour_data 	( num_colour				)
+	.clk			( VGA_clk 				),
+	.row			( num_gfx ? num_row: 11	),
+	.col			( num_gfx ? num_col: 0 	),
+	.colour_data 	( num_colour			)
 );
 
 medals_rom medal
 (
-	.clk				( VGA_clk 				),
-	.row				( medal_row 			),
-	.col				( medal_col 			),
+	.clk			( VGA_clk 				),
+	.row			( medal_row 			),
+	.col			( medal_col 			),
 	.colour_data 	( medal_colour			)
 );
 
+// logic to determine score display based on game state and current score
 always@(X or Y)
 begin
 	
@@ -516,7 +544,6 @@ begin
 			
 		end
 	endcase
-
 end
 		
 endmodule

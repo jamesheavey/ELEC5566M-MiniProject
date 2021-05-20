@@ -41,9 +41,10 @@ module flappy_bird
 // PARAMETERS
 localparam SCALE 		=   3;
 localparam PIPE_GAP 	=  75;
-localparam NUM_PIPES =   4;
-localparam PIPE_SEP	= 250;
-localparam BIRD_SIZE_X = 18*SCALE, BIRD_SIZE_Y = 15*SCALE;
+localparam NUM_PIPES 	=   4;
+localparam PIPE_SEP		= 250;
+localparam BIRD_SIZE_X 	= 18*SCALE; 
+localparam BIRD_SIZE_Y 	= 15*SCALE;
 localparam BIRD_X		= 150;
 
 
@@ -78,15 +79,15 @@ wire flap, pause, collision;
 // sprite display.
 vga_gen vga
 (
-	.clk				( VGA_clk 		),
-	.rst				( rst 			),
+	.clk			( VGA_clk 		),
+	.rst			( rst 			),
 	.h_sync			( h_sync 		),
 	.v_sync			( v_sync 		),
-	.v_clk			( v_clk 			),
+	.v_clk			( v_clk 		),
 	.display_on		( display_on 	),
 	.sync_n			( sync_n 		),
-	.h_pos			( X 				),
-	.v_pos			( Y 				)
+	.h_pos			( X 			),
+	.v_pos			( Y 			)
 );
 
 
@@ -96,12 +97,12 @@ vga_gen vga
 // space = "flap", esc = "pause".
 keyboard_input kb
 (
-	.clk				( clk 			),
-	.rst				( rst 			),
-	.PS2_clk			( PS2_clk 		),
+	.clk			( clk 			),
+	.rst			( rst 			),
+	.PS2_clk		( PS2_clk 		),
 	.PS2_data		( PS2_data 		),
-	.flap				( flap 			),
-	.pause			( pause 			)
+	.flap			( flap 			),
+	.pause			( pause 		)
 );
 
 
@@ -112,11 +113,11 @@ keyboard_input kb
 // determine functions within other modules.
 game_FSM FSM
 (
-	.clk				( clk 			),
-	.rst				( rst 			),
+	.clk			( clk 			),
+	.rst			( rst 			),
 	.collision		( collision 	),
-	.pause			( pause 			),
-	.flap				( flap 			),
+	.pause			( pause 		),
+	.flap			( flap 			),
 	.game_state		( game_state 	)
 );
 
@@ -129,11 +130,11 @@ bird_physics #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	)
 ) physics (
-	.clk				( clk 			),
-	.rst				( rst				),
+	.clk			( clk 			),
+	.rst			( rst			),
 	.game_state		( game_state 	),
-	.flap				( flap 			),
-	.birdY			( birdY 			),
+	.flap			( flap 			),
+	.birdY			( birdY 		),
 	.bird_state		( bird_state 	),
 	.bird_angle		( bird_angle	)
 );
@@ -149,9 +150,9 @@ collision_detection #(
 	.PIPE_GAP		( PIPE_GAP		),
 	.NUM_PIPES		( NUM_PIPES		)
 ) detect (
-	.clk				( clk 			),
-	.birdX			( birdX 			),
-	.birdY			( birdY 			),
+	.clk			( clk 			),
+	.birdX			( birdX 		),
+	.birdY			( birdY 		),
 	.pipeX_flat		( pipeX_flat	),
 	.pipeY_flat		( pipeY_flat	),
 	.collision		( collision		)
@@ -166,11 +167,11 @@ pipes #(
 	.NUM_PIPES		( NUM_PIPES		),
 	.PIPE_SEP		( PIPE_SEP		)
 ) pipe_shift (
-	.clk				( clk 			),
-	.FL_clk			( FL_clk			),
-	.rst				( rst				),
+	.clk			( clk 			),
+	.FL_clk			( FL_clk		),
+	.rst			( rst			),
 	.game_state 	( game_state	),
-	.birdX			( birdX 			),
+	.birdX			( birdX 		),
 	.pipeX_flat		( pipeX_flat	),
 	.pipeY_flat		( pipeY_flat	),
 	.score_count	( score_count	)
@@ -183,7 +184,7 @@ pipes #(
 // and 7 segments.
 score_display score
 (
-	.rst				( rst				),
+	.rst			( rst			),
 	.score_count	( score_count	),
 	.score_BCD		( score_BCD		),
 	.hiscore_BCD	( hiscore_BCD	),
@@ -200,27 +201,27 @@ score_display score
 image_rendering #(
 	.BIRD_SIZE_X	( BIRD_SIZE_X 	),
 	.BIRD_SIZE_Y	( BIRD_SIZE_Y 	),
-	.SCALE			( SCALE 			),
+	.SCALE			( SCALE 		),
 	.PIPE_GAP		( PIPE_GAP		),
 	.NUM_PIPES		( NUM_PIPES		)
 ) display (
-	.VGA_clk			( VGA_clk 		),
+	.VGA_clk		( VGA_clk 		),
 	.BG_clk			( BG_clk 		),
-	.FL_clk			( FL_clk			),
-	.rst				( rst 			),
+	.FL_clk			( FL_clk		),
+	.rst			( rst 			),
 	.display_on		( display_on 	),
 	.game_state		( game_state 	),
 	.bird_state		( bird_state 	),
 	.bird_angle		( bird_angle	),
-	.X					( X 				),
-	.Y					( Y 				),
-	.birdX			( birdX 			),
-	.birdY			( birdY 			),
+	.X				( X 			),
+	.Y				( Y 			),
+	.birdX			( birdX 		),
+	.birdY			( birdY 		),
 	.pipeX_flat		( pipeX_flat	),
 	.pipeY_flat		( pipeY_flat	),
 	.score_BCD		( score_BCD		),
 	.hiscore_BCD	( hiscore_BCD	),
-	.RGB				( {R,G,B} 		)
+	.RGB			( {R,G,B} 		)
 );
 
 // Upon collision, the LEDs flash

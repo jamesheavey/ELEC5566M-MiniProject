@@ -17,7 +17,7 @@
 module hex_to_7seg 
 ( 
 	// INPUT
-	input			[3:0] hex,
+	input [3:0] hex,
 	
 	// OUTPUT
 	output reg	[6:0] seven_seg

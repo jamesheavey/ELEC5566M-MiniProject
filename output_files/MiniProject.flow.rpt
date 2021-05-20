@@ -1,5 +1,5 @@
 Flow report for MiniProject
-Thu May 20 02:21:06 2021
+Thu May 20 03:32:55 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu May 20 02:20:32 2021       ;
+; Flow Status                     ; Successful - Thu May 20 03:32:15 2021       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; MiniProject                                 ;
 ; Top-level Entity Name           ; flappy_bird                                 ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/20/2021 02:00:25 ;
+; Start date & time ; 05/20/2021 03:08:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MiniProject         ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 70975883156024.162147242412780         ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 70975883156024.162147653402980         ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; game_FSM_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; bin_to_BCD_tb    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; clk_divider_tb   ;
@@ -117,11 +117,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:03:34     ; 1.8                     ; 5149 MB             ; 00:04:12                           ;
-; Fitter                    ; 00:16:06     ; 1.1                     ; 6858 MB             ; 00:23:11                           ;
-; Assembler                 ; 00:00:19     ; 1.0                     ; 5006 MB             ; 00:00:19                           ;
-; TimeQuest Timing Analyzer ; 00:00:31     ; 2.8                     ; 5415 MB             ; 00:01:18                           ;
-; Total                     ; 00:20:30     ; --                      ; --                  ; 00:29:00                           ;
+; Analysis & Synthesis      ; 00:04:02     ; 1.8                     ; 5152 MB             ; 00:04:25                           ;
+; Fitter                    ; 00:18:47     ; 1.1                     ; 6888 MB             ; 00:24:58                           ;
+; Assembler                 ; 00:00:22     ; 1.0                     ; 5007 MB             ; 00:00:20                           ;
+; TimeQuest Timing Analyzer ; 00:00:39     ; 2.9                     ; 5428 MB             ; 00:01:20                           ;
+; Total                     ; 00:23:50     ; --                      ; --                  ; 00:31:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
