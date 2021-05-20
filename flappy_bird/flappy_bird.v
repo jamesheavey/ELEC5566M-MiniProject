@@ -21,8 +21,16 @@
  *
  */
 
-module flappy_bird
-(	
+module flappy_bird #(
+	// PARAMETERS
+	parameter SCALE 	=   3,
+	parameter PIPE_GAP 	=  75,
+	parameter NUM_PIPES 	=   4,
+	parameter PIPE_SEP	= 250,
+	parameter BIRD_SIZE_X 	= 18*SCALE, 
+	parameter BIRD_SIZE_Y 	= 15*SCALE,
+	parameter BIRD_X	= 150	
+)(	
 	// INPUTS
 	input clk, rst,
 	input PS2_clk, PS2_data,
@@ -34,17 +42,6 @@ module flappy_bird
 	output [9:0] LED,
 	output [41:0] seven_seg
 );
-
-
-// PARAMETERS
-localparam SCALE 	=   3;
-localparam PIPE_GAP 	=  75;
-localparam NUM_PIPES 	=   4;
-localparam PIPE_SEP	= 250;
-localparam BIRD_SIZE_X 	= 18*SCALE; 
-localparam BIRD_SIZE_Y 	= 15*SCALE;
-localparam BIRD_X	= 150;
-
 
 // 25MHz clk required by VGA 640x480 timing 
 wire VGA_clk;
