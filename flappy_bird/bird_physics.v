@@ -86,12 +86,6 @@ begin
 				flap_elapsed 	<= TIME_MAX;
 				flap_start 	<= TIME_MAX;
 				
-				if (game_state == PAUSE || game_state == END_SCREEN) begin
-					// If paused or game over, stop motion
-					prev_state 	<= TOP;
-					motion_state	<= STOP;
-				end
-				
 				// always transition to DOWN state
 				motion_state 	<= DOWN;
 			end

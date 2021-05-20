@@ -488,7 +488,7 @@ begin
 					&& Y < 16 + NUM_SIZE_Y) 
 					begin
 					
-					if (!(i < 2 && score_BCD[4*(3-i)-1-:4] == 0)) begin
+					if (!(i < 2 && score_BCD[4*(3-i)-1-:4] == 0) || (score_BCD[11:8] > 0)) begin
 						num_col = (X - (550 + i*(NUM_SPACING+NUM_SIZE_X))) /SCALE;
 						num_row = (Y - 16 + (score_BCD[4*(3-i)-1-:4] * NUM_SIZE_Y)) /SCALE;
 						num_gfx = 1;
@@ -506,7 +506,7 @@ begin
 					&& Y >= SCORE_Y + 50 && Y < SCORE_Y + 50 + NUM_SIZE_Y) 
 					begin
 					
-					if (!(i < 2 && score_BCD[4*(3-i)-1-:4] == 0)) begin
+					if (!(i < 2 && score_BCD[4*(3-i)-1-:4] == 0) || (score_BCD[11:8] > 0)) begin
 						num_col = (X - (SCORE_X + 230 + i*(NUM_SPACING+NUM_SIZE_X))) /SCALE;
 						num_row = (Y - (SCORE_Y + 50) + (score_BCD[4*(3-i)-1-:4] * NUM_SIZE_Y)) /SCALE;
 						num_gfx = 1;
@@ -519,7 +519,7 @@ begin
 					&& Y < SCORE_Y + 110 + NUM_SIZE_Y) 
 					begin
 				
-					if (!(i < 2 && hiscore_BCD[4*(3-i)-1-:4] == 0)) begin
+					if (!(i < 2 && hiscore_BCD[4*(3-i)-1-:4] == 0) || (score_BCD[11:8] > 0)) begin
 						num_col = (X - (SCORE_X + 230 + i*(NUM_SPACING+NUM_SIZE_X))) /SCALE;
 						num_row = (Y - (SCORE_Y + 110) + (hiscore_BCD[4*(3-i)-1-:4] * NUM_SIZE_Y)) /SCALE;
 						num_gfx = 1;
