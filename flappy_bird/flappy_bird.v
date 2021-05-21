@@ -203,6 +203,6 @@ image_rendering #(
 );
 
 // Upon collision, the LEDs flash
-assign LED = FL_clk ? {9{collision}} : 0;
+assign LED = BG_clk ? {9{collision}} : 0;
 
 endmodule
