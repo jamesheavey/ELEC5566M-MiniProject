@@ -3,7 +3,7 @@
 This repository contains multiple Verilog HDL files that program a DE1-SoC development board FPGA circuit to play the classic iOS game Flappy Bird. The full list of module hierarchy, properties and functions can be seen in sections below.
 
 A video demonstration of the implemented code can be seen using the link provided:
-[VIDEO DEMO](https://github.com/leeds-embedded-systems/ELEC5566M-Assignment2-jamesheavey/blob/6cca6de2a3854d2b45c6a78d0e5444cad8d6c4b4/DEMO%20&%20DIAGRAMS/Digital_Lock_demo.mp4)
+[VIDEO DEMO](https://github.com/jamesheavey/ELEC5566M-MiniProject/blob/a439031b16155f7b8fb6ea56d151d74727cb6980/demo%20&%20diagrams/Video%20Demo.mp4)
 
 ## Module List
 This repository includes the following files:
@@ -26,10 +26,26 @@ This repository includes the following files:
 | `random_number_gen.v`   |  This is a submodule, instantaied in the `pipes` module to generate a 32bit random number to randomise the pipe obstacles. This module utilises an LFSR and was imported fron NANDLAND (REF: https://www.nandland.com/vhdl/modules/lfsr-linear-feedback-shift-register.html) |
 
 ## Module Hierarchy
+<p align="center">
+  <img width="802" height="422" src="https://github.com/jamesheavey/ELEC5566M-MiniProject/blob/13cc6d2a150b8bd8d3835f4e10c6efe046054e8e/demo%20&%20diagrams/Module%20Hierarchy.png">
+</p>
 
+## Game FSM
+<p align="center">
+  <img width="569" height="451" src="https://github.com/jamesheavey/ELEC5566M-MiniProject/blob/5107396a15a4ae5640b25097c3d6883323959874/demo%20&%20diagrams/Game%20State%20FSM.png">
+</p>
 
-## Sprites
-This is a Moore Finite State Machine with a single Mealy reset input. Each state has an associated state output flag bit as well as a designated 7Seg digit display message. The State flags are connected to LEDs in the top level module. All outputs for the FSM are for user interface purposes only and are not required for the core function of the FSM.
+## Bird Motion FSM
+<p align="center">
+  <img width="649" height="451" src="https://github.com/jamesheavey/ELEC5566M-MiniProject/blob/a439031b16155f7b8fb6ea56d151d74727cb6980/demo%20&%20diagrams/Bird%20Motion%20FSM.png">
+</p>
+
+## Sprite Sheet
+<p align="center">
+  <img width="352" height="270" src="https://github.com/jamesheavey/ELEC5566M-MiniProject/blob/5107396a15a4ae5640b25097c3d6883323959874/demo%20&%20diagrams/Sprites.png">
+</p>
+
+All sprites originally from The Spriters Resource website (REF: https://www.spriters-resource.com/mobile/flappybird/sheet/59537/)
 
 ---
 
