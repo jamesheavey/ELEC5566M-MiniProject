@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for MiniProject
-Fri May 21 00:10:59 2021
+Fri May 21 01:31:40 2021
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.86        ;
+; Average used               ; 2.82        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  62.3%      ;
-;     Processor 3            ;  62.0%      ;
-;     Processor 4            ;  61.8%      ;
+;     Processor 2            ;  61.1%      ;
+;     Processor 3            ;  60.7%      ;
+;     Processor 4            ;  60.2%      ;
 +----------------------------+-------------+
 
 
@@ -132,13 +132,13 @@ refer to the applicable agreement for further details.
 +------------+-----------------+---------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                      ; Note ;
 +------------+-----------------+---------------------------------+------+
-; 17.29 MHz  ; 17.29 MHz       ; rst                             ;      ;
-; 21.94 MHz  ; 21.94 MHz       ; clk_divider:VGA|out_clk         ;      ;
-; 115.78 MHz ; 115.78 MHz      ; clk_divider:FLOOR|out_clk       ;      ;
-; 119.65 MHz ; 119.65 MHz      ; clk                             ;      ;
-; 141.56 MHz ; 141.56 MHz      ; pipes:pipe_shift|score_count[0] ;      ;
-; 143.55 MHz ; 143.55 MHz      ; PS2_clk                         ;      ;
-; 296.21 MHz ; 296.21 MHz      ; clk_divider:BG|out_clk          ;      ;
+; 16.85 MHz  ; 16.85 MHz       ; rst                             ;      ;
+; 21.86 MHz  ; 21.86 MHz       ; clk_divider:VGA|out_clk         ;      ;
+; 116.41 MHz ; 116.41 MHz      ; clk_divider:FLOOR|out_clk       ;      ;
+; 125.45 MHz ; 125.45 MHz      ; clk                             ;      ;
+; 140.13 MHz ; 140.13 MHz      ; pipes:pipe_shift|score_count[0] ;      ;
+; 168.52 MHz ; 168.52 MHz      ; PS2_clk                         ;      ;
+; 315.26 MHz ; 315.26 MHz      ; clk_divider:BG|out_clk          ;      ;
 +------------+-----------------+---------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -154,13 +154,13 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+---------+---------------+
 ; Clock                           ; Slack   ; End Point TNS ;
 +---------------------------------+---------+---------------+
-; clk_divider:VGA|out_clk         ; -45.696 ; -3505.646     ;
-; rst                             ; -43.228 ; -528.046      ;
-; clk                             ; -9.481  ; -1264.938     ;
-; clk_divider:FLOOR|out_clk       ; -7.637  ; -1232.844     ;
-; PS2_clk                         ; -5.966  ; -248.534      ;
-; clk_divider:BG|out_clk          ; -4.855  ; -77.672       ;
-; pipes:pipe_shift|score_count[0] ; -4.571  ; -118.035      ;
+; clk_divider:VGA|out_clk         ; -46.397 ; -3508.511     ;
+; rst                             ; -42.218 ; -539.188      ;
+; clk                             ; -9.293  ; -1203.290     ;
+; clk_divider:FLOOR|out_clk       ; -7.590  ; -1269.623     ;
+; pipes:pipe_shift|score_count[0] ; -5.025  ; -134.857      ;
+; PS2_clk                         ; -4.934  ; -238.979      ;
+; clk_divider:BG|out_clk          ; -3.937  ; -62.984       ;
 +---------------------------------+---------+---------------+
 
 
@@ -169,13 +169,13 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.834 ; -12.057       ;
+; pipes:pipe_shift|score_count[0] ; -0.552 ; -7.167        ;
 ; clk_divider:FLOOR|out_clk       ; 0.119  ; 0.000         ;
-; PS2_clk                         ; 0.220  ; 0.000         ;
-; clk                             ; 0.240  ; 0.000         ;
-; clk_divider:BG|out_clk          ; 0.271  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 0.550  ; 0.000         ;
-; rst                             ; 1.751  ; 0.000         ;
+; PS2_clk                         ; 0.219  ; 0.000         ;
+; clk                             ; 0.222  ; 0.000         ;
+; clk_divider:BG|out_clk          ; 0.269  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 0.422  ; 0.000         ;
+; rst                             ; 1.840  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -184,10 +184,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk       ; -7.110 ; -1229.646     ;
-; clk_divider:VGA|out_clk         ; -6.348 ; -364.022      ;
-; clk                             ; -4.830 ; -645.461      ;
-; pipes:pipe_shift|score_count[0] ; -4.144 ; -117.577      ;
+; clk_divider:FLOOR|out_clk       ; -6.782 ; -1194.195     ;
+; clk_divider:VGA|out_clk         ; -6.566 ; -372.413      ;
+; clk                             ; -4.748 ; -624.477      ;
+; pipes:pipe_shift|score_count[0] ; -4.575 ; -124.415      ;
 +---------------------------------+--------+---------------+
 
 
@@ -196,10 +196,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.304 ; -1.119        ;
-; clk                             ; 1.721  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 2.744  ; 0.000         ;
-; clk_divider:FLOOR|out_clk       ; 2.821  ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; -0.097 ; -0.097        ;
+; clk                             ; 1.670  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 3.018  ; 0.000         ;
+; clk_divider:FLOOR|out_clk       ; 3.042  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -208,13 +208,13 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; rst                             ; -3.312 ; -1256.592     ;
-; clk                             ; -0.624 ; -137.792      ;
-; clk_divider:VGA|out_clk         ; -0.567 ; -115.103      ;
-; clk_divider:FLOOR|out_clk       ; -0.486 ; -142.818      ;
-; PS2_clk                         ; -0.394 ; -31.908       ;
-; clk_divider:BG|out_clk          ; -0.394 ; -10.448       ;
-; pipes:pipe_shift|score_count[0] ; 0.082  ; 0.000         ;
+; rst                             ; -4.278 ; -1622.924     ;
+; clk_divider:FLOOR|out_clk       ; -0.529 ; -161.925      ;
+; clk_divider:VGA|out_clk         ; -0.496 ; -121.155      ;
+; clk                             ; -0.481 ; -135.428      ;
+; PS2_clk                         ; -0.394 ; -30.908       ;
+; clk_divider:BG|out_clk          ; -0.394 ; -10.832       ;
+; pipes:pipe_shift|score_count[0] ; 0.130  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -229,13 +229,13 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                      ; Note ;
 +------------+-----------------+---------------------------------+------+
-; 16.49 MHz  ; 16.49 MHz       ; rst                             ;      ;
-; 21.19 MHz  ; 21.19 MHz       ; clk_divider:VGA|out_clk         ;      ;
-; 115.96 MHz ; 115.96 MHz      ; clk_divider:FLOOR|out_clk       ;      ;
-; 117.91 MHz ; 117.91 MHz      ; clk                             ;      ;
-; 148.5 MHz  ; 148.5 MHz       ; PS2_clk                         ;      ;
-; 149.43 MHz ; 149.43 MHz      ; pipes:pipe_shift|score_count[0] ;      ;
-; 303.58 MHz ; 303.58 MHz      ; clk_divider:BG|out_clk          ;      ;
+; 16.27 MHz  ; 16.27 MHz       ; rst                             ;      ;
+; 21.09 MHz  ; 21.09 MHz       ; clk_divider:VGA|out_clk         ;      ;
+; 117.59 MHz ; 117.59 MHz      ; clk_divider:FLOOR|out_clk       ;      ;
+; 125.74 MHz ; 125.74 MHz      ; clk                             ;      ;
+; 147.23 MHz ; 147.23 MHz      ; pipes:pipe_shift|score_count[0] ;      ;
+; 170.71 MHz ; 170.71 MHz      ; PS2_clk                         ;      ;
+; 315.96 MHz ; 315.96 MHz      ; clk_divider:BG|out_clk          ;      ;
 +------------+-----------------+---------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -245,13 +245,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+---------+---------------+
 ; Clock                           ; Slack   ; End Point TNS ;
 +---------------------------------+---------+---------------+
-; clk_divider:VGA|out_clk         ; -47.583 ; -3557.975     ;
-; rst                             ; -45.009 ; -543.359      ;
-; clk                             ; -8.944  ; -1211.332     ;
-; clk_divider:FLOOR|out_clk       ; -7.624  ; -1227.071     ;
-; PS2_clk                         ; -5.734  ; -244.269      ;
-; clk_divider:BG|out_clk          ; -4.843  ; -77.480       ;
-; pipes:pipe_shift|score_count[0] ; -4.409  ; -113.039      ;
+; clk_divider:VGA|out_clk         ; -48.266 ; -3557.538     ;
+; rst                             ; -44.218 ; -554.926      ;
+; clk                             ; -8.930  ; -1147.463     ;
+; clk_divider:FLOOR|out_clk       ; -7.504  ; -1256.942     ;
+; pipes:pipe_shift|score_count[0] ; -4.905  ; -129.780      ;
+; PS2_clk                         ; -4.858  ; -237.978      ;
+; clk_divider:BG|out_clk          ; -4.022  ; -64.344       ;
 +---------------------------------+---------+---------------+
 
 
@@ -260,13 +260,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.967 ; -17.216       ;
-; clk                             ; 0.203  ; 0.000         ;
-; clk_divider:FLOOR|out_clk       ; 0.254  ; 0.000         ;
-; PS2_clk                         ; 0.264  ; 0.000         ;
-; clk_divider:BG|out_clk          ; 0.276  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 0.576  ; 0.000         ;
-; rst                             ; 1.898  ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; -0.744 ; -13.282       ;
+; clk                             ; 0.209  ; 0.000         ;
+; clk_divider:FLOOR|out_clk       ; 0.227  ; 0.000         ;
+; PS2_clk                         ; 0.269  ; 0.000         ;
+; clk_divider:BG|out_clk          ; 0.271  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 0.439  ; 0.000         ;
+; rst                             ; 1.918  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -275,10 +275,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk       ; -7.024 ; -1221.636     ;
-; clk_divider:VGA|out_clk         ; -6.345 ; -364.380      ;
-; clk                             ; -4.596 ; -614.104      ;
-; pipes:pipe_shift|score_count[0] ; -4.090 ; -116.617      ;
+; clk_divider:FLOOR|out_clk       ; -6.711 ; -1188.926     ;
+; clk_divider:VGA|out_clk         ; -6.518 ; -370.947      ;
+; clk                             ; -4.522 ; -595.169      ;
+; pipes:pipe_shift|score_count[0] ; -4.435 ; -122.477      ;
 +---------------------------------+--------+---------------+
 
 
@@ -287,10 +287,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.354 ; -1.854        ;
-; clk                             ; 1.569  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 2.876  ; 0.000         ;
-; clk_divider:FLOOR|out_clk       ; 2.924  ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; -0.215 ; -0.215        ;
+; clk                             ; 1.517  ; 0.000         ;
+; clk_divider:FLOOR|out_clk       ; 3.094  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 3.116  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -299,13 +299,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; rst                             ; -3.350 ; -1312.128     ;
-; clk                             ; -0.608 ; -149.500      ;
-; clk_divider:VGA|out_clk         ; -0.545 ; -117.081      ;
-; clk_divider:FLOOR|out_clk       ; -0.456 ; -141.421      ;
-; PS2_clk                         ; -0.394 ; -31.822       ;
-; clk_divider:BG|out_clk          ; -0.394 ; -10.480       ;
-; pipes:pipe_shift|score_count[0] ; 0.007  ; 0.000         ;
+; rst                             ; -4.353 ; -1725.232     ;
+; clk_divider:FLOOR|out_clk       ; -0.506 ; -159.410      ;
+; clk                             ; -0.483 ; -147.616      ;
+; clk_divider:VGA|out_clk         ; -0.461 ; -118.826      ;
+; PS2_clk                         ; -0.394 ; -32.221       ;
+; clk_divider:BG|out_clk          ; -0.394 ; -11.008       ;
+; pipes:pipe_shift|score_count[0] ; 0.121  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -320,13 +320,13 @@ No synchronizer chains to report.
 +---------------------------------+---------+---------------+
 ; Clock                           ; Slack   ; End Point TNS ;
 +---------------------------------+---------+---------------+
-; clk_divider:VGA|out_clk         ; -24.472 ; -1980.075     ;
-; rst                             ; -23.312 ; -287.715      ;
-; clk                             ; -5.924  ; -697.143      ;
-; clk_divider:FLOOR|out_clk       ; -4.277  ; -677.002      ;
-; pipes:pipe_shift|score_count[0] ; -3.616  ; -90.043       ;
-; PS2_clk                         ; -3.040  ; -112.027      ;
-; clk_divider:BG|out_clk          ; -2.460  ; -39.360       ;
+; clk_divider:VGA|out_clk         ; -24.966 ; -1987.870     ;
+; rst                             ; -22.602 ; -295.304      ;
+; clk                             ; -5.557  ; -654.392      ;
+; clk_divider:FLOOR|out_clk       ; -4.170  ; -690.328      ;
+; pipes:pipe_shift|score_count[0] ; -3.610  ; -97.946       ;
+; PS2_clk                         ; -2.308  ; -102.122      ;
+; clk_divider:BG|out_clk          ; -1.981  ; -31.696       ;
 +---------------------------------+---------+---------------+
 
 
@@ -335,13 +335,13 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.106 ; -0.189        ;
-; clk_divider:FLOOR|out_clk       ; -0.086 ; -0.133        ;
+; pipes:pipe_shift|score_count[0] ; -0.232 ; -0.737        ;
+; clk_divider:FLOOR|out_clk       ; -0.090 ; -0.183        ;
 ; clk_divider:BG|out_clk          ; 0.088  ; 0.000         ;
-; PS2_clk                         ; 0.140  ; 0.000         ;
-; clk                             ; 0.145  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 0.220  ; 0.000         ;
-; rst                             ; 0.839  ; 0.000         ;
+; clk                             ; 0.133  ; 0.000         ;
+; PS2_clk                         ; 0.141  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 0.156  ; 0.000         ;
+; rst                             ; 0.938  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -350,10 +350,10 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk       ; -4.291 ; -742.978      ;
-; clk_divider:VGA|out_clk         ; -3.844 ; -219.948      ;
-; clk                             ; -3.006 ; -401.861      ;
-; pipes:pipe_shift|score_count[0] ; -2.896 ; -81.775       ;
+; clk_divider:FLOOR|out_clk       ; -4.044 ; -710.975      ;
+; clk_divider:VGA|out_clk         ; -3.888 ; -222.543      ;
+; pipes:pipe_shift|score_count[0] ; -3.106 ; -84.001       ;
+; clk                             ; -2.947 ; -387.660      ;
 +---------------------------------+--------+---------------+
 
 
@@ -362,10 +362,10 @@ No synchronizer chains to report.
 +---------------------------------+-------+---------------+
 ; Clock                           ; Slack ; End Point TNS ;
 +---------------------------------+-------+---------------+
-; pipes:pipe_shift|score_count[0] ; 0.034 ; 0.000         ;
-; clk                             ; 0.933 ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 1.384 ; 0.000         ;
-; clk_divider:FLOOR|out_clk       ; 1.436 ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; 0.081 ; 0.000         ;
+; clk                             ; 0.899 ; 0.000         ;
+; clk_divider:FLOOR|out_clk       ; 1.454 ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 1.544 ; 0.000         ;
 +---------------------------------+-------+---------------+
 
 
@@ -374,13 +374,13 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; rst                             ; -2.296 ; -826.126      ;
-; clk                             ; -0.568 ; -24.030       ;
-; PS2_clk                         ; -0.345 ; -20.579       ;
-; clk_divider:VGA|out_clk         ; -0.272 ; -15.518       ;
-; clk_divider:FLOOR|out_clk       ; -0.241 ; -18.318       ;
-; clk_divider:BG|out_clk          ; -0.049 ; -0.760        ;
-; pipes:pipe_shift|score_count[0] ; 0.065  ; 0.000         ;
+; rst                             ; -2.708 ; -973.280      ;
+; clk                             ; -0.461 ; -22.805       ;
+; PS2_clk                         ; -0.359 ; -22.107       ;
+; clk_divider:FLOOR|out_clk       ; -0.261 ; -31.895       ;
+; clk_divider:VGA|out_clk         ; -0.235 ; -18.368       ;
+; clk_divider:BG|out_clk          ; -0.075 ; -1.176        ;
+; pipes:pipe_shift|score_count[0] ; 0.185  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -395,13 +395,13 @@ No synchronizer chains to report.
 +---------------------------------+---------+---------------+
 ; Clock                           ; Slack   ; End Point TNS ;
 +---------------------------------+---------+---------------+
-; clk_divider:VGA|out_clk         ; -23.591 ; -1831.637     ;
-; rst                             ; -22.186 ; -265.559      ;
-; clk                             ; -5.409  ; -622.375      ;
-; clk_divider:FLOOR|out_clk       ; -3.832  ; -609.054      ;
-; pipes:pipe_shift|score_count[0] ; -2.978  ; -76.025       ;
-; PS2_clk                         ; -2.650  ; -98.922       ;
-; clk_divider:BG|out_clk          ; -2.303  ; -36.848       ;
+; clk_divider:VGA|out_clk         ; -24.021 ; -1837.477     ;
+; rst                             ; -21.699 ; -275.124      ;
+; clk                             ; -5.158  ; -584.675      ;
+; clk_divider:FLOOR|out_clk       ; -3.713  ; -618.429      ;
+; pipes:pipe_shift|score_count[0] ; -3.003  ; -83.744       ;
+; PS2_clk                         ; -2.043  ; -90.709       ;
+; clk_divider:BG|out_clk          ; -1.908  ; -30.528       ;
 +---------------------------------+---------+---------------+
 
 
@@ -410,13 +410,13 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; pipes:pipe_shift|score_count[0] ; -0.160 ; -0.799        ;
-; clk_divider:FLOOR|out_clk       ; -0.022 ; -0.022        ;
-; clk                             ; 0.000  ; 0.000         ;
-; clk_divider:BG|out_clk          ; 0.078  ; 0.000         ;
-; PS2_clk                         ; 0.148  ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 0.216  ; 0.000         ;
-; rst                             ; 0.798  ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; -0.248 ; -1.366        ;
+; clk_divider:FLOOR|out_clk       ; -0.023 ; -0.036        ;
+; clk                             ; 0.043  ; 0.000         ;
+; clk_divider:BG|out_clk          ; 0.077  ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 0.144  ; 0.000         ;
+; PS2_clk                         ; 0.145  ; 0.000         ;
+; rst                             ; 0.873  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -425,10 +425,10 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clk_divider:FLOOR|out_clk       ; -4.197 ; -734.204      ;
-; clk_divider:VGA|out_clk         ; -3.833 ; -219.935      ;
-; clk                             ; -2.874 ; -384.433      ;
-; pipes:pipe_shift|score_count[0] ; -2.581 ; -73.112       ;
+; clk_divider:FLOOR|out_clk       ; -3.973 ; -705.686      ;
+; clk_divider:VGA|out_clk         ; -3.834 ; -221.220      ;
+; clk                             ; -2.823 ; -371.701      ;
+; pipes:pipe_shift|score_count[0] ; -2.748 ; -75.255       ;
 +---------------------------------+--------+---------------+
 
 
@@ -437,10 +437,10 @@ No synchronizer chains to report.
 +---------------------------------+-------+---------------+
 ; Clock                           ; Slack ; End Point TNS ;
 +---------------------------------+-------+---------------+
-; pipes:pipe_shift|score_count[0] ; 0.092 ; 0.000         ;
-; clk                             ; 0.822 ; 0.000         ;
-; clk_divider:VGA|out_clk         ; 1.443 ; 0.000         ;
-; clk_divider:FLOOR|out_clk       ; 1.487 ; 0.000         ;
+; pipes:pipe_shift|score_count[0] ; 0.112 ; 0.000         ;
+; clk                             ; 0.790 ; 0.000         ;
+; clk_divider:FLOOR|out_clk       ; 1.467 ; 0.000         ;
+; clk_divider:VGA|out_clk         ; 1.583 ; 0.000         ;
 +---------------------------------+-------+---------------+
 
 
@@ -449,13 +449,13 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; rst                             ; -2.075 ; -737.708      ;
-; clk                             ; -0.531 ; -23.755       ;
-; PS2_clk                         ; -0.356 ; -20.931       ;
-; clk_divider:VGA|out_clk         ; -0.198 ; -10.450       ;
-; clk_divider:FLOOR|out_clk       ; -0.166 ; -10.683       ;
-; clk_divider:BG|out_clk          ; -0.012 ; -0.176        ;
-; pipes:pipe_shift|score_count[0] ; 0.124  ; 0.000         ;
+; rst                             ; -2.438 ; -881.120      ;
+; clk                             ; -0.444 ; -22.622       ;
+; PS2_clk                         ; -0.361 ; -22.204       ;
+; clk_divider:FLOOR|out_clk       ; -0.175 ; -19.829       ;
+; clk_divider:VGA|out_clk         ; -0.145 ; -10.691       ;
+; clk_divider:BG|out_clk          ; -0.043 ; -0.672        ;
+; pipes:pipe_shift|score_count[0] ; 0.218  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -470,22 +470,22 @@ No synchronizer chains to report.
 +----------------------------------+-----------+---------+-----------+---------+---------------------+
 ; Clock                            ; Setup     ; Hold    ; Recovery  ; Removal ; Minimum Pulse Width ;
 +----------------------------------+-----------+---------+-----------+---------+---------------------+
-; Worst-case Slack                 ; -47.583   ; -0.967  ; -7.110    ; -0.354  ; -3.350              ;
-;  PS2_clk                         ; -5.966    ; 0.140   ; N/A       ; N/A     ; -0.394              ;
-;  clk                             ; -9.481    ; 0.000   ; -4.830    ; 0.822   ; -0.624              ;
-;  clk_divider:BG|out_clk          ; -4.855    ; 0.078   ; N/A       ; N/A     ; -0.394              ;
-;  clk_divider:FLOOR|out_clk       ; -7.637    ; -0.086  ; -7.110    ; 1.436   ; -0.486              ;
-;  clk_divider:VGA|out_clk         ; -47.583   ; 0.216   ; -6.348    ; 1.384   ; -0.567              ;
-;  pipes:pipe_shift|score_count[0] ; -4.571    ; -0.967  ; -4.144    ; -0.354  ; 0.007               ;
-;  rst                             ; -45.009   ; 0.798   ; N/A       ; N/A     ; -3.350              ;
-; Design-wide TNS                  ; -6975.715 ; -17.216 ; -2356.706 ; -1.854  ; -1762.432           ;
-;  PS2_clk                         ; -248.534  ; 0.000   ; N/A       ; N/A     ; -31.908             ;
-;  clk                             ; -1264.938 ; 0.000   ; -645.461  ; 0.000   ; -149.500            ;
-;  clk_divider:BG|out_clk          ; -77.672   ; 0.000   ; N/A       ; N/A     ; -10.480             ;
-;  clk_divider:FLOOR|out_clk       ; -1232.844 ; -0.133  ; -1229.646 ; 0.000   ; -142.818            ;
-;  clk_divider:VGA|out_clk         ; -3557.975 ; 0.000   ; -364.380  ; 0.000   ; -117.081            ;
-;  pipes:pipe_shift|score_count[0] ; -118.035  ; -17.216 ; -117.577  ; -1.854  ; 0.000               ;
-;  rst                             ; -543.359  ; 0.000   ; N/A       ; N/A     ; -1312.128           ;
+; Worst-case Slack                 ; -48.266   ; -0.744  ; -6.782    ; -0.215  ; -4.353              ;
+;  PS2_clk                         ; -4.934    ; 0.141   ; N/A       ; N/A     ; -0.394              ;
+;  clk                             ; -9.293    ; 0.043   ; -4.748    ; 0.790   ; -0.483              ;
+;  clk_divider:BG|out_clk          ; -4.022    ; 0.077   ; N/A       ; N/A     ; -0.394              ;
+;  clk_divider:FLOOR|out_clk       ; -7.590    ; -0.090  ; -6.782    ; 1.454   ; -0.529              ;
+;  clk_divider:VGA|out_clk         ; -48.266   ; 0.144   ; -6.566    ; 1.544   ; -0.496              ;
+;  pipes:pipe_shift|score_count[0] ; -5.025    ; -0.744  ; -4.575    ; -0.215  ; 0.121               ;
+;  rst                             ; -44.218   ; 0.873   ; N/A       ; N/A     ; -4.353              ;
+; Design-wide TNS                  ; -6957.432 ; -13.282 ; -2315.5   ; -0.215  ; -2194.313           ;
+;  PS2_clk                         ; -238.979  ; 0.000   ; N/A       ; N/A     ; -32.221             ;
+;  clk                             ; -1203.290 ; 0.000   ; -624.477  ; 0.000   ; -147.616            ;
+;  clk_divider:BG|out_clk          ; -64.344   ; 0.000   ; N/A       ; N/A     ; -11.008             ;
+;  clk_divider:FLOOR|out_clk       ; -1269.623 ; -0.183  ; -1194.195 ; 0.000   ; -161.925            ;
+;  clk_divider:VGA|out_clk         ; -3557.538 ; 0.000   ; -372.413  ; 0.000   ; -121.155            ;
+;  pipes:pipe_shift|score_count[0] ; -134.857  ; -13.282 ; -124.415  ; -0.215  ; 0.000               ;
+;  rst                             ; -554.926  ; 0.000   ; N/A       ; N/A     ; -1725.232           ;
 +----------------------------------+-----------+---------+-----------+---------+---------------------+
 
 
@@ -951,7 +951,7 @@ No synchronizer chains to report.
 +---------------------------------+---------------------------------+--------------+--------------+--------------+--------------+
 ; From Clock                      ; To Clock                        ; RR Paths     ; FR Paths     ; RF Paths     ; FF Paths     ;
 +---------------------------------+---------------------------------+--------------+--------------+--------------+--------------+
-; clk                             ; clk                             ; 55772        ; 0            ; 0            ; 0            ;
+; clk                             ; clk                             ; 55409        ; 0            ; 0            ; 0            ;
 ; clk_divider:BG|out_clk          ; clk                             ; 1            ; 1            ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk       ; clk                             ; 2453         ; 1            ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk         ; clk                             ; 1            ; 1            ; 0            ; 0            ;
@@ -985,7 +985,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------+---------------------------------+--------------+--------------+--------------+--------------+
 ; From Clock                      ; To Clock                        ; RR Paths     ; FR Paths     ; RF Paths     ; FF Paths     ;
 +---------------------------------+---------------------------------+--------------+--------------+--------------+--------------+
-; clk                             ; clk                             ; 55772        ; 0            ; 0            ; 0            ;
+; clk                             ; clk                             ; 55409        ; 0            ; 0            ; 0            ;
 ; clk_divider:BG|out_clk          ; clk                             ; 1            ; 1            ; 0            ; 0            ;
 ; clk_divider:FLOOR|out_clk       ; clk                             ; 2453         ; 1            ; 0            ; 0            ;
 ; clk_divider:VGA|out_clk         ; clk                             ; 1            ; 1            ; 0            ; 0            ;
@@ -1019,7 +1019,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+---------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+---------------------------------+----------+----------+----------+----------+
-; rst        ; clk                             ; 134      ; 134      ; 0        ; 0        ;
+; rst        ; clk                             ; 132      ; 132      ; 0        ; 0        ;
 ; rst        ; clk_divider:FLOOR|out_clk       ; 188      ; 188      ; 0        ; 0        ;
 ; rst        ; clk_divider:VGA|out_clk         ; 59       ; 59       ; 0        ; 0        ;
 ; rst        ; pipes:pipe_shift|score_count[0] ; 0        ; 0        ; 32       ; 32       ;
@@ -1032,7 +1032,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+---------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+---------------------------------+----------+----------+----------+----------+
-; rst        ; clk                             ; 134      ; 134      ; 0        ; 0        ;
+; rst        ; clk                             ; 132      ; 132      ; 0        ; 0        ;
 ; rst        ; clk_divider:FLOOR|out_clk       ; 188      ; 188      ; 0        ; 0        ;
 ; rst        ; clk_divider:VGA|out_clk         ; 59       ; 59       ; 0        ; 0        ;
 ; rst        ; pipes:pipe_shift|score_count[0] ; 0        ; 0        ; 32       ; 32       ;
@@ -1237,7 +1237,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 21 00:10:21 2021
+    Info: Processing started: Fri May 21 01:31:01 2021
 Info: Command: quartus_sta MiniProject -c MiniProject
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1267,16 +1267,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add38~41  from: cin  to: sumout
     Info (332098): Cell: display|Add38~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~45  from: datac  to: sumout
+    Info (332098): Cell: display|Add38~45  from: datad  to: sumout
     Info (332098): Cell: display|Add38~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~49  from: datac  to: sumout
     Info (332098): Cell: display|Add38~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~53  from: cin  to: sumout
     Info (332098): Cell: display|Add38~53  from: datad  to: sumout
     Info (332098): Cell: display|Add38~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~57  from: datab  to: sumout
     Info (332098): Cell: display|Add38~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~5  from: cin  to: sumout
     Info (332098): Cell: display|Add38~62  from: datad  to: cout
@@ -1298,17 +1298,17 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add40~53  from: datac  to: sumout
     Info (332098): Cell: display|Add40~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~57  from: datac  to: sumout
     Info (332098): Cell: display|Add40~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~5  from: cin  to: sumout
     Info (332098): Cell: display|Add40~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~61  from: datac  to: sumout
     Info (332098): Cell: display|Add40~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add40~65  from: datad  to: sumout
     Info (332098): Cell: display|Add40~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~70  from: datad  to: cout
-    Info (332098): Cell: display|Add40~74  from: datad  to: cout
+    Info (332098): Cell: display|Add40~74  from: datac  to: cout
     Info (332098): Cell: display|Add40~9  from: cin  to: sumout
     Info (332098): Cell: display|Add47~13  from: cin  to: sumout
     Info (332098): Cell: display|Add47~17  from: cin  to: sumout
@@ -1321,19 +1321,19 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add47~41  from: cin  to: sumout
     Info (332098): Cell: display|Add47~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add47~45  from: datac  to: sumout
     Info (332098): Cell: display|Add47~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~49  from: datac  to: sumout
     Info (332098): Cell: display|Add47~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~53  from: datac  to: sumout
     Info (332098): Cell: display|Add47~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~57  from: datac  to: sumout
+    Info (332098): Cell: display|Add47~57  from: datab  to: sumout
     Info (332098): Cell: display|Add47~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~62  from: datac  to: cout
+    Info (332098): Cell: display|Add47~62  from: datab  to: cout
     Info (332098): Cell: display|Add47~66  from: datad  to: cout
     Info (332098): Cell: display|Add47~9  from: cin  to: sumout
     Info (332098): Cell: display|Add49~13  from: cin  to: sumout
@@ -1349,20 +1349,20 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add49~49  from: cin  to: sumout
     Info (332098): Cell: display|Add49~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add49~53  from: datac  to: sumout
     Info (332098): Cell: display|Add49~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~57  from: cin  to: sumout
     Info (332098): Cell: display|Add49~57  from: datad  to: sumout
     Info (332098): Cell: display|Add49~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~5  from: cin  to: sumout
     Info (332098): Cell: display|Add49~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~61  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~61  from: datad  to: sumout
     Info (332098): Cell: display|Add49~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~65  from: datad  to: sumout
     Info (332098): Cell: display|Add49~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~70  from: datac  to: cout
-    Info (332098): Cell: display|Add49~74  from: datab  to: cout
+    Info (332098): Cell: display|Add49~74  from: datad  to: cout
     Info (332098): Cell: display|Add49~9  from: cin  to: sumout
     Info (332098): Cell: display|Add56~13  from: cin  to: sumout
     Info (332098): Cell: display|Add56~17  from: cin  to: sumout
@@ -1381,14 +1381,14 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add56~49  from: datad  to: sumout
     Info (332098): Cell: display|Add56~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add56~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add56~53  from: datac  to: sumout
     Info (332098): Cell: display|Add56~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~57  from: cin  to: sumout
     Info (332098): Cell: display|Add56~57  from: datad  to: sumout
     Info (332098): Cell: display|Add56~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~5  from: cin  to: sumout
     Info (332098): Cell: display|Add56~62  from: datad  to: cout
-    Info (332098): Cell: display|Add56~66  from: datac  to: cout
+    Info (332098): Cell: display|Add56~66  from: datad  to: cout
     Info (332098): Cell: display|Add56~9  from: cin  to: sumout
     Info (332098): Cell: display|Add58~13  from: cin  to: sumout
     Info (332098): Cell: display|Add58~17  from: cin  to: sumout
@@ -1406,16 +1406,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add58~53  from: datac  to: sumout
     Info (332098): Cell: display|Add58~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~57  from: datab  to: sumout
+    Info (332098): Cell: display|Add58~57  from: datad  to: sumout
     Info (332098): Cell: display|Add58~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~5  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: datac  to: sumout
     Info (332098): Cell: display|Add58~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~65  from: datad  to: sumout
+    Info (332098): Cell: display|Add58~65  from: datac  to: sumout
     Info (332098): Cell: display|Add58~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add58~70  from: datad  to: cout
+    Info (332098): Cell: display|Add58~70  from: datac  to: cout
     Info (332098): Cell: display|Add58~74  from: datad  to: cout
     Info (332098): Cell: display|Add58~9  from: cin  to: sumout
     Info (332098): Cell: display|Add65~13  from: cin  to: sumout
@@ -1429,7 +1429,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~41  from: cin  to: sumout
     Info (332098): Cell: display|Add65~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add65~45  from: datad  to: sumout
     Info (332098): Cell: display|Add65~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~49  from: cin  to: sumout
     Info (332098): Cell: display|Add65~49  from: datad  to: sumout
@@ -1441,7 +1441,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~57  from: datad  to: sumout
     Info (332098): Cell: display|Add65~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~62  from: datac  to: cout
+    Info (332098): Cell: display|Add65~62  from: datad  to: cout
     Info (332098): Cell: display|Add65~66  from: datac  to: cout
     Info (332098): Cell: display|Add65~9  from: cin  to: sumout
     Info (332098): Cell: display|Add68~13  from: cin  to: sumout
@@ -1457,99 +1457,99 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add68~49  from: cin  to: sumout
     Info (332098): Cell: display|Add68~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~53  from: dataa  to: sumout
+    Info (332098): Cell: display|Add68~53  from: datad  to: sumout
     Info (332098): Cell: display|Add68~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~57  from: datac  to: sumout
     Info (332098): Cell: display|Add68~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~5  from: cin  to: sumout
     Info (332098): Cell: display|Add68~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~61  from: datac  to: sumout
     Info (332098): Cell: display|Add68~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~65  from: cin  to: sumout
     Info (332098): Cell: display|Add68~65  from: datac  to: sumout
     Info (332098): Cell: display|Add68~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add68~70  from: datac  to: cout
-    Info (332098): Cell: display|Add68~74  from: datac  to: cout
+    Info (332098): Cell: display|Add68~70  from: datad  to: cout
+    Info (332098): Cell: display|Add68~74  from: datad  to: cout
     Info (332098): Cell: display|Add68~9  from: cin  to: sumout
-    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datae  to: combout
     Info (332098): Cell: pipe_shift|pipeY[0][3]~67  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][0]~82  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][2]~81  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][6]~73  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[2][6]~85  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datae  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datac  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -45.696
+Info (332146): Worst-case setup slack is -46.397
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -45.696           -3505.646 clk_divider:VGA|out_clk 
-    Info (332119):   -43.228            -528.046 rst 
-    Info (332119):    -9.481           -1264.938 clk 
-    Info (332119):    -7.637           -1232.844 clk_divider:FLOOR|out_clk 
-    Info (332119):    -5.966            -248.534 PS2_clk 
-    Info (332119):    -4.855             -77.672 clk_divider:BG|out_clk 
-    Info (332119):    -4.571            -118.035 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case hold slack is -0.834
+    Info (332119):   -46.397           -3508.511 clk_divider:VGA|out_clk 
+    Info (332119):   -42.218            -539.188 rst 
+    Info (332119):    -9.293           -1203.290 clk 
+    Info (332119):    -7.590           -1269.623 clk_divider:FLOOR|out_clk 
+    Info (332119):    -5.025            -134.857 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -4.934            -238.979 PS2_clk 
+    Info (332119):    -3.937             -62.984 clk_divider:BG|out_clk 
+Info (332146): Worst-case hold slack is -0.552
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.834             -12.057 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -0.552              -7.167 pipes:pipe_shift|score_count[0] 
     Info (332119):     0.119               0.000 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.220               0.000 PS2_clk 
-    Info (332119):     0.240               0.000 clk 
-    Info (332119):     0.271               0.000 clk_divider:BG|out_clk 
-    Info (332119):     0.550               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     1.751               0.000 rst 
-Info (332146): Worst-case recovery slack is -7.110
+    Info (332119):     0.219               0.000 PS2_clk 
+    Info (332119):     0.222               0.000 clk 
+    Info (332119):     0.269               0.000 clk_divider:BG|out_clk 
+    Info (332119):     0.422               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     1.840               0.000 rst 
+Info (332146): Worst-case recovery slack is -6.782
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.110           -1229.646 clk_divider:FLOOR|out_clk 
-    Info (332119):    -6.348            -364.022 clk_divider:VGA|out_clk 
-    Info (332119):    -4.830            -645.461 clk 
-    Info (332119):    -4.144            -117.577 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case removal slack is -0.304
+    Info (332119):    -6.782           -1194.195 clk_divider:FLOOR|out_clk 
+    Info (332119):    -6.566            -372.413 clk_divider:VGA|out_clk 
+    Info (332119):    -4.748            -624.477 clk 
+    Info (332119):    -4.575            -124.415 pipes:pipe_shift|score_count[0] 
+Info (332146): Worst-case removal slack is -0.097
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.304              -1.119 pipes:pipe_shift|score_count[0] 
-    Info (332119):     1.721               0.000 clk 
-    Info (332119):     2.744               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     2.821               0.000 clk_divider:FLOOR|out_clk 
-Info (332146): Worst-case minimum pulse width slack is -3.312
+    Info (332119):    -0.097              -0.097 pipes:pipe_shift|score_count[0] 
+    Info (332119):     1.670               0.000 clk 
+    Info (332119):     3.018               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     3.042               0.000 clk_divider:FLOOR|out_clk 
+Info (332146): Worst-case minimum pulse width slack is -4.278
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.312           -1256.592 rst 
-    Info (332119):    -0.624            -137.792 clk 
-    Info (332119):    -0.567            -115.103 clk_divider:VGA|out_clk 
-    Info (332119):    -0.486            -142.818 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.394             -31.908 PS2_clk 
-    Info (332119):    -0.394             -10.448 clk_divider:BG|out_clk 
-    Info (332119):     0.082               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -4.278           -1622.924 rst 
+    Info (332119):    -0.529            -161.925 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.496            -121.155 clk_divider:VGA|out_clk 
+    Info (332119):    -0.481            -135.428 clk 
+    Info (332119):    -0.394             -30.908 PS2_clk 
+    Info (332119):    -0.394             -10.832 clk_divider:BG|out_clk 
+    Info (332119):     0.130               0.000 pipes:pipe_shift|score_count[0] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1565,16 +1565,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add38~41  from: cin  to: sumout
     Info (332098): Cell: display|Add38~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~45  from: datac  to: sumout
+    Info (332098): Cell: display|Add38~45  from: datad  to: sumout
     Info (332098): Cell: display|Add38~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~49  from: datac  to: sumout
     Info (332098): Cell: display|Add38~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~53  from: cin  to: sumout
     Info (332098): Cell: display|Add38~53  from: datad  to: sumout
     Info (332098): Cell: display|Add38~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~57  from: datab  to: sumout
     Info (332098): Cell: display|Add38~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~5  from: cin  to: sumout
     Info (332098): Cell: display|Add38~62  from: datad  to: cout
@@ -1596,17 +1596,17 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add40~53  from: datac  to: sumout
     Info (332098): Cell: display|Add40~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~57  from: datac  to: sumout
     Info (332098): Cell: display|Add40~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~5  from: cin  to: sumout
     Info (332098): Cell: display|Add40~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~61  from: datac  to: sumout
     Info (332098): Cell: display|Add40~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add40~65  from: datad  to: sumout
     Info (332098): Cell: display|Add40~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~70  from: datad  to: cout
-    Info (332098): Cell: display|Add40~74  from: datad  to: cout
+    Info (332098): Cell: display|Add40~74  from: datac  to: cout
     Info (332098): Cell: display|Add40~9  from: cin  to: sumout
     Info (332098): Cell: display|Add47~13  from: cin  to: sumout
     Info (332098): Cell: display|Add47~17  from: cin  to: sumout
@@ -1619,19 +1619,19 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add47~41  from: cin  to: sumout
     Info (332098): Cell: display|Add47~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add47~45  from: datac  to: sumout
     Info (332098): Cell: display|Add47~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~49  from: datac  to: sumout
     Info (332098): Cell: display|Add47~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~53  from: datac  to: sumout
     Info (332098): Cell: display|Add47~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~57  from: datac  to: sumout
+    Info (332098): Cell: display|Add47~57  from: datab  to: sumout
     Info (332098): Cell: display|Add47~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~62  from: datac  to: cout
+    Info (332098): Cell: display|Add47~62  from: datab  to: cout
     Info (332098): Cell: display|Add47~66  from: datad  to: cout
     Info (332098): Cell: display|Add47~9  from: cin  to: sumout
     Info (332098): Cell: display|Add49~13  from: cin  to: sumout
@@ -1647,20 +1647,20 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add49~49  from: cin  to: sumout
     Info (332098): Cell: display|Add49~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add49~53  from: datac  to: sumout
     Info (332098): Cell: display|Add49~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~57  from: cin  to: sumout
     Info (332098): Cell: display|Add49~57  from: datad  to: sumout
     Info (332098): Cell: display|Add49~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~5  from: cin  to: sumout
     Info (332098): Cell: display|Add49~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~61  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~61  from: datad  to: sumout
     Info (332098): Cell: display|Add49~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~65  from: datad  to: sumout
     Info (332098): Cell: display|Add49~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~70  from: datac  to: cout
-    Info (332098): Cell: display|Add49~74  from: datab  to: cout
+    Info (332098): Cell: display|Add49~74  from: datad  to: cout
     Info (332098): Cell: display|Add49~9  from: cin  to: sumout
     Info (332098): Cell: display|Add56~13  from: cin  to: sumout
     Info (332098): Cell: display|Add56~17  from: cin  to: sumout
@@ -1679,14 +1679,14 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add56~49  from: datad  to: sumout
     Info (332098): Cell: display|Add56~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add56~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add56~53  from: datac  to: sumout
     Info (332098): Cell: display|Add56~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~57  from: cin  to: sumout
     Info (332098): Cell: display|Add56~57  from: datad  to: sumout
     Info (332098): Cell: display|Add56~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~5  from: cin  to: sumout
     Info (332098): Cell: display|Add56~62  from: datad  to: cout
-    Info (332098): Cell: display|Add56~66  from: datac  to: cout
+    Info (332098): Cell: display|Add56~66  from: datad  to: cout
     Info (332098): Cell: display|Add56~9  from: cin  to: sumout
     Info (332098): Cell: display|Add58~13  from: cin  to: sumout
     Info (332098): Cell: display|Add58~17  from: cin  to: sumout
@@ -1704,16 +1704,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add58~53  from: datac  to: sumout
     Info (332098): Cell: display|Add58~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~57  from: datab  to: sumout
+    Info (332098): Cell: display|Add58~57  from: datad  to: sumout
     Info (332098): Cell: display|Add58~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~5  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: datac  to: sumout
     Info (332098): Cell: display|Add58~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~65  from: datad  to: sumout
+    Info (332098): Cell: display|Add58~65  from: datac  to: sumout
     Info (332098): Cell: display|Add58~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add58~70  from: datad  to: cout
+    Info (332098): Cell: display|Add58~70  from: datac  to: cout
     Info (332098): Cell: display|Add58~74  from: datad  to: cout
     Info (332098): Cell: display|Add58~9  from: cin  to: sumout
     Info (332098): Cell: display|Add65~13  from: cin  to: sumout
@@ -1727,7 +1727,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~41  from: cin  to: sumout
     Info (332098): Cell: display|Add65~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add65~45  from: datad  to: sumout
     Info (332098): Cell: display|Add65~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~49  from: cin  to: sumout
     Info (332098): Cell: display|Add65~49  from: datad  to: sumout
@@ -1739,7 +1739,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~57  from: datad  to: sumout
     Info (332098): Cell: display|Add65~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~62  from: datac  to: cout
+    Info (332098): Cell: display|Add65~62  from: datad  to: cout
     Info (332098): Cell: display|Add65~66  from: datac  to: cout
     Info (332098): Cell: display|Add65~9  from: cin  to: sumout
     Info (332098): Cell: display|Add68~13  from: cin  to: sumout
@@ -1755,96 +1755,96 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add68~49  from: cin  to: sumout
     Info (332098): Cell: display|Add68~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~53  from: dataa  to: sumout
+    Info (332098): Cell: display|Add68~53  from: datad  to: sumout
     Info (332098): Cell: display|Add68~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~57  from: datac  to: sumout
     Info (332098): Cell: display|Add68~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~5  from: cin  to: sumout
     Info (332098): Cell: display|Add68~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~61  from: datac  to: sumout
     Info (332098): Cell: display|Add68~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~65  from: cin  to: sumout
     Info (332098): Cell: display|Add68~65  from: datac  to: sumout
     Info (332098): Cell: display|Add68~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add68~70  from: datac  to: cout
-    Info (332098): Cell: display|Add68~74  from: datac  to: cout
+    Info (332098): Cell: display|Add68~70  from: datad  to: cout
+    Info (332098): Cell: display|Add68~74  from: datad  to: cout
     Info (332098): Cell: display|Add68~9  from: cin  to: sumout
-    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datae  to: combout
     Info (332098): Cell: pipe_shift|pipeY[0][3]~67  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][0]~82  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][2]~81  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][6]~73  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[2][6]~85  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datae  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -47.583
+Info (332146): Worst-case setup slack is -48.266
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -47.583           -3557.975 clk_divider:VGA|out_clk 
-    Info (332119):   -45.009            -543.359 rst 
-    Info (332119):    -8.944           -1211.332 clk 
-    Info (332119):    -7.624           -1227.071 clk_divider:FLOOR|out_clk 
-    Info (332119):    -5.734            -244.269 PS2_clk 
-    Info (332119):    -4.843             -77.480 clk_divider:BG|out_clk 
-    Info (332119):    -4.409            -113.039 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case hold slack is -0.967
+    Info (332119):   -48.266           -3557.538 clk_divider:VGA|out_clk 
+    Info (332119):   -44.218            -554.926 rst 
+    Info (332119):    -8.930           -1147.463 clk 
+    Info (332119):    -7.504           -1256.942 clk_divider:FLOOR|out_clk 
+    Info (332119):    -4.905            -129.780 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -4.858            -237.978 PS2_clk 
+    Info (332119):    -4.022             -64.344 clk_divider:BG|out_clk 
+Info (332146): Worst-case hold slack is -0.744
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.967             -17.216 pipes:pipe_shift|score_count[0] 
-    Info (332119):     0.203               0.000 clk 
-    Info (332119):     0.254               0.000 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.264               0.000 PS2_clk 
-    Info (332119):     0.276               0.000 clk_divider:BG|out_clk 
-    Info (332119):     0.576               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     1.898               0.000 rst 
-Info (332146): Worst-case recovery slack is -7.024
+    Info (332119):    -0.744             -13.282 pipes:pipe_shift|score_count[0] 
+    Info (332119):     0.209               0.000 clk 
+    Info (332119):     0.227               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.269               0.000 PS2_clk 
+    Info (332119):     0.271               0.000 clk_divider:BG|out_clk 
+    Info (332119):     0.439               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     1.918               0.000 rst 
+Info (332146): Worst-case recovery slack is -6.711
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.024           -1221.636 clk_divider:FLOOR|out_clk 
-    Info (332119):    -6.345            -364.380 clk_divider:VGA|out_clk 
-    Info (332119):    -4.596            -614.104 clk 
-    Info (332119):    -4.090            -116.617 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case removal slack is -0.354
+    Info (332119):    -6.711           -1188.926 clk_divider:FLOOR|out_clk 
+    Info (332119):    -6.518            -370.947 clk_divider:VGA|out_clk 
+    Info (332119):    -4.522            -595.169 clk 
+    Info (332119):    -4.435            -122.477 pipes:pipe_shift|score_count[0] 
+Info (332146): Worst-case removal slack is -0.215
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.354              -1.854 pipes:pipe_shift|score_count[0] 
-    Info (332119):     1.569               0.000 clk 
-    Info (332119):     2.876               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     2.924               0.000 clk_divider:FLOOR|out_clk 
-Info (332146): Worst-case minimum pulse width slack is -3.350
+    Info (332119):    -0.215              -0.215 pipes:pipe_shift|score_count[0] 
+    Info (332119):     1.517               0.000 clk 
+    Info (332119):     3.094               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     3.116               0.000 clk_divider:VGA|out_clk 
+Info (332146): Worst-case minimum pulse width slack is -4.353
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.350           -1312.128 rst 
-    Info (332119):    -0.608            -149.500 clk 
-    Info (332119):    -0.545            -117.081 clk_divider:VGA|out_clk 
-    Info (332119):    -0.456            -141.421 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.394             -31.822 PS2_clk 
-    Info (332119):    -0.394             -10.480 clk_divider:BG|out_clk 
-    Info (332119):     0.007               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -4.353           -1725.232 rst 
+    Info (332119):    -0.506            -159.410 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.483            -147.616 clk 
+    Info (332119):    -0.461            -118.826 clk_divider:VGA|out_clk 
+    Info (332119):    -0.394             -32.221 PS2_clk 
+    Info (332119):    -0.394             -11.008 clk_divider:BG|out_clk 
+    Info (332119):     0.121               0.000 pipes:pipe_shift|score_count[0] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1860,16 +1860,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add38~41  from: cin  to: sumout
     Info (332098): Cell: display|Add38~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~45  from: datac  to: sumout
+    Info (332098): Cell: display|Add38~45  from: datad  to: sumout
     Info (332098): Cell: display|Add38~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~49  from: datac  to: sumout
     Info (332098): Cell: display|Add38~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~53  from: cin  to: sumout
     Info (332098): Cell: display|Add38~53  from: datad  to: sumout
     Info (332098): Cell: display|Add38~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~57  from: datab  to: sumout
     Info (332098): Cell: display|Add38~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~5  from: cin  to: sumout
     Info (332098): Cell: display|Add38~62  from: datad  to: cout
@@ -1891,17 +1891,17 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add40~53  from: datac  to: sumout
     Info (332098): Cell: display|Add40~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~57  from: datac  to: sumout
     Info (332098): Cell: display|Add40~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~5  from: cin  to: sumout
     Info (332098): Cell: display|Add40~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~61  from: datac  to: sumout
     Info (332098): Cell: display|Add40~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add40~65  from: datad  to: sumout
     Info (332098): Cell: display|Add40~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~70  from: datad  to: cout
-    Info (332098): Cell: display|Add40~74  from: datad  to: cout
+    Info (332098): Cell: display|Add40~74  from: datac  to: cout
     Info (332098): Cell: display|Add40~9  from: cin  to: sumout
     Info (332098): Cell: display|Add47~13  from: cin  to: sumout
     Info (332098): Cell: display|Add47~17  from: cin  to: sumout
@@ -1914,19 +1914,19 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add47~41  from: cin  to: sumout
     Info (332098): Cell: display|Add47~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add47~45  from: datac  to: sumout
     Info (332098): Cell: display|Add47~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~49  from: datac  to: sumout
     Info (332098): Cell: display|Add47~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~53  from: datac  to: sumout
     Info (332098): Cell: display|Add47~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~57  from: datac  to: sumout
+    Info (332098): Cell: display|Add47~57  from: datab  to: sumout
     Info (332098): Cell: display|Add47~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~62  from: datac  to: cout
+    Info (332098): Cell: display|Add47~62  from: datab  to: cout
     Info (332098): Cell: display|Add47~66  from: datad  to: cout
     Info (332098): Cell: display|Add47~9  from: cin  to: sumout
     Info (332098): Cell: display|Add49~13  from: cin  to: sumout
@@ -1942,20 +1942,20 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add49~49  from: cin  to: sumout
     Info (332098): Cell: display|Add49~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add49~53  from: datac  to: sumout
     Info (332098): Cell: display|Add49~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~57  from: cin  to: sumout
     Info (332098): Cell: display|Add49~57  from: datad  to: sumout
     Info (332098): Cell: display|Add49~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~5  from: cin  to: sumout
     Info (332098): Cell: display|Add49~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~61  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~61  from: datad  to: sumout
     Info (332098): Cell: display|Add49~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~65  from: datad  to: sumout
     Info (332098): Cell: display|Add49~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~70  from: datac  to: cout
-    Info (332098): Cell: display|Add49~74  from: datab  to: cout
+    Info (332098): Cell: display|Add49~74  from: datad  to: cout
     Info (332098): Cell: display|Add49~9  from: cin  to: sumout
     Info (332098): Cell: display|Add56~13  from: cin  to: sumout
     Info (332098): Cell: display|Add56~17  from: cin  to: sumout
@@ -1974,14 +1974,14 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add56~49  from: datad  to: sumout
     Info (332098): Cell: display|Add56~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add56~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add56~53  from: datac  to: sumout
     Info (332098): Cell: display|Add56~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~57  from: cin  to: sumout
     Info (332098): Cell: display|Add56~57  from: datad  to: sumout
     Info (332098): Cell: display|Add56~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~5  from: cin  to: sumout
     Info (332098): Cell: display|Add56~62  from: datad  to: cout
-    Info (332098): Cell: display|Add56~66  from: datac  to: cout
+    Info (332098): Cell: display|Add56~66  from: datad  to: cout
     Info (332098): Cell: display|Add56~9  from: cin  to: sumout
     Info (332098): Cell: display|Add58~13  from: cin  to: sumout
     Info (332098): Cell: display|Add58~17  from: cin  to: sumout
@@ -1999,16 +1999,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add58~53  from: datac  to: sumout
     Info (332098): Cell: display|Add58~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~57  from: datab  to: sumout
+    Info (332098): Cell: display|Add58~57  from: datad  to: sumout
     Info (332098): Cell: display|Add58~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~5  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: datac  to: sumout
     Info (332098): Cell: display|Add58~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~65  from: datad  to: sumout
+    Info (332098): Cell: display|Add58~65  from: datac  to: sumout
     Info (332098): Cell: display|Add58~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add58~70  from: datad  to: cout
+    Info (332098): Cell: display|Add58~70  from: datac  to: cout
     Info (332098): Cell: display|Add58~74  from: datad  to: cout
     Info (332098): Cell: display|Add58~9  from: cin  to: sumout
     Info (332098): Cell: display|Add65~13  from: cin  to: sumout
@@ -2022,7 +2022,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~41  from: cin  to: sumout
     Info (332098): Cell: display|Add65~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add65~45  from: datad  to: sumout
     Info (332098): Cell: display|Add65~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~49  from: cin  to: sumout
     Info (332098): Cell: display|Add65~49  from: datad  to: sumout
@@ -2034,7 +2034,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~57  from: datad  to: sumout
     Info (332098): Cell: display|Add65~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~62  from: datac  to: cout
+    Info (332098): Cell: display|Add65~62  from: datad  to: cout
     Info (332098): Cell: display|Add65~66  from: datac  to: cout
     Info (332098): Cell: display|Add65~9  from: cin  to: sumout
     Info (332098): Cell: display|Add68~13  from: cin  to: sumout
@@ -2050,96 +2050,96 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add68~49  from: cin  to: sumout
     Info (332098): Cell: display|Add68~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~53  from: dataa  to: sumout
+    Info (332098): Cell: display|Add68~53  from: datad  to: sumout
     Info (332098): Cell: display|Add68~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~57  from: datac  to: sumout
     Info (332098): Cell: display|Add68~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~5  from: cin  to: sumout
     Info (332098): Cell: display|Add68~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~61  from: datac  to: sumout
     Info (332098): Cell: display|Add68~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~65  from: cin  to: sumout
     Info (332098): Cell: display|Add68~65  from: datac  to: sumout
     Info (332098): Cell: display|Add68~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add68~70  from: datac  to: cout
-    Info (332098): Cell: display|Add68~74  from: datac  to: cout
+    Info (332098): Cell: display|Add68~70  from: datad  to: cout
+    Info (332098): Cell: display|Add68~74  from: datad  to: cout
     Info (332098): Cell: display|Add68~9  from: cin  to: sumout
-    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datae  to: combout
     Info (332098): Cell: pipe_shift|pipeY[0][3]~67  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][0]~82  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][2]~81  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][6]~73  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[2][6]~85  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datae  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -24.472
+Info (332146): Worst-case setup slack is -24.966
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -24.472           -1980.075 clk_divider:VGA|out_clk 
-    Info (332119):   -23.312            -287.715 rst 
-    Info (332119):    -5.924            -697.143 clk 
-    Info (332119):    -4.277            -677.002 clk_divider:FLOOR|out_clk 
-    Info (332119):    -3.616             -90.043 pipes:pipe_shift|score_count[0] 
-    Info (332119):    -3.040            -112.027 PS2_clk 
-    Info (332119):    -2.460             -39.360 clk_divider:BG|out_clk 
-Info (332146): Worst-case hold slack is -0.106
+    Info (332119):   -24.966           -1987.870 clk_divider:VGA|out_clk 
+    Info (332119):   -22.602            -295.304 rst 
+    Info (332119):    -5.557            -654.392 clk 
+    Info (332119):    -4.170            -690.328 clk_divider:FLOOR|out_clk 
+    Info (332119):    -3.610             -97.946 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -2.308            -102.122 PS2_clk 
+    Info (332119):    -1.981             -31.696 clk_divider:BG|out_clk 
+Info (332146): Worst-case hold slack is -0.232
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.106              -0.189 pipes:pipe_shift|score_count[0] 
-    Info (332119):    -0.086              -0.133 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.232              -0.737 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -0.090              -0.183 clk_divider:FLOOR|out_clk 
     Info (332119):     0.088               0.000 clk_divider:BG|out_clk 
-    Info (332119):     0.140               0.000 PS2_clk 
-    Info (332119):     0.145               0.000 clk 
-    Info (332119):     0.220               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.839               0.000 rst 
-Info (332146): Worst-case recovery slack is -4.291
+    Info (332119):     0.133               0.000 clk 
+    Info (332119):     0.141               0.000 PS2_clk 
+    Info (332119):     0.156               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     0.938               0.000 rst 
+Info (332146): Worst-case recovery slack is -4.044
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.291            -742.978 clk_divider:FLOOR|out_clk 
-    Info (332119):    -3.844            -219.948 clk_divider:VGA|out_clk 
-    Info (332119):    -3.006            -401.861 clk 
-    Info (332119):    -2.896             -81.775 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case removal slack is 0.034
+    Info (332119):    -4.044            -710.975 clk_divider:FLOOR|out_clk 
+    Info (332119):    -3.888            -222.543 clk_divider:VGA|out_clk 
+    Info (332119):    -3.106             -84.001 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -2.947            -387.660 clk 
+Info (332146): Worst-case removal slack is 0.081
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.034               0.000 pipes:pipe_shift|score_count[0] 
-    Info (332119):     0.933               0.000 clk 
-    Info (332119):     1.384               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     1.436               0.000 clk_divider:FLOOR|out_clk 
-Info (332146): Worst-case minimum pulse width slack is -2.296
+    Info (332119):     0.081               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):     0.899               0.000 clk 
+    Info (332119):     1.454               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     1.544               0.000 clk_divider:VGA|out_clk 
+Info (332146): Worst-case minimum pulse width slack is -2.708
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.296            -826.126 rst 
-    Info (332119):    -0.568             -24.030 clk 
-    Info (332119):    -0.345             -20.579 PS2_clk 
-    Info (332119):    -0.272             -15.518 clk_divider:VGA|out_clk 
-    Info (332119):    -0.241             -18.318 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.049              -0.760 clk_divider:BG|out_clk 
-    Info (332119):     0.065               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -2.708            -973.280 rst 
+    Info (332119):    -0.461             -22.805 clk 
+    Info (332119):    -0.359             -22.107 PS2_clk 
+    Info (332119):    -0.261             -31.895 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.235             -18.368 clk_divider:VGA|out_clk 
+    Info (332119):    -0.075              -1.176 clk_divider:BG|out_clk 
+    Info (332119):     0.185               0.000 pipes:pipe_shift|score_count[0] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: display|Add38~13  from: cin  to: sumout
@@ -2153,16 +2153,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add38~41  from: cin  to: sumout
     Info (332098): Cell: display|Add38~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~45  from: datac  to: sumout
+    Info (332098): Cell: display|Add38~45  from: datad  to: sumout
     Info (332098): Cell: display|Add38~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~49  from: datac  to: sumout
     Info (332098): Cell: display|Add38~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~53  from: cin  to: sumout
     Info (332098): Cell: display|Add38~53  from: datad  to: sumout
     Info (332098): Cell: display|Add38~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add38~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add38~57  from: datab  to: sumout
     Info (332098): Cell: display|Add38~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add38~5  from: cin  to: sumout
     Info (332098): Cell: display|Add38~62  from: datad  to: cout
@@ -2184,17 +2184,17 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add40~53  from: datac  to: sumout
     Info (332098): Cell: display|Add40~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~57  from: datac  to: sumout
     Info (332098): Cell: display|Add40~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~5  from: cin  to: sumout
     Info (332098): Cell: display|Add40~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add40~61  from: datac  to: sumout
     Info (332098): Cell: display|Add40~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add40~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add40~65  from: datad  to: sumout
     Info (332098): Cell: display|Add40~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add40~70  from: datad  to: cout
-    Info (332098): Cell: display|Add40~74  from: datad  to: cout
+    Info (332098): Cell: display|Add40~74  from: datac  to: cout
     Info (332098): Cell: display|Add40~9  from: cin  to: sumout
     Info (332098): Cell: display|Add47~13  from: cin  to: sumout
     Info (332098): Cell: display|Add47~17  from: cin  to: sumout
@@ -2207,19 +2207,19 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add47~41  from: cin  to: sumout
     Info (332098): Cell: display|Add47~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add47~45  from: datac  to: sumout
     Info (332098): Cell: display|Add47~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~49  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~49  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~49  from: datac  to: sumout
     Info (332098): Cell: display|Add47~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add47~53  from: datac  to: sumout
     Info (332098): Cell: display|Add47~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~57  from: datac  to: sumout
+    Info (332098): Cell: display|Add47~57  from: datab  to: sumout
     Info (332098): Cell: display|Add47~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add47~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add47~62  from: datac  to: cout
+    Info (332098): Cell: display|Add47~62  from: datab  to: cout
     Info (332098): Cell: display|Add47~66  from: datad  to: cout
     Info (332098): Cell: display|Add47~9  from: cin  to: sumout
     Info (332098): Cell: display|Add49~13  from: cin  to: sumout
@@ -2235,20 +2235,20 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add49~49  from: cin  to: sumout
     Info (332098): Cell: display|Add49~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add49~53  from: datac  to: sumout
     Info (332098): Cell: display|Add49~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~57  from: cin  to: sumout
     Info (332098): Cell: display|Add49~57  from: datad  to: sumout
     Info (332098): Cell: display|Add49~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~5  from: cin  to: sumout
     Info (332098): Cell: display|Add49~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~61  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~61  from: datad  to: sumout
     Info (332098): Cell: display|Add49~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add49~65  from: datac  to: sumout
+    Info (332098): Cell: display|Add49~65  from: datad  to: sumout
     Info (332098): Cell: display|Add49~65  from: sharein  to: sumout
     Info (332098): Cell: display|Add49~70  from: datac  to: cout
-    Info (332098): Cell: display|Add49~74  from: datab  to: cout
+    Info (332098): Cell: display|Add49~74  from: datad  to: cout
     Info (332098): Cell: display|Add49~9  from: cin  to: sumout
     Info (332098): Cell: display|Add56~13  from: cin  to: sumout
     Info (332098): Cell: display|Add56~17  from: cin  to: sumout
@@ -2267,14 +2267,14 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add56~49  from: datad  to: sumout
     Info (332098): Cell: display|Add56~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add56~53  from: datad  to: sumout
+    Info (332098): Cell: display|Add56~53  from: datac  to: sumout
     Info (332098): Cell: display|Add56~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~57  from: cin  to: sumout
     Info (332098): Cell: display|Add56~57  from: datad  to: sumout
     Info (332098): Cell: display|Add56~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add56~5  from: cin  to: sumout
     Info (332098): Cell: display|Add56~62  from: datad  to: cout
-    Info (332098): Cell: display|Add56~66  from: datac  to: cout
+    Info (332098): Cell: display|Add56~66  from: datad  to: cout
     Info (332098): Cell: display|Add56~9  from: cin  to: sumout
     Info (332098): Cell: display|Add58~13  from: cin  to: sumout
     Info (332098): Cell: display|Add58~17  from: cin  to: sumout
@@ -2292,16 +2292,16 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add58~53  from: datac  to: sumout
     Info (332098): Cell: display|Add58~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~57  from: datab  to: sumout
+    Info (332098): Cell: display|Add58~57  from: datad  to: sumout
     Info (332098): Cell: display|Add58~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~5  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: cin  to: sumout
     Info (332098): Cell: display|Add58~61  from: datac  to: sumout
     Info (332098): Cell: display|Add58~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add58~65  from: cin  to: sumout
-    Info (332098): Cell: display|Add58~65  from: datad  to: sumout
+    Info (332098): Cell: display|Add58~65  from: datac  to: sumout
     Info (332098): Cell: display|Add58~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add58~70  from: datad  to: cout
+    Info (332098): Cell: display|Add58~70  from: datac  to: cout
     Info (332098): Cell: display|Add58~74  from: datad  to: cout
     Info (332098): Cell: display|Add58~9  from: cin  to: sumout
     Info (332098): Cell: display|Add65~13  from: cin  to: sumout
@@ -2315,7 +2315,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~41  from: cin  to: sumout
     Info (332098): Cell: display|Add65~41  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~45  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~45  from: dataa  to: sumout
+    Info (332098): Cell: display|Add65~45  from: datad  to: sumout
     Info (332098): Cell: display|Add65~45  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~49  from: cin  to: sumout
     Info (332098): Cell: display|Add65~49  from: datad  to: sumout
@@ -2327,7 +2327,7 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add65~57  from: datad  to: sumout
     Info (332098): Cell: display|Add65~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add65~5  from: cin  to: sumout
-    Info (332098): Cell: display|Add65~62  from: datac  to: cout
+    Info (332098): Cell: display|Add65~62  from: datad  to: cout
     Info (332098): Cell: display|Add65~66  from: datac  to: cout
     Info (332098): Cell: display|Add65~9  from: cin  to: sumout
     Info (332098): Cell: display|Add68~13  from: cin  to: sumout
@@ -2343,102 +2343,102 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: display|Add68~49  from: cin  to: sumout
     Info (332098): Cell: display|Add68~49  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~53  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~53  from: dataa  to: sumout
+    Info (332098): Cell: display|Add68~53  from: datad  to: sumout
     Info (332098): Cell: display|Add68~53  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~57  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~57  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~57  from: datac  to: sumout
     Info (332098): Cell: display|Add68~57  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~5  from: cin  to: sumout
     Info (332098): Cell: display|Add68~61  from: cin  to: sumout
-    Info (332098): Cell: display|Add68~61  from: datad  to: sumout
+    Info (332098): Cell: display|Add68~61  from: datac  to: sumout
     Info (332098): Cell: display|Add68~61  from: sharein  to: sumout
     Info (332098): Cell: display|Add68~65  from: cin  to: sumout
     Info (332098): Cell: display|Add68~65  from: datac  to: sumout
     Info (332098): Cell: display|Add68~65  from: sharein  to: sumout
-    Info (332098): Cell: display|Add68~70  from: datac  to: cout
-    Info (332098): Cell: display|Add68~74  from: datac  to: cout
+    Info (332098): Cell: display|Add68~70  from: datad  to: cout
+    Info (332098): Cell: display|Add68~74  from: datad  to: cout
     Info (332098): Cell: display|Add68~9  from: cin  to: sumout
-    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][0]~70  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][1]~71  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][2]~69  from: datae  to: combout
     Info (332098): Cell: pipe_shift|pipeY[0][3]~67  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][4]~65  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][5]~63  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[0][6]~61  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][0]~82  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][1]~83  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][2]~81  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][3]~79  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][4]~77  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[1][5]~75  from: datab  to: combout
     Info (332098): Cell: pipe_shift|pipeY[1][6]~73  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: dataa  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][0]~94  from: datae  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][1]~95  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][2]~93  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][3]~91  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][4]~89  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[2][5]~87  from: datad  to: combout
     Info (332098): Cell: pipe_shift|pipeY[2][6]~85  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datae  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: datac  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datad  to: combout
-    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datad  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][0]~106  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][1]~107  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][2]~105  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][3]~103  from: dataf  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][4]~101  from: datac  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][5]~99  from: datab  to: combout
+    Info (332098): Cell: pipe_shift|pipeY[3][6]~97  from: datac  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -23.591
+Info (332146): Worst-case setup slack is -24.021
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -23.591           -1831.637 clk_divider:VGA|out_clk 
-    Info (332119):   -22.186            -265.559 rst 
-    Info (332119):    -5.409            -622.375 clk 
-    Info (332119):    -3.832            -609.054 clk_divider:FLOOR|out_clk 
-    Info (332119):    -2.978             -76.025 pipes:pipe_shift|score_count[0] 
-    Info (332119):    -2.650             -98.922 PS2_clk 
-    Info (332119):    -2.303             -36.848 clk_divider:BG|out_clk 
-Info (332146): Worst-case hold slack is -0.160
+    Info (332119):   -24.021           -1837.477 clk_divider:VGA|out_clk 
+    Info (332119):   -21.699            -275.124 rst 
+    Info (332119):    -5.158            -584.675 clk 
+    Info (332119):    -3.713            -618.429 clk_divider:FLOOR|out_clk 
+    Info (332119):    -3.003             -83.744 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -2.043             -90.709 PS2_clk 
+    Info (332119):    -1.908             -30.528 clk_divider:BG|out_clk 
+Info (332146): Worst-case hold slack is -0.248
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.160              -0.799 pipes:pipe_shift|score_count[0] 
-    Info (332119):    -0.022              -0.022 clk_divider:FLOOR|out_clk 
-    Info (332119):     0.000               0.000 clk 
-    Info (332119):     0.078               0.000 clk_divider:BG|out_clk 
-    Info (332119):     0.148               0.000 PS2_clk 
-    Info (332119):     0.216               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     0.798               0.000 rst 
-Info (332146): Worst-case recovery slack is -4.197
+    Info (332119):    -0.248              -1.366 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -0.023              -0.036 clk_divider:FLOOR|out_clk 
+    Info (332119):     0.043               0.000 clk 
+    Info (332119):     0.077               0.000 clk_divider:BG|out_clk 
+    Info (332119):     0.144               0.000 clk_divider:VGA|out_clk 
+    Info (332119):     0.145               0.000 PS2_clk 
+    Info (332119):     0.873               0.000 rst 
+Info (332146): Worst-case recovery slack is -3.973
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.197            -734.204 clk_divider:FLOOR|out_clk 
-    Info (332119):    -3.833            -219.935 clk_divider:VGA|out_clk 
-    Info (332119):    -2.874            -384.433 clk 
-    Info (332119):    -2.581             -73.112 pipes:pipe_shift|score_count[0] 
-Info (332146): Worst-case removal slack is 0.092
+    Info (332119):    -3.973            -705.686 clk_divider:FLOOR|out_clk 
+    Info (332119):    -3.834            -221.220 clk_divider:VGA|out_clk 
+    Info (332119):    -2.823            -371.701 clk 
+    Info (332119):    -2.748             -75.255 pipes:pipe_shift|score_count[0] 
+Info (332146): Worst-case removal slack is 0.112
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.092               0.000 pipes:pipe_shift|score_count[0] 
-    Info (332119):     0.822               0.000 clk 
-    Info (332119):     1.443               0.000 clk_divider:VGA|out_clk 
-    Info (332119):     1.487               0.000 clk_divider:FLOOR|out_clk 
-Info (332146): Worst-case minimum pulse width slack is -2.075
+    Info (332119):     0.112               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):     0.790               0.000 clk 
+    Info (332119):     1.467               0.000 clk_divider:FLOOR|out_clk 
+    Info (332119):     1.583               0.000 clk_divider:VGA|out_clk 
+Info (332146): Worst-case minimum pulse width slack is -2.438
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.075            -737.708 rst 
-    Info (332119):    -0.531             -23.755 clk 
-    Info (332119):    -0.356             -20.931 PS2_clk 
-    Info (332119):    -0.198             -10.450 clk_divider:VGA|out_clk 
-    Info (332119):    -0.166             -10.683 clk_divider:FLOOR|out_clk 
-    Info (332119):    -0.012              -0.176 clk_divider:BG|out_clk 
-    Info (332119):     0.124               0.000 pipes:pipe_shift|score_count[0] 
+    Info (332119):    -2.438            -881.120 rst 
+    Info (332119):    -0.444             -22.622 clk 
+    Info (332119):    -0.361             -22.204 PS2_clk 
+    Info (332119):    -0.175             -19.829 clk_divider:FLOOR|out_clk 
+    Info (332119):    -0.145             -10.691 clk_divider:VGA|out_clk 
+    Info (332119):    -0.043              -0.672 clk_divider:BG|out_clk 
+    Info (332119):     0.218               0.000 pipes:pipe_shift|score_count[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5432 megabytes
-    Info: Processing ended: Fri May 21 00:10:59 2021
-    Info: Elapsed time: 00:00:38
-    Info: Total CPU time (on all processors): 00:01:23
+    Info: Peak virtual memory: 5434 megabytes
+    Info: Processing ended: Fri May 21 01:31:40 2021
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:01:24
 
 
