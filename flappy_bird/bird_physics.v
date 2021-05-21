@@ -46,9 +46,9 @@ localparam	TOP		= 4'b0001,
 		STOP		= 4'b1000;
 
 // Symbolic bird spaceping state definitions 
-localparam	space_1 		= 2'd0,
+localparam	space_1 	= 2'd0,
 		space_2		= 2'd1,
-		space_3 		= 2'd2;
+		space_3 	= 2'd2;
 
 // Symbolic bird angle state definitions 
 localparam	HORZ 		= 2'd0,
