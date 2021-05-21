@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-# Date created = 16:17:10  May 10, 2021
+# Date created = 15:32:56  May 21, 2021
 #
 # -------------------------------------------------------------------------- #
 #
@@ -40,18 +40,45 @@ set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY flappy_bird
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:17:10  MAY 10, 2021"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:32:56  MAY 21, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name VERILOG_FILE sprites/title_rom.v
+set_global_assignment -name VERILOG_FILE sprites/score_rom.v
+set_global_assignment -name VERILOG_FILE sprites/pipe_rom.v
+set_global_assignment -name VERILOG_FILE sprites/pause_rom.v
+set_global_assignment -name VERILOG_FILE sprites/numbers_rom.v
+set_global_assignment -name VERILOG_FILE sprites/medals_rom.v
+set_global_assignment -name VERILOG_FILE sprites/game_over_rom.v
+set_global_assignment -name VERILOG_FILE sprites/floor_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_3_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_3_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_3_neg45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_2_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_2_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_2_neg45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_1_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_1_pos45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/flap_1_neg45_rom.v
+set_global_assignment -name VERILOG_FILE sprites/background_rom.v
+set_global_assignment -name VERILOG_FILE flappy_bird/vga_gen.v
+set_global_assignment -name VERILOG_FILE flappy_bird/score_display.v
+set_global_assignment -name VERILOG_FILE flappy_bird/random_number_gen.v
+set_global_assignment -name VERILOG_FILE flappy_bird/pipes.v
+set_global_assignment -name VERILOG_FILE flappy_bird/keyboard_input.v
+set_global_assignment -name VERILOG_FILE flappy_bird/key_filter.v
+set_global_assignment -name VERILOG_FILE flappy_bird/image_rendering.v
+set_global_assignment -name VERILOG_FILE flappy_bird/hex_to_7seg.v
+set_global_assignment -name VERILOG_FILE flappy_bird/game_FSM.v
+set_global_assignment -name VERILOG_FILE flappy_bird/flappy_bird.v
+set_global_assignment -name VERILOG_FILE flappy_bird/collision_detection.v
+set_global_assignment -name VERILOG_FILE flappy_bird/clk_divider.v
+set_global_assignment -name VERILOG_FILE flappy_bird/bird_physics.v
+set_global_assignment -name VERILOG_FILE flappy_bird/bin_to_BCD.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name BOARD "DE1-SoC Board"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH score_display_tb -section_id eda_simulation
 set_location_assignment PIN_J14 -to B[7]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to B[7]
 set_location_assignment PIN_G15 -to B[6]
@@ -222,56 +249,7 @@ set_location_assignment PIN_A11 -to v_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to v_clk
 set_location_assignment PIN_D11 -to v_sync
 set_instance_assignment -name IO_STANDARD "2.5 V" -to v_sync
-set_global_assignment -name EDA_TEST_BENCH_NAME bin_to_BCD_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id bin_to_BCD_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME bin_to_BCD_tb -section_id bin_to_BCD_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME clk_divider_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id clk_divider_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME clk_divider_tb -section_id clk_divider_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME game_FSM_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id game_FSM_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME game_FSM_tb -section_id game_FSM_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/bin_to_BCD_tb.v -section_id bin_to_BCD_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/clk_divider_tb.v -section_id clk_divider_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME score_display_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME score_display_tb -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/score_display_tb.v -section_id score_display_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/game_FSM_tb.v -section_id game_FSM_tb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE flappy_bird/vga_gen.v
-set_global_assignment -name VERILOG_FILE flappy_bird/score_display.v
-set_global_assignment -name VERILOG_FILE flappy_bird/random_number_gen.v
-set_global_assignment -name VERILOG_FILE flappy_bird/pipes.v
-set_global_assignment -name VERILOG_FILE flappy_bird/keyboard_input.v
-set_global_assignment -name VERILOG_FILE flappy_bird/key_filter.v
-set_global_assignment -name VERILOG_FILE flappy_bird/image_rendering.v
-set_global_assignment -name VERILOG_FILE flappy_bird/hex_to_7seg.v
-set_global_assignment -name VERILOG_FILE flappy_bird/game_FSM.v
-set_global_assignment -name VERILOG_FILE flappy_bird/flappy_bird.v
-set_global_assignment -name VERILOG_FILE flappy_bird/collision_detection.v
-set_global_assignment -name VERILOG_FILE flappy_bird/clk_divider.v
-set_global_assignment -name VERILOG_FILE flappy_bird/bird_physics.v
-set_global_assignment -name VERILOG_FILE flappy_bird/bin_to_BCD.v
-set_global_assignment -name VERILOG_FILE sprites/flap_3_pos45_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_3_neg45_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_2_pos45_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_2_neg45_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_1_pos45_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_1_neg45_rom.v
-set_global_assignment -name SOURCE_FILE pin_config.csv
-set_global_assignment -name VERILOG_FILE sprites/title_rom.v
-set_global_assignment -name VERILOG_FILE sprites/score_rom.v
-set_global_assignment -name VERILOG_FILE sprites/pipe_rom.v
-set_global_assignment -name VERILOG_FILE sprites/pause_rom.v
-set_global_assignment -name VERILOG_FILE sprites/numbers_rom.v
-set_global_assignment -name VERILOG_FILE sprites/medals_rom.v
-set_global_assignment -name VERILOG_FILE sprites/game_over_rom.v
-set_global_assignment -name VERILOG_FILE sprites/floor_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_3_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_2_rom.v
-set_global_assignment -name VERILOG_FILE sprites/flap_1_rom.v
-set_global_assignment -name VERILOG_FILE sprites/background_rom.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
