@@ -92,8 +92,8 @@ keyboard_input kb
 	.rst		( rst 		),
 	.PS2_clk	( PS2_clk 	),
 	.PS2_data	( PS2_data 	),
-	.space		( space 		),
-	.esc		( esc 	)
+	.space		( space 	),
+	.esc		( esc 		)
 );
 
 
@@ -105,8 +105,8 @@ game_FSM FSM
 	.clk		( clk 		),
 	.rst		( rst 		),
 	.collision	( collision 	),
-	.esc		( esc 	),
-	.space		( space 		),
+	.esc		( esc 		),
+	.space		( space 	),
 	.game_state	( game_state 	)
 );
 
@@ -120,7 +120,7 @@ bird_physics #(
 	.clk		( clk 		),
 	.rst		( rst		),
 	.game_state	( game_state 	),
-	.space		( space 		),
+	.space		( space 	),
 	.birdY		( birdY 	),
 	.bird_state	( bird_state 	),
 	.bird_angle	( bird_angle	)
