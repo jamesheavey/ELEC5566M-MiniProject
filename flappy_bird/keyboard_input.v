@@ -70,14 +70,13 @@ begin
 	end else begin
 		space = 0;
 		raw_esc = 0;
-		
-		// space code
-		if (code == 8'h29)
-			space 	= 1;
-			
-		// esc code
-		else if (code == 8'h76)
-			raw_esc = 1;
+		case (code)
+			// space code
+			8'h29:	space 	= 1;
+
+			// esc code
+			8'h76:	raw_esc = 1;
+		endcase
 	end
 end
 
